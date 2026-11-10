@@ -163,25 +163,25 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 
 ## Sources
 
-| File | Type | Document date | Modified | SHA-256 (first 16) | Status |
-|---|---|---|---|---|---|
-| bylaws-house-rules-2019.pdf | bylaws | 2019-05-01 | (at compile) | (at compile) | processed |
-| minutes-2024-01-18.pdf | minutes | 2024-01-18 | | | processed |
-| contract-bramblewick-landscaping-2024.pdf | contract | 2024-01-25 | | | processed |
-| minutes-2024-06-12.docx | minutes | 2024-06-12 | | | processed |
-| notice-2024-07-01-renovation-hours.pdf | notice | 2024-07-01 | | | processed |
-| minutes-2024-11-07.pdf | minutes | 2024-11-07 | | | processed |
-| agenda-2025-01-23.pdf | agenda | 2025-01-23 | | | processed |
-| minutes-2025-01-23.pdf | minutes | 2025-01-23 | | | processed |
-| notice-2025-02-10-fees.pdf | notice | 2025-02-10 | | | processed |
-| minutes-2025-04-15.docx | minutes | 2025-04-15 | | | processed |
-| minutes-2025-09-10.pdf | minutes | 2025-09-10 | | | processed |
-| newsletter-2025-12.pdf | newsletter | 2025-12 | | | processed |
-| minutes-2026-01-20.pdf | minutes | 2026-01-20 | | | processed |
-| email-2026-02-02-landscaping.txt | email | 2026-02-02 | | | processed |
-| notice-2026-05-01-pool.pdf | notice | 2026-05-01 | | | processed |
-| board-meeting-2026-06-18.m4a | recording | 2026-06-18 | | | processed |
-| minutes-2026-09-15.docx | minutes | 2026-09-15 | | | processed |
+| File | Type | Document date | Size | Modified | SHA-256 (first 16) | Status |
+|---|---|---|---|---|---|---|
+| bylaws-house-rules-2019.pdf | bylaws | 2019-05-01 | (at compile) | (at compile) | (at compile) | processed |
+| minutes-2024-01-18.pdf | minutes | 2024-01-18 | | | | processed |
+| contract-bramblewick-landscaping-2024.pdf | contract | 2024-01-25 | | | | processed |
+| minutes-2024-06-12.docx | minutes | 2024-06-12 | | | | processed |
+| notice-2024-07-01-renovation-hours.pdf | notice | 2024-07-01 | | | | processed |
+| minutes-2024-11-07.pdf | minutes | 2024-11-07 | | | | processed |
+| agenda-2025-01-23.pdf | agenda | 2025-01-23 | | | | processed |
+| minutes-2025-01-23.pdf | minutes | 2025-01-23 | | | | processed |
+| notice-2025-02-10-fees.pdf | notice | 2025-02-10 | | | | processed |
+| minutes-2025-04-15.docx | minutes | 2025-04-15 | | | | processed |
+| minutes-2025-09-10.pdf | minutes | 2025-09-10 | | | | processed |
+| newsletter-2025-12.pdf | newsletter | 2025-12 | | | | processed |
+| minutes-2026-01-20.pdf | minutes | 2026-01-20 | | | | processed |
+| email-2026-02-02-landscaping.txt | email | 2026-02-02 | | | | processed |
+| notice-2026-05-01-pool.pdf | notice | 2026-05-01 | | | | processed |
+| board-meeting-2026-06-18.m4a | recording | 2026-06-18 | | | | processed |
+| minutes-2026-09-15.docx | minutes | 2026-09-15 | | | | processed |
 
 ## Changelog
 
@@ -195,3 +195,5 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 - 12 topics compiled. 1 open conflict: Pool hours for 2026.
 - 1 correction applied: the EUR 230 notice of 2025-02-10.
 - 1 provisional item: electric barbecues, from the June 2026 recording.
+
+End of almanac v2.

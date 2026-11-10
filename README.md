@@ -37,7 +37,9 @@ See [SKILL.md](skill/almanac/SKILL.md) for the full workflow and [the almanac fo
 
 ## Why not just file chat or RAG?
 
-Retrieval finds passages that match a question. It cannot tell a 2019 rule from the 2025 vote that replaced it, a proposal from an adopted motion, or a notice with a typo from the corrected minutes. Almanac resolves those relationships once, when files arrive, and keeps the result, so answers come from one small reconciled file. That also suits a small on-device model.
+Retrieval finds passages that match each question and leaves every answer to work out which rule replaced which: the 2019 rule or the 2025 vote, a proposal or an adopted motion, a notice with a typo or the corrected minutes. Well-built retrieval can get this right, but it repeats the work on every question. Almanac settles it once, when files arrive, with rules written for boards: effective dates, failed motions, corrections, partial-scope amendments and unresolved conflicts. Answers then come from one small reconciled file, which also suits a small on-device model.
+
+Safeguards in the compile: the previous almanac is read completely or the run stops; it is state to update, never evidence, so every rule cites an original document; failed and pending files are retried on the next run; the file name is checked before saving and the saved file is read back.
 
 ## Status
 

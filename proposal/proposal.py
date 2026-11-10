@@ -19,39 +19,39 @@ ITEMS = [
         "Almanac compiles condo, HOA or club board documents on the NAS into a versioned, cited rulebook that answers \"what is the rule now, since when, says who?\"",
     ]),
     ("2. User and problem", [
-        "Volunteer boards and managers of small associations. Rules span years of bylaws, minutes, notices, contracts and recordings; later votes replace earlier ones, notices contain errors, deadlines slip. Search returns every version; people guess which is current.",
+        "Volunteer boards and managers of small associations. Rules span years of bylaws, minutes, notices, contracts and recordings; later votes replace earlier ones, notices contain errors, deadlines slip.",
     ]),
     ("3. Solution", [
-        "Compile once, answer many times. Each compile processes only new or changed files, applies explicit supersession rules, and saves a new Markdown version recording, per topic, the current rule, effective date, vote, quote and source, replaced rules, conflicts and action items.",
+        "Each compile processes only new, changed or unfinished files, applies explicit supersession rules, and saves a new Markdown version recording, per topic, the current rule, effective date, vote, quote, source, replaced rules, conflicts and action items.",
     ]),
     ("4. Core user flow", [
         "\"Compile the almanac for Board Documents\" → confirm folders → inventory, transcribe, extract, reconcile → approve changelog and save → almanac-2026-11-22-v1.md. \"Can I put a heat pump on my balcony?\" → conditions, vote, source, version. \"Check the almanac\" → conflicts, late notices, deadlines.",
     ]),
     ("5. Difference", [
-        "File chat and RAG retrieve passages and cannot tell a 2019 rule from its 2025 replacement. Almanac resolves supersession when files arrive and keeps the result: corrections, failed motions, partial changes and conflicts are explicit, never guessed. Answers come from one small reconciled file, which suits a local model, and versions remain as an audit trail.",
+        "File chat retrieves passages, leaving each answer to work out which rule replaced which. Almanac settles this once, as files arrive, with board-specific rules: effective dates, failed motions, corrections, partial amendments (weekend-only quiet hours) and unresolved conflicts are explicit, never guessed. Answers come from one small reconciled file, which suits a local model; versions remain an audit trail.",
     ]),
-    ("6. NAS capabilities by step", [
+    ("6. NAS capabilities", [
         ("ul", [
             "file-agent (ug-filesystem): previous almanac (step 1, Ask, Lint), checksummed inventory (2), folder creation (8).",
             "knowledge-agent (ug-knowledge): transcription (3), saving versions (9).",
-            "document-agent (ug-document): claim extraction (4), reconciliation (5), answers from the almanac (Ask).",
+            "document-agent (ug-document): claim extraction (4), reconciliation (5), answers (Ask).",
             "NAS local model by default.",
         ]),
     ]),
     ("7. Technical approach", [
-        "The parent Skill only delegates to these three experts. Inputs: two folders, mode, model route. Permissions: reads, plus approvals to create the folder once and save each version; nothing is overwritten or deleted. A Sources ledger (SHA-256, modification time) drives incremental compiles of at most 60 documents per run. Claims need a verbatim quote; transcript claims stay provisional. Document text is untrusted data. Third-party models need explicit consent.",
+        "The parent Skill only delegates to these experts. Inputs: two folders, mode, model route. Permissions: reads, plus approvals to create the folder and save versions; nothing is overwritten or deleted. A Sources ledger (checksum, status) drives resumable compiles, 60 documents per run. The previous almanac is read completely or the run stops; it is state, never evidence, so every rule cites an original quote. Transcript claims stay provisional. Third-party models need consent.",
     ]),
     ("8. Status", [
-        "Implemented: SKILL.md and six references; official checker (catalog 2.0.0): static-pass, 0 errors, 0 warnings. Validation kit: synthetic board folder, 20-question answer key and scorer. Pending NAS validation: runtime behaviour, extraction quality, timing.",
+        "Implemented: SKILL.md and six references; official checker (catalog 2.0.0): static-pass, 0 errors, 0 warnings. Validation kit: synthetic board folder, 20-question answer key, scorer. Pending NAS validation: runtime behaviour, accuracy, timing.",
     ]),
     ("9. Validation plan", [
-        "Core 1, supersession: ask the fee and pet rule. Pass: EUR 240 and two pets with dates, votes and citations; never the EUR 235 proposal or the erroneous EUR 230 notice.",
+        "Core 1, supersession: fee and pet rule. Pass: EUR 240 and two pets with dates, votes and citations; never the EUR 235 proposal or erroneous EUR 230 notice.",
         "Core 2, answering from the almanac: heat-pump conditions with the 2-1 vote and version; a gym question returns \"not covered\".",
-        "Edge: add weekend quiet-hours minutes and recompile. Pass: only that file processed, new version saved, weekday hours unchanged, pool-hours conflict still open.",
+        "Edge: add weekend quiet-hours minutes and recompile. Pass: only that file processed, new version saved, weekday hours unchanged, pool conflict still open.",
         "All 20 questions also run against plain file chat.",
     ]),
     ("10. Limitations", [
-        "Quality depends on on-device extraction, OCR and transcription; failed files are flagged. Not legal advice: vote validity is not judged. Large archives need several runs; each save needs approval. Tested only on synthetic data so far.",
+        "Quality depends on on-device extraction, OCR and transcription; failed files are flagged and retried. Not legal advice. Large archives need several runs. Tested only on synthetic data so far; accuracy is unmeasured until the NAS run.",
     ]),
 ]
 

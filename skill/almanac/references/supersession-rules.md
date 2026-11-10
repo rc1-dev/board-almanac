@@ -2,6 +2,8 @@
 
 These rules decide, topic by topic, which statement is current. They are applied in order. When no rule decides, the topic is recorded as a conflict for people to resolve.
 
+Only original documents and recordings are evidence. The previous almanac records earlier conclusions; it is never cited as the source of a rule.
+
 ## 1. Same topic and same subject first
 
 Two statements can only replace or contradict each other if they are about the same subject and the same scope.

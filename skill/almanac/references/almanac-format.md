@@ -2,11 +2,11 @@
 
 An almanac is one Markdown file per compile run, saved as `almanac-YYYY-MM-DD-vN.md` in the almanac folder. Older versions are never changed, so the folder is also the history.
 
-Keep the whole file under 60,000 characters so the local model can read it in a few parts. If it would be longer, shorten quotes to the decisive words and move superseded entries older than five years to a single line each.
+Keep the whole file under 60,000 characters so it can be read completely in parts of 4,000 characters. If it would be longer, shorten quotes to the decisive words and condense superseded entries older than five years to a single line each that names the older almanac version holding the full entry. Never drop an entry: older versions are kept unchanged, so the full history stays on the NAS.
 
 ## Section order
 
-The file has exactly these sections, in this order. Section titles are fixed so that later runs can find them.
+The file has exactly these sections, in this order, followed by an end line. Section titles are fixed so that later runs can find them and check that a read was complete.
 
 ### 1. Header
 
@@ -85,12 +85,12 @@ Action items with owner role, due date, status and source, and contract deadline
 The ledger that makes incremental compiles possible. One row per file in the board folder.
 
 ```text
-| File | Type | Document date | Modified | SHA-256 (first 16) | Status |
-|---|---|---|---|---|---|
-| minutes-2025-04-15.docx | minutes | 2025-04-15 | 2025-04-20 09:12 | 3f9c0a17b2d4e8c1 | processed |
+| File | Type | Document date | Size | Modified | SHA-256 (first 16) | Status |
+|---|---|---|---|---|---|---|
+| minutes-2025-04-15.docx | minutes | 2025-04-15 | 36846 | 2025-04-20 09:12 | 3f9c0a17b2d4e8c1 | processed |
 ```
 
-Status is `processed`, `failed`, `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder).
+Status is `processed`, `failed` (with the reason), `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder). Only `processed` files are skipped by the next compile; `failed` and `pending` files are processed again.
 
 ### 6. Changelog
 
@@ -103,6 +103,15 @@ Newest first. Each entry lists what this run added, changed, superseded, marked 
 - No new conflicts.
 ```
 
+### End line
+
+The last line of the file is always:
+
+```text
+End of almanac v7.
+```
+
+with the version number. A read that does not reach this line is incomplete.
 ## Topic list for boards
 
 Use these topic names when they fit, and add a new topic only when no existing one fits:

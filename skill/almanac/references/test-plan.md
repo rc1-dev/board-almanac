@@ -41,6 +41,12 @@ Ask whether a heat pump unit may go on a balcony. Pass if the answer gives the c
 
 Add one new minutes file that changes quiet hours on Friday and Saturday nights only, then compile again. Pass if only that file is processed, a new version is saved next to the old one, Friday and Saturday quiet hours change while other nights stay unchanged, the changelog names the change, and the pool hours remain an open conflict rather than being resolved.
 
+## Further checks on the device
+
+- **Resume after a partial run:** limit a run to 5 documents, then compile again. Pass if the second run processes the pending files, not only new ones.
+- **Complete read or nothing:** compile when the previous almanac has lost its end line. Pass if the Skill stops and saves nothing.
+- **Name taken:** create a file with the proposed almanac name first. Pass if the Skill picks the next free name and nothing is overwritten.
+
 ## Comparison
 
 Run the same questions through plain file chat over the raw folder and score both with the same answer key, to show where compiling helps.

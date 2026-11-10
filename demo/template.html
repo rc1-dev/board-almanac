@@ -233,7 +233,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
   </section>
 
   <section class="panel" id="p-update" role="tabpanel" hidden>
-    <div class="intro"><div><h2>Update: version 2</h2><p>New minutes arrive. The next compile reads only files whose checksum is new or changed, and saves version 2 next to version 1.</p></div></div>
+    <div class="intro"><div><h2>Update: version 2</h2><p>New minutes arrive. The next compile reads version 1 completely, processes only files that are new, changed, pending or failed, and saves version 2 next to version 1.</p></div></div>
     <div class="cols2">
       <div class="sheet pad"><h3>Inventory against the Sources ledger</h3>
         <div class="bigstat"><div><b>1</b>new file processed</div><div><b>16</b>unchanged, skipped</div><div><b>0</b>overwritten</div></div>
@@ -270,15 +270,15 @@ const TRAPS = {
 };
 
 const STEPS = [
-  { t: "Find the current almanac", a: "file-agent", d: 0, r: "No almanac file found in <code>Almanac/</code>. This is a first compile, so every file counts as new." },
+  { t: "Read the current almanac", a: "file-agent", d: 0, r: "No almanac file found in <code>Almanac/</code>. This is a first compile, so every file counts as new. On later runs the whole file is read, or the run stops." },
   { t: "Inventory the board folder", a: "file-agent", d: 1, r: "16 files with type, size, modification time and SHA-256: 15 documents and 1 recording. All new." },
   { t: "Transcribe the recording", a: "knowledge-agent", d: 2, r: "<code>board-meeting-2026-06-18.m4a</code> transcribed. Electric barbecues discussed, no vote: recorded as provisional." },
-  { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 15 kg limit for dogs is removed</q></li><li>Fee: EUR 235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
-  { t: "Reconcile", a: "document-agent", d: 4, r: "Disagreements reported, not decided:<ul><li>Fee EUR 230 (notice) vs EUR 225 (minutes): a later document says the notice was in error.</li><li>Pool 22:00 (minutes) vs 21:00 (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
+  { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first, in two requests: the contract with the contract schema, the rest with the mixed schema. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 15 kg limit for dogs is removed</q></li><li>Fee: EUR 235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
+  { t: "Reconcile", a: "document-agent", d: 4, r: "Documents checked against each other, never against the almanac itself. Disagreements reported, not decided:<ul><li>Fee EUR 230 (notice) vs EUR 225 (minutes): a later document says the notice was in error.</li><li>Pool 22:00 (minutes) vs 21:00 (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
   { t: "Compile version 1", a: "Skill", d: null, r: "Supersession rules applied topic by topic: 12 topics, 1 correction, 1 open conflict, 1 provisional item, 6 open items." },
   { t: "Show the changelog and ask", a: "Skill", d: null, ap: "asks the user", r: "The user sees the changelog and the file name <code>almanac-2026-11-22-v1.md</code>, and confirms." },
-  { t: "Create the almanac folder", a: "file-agent", d: 5, ap: "approval", r: "<code>Almanac/</code> created inside the board folder. Nothing else touched." },
-  { t: "Save version 1", a: "knowledge-agent", d: 6, ap: "approval", r: "Saved <code>Almanac/almanac-2026-11-22-v1.md</code>. Verified: true. Only now does the Skill report success." }
+  { t: "Prepare the almanac folder", a: "file-agent", d: 5, ap: "approval", r: "<code>Almanac/</code> created inside the board folder, then the file name checked: <code>almanac-2026-11-22-v1.md</code> is free. Nothing else touched." },
+  { t: "Save and verify version 1", a: "knowledge-agent", d: 7, ap: "approval", r: "Saved <code>Almanac/almanac-2026-11-22-v1.md</code>, verified, then read back by file-agent: it ends with <code>End of almanac v1.</code> Only now does the Skill report success." }
 ];
 
 // Topic history, newest first. kind: current | superseded | proposed | corrected | failed | conflict | provisional | info | late | partial
