@@ -28,7 +28,7 @@ ITEMS = [
         "The Skill inventories the folder, transcribes recordings, extracts and reconciles decisions, and saves a version once the user approves. Members can then ask whether a heat pump may go on a balcony and receive the conditions, vote and source.",
     ]),
     ("5. Difference", [
-        "File chat retrieves passages per question and leaves each answer to decide which version applies. Almanac decides once, as documents arrive, with explicit rules for effective dates, failed motions, corrections, partial amendments and conflicts, and answers from one reconciled file.",
+        "File chat retrieves passages and leaves each answer to decide which version applies; errors mean a refused Saturday renovation, a wrong fee or a missed contract deadline. Almanac decides once, as documents arrive, with explicit rules for effective dates, scheduled changes, failed motions, corrections, partial amendments and conflicts.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
@@ -39,7 +39,7 @@ ITEMS = [
         ]),
     ]),
     ("7. Technical approach", [
-        "The parent Skill only delegates to these agents. Inputs are the two folders, the mode and the model setting. It reads files and needs approval to create the folder or save; it never overwrites or deletes. A ledger of checksums and processing states makes compiles incremental and resumable, up to 60 documents per run. The previous almanac is read in full or the run stops, and every rule cites an original document.",
+        "The parent Skill only delegates to these agents. Inputs are the two folders, the mode and the model setting. It needs approval to create the folder or save, and never overwrites or deletes. A ledger of checksums and processing states makes compiles incremental and resumable, up to 60 documents per run. The previous almanac is read in full or the run stops, and every rule cites an original document.",
     ]),
     ("8. Status", [
         "SKILL.md and six references are complete and pass the official checker (catalog 2.0.0) without errors or warnings. A synthetic archive, answer key and scorer are ready; runtime accuracy and timing await NAS testing.",
@@ -47,7 +47,7 @@ ITEMS = [
     ("9. Validation plan", [
         "Core case 1, supersession: the fee and pet-rule answers give $240 and two pets with dates, votes and citations, never the $235 proposal or the erroneous $230 notice.",
         "Core case 2, answering from the almanac: a heat-pump question returns the conditions, 2-1 vote and version; a gym question is reported as not covered.",
-        "Edge case: minutes changing only weekend quiet hours are added. The recompile extracts the new minutes, rechecks the bylaws they amend, and preserves weekday hours, every other rule and the open pool conflict. All 20 questions also go to plain file chat.",
+        "Edge case: minutes changing weekend quiet hours are added; the recompile rechecks the amended bylaws and preserves weekday hours, other rules and the pool conflict. All questions also go to plain file chat.",
     ]),
     ("10. Limitations", [
         "Accuracy depends on on-device extraction, OCR and transcription. The almanac is not legal advice. Model routing is a UGOS setting the Skill confirms but cannot enforce. Testing so far is synthetic.",

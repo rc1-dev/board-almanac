@@ -33,18 +33,27 @@ Count the board files that are not in the almanac's Sources ledger, whose size o
 
 Ledger files that are no longer in the folder are counted too. This is a quick check that compares size and modification time, not content, so a file changed without any change to either would not be counted. A compile confirms every change by checksum, and the user can ask for that definitive check at any time.
 
+## Scheduled changes
+
+Before answering, compare today's date with every scheduled effective date in the At a glance table. If a scheduled change has taken effect since the compile, it is the current rule: answer with it, cite the decision that adopted it, and say that the almanac was compiled before it took effect. For a question about a particular date, answer from the effective dates and history recorded for that topic as of that date.
+
+## Coverage
+
+Ask the document expert to read the whole almanac, not a preview, and to say whether it did. If it did not, read the file completely and answer from the topic's own section. If the history the question needs was condensed into a reference to an older almanac version, read that version or say where the detail is.
+
 ## Lint checks
 
 Lint reads the newest almanac and the inventory of changed files. It reports, in this order:
 
-1. **Open conflicts**, with both quotes.
-2. **Provisional items** that no adopted minutes confirm yet.
-3. **Overdue action items**: due date passed and no document shows them done.
-4. **Late actions**: done after their due date, for example a contract notice sent after the notice deadline.
-5. **Coming effective dates** within 90 days.
-6. **Contract deadlines** within 90 days, such as renewal notice periods.
-7. **Files changed since the last compile**, by count and name.
-8. **Incomplete topics** caused by failed or missing files.
+1. **Scheduled changes now in force**: adopted changes whose effective date has passed since the compile.
+2. **Open conflicts**, with both quotes.
+3. **Provisional items** that no adopted minutes confirm yet.
+4. **Overdue action items**: due date passed and no document shows them done.
+5. **Late actions**: done after their due date, for example a contract notice sent after the notice deadline.
+6. **Coming effective dates** within 90 days.
+7. **Contract deadlines** within 90 days, such as renewal notice periods.
+8. **Files changed since the last compile**, by count and name.
+9. **Incomplete or disputed topics** caused by failed or missing files.
 
 If every check is empty, report "Lint found no issues" with the almanac version.
 

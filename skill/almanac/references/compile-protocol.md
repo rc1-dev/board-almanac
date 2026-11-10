@@ -23,6 +23,8 @@ Only files that need processing are sent to extraction. A routine update after o
 
 ## Evidence dependencies
 
+The records to rebuild are the union of two sets: records that cite a changed or missing file, and records whose subject and scope overlap a claim from a new or changed document or recording. Unchanged sources alone never mean a record is current, because a new amendment can change a topic whose earlier sources are untouched.
+
 Every topic and every open item depends on the files it cites. When a file changes or goes missing, every record that cites it is rebuilt from the original evidence that remains, even if the new extraction returns nothing for it. The previous almanac shows which files to look at; those surviving files are extracted again for the affected records, because the almanac itself is never evidence. A claim that a corrected document no longer contains is dropped. If no remaining source supports a rule, the topic is marked `incomplete` and the changelog says why, so an obsolete rule is never kept as current. Only topics whose cited sources are all unchanged are carried forward word for word.
 
 ## Reading the previous almanac
@@ -35,6 +37,8 @@ The previous almanac is read completely, in parts of 4,000 characters, before an
 - Choose the batch oldest first by the date in the file name, or by modification time when the name has none. During compiling, order claims by the document date the extraction returned, so that later decisions are applied after the rules they replace.
 - Send contracts in their own extraction request with the contract schema, and other documents with the mixed schema, because each request takes one schema.
 - Send at most 60 files per reconcile request, the default limit, and split by topic when there are more.
+- Recordings are transcribed in their own step and never sent to document extraction. Their spoken decisions are mapped to the same claim fields as document claims.
+- If a source that an affected record needs is still pending at the end of a run, that record is marked `incomplete` rather than rebuilt from part of its evidence.
 - If documents remain, mark the run `partial`, list the remaining files as `pending`, and tell the user to run compile again.
 
 ## Claim fields
@@ -90,7 +94,7 @@ The previous almanac is state to update, never evidence. Reconciliation compares
 
 ## Saving
 
-Before saving, confirm that the file name is free. A taken name means another version was saved after this compile began, so the compile stops without saving and starts again from the newest version. The version number is set once, in Step 6, and used in the file name, header, changelog entry and end line. After saving, accept the result only if the expert reports it completed and verified, and a read-back of the last 4,000 characters ends with this version's end line. If the saved name differs from the one supplied, report the actual name.
+Before saving, confirm that the file name is free. A taken name means another version was saved after this compile began, so the compile stops without saving and starts again from the newest version. The version number is set once, in Step 6, and used in the file name, header, changelog entry and end line. After saving, accept the result only if the expert reports it completed and verified, the saved name is the one supplied, the file size matches the content size the save reported, and a complete read-back contains every section, topic and open item of the approved text with this version in every version field. Anything else is an unresolved save: name the file that was written and do not describe it as the new version. The interface offers no byte-for-byte comparison, so this confirms structure and size rather than every character.
 
 ## What the compile must never do
 

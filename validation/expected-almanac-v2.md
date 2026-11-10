@@ -13,20 +13,20 @@ Model route: NAS local model
 
 ## At a glance
 
-| Topic | Current rule | Since | Status |
-|---|---|---|---|
-| Monthly fee and budget | $240 per unit per month | 2026-03-01 | adopted |
-| Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | adopted |
-| Renovations and work hours | Mon to Fri 8:00 a.m. to 5:00 p.m., Sat 9:00 a.m. to 1:00 p.m., no Sun or holidays | 2024-07-15 | adopted |
-| Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited (electric barbecues discussed, provisional) | 2025-01-23 | adopted |
-| Quiet hours | 10:00 p.m. to 7:00 a.m.; Friday and Saturday nights 11:00 p.m. to 7:00 a.m. | 2026-10-01 | adopted |
-| Rentals and leasing | Minimum lease 30 days | 2025-04-15 | adopted |
-| Parking | Guest parking up to 48 hours | 2025-10-01 | adopted |
-| Electric vehicle charging | Allowed in assigned space with approval and licensed electrician | 2026-01-20 (decision date) | adopted |
-| Pool and amenities | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. for 2026 | 2026 season | conflict |
-| Vendor contracts | Landscaping: Bramblewick Grounds, $1,450 per month, 4% renewal cap, non-renewal notice sent late | 2024-04-01 | adopted |
-| Officers and elections | Board of President, Treasurer, Secretary; Treasurer replaced 2025-09-10 | 2025-09-10 | adopted |
-| Governance and amendments | Bylaws: 2/3 of owners. House rules: board majority | 2019-05-01 | adopted |
+| Topic | Current rule | Since | Scheduled | Status |
+|---|---|---|---|---|
+| Monthly fee and budget | $240 per unit per month | 2026-03-01 | none | adopted |
+| Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | none | adopted |
+| Renovations and work hours | Mon to Fri 8:00 a.m. to 5:00 p.m., Sat 9:00 a.m. to 1:00 p.m., no Sun or holidays | 2024-07-15 | none | adopted |
+| Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited (electric barbecues discussed, provisional) | 2025-01-23 | none | adopted |
+| Quiet hours | 10:00 p.m. to 7:00 a.m.; Friday and Saturday nights 11:00 p.m. to 7:00 a.m. | 2026-10-01 | none | adopted |
+| Rentals and leasing | Minimum lease 30 days | 2025-04-15 | none | adopted |
+| Parking | Guest parking up to 48 hours | 2025-10-01 | none | adopted |
+| Electric vehicle charging | Allowed in assigned space with approval and licensed electrician | 2026-01-20 (decision date) | none | adopted |
+| Pool and amenities | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. for 2026 | 2026 season | none | conflict |
+| Vendor contracts | Landscaping: Bramblewick Grounds, $1,450 per month, 4% renewal cap, non-renewal notice sent late | 2024-04-01 | none | adopted |
+| Officers and elections | Board of President, Treasurer, Secretary; Treasurer replaced 2025-09-10 | 2025-09-10 | none | adopted |
+| Governance and amendments | Bylaws: 2/3 of owners. House rules: board majority | 2019-05-01 | none | adopted |
 
 ## Monthly fee and budget
 

@@ -14,6 +14,8 @@ Almanac does that work once, when documents arrive, and keeps the result. Each c
 
 The rules for deciding which statement is current are written out explicitly in [the supersession rules](skill/almanac/references/supersession-rules.md). A later adopted decision replaces an earlier one only for the same subject and scope, so an amendment that changes quiet hours on Friday and Saturday nights leaves the other nights untouched. Failed motions and agenda proposals never change a rule. A notice that contradicts the minutes is recorded as a conflict unless a later document corrects it. When nothing resolves a disagreement, the almanac quotes both statements and leaves the decision to the board.
 
+Adopted changes that take effect later are recorded as scheduled, so the almanac knows when a rule changes even if no new document arrives; questions asked after that date get the new rule.
+
 Questions are answered from the newest almanac rather than from the raw archive. Each answer gives the rule, its source and the almanac version it came from, and says so plainly when the almanac does not cover the question.
 
 ## How a compile runs
@@ -41,7 +43,7 @@ Both replay the expected behavior on the synthetic test archive. The delegation 
 
 ## Status
 
-The Skill (`SKILL.md` and six reference files) is complete and passes the official kit checker for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, a 20-question answer key and a scorer. Runtime behavior on a UGREEN AI NAS has not yet been tested.
+The Skill (`SKILL.md` and six reference files) is complete and passes the official kit checker for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, six adversarial cases, a 23-question answer key and a scorer. Runtime behavior on a UGREEN AI NAS has not yet been tested.
 
 ## Repository layout
 
@@ -62,7 +64,7 @@ python3 validation/build_corpus.py       # writes validation/corpus/
 python3 validation/score.py validation/selftest/gold_answers.jsonl --recording
 ```
 
-The reference answers in `validation/selftest/` are written by hand. They confirm that the answer key and scorer agree, and serve as the standard that output from the NAS will be measured against.
+The reference answers in `validation/selftest/` are written by hand. They confirm that the answer key and scorer agree, and serve as the standard that output from the NAS will be measured against. The kit also contains six adversarial cases with their expected outcomes, including corrected minutes and a change adopted for a later effective date. The generated archive is byte-for-byte reproducible and its checksums are recorded.
 
 ## Building
 

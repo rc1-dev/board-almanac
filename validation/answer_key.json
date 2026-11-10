@@ -1,6 +1,6 @@
 {
  "corpus": "Harbor View Condominium Association (synthetic)",
- "notes": "Patterns are case-insensitive regular expressions. Each entry in must_include is a list of alternatives; at least one alternative of every entry must match. must_cite works the same way on file names. must_not_include fails the answer if any pattern matches. phase 'initial' runs after the first compile of 'Board Documents'; 'after_update' runs after adding add-later/minutes-2026-09-15.docx and compiling again.",
+ "notes": "Patterns are case-insensitive regular expressions. Each entry in must_include is a list of alternatives; at least one alternative of every entry must match. must_cite works the same way on file names. must_not_include fails the answer if any pattern matches. phase 'initial' runs after the first compile of 'Board Documents'; 'after_update' runs after adding add-later/minutes-2026-09-15.docx and compiling again. Phases 'corrected' and 'scheduled' run after the adversarial cases of the same names (see corpus/adversarial/EXPECTED.md).",
  "questions": [
   {
    "id": "Q1",
@@ -12,7 +12,8 @@
     ]
    ],
    "must_not_include": [
-    "\\b(is|now|currently)\\b[^.]{0,30}\\b23[05]\\b"
+    "\\b(is|now|currently)\\b[^.]{0,30}\\b23[05]\\b",
+    "\\$?\\b230\\b(?![^.]*\\b(error|erroneous|corrected|incorrect|wrong)\\b)"
    ],
    "must_cite": [
     [
@@ -30,7 +31,8 @@
     ]
    ],
    "must_not_include": [
-    "\\b(was|charge of)\\b[^.]{0,20}\\b230\\b(?![^.]*\\berror)"
+    "\\b(was|charge of)\\b[^.]{0,20}\\b230\\b(?![^.]*\\berror)",
+    "\\$?\\b230\\b(?![^.]*\\b(error|erroneous|corrected|incorrect|wrong)\\b)"
    ],
    "must_cite": [
     [
@@ -446,6 +448,70 @@
    "must_cite": [
     [
      "bylaws-house-rules-2019"
+    ]
+   ]
+  },
+  {
+   "id": "C1",
+   "phase": "corrected",
+   "question": "How many pets may a unit keep?",
+   "must_include": [
+    [
+     "\\b(one|1)\\b"
+    ]
+   ],
+   "must_not_include": [
+    "\\b(two|2) pets\\b(?![^.]*\\b(dropped|removed|no longer|corrected|before)\\b)"
+   ],
+   "must_cite": [
+    [
+     "bylaws-house-rules-2019"
+    ]
+   ]
+  },
+  {
+   "id": "S1",
+   "phase": "scheduled",
+   "question": "How long can a guest car stay in guest parking on January 5, 2027?",
+   "must_include": [
+    [
+     "\\b24 ?(h|hours)\\b"
+    ]
+   ],
+   "must_not_include": [
+    "^\\s*48\\b"
+   ],
+   "must_cite": [
+    [
+     "minutes-2026-11-10"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "phase": "scheduled",
+   "question": "How long can a guest car stay in guest parking now (before January 1, 2027)?",
+   "must_include": [
+    [
+     "\\b48 ?(h|hours)\\b"
+    ],
+    [
+     "\\b24 ?(h|hours)\\b"
+    ],
+    [
+     "scheduled",
+     "from January 1, 2027",
+     "2027-01-01",
+     "effective January 1, 2027"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2025-09-10"
+    ],
+    [
+     "minutes-2026-11-10"
     ]
    ]
   }

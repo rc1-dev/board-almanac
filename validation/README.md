@@ -6,13 +6,14 @@ The archive is designed to exercise the cases that make board rules hard to foll
 
 | File | Purpose |
 |---|---|
-| `build_corpus.py` | Generates the board folder (`corpus/Board Documents`, 15 PDF, Word and text files) and the file added later for the update test (`corpus/add-later/minutes-2026-09-15.docx`). Requires `reportlab` and `python-docx`. |
+| `build_corpus.py` | Generates the board folder (`corpus/Board Documents`, 15 PDF, Word and text files), the file added later for the update test (`corpus/add-later/minutes-2026-09-15.docx`) and the adversarial cases (`corpus/adversarial/`). The output is byte-for-byte reproducible, and `corpus/SHA256SUMS` lists the checksum of every file. Requires `reportlab` and `python-docx`. |
+| `corpus/adversarial/EXPECTED.md` | Six adversarial cases with the expected outcome of each: corrected minutes, a corrected email, a change scheduled for a later date, a document that agrees with every rule, a document containing instructions addressed to an AI assistant, and a file that cannot be read. |
 | `recording-script-2026-06.md` | A short board discussion to be read aloud and recorded on the NAS during device testing. |
-| `answer_key.json` | Twenty questions, each with the facts an answer must contain, statements it must not make, and the sources it must cite. Eighteen are asked after the first compile and two after the update. |
-| `score.py` | Scores a file of answers against the key, using only the Python standard library: `python3 score.py answers.jsonl [--phase initial] [--recording]`. |
+| `answer_key.json` | Twenty-three questions, each with the facts an answer must contain, statements it must not make, and the sources it must cite. Eighteen are asked after the first compile, two after the update, and three after the corrected-minutes and scheduled-change cases. |
+| `score.py` | Scores a file of answers against the key, using only the Python standard library: `python3 score.py answers.jsonl [--phase initial] [--recording]`. It exits with status 1 if any answer fails. The checks are patterns, so answers from the device are also reviewed by hand. |
 | `expected-almanac-v1.md` | A hand-written reference for a correct first compile of the 15 files and the recording. |
 | `expected-almanac-v2.md` | The same reference after the update. |
-| `selftest/gold_answers.jsonl` | Hand-written reference answers. They score 20 of 20, which confirms that the key and the scorer agree. |
+| `selftest/gold_answers.jsonl` | Hand-written reference answers. They score 23 of 23, which confirms that the key and the scorer agree. |
 | `selftest/raw_search_example.jsonl` | Hand-written examples of the mistakes a search over the raw folder tends to make. They illustrate the failure cases and are not measured results. |
 
 ## Procedure for device testing
@@ -22,6 +23,9 @@ The archive is designed to exercise the cases that make board rules hard to foll
 3. Ask the eighteen initial questions, save the answers as JSON Lines, and score them with `--phase initial --recording`.
 4. Ask the same questions through plain file chat over the raw folder and score those answers the same way.
 5. Add `corpus/add-later/minutes-2026-09-15.docx` to the board folder and compile again. Confirm that claims were extracted only from the new minutes, that the quiet-hours rule was rechecked against the bylaws, that a new version was saved beside the first, and that every other rule is unchanged. Then ask the two update questions with `--phase after_update`.
-6. Record run times, approval prompts and any files that failed.
+6. Apply the adversarial cases one at a time, as described in `corpus/adversarial/EXPECTED.md`, and score the `corrected` and `scheduled` questions.
+7. Record run times, approval prompts and any files that failed, and review every answer by hand as well as with the scorer.
+
+Run the device tests from small to large: three documents, then eight, then the full archive, then the update and the adversarial cases.
 
 All results will be reported as measured on the device.

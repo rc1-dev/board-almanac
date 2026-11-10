@@ -8,6 +8,10 @@ answers.jsonl has one JSON object per line: {"id": "Q1", "answer": "..."}.
 An answer passes when every must_include entry matches, every must_cite entry
 matches, and no must_not_include pattern matches. --recording also applies the
 if_recording checks, for runs where the meeting recording was in the folder.
+
+The exit code is 0 only if every scored answer passes, and 1 otherwise.
+Pattern checks are a regression aid: they can accept an answer that is wrong in
+meaning, so answers from the device are also reviewed by hand.
 """
 import argparse
 import json
@@ -49,7 +53,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("answers")
     ap.add_argument("--key", default=str(here / "answer_key.json"))
-    ap.add_argument("--phase", default="all", choices=["initial", "after_update", "all"])
+    ap.add_argument("--phase", default="all", choices=["initial", "after_update", "corrected", "scheduled", "all"])
     ap.add_argument("--recording", action="store_true")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
@@ -79,7 +83,7 @@ def main():
             mark = "PASS" if r["pass"] else "FAIL"
             print(f"{r['id']:>4}  {mark}  {'; '.join(r['problems'])}")
         print(f"\n{passed}/{len(results)} passed")
-    return 0
+    return 0 if results and passed == len(results) else 1
 
 
 if __name__ == "__main__":

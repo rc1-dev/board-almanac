@@ -68,7 +68,7 @@ def score(path, recording=False):
     cmd = [sys.executable, str(VAL / "score.py"), str(path), "--json"]
     if recording:
         cmd.append("--recording")
-    res = json.loads(subprocess.run(cmd, capture_output=True, text=True, check=True).stdout)
+    res = json.loads(subprocess.run(cmd, capture_output=True, text=True, check=False).stdout)  # exit 1 means some answers failed
     return {r["id"]: r for r in res["results"]}
 
 
@@ -85,6 +85,8 @@ def ask():
     rs = score(VAL / "selftest" / "raw_search_example.jsonl")
     out = []
     for q in key["questions"]:
+        if q["phase"] not in ("initial", "after_update"):
+            continue  # adversarial cases are described in the validation kit, not the demo
         i = q["id"]
         item = {"id": i, "q": q["question"], "phase": q["phase"], "almanac": gold[i],
                 "almanacScore": gs[i]["pass"]}
