@@ -14,3 +14,4 @@ code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.4pt; background:
 footer { margin-top: 10px; border-top: 1px solid #c9d3da; padding-top: 4px; font-size: 8pt; color: #3d4955; }
 footer h2 { font-size: 8.8pt; color: #3d4955; }
 .wc { margin-top: 4px; color: #5a6675; }
+.meta a { color: #1f5f74; text-decoration: none; }

@@ -8,7 +8,8 @@ Synthetic test material for the `almanac` Skill. Everything is fictional; people
 | `recording-script-2026-06.md` | Script to read aloud and record on the NAS on test day (provisional-decision test). |
 | `answer_key.json` | 20 questions with required facts, forbidden facts and required citations. Phases: `initial` (18) and `after_update` (2). |
 | `score.py` | Scorer, standard library only. `python3 score.py answers.jsonl [--phase initial] [--recording]` |
-| `expected-almanac-v1.md` | Hand-written reference of a correct first compile, for reviewing real output. |
+| `expected-almanac-v1.md` | Hand-written reference of a correct first compile (15 files plus the recording), for reviewing real output. |
+| `expected-almanac-v2.md` | The same after adding the edge-case minutes and compiling again. |
 | `selftest/gold_answers.jsonl` | Hand-written correct answers. Scores 20/20; proves the key and scorer agree. |
 | `selftest/raw_search_example.jsonl` | Hand-written examples of typical raw-search mistakes (stale fee, superseded pet rule, one side of a conflict, invented gym hours). Illustrative only; not a measured baseline. |
 

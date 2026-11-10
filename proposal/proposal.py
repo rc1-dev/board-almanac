@@ -11,6 +11,7 @@ from pathlib import Path
 TITLE = "Almanac"
 SUBTITLE = "A living, cited rulebook for board documents on the UGREEN AI NAS"
 META = "Track: Automate Your Workflow · Skill name: almanac · UGREEN Hackathon 2026, Round 1"
+LINKS = "Source, demo and video: github.com/rc1-dev/board-almanac"
 
 # (heading, [paragraphs or ("ul", [items])])
 ITEMS = [
@@ -118,7 +119,7 @@ def main():
     css = Path(__file__).with_name("style.css").read_text(encoding="utf-8")
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Almanac - Round 1 proposal</title><style>{css}</style></head><body>
-<header><h1>{TITLE}</h1><p class="sub">{html.escape(SUBTITLE)}</p><p class="meta">{html.escape(META)}</p></header>
+<header><h1>{TITLE}</h1><p class="sub">{html.escape(SUBTITLE)}</p><p class="meta">{html.escape(META)}</p><p class="meta"><a href="https://github.com/rc1-dev/board-almanac">{html.escape(LINKS)}</a></p></header>
 <main>{render(ITEMS)}</main>
 <footer>{render(DISCLOSURE, "disc")}</footer>
 </body></html>"""

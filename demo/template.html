@@ -1,0 +1,550 @@
+<title>Board Almanac</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: a ledger. Sticky step bar on top; each step is a two-pane workspace (list | detail) that stacks on phones. */
+:root {
+  --paper: #f3f6f7; --sheet: #ffffff; --ink: #15212a; --muted: #586874; --rule: #d3dce1; --rule-strong: #b7c4cc;
+  --accent: #1b6a80; --accent-ink: #ffffff; --accent-weak: #e1eff3;
+  --conflict: #b0521a; --conflict-weak: #fbeadc;
+  --prov: #6a4c9f; --prov-weak: #eee7f8;
+  --ok: #2c7a4b; --ok-weak: #e0f1e6;
+  --struck: #84939e; --note: #fff8e0; --note-rule: #e4cf86;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-doc: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0e1418; --sheet: #162027; --ink: #e1e9ed; --muted: #97a8b3; --rule: #273540; --rule-strong: #3a4b57;
+  --accent: #62b8cd; --accent-ink: #0b1418; --accent-weak: #14323b;
+  --conflict: #ec9d66; --conflict-weak: #3a2416;
+  --prov: #b59ee3; --prov-weak: #2a2140;
+  --ok: #6ccb91; --ok-weak: #16301f;
+  --struck: #6f808b; --note: #2a2614; --note-rule: #6b5d26; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0e1418; --sheet: #162027; --ink: #e1e9ed; --muted: #97a8b3; --rule: #273540; --rule-strong: #3a4b57;
+  --accent: #62b8cd; --accent-ink: #0b1418; --accent-weak: #14323b;
+  --conflict: #ec9d66; --conflict-weak: #3a2416;
+  --prov: #b59ee3; --prov-weak: #2a2140;
+  --ok: #6ccb91; --ok-weak: #16301f;
+  --struck: #6f808b; --note: #2a2614; --note-rule: #6b5d26; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 15px/1.5 var(--f-body); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--accent); }
+code, .mono { font-family: var(--f-mono); font-size: 0.86em; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { padding-block: 28px 18px; }
+.eyebrow { font: 500 12px/1.2 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h1 { font: 700 clamp(34px, 6vw, 54px)/1 var(--f-display); letter-spacing: -0.01em; margin: 0; }
+.lede { font: 400 clamp(18px, 2.4vw, 22px)/1.35 var(--f-doc); margin: 10px 0 0; max-width: 40ch; text-wrap: balance; }
+.notice { margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; background: var(--note); border: 1px solid var(--note-rule); border-radius: 6px; padding: 10px 14px; max-width: 860px; font-size: 14px; }
+.notice b { white-space: nowrap; }
+.links { margin-top: 12px; font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+nav.steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
+nav.steps .wrap { display: flex; gap: 2px; overflow-x: auto; padding-block: 0; scrollbar-width: none; }
+nav.steps button { background: none; border: 0; border-bottom: 3px solid transparent; padding: 12px 12px 10px; cursor: pointer; white-space: nowrap; display: flex; gap: 8px; align-items: baseline; color: var(--muted); }
+nav.steps button .n { font: 500 12px var(--f-mono); }
+nav.steps button .t { font: 600 16px var(--f-display); letter-spacing: 0.01em; }
+nav.steps button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+nav.steps button:hover { color: var(--ink); }
+
+main { padding-block: 22px 60px; }
+section.panel > .intro { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+h2 { font: 600 26px/1.15 var(--f-display); margin: 0; }
+.intro p { margin: 4px 0 0; color: var(--muted); max-width: 70ch; }
+h3 { font: 600 18px/1.2 var(--f-display); margin: 0 0 8px; }
+.split { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 820px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; min-width: 0; }
+.pad { padding: 16px 18px; }
+
+/* Folder */
+.filelist { list-style: none; margin: 0; padding: 6px; }
+.filelist .yr { font: 500 11px var(--f-mono); color: var(--muted); letter-spacing: 0.06em; padding: 10px 10px 4px; }
+.filelist button { width: 100%; text-align: left; background: none; border: 0; border-radius: 5px; padding: 7px 10px; cursor: pointer; display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 2px 10px; align-items: baseline; }
+.filelist button:hover { background: var(--accent-weak); }
+.filelist button[aria-current="true"] { background: var(--accent-weak); box-shadow: inset 3px 0 0 var(--accent); }
+.filelist .fn { font: 400 13px var(--f-mono); overflow-wrap: anywhere; }
+.filelist .trap { grid-column: 2; font-size: 12px; color: var(--conflict); }
+.type { font: 500 10.5px/1 var(--f-mono); text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 6px; border-radius: 3px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); text-align: center; }
+.doc { font-family: var(--f-doc); font-size: 17px; line-height: 1.55; padding: 26px clamp(18px, 4vw, 40px) 30px; }
+.doc .meta { font: 400 12px var(--f-mono); color: var(--muted); margin-bottom: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.doc h3 { font: 600 22px/1.25 var(--f-doc); margin: 0 0 14px; }
+.doc p { margin: 0 0 10px; max-width: 68ch; }
+.doc .part { font: 600 13px var(--f-body); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 18px; color: var(--muted); }
+.doc.transcript p { font-family: var(--f-body); font-size: 15px; }
+.doc .trapnote { font: 14px/1.4 var(--f-body); background: var(--conflict-weak); color: var(--ink); border-radius: 5px; padding: 8px 12px; margin-bottom: 16px; }
+
+/* Compile */
+.run-bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 6px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn:disabled { opacity: 0.55; cursor: default; }
+ol.run { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+ol.run > li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 14px 16px; transition: opacity 0.3s ease, transform 0.3s ease; }
+ol.run > li.pending { opacity: 0.28; }
+ol.run > li.active { box-shadow: 0 0 0 2px var(--accent); }
+.stepno { font: 700 26px/1 var(--f-display); color: var(--accent); }
+.stephead { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.stephead strong { font: 600 17px var(--f-display); }
+.agent { font: 500 12px var(--f-mono); padding: 2px 8px; border-radius: 99px; background: var(--accent-weak); color: var(--accent); }
+.agent.skill { background: var(--paper); color: var(--muted); border: 1px solid var(--rule); }
+.approval { font: 500 12px var(--f-body); padding: 2px 8px; border-radius: 99px; background: var(--note); border: 1px solid var(--note-rule); }
+.result { margin: 8px 0 0; }
+.result ul { margin: 4px 0 0; padding-left: 18px; }
+details.deleg { margin-top: 8px; font-size: 13px; }
+details.deleg summary { cursor: pointer; color: var(--muted); }
+details.deleg pre { margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 12.5px/1.5 var(--f-mono); background: var(--paper); border: 1px solid var(--rule); border-radius: 5px; padding: 10px 12px; }
+
+/* Almanac */
+.vtoggle { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 6px; overflow: hidden; }
+.vtoggle button { background: var(--sheet); border: 0; padding: 7px 12px; cursor: pointer; font: 500 13px var(--f-mono); }
+.vtoggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.glance { list-style: none; margin: 0; padding: 6px; }
+.glance button { width: 100%; background: none; border: 0; border-radius: 5px; text-align: left; padding: 9px 10px; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; }
+.glance button:hover, .glance button[aria-current="true"] { background: var(--accent-weak); }
+.glance button[aria-current="true"] { box-shadow: inset 3px 0 0 var(--accent); }
+.glance .tn { font-weight: 600; }
+.glance .tv { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+.pill { font: 500 11px/1 var(--f-mono); text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 7px; border-radius: 99px; align-self: center; white-space: nowrap; }
+.pill.adopted { background: var(--ok-weak); color: var(--ok); }
+.pill.conflict { background: var(--conflict-weak); color: var(--conflict); }
+.pill.provisional { background: var(--prov-weak); color: var(--prov); }
+.pill.changed { background: var(--accent-weak); color: var(--accent); }
+.topic .now { font: 400 22px/1.3 var(--f-doc); margin: 6px 0 10px; text-wrap: pretty; }
+.topic .setby { font-size: 14px; color: var(--muted); }
+.timeline { list-style: none; margin: 18px 0 0; padding: 0; border-left: 2px solid var(--rule); }
+.timeline li { position: relative; padding: 0 0 16px 20px; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--sheet); border: 2px solid var(--rule-strong); }
+.timeline li.current::before { background: var(--accent); border-color: var(--accent); }
+.timeline li.conflict::before { background: var(--conflict); border-color: var(--conflict); }
+.timeline li.provisional::before { border-color: var(--prov); border-style: dashed; }
+.timeline li.proposed::before, .timeline li.failed::before { border-style: dashed; }
+.timeline li.late::before { border-color: var(--conflict); }
+.tl-head { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.tl-date { font: 500 12.5px var(--f-mono); color: var(--muted); min-width: 88px; }
+.tl-val { font-weight: 600; }
+.superseded .tl-val, .corrected .tl-val, .proposed .tl-val, .failed .tl-val { text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--struck); }
+.kind { font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.conflict .kind, .late .kind, .corrected .kind { color: var(--conflict); }
+.provisional .kind { color: var(--prov); }
+.current .kind { color: var(--ok); }
+.tl-src { font-size: 13px; margin-top: 2px; color: var(--muted); }
+.tl-src q { font-family: var(--f-doc); font-style: italic; color: var(--ink); }
+.tl-note { font-size: 13px; margin-top: 2px; }
+details.mdfile { margin-top: 18px; }
+details.mdfile > summary { cursor: pointer; font-weight: 600; padding: 12px 18px; }
+.md { padding: 4px 22px 22px; font-size: 14px; overflow-x: auto; }
+.md h1, .md h2, .md h3 { font-family: var(--f-display); margin: 18px 0 6px; }
+.md h1 { font-size: 22px; } .md h2 { font-size: 18px; } .md h3 { font-size: 16px; }
+.md p { margin: 0 0 8px; }
+.md table { border-collapse: collapse; font-size: 13px; margin: 6px 0 12px; }
+.md th, .md td { border: 1px solid var(--rule); padding: 4px 8px; text-align: left; vertical-align: top; }
+.md th { background: var(--paper); }
+.md ul { margin: 0 0 8px; padding-left: 20px; }
+.filechip { font: 500 13px var(--f-mono); background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; }
+
+/* Ask */
+.qgroups { display: grid; gap: 14px; }
+.qlabel { font: 500 11px var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button { background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: 99px; padding: 6px 12px; cursor: pointer; font-size: 13.5px; text-align: left; }
+.chips button:hover { border-color: var(--accent); }
+.chips button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.question { font: 400 24px/1.3 var(--f-doc); margin: 0 0 14px; }
+.answers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px; }
+.ans h3 { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.ans .body { font-size: 15.5px; }
+.ans.raw { background: var(--paper); border-style: dashed; }
+.verdict { font: 500 12px var(--f-mono); padding: 3px 8px; border-radius: 99px; }
+.verdict.pass { background: var(--ok-weak); color: var(--ok); }
+.verdict.fail { background: var(--conflict-weak); color: var(--conflict); }
+.problems { margin: 10px 0 0; padding-left: 18px; font-size: 13.5px; color: var(--conflict); }
+.empty { color: var(--muted); font-size: 14px; }
+
+/* Update + Lint */
+.cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.inv { width: 100%; border-collapse: collapse; font-size: 13px; }
+.inv td, .inv th { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
+.inv th { font: 500 11px var(--f-mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.inv td.f { font-family: var(--f-mono); overflow-wrap: anywhere; }
+.inv tr.new td { background: var(--accent-weak); font-weight: 600; }
+.scroll { overflow-x: auto; }
+.bigstat { display: flex; gap: 22px; flex-wrap: wrap; margin: 4px 0 12px; }
+.bigstat div { font-size: 13px; color: var(--muted); }
+.bigstat b { display: block; font: 700 30px/1 var(--f-display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.beforeafter { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 10px; }
+.beforeafter > div { border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; }
+.beforeafter .lbl { font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.lint { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lint > li { display: grid; grid-template-columns: 6px minmax(0, 1fr); gap: 14px; padding: 14px 16px 14px 0; overflow: hidden; }
+.lint > li::before { content: ""; border-radius: 0 3px 3px 0; background: var(--rule-strong); }
+.lint > li.conflict::before, .lint > li.late::before { background: var(--conflict); }
+.lint > li.provisional::before { background: var(--prov); }
+.lint > li.deadline::before { background: var(--accent); }
+.lint .lk { font: 500 11px var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.lint .lt { font-weight: 600; margin: 2px 0; }
+.lint .ls { font-size: 13.5px; color: var(--muted); }
+footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<header class="top wrap">
+  <p class="eyebrow">UGREEN Hackathon 2026 · Skill <code>almanac</code> · Automate Your Workflow</p>
+  <h1>Board Almanac</h1>
+  <p class="lede">What is the rule now, since when, and says who?</p>
+  <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behaviour of the <code>almanac</code> Skill on a synthetic board folder for a fictional 48-unit building. The Skill itself runs on a UGREEN AI NAS; on-device results come after the NAS test day. Delegation text is quoted from the Skill; answers are the reference answers from the test kit.</span></div>
+  <div class="links"><a href="https://github.com/rc1-dev/board-almanac" target="_blank" rel="noopener">Source on GitHub</a><span>Board folder: Harbor View Condominium Association, 2019 to 2026</span></div>
+</header>
+
+<nav class="steps" aria-label="Demo steps"><div class="wrap" role="tablist" id="tabs"></div></nav>
+
+<main class="wrap">
+  <section class="panel" id="p-folder" role="tabpanel">
+    <div class="intro"><div><h2>The board folder</h2><p>Seven years of bylaws, minutes, notices, a contract, an email and a meeting recording. Later votes replace earlier ones, and a few files are traps. Pick a file to read it.</p></div></div>
+    <div class="split"><div class="sheet"><ul class="filelist" id="filelist"></ul></div><article class="sheet doc" id="docview" aria-live="polite"></article></div>
+  </section>
+
+  <section class="panel" id="p-compile" role="tabpanel" hidden>
+    <div class="intro"><div><h2>Compile: version 1</h2><p>The Skill only delegates to UGOS experts. It never overwrites, moves or deletes a file, and it asks before creating the folder and before saving.</p></div>
+      <div class="run-bar"><button class="btn" id="replay" type="button">Replay the run</button><span class="mono" id="runstate">Run complete · 9 of 9 steps</span></div></div>
+    <ol class="run" id="run"></ol>
+  </section>
+
+  <section class="panel" id="p-almanac" role="tabpanel" hidden>
+    <div class="intro"><div><h2>The almanac</h2><p>One Markdown file per compile run. Each topic keeps the current rule, the vote or document that set it, a quote, and every rule it replaced.</p></div>
+      <div class="vtoggle" role="group" aria-label="Almanac version"><button type="button" data-v="v1">v1</button><button type="button" data-v="v2">v2</button></div></div>
+    <div class="split"><div class="sheet"><ul class="glance" id="glance"></ul></div><article class="sheet pad topic" id="topic" aria-live="polite"></article></div>
+    <details class="sheet mdfile"><summary>Open the file <span class="filechip" id="mdname"></span></summary><div class="md" id="md"></div></details>
+  </section>
+
+  <section class="panel" id="p-ask" role="tabpanel" hidden>
+    <div class="intro"><div><h2>Ask</h2><p>Answers come only from the newest almanac, with the source file and the almanac version. Where a raw search of the folder goes wrong, the comparison shows how. Both are scored with the same answer key.</p></div></div>
+    <div class="split"><div class="qgroups" id="qgroups"></div><div id="answer" aria-live="polite"></div></div>
+  </section>
+
+  <section class="panel" id="p-update" role="tabpanel" hidden>
+    <div class="intro"><div><h2>Update: version 2</h2><p>New minutes arrive. The next compile reads only files whose checksum is new or changed, and saves version 2 next to version 1.</p></div></div>
+    <div class="cols2">
+      <div class="sheet pad"><h3>Inventory against the Sources ledger</h3>
+        <div class="bigstat"><div><b>1</b>new file processed</div><div><b>16</b>unchanged, skipped</div><div><b>0</b>overwritten</div></div>
+        <div class="scroll"><table class="inv" id="inv"></table></div></div>
+      <div style="display:grid; gap:14px; align-content:start; min-width:0">
+        <div class="sheet pad"><h3>What changed</h3><div class="beforeafter" id="ba"></div><p class="tl-note" style="margin-top:10px">Only Friday and Saturday nights changed. A search that finds "23:00" in the newest minutes would wrongly apply it to every night.</p></div>
+        <div class="sheet pad"><h3>Almanac folder after the run</h3><div class="md" style="padding:0"><table><tr><th>File</th><th>State</th></tr><tr><td class="mono">almanac-2026-11-22-v1.md</td><td>kept, unchanged</td></tr><tr><td class="mono"><b>almanac-2026-11-22-v2.md</b></td><td>new, saved after approval</td></tr></table></div></div>
+        <div class="sheet pad"><h3>Changelog v2</h3><div class="md" style="padding:0" id="cl2"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-lint" role="tabpanel" hidden>
+    <div class="intro"><div><h2>Lint: what needs attention</h2><p>Read from almanac v2, checked on the compile date, 22 Nov 2026. Lint saves nothing unless asked.</p></div></div>
+    <ul class="lint" id="lint"></ul>
+  </section>
+</main>
+
+<footer class="foot wrap">Synthetic, fictional test data; people appear by board role only. Not legal advice: the Skill reports what documents say and records conflicts instead of resolving them. Built for the UGREEN Hackathon 2026 with help from Claude (Anthropic).</footer>
+
+<script>
+const DATA = /*DATA*/null;
+
+const TABS = [["folder","Board folder"],["compile","Compile"],["almanac","Almanac"],["ask","Ask"],["update","Update"],["lint","Lint"]];
+
+const TRAPS = {
+  "notice-2025-02-10-fees.pdf": "States the wrong fee; corrected in later minutes",
+  "agenda-2025-01-23.pdf": "A proposal, not a decision",
+  "newsletter-2025-12.pdf": "Informal wording, sets no rule",
+  "notice-2026-05-01-pool.pdf": "Disagrees with the board minutes",
+  "email-2026-02-02-landscaping.txt": "Sent after the notice deadline",
+  "board-meeting-2026-06-18.m4a": "Discussion only, no vote",
+  "minutes-2026-09-15.docx": "Arrives later: changes weekends only"
+};
+
+const STEPS = [
+  { t: "Find the current almanac", a: "file-agent", d: 0, r: "No almanac file found in <code>Almanac/</code>. This is a first compile, so every file counts as new." },
+  { t: "Inventory the board folder", a: "file-agent", d: 1, r: "16 files with type, size, modification time and SHA-256: 15 documents and 1 recording. All new." },
+  { t: "Transcribe the recording", a: "knowledge-agent", d: 2, r: "<code>board-meeting-2026-06-18.m4a</code> transcribed. Electric barbecues discussed, no vote: recorded as provisional." },
+  { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 15 kg limit for dogs is removed</q></li><li>Fee: EUR 235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
+  { t: "Reconcile", a: "document-agent", d: 4, r: "Disagreements reported, not decided:<ul><li>Fee EUR 230 (notice) vs EUR 225 (minutes): a later document says the notice was in error.</li><li>Pool 22:00 (minutes) vs 21:00 (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
+  { t: "Compile version 1", a: "Skill", d: null, r: "Supersession rules applied topic by topic: 12 topics, 1 correction, 1 open conflict, 1 provisional item, 6 open items." },
+  { t: "Show the changelog and ask", a: "Skill", d: null, ap: "asks the user", r: "The user sees the changelog and the file name <code>almanac-2026-11-22-v1.md</code>, and confirms." },
+  { t: "Create the almanac folder", a: "file-agent", d: 5, ap: "approval", r: "<code>Almanac/</code> created inside the board folder. Nothing else touched." },
+  { t: "Save version 1", a: "knowledge-agent", d: 6, ap: "approval", r: "Saved <code>Almanac/almanac-2026-11-22-v1.md</code>. Verified: true. Only now does the Skill report success." }
+];
+
+// Topic history, newest first. kind: current | superseded | proposed | corrected | failed | conflict | provisional | info | late | partial
+const TOPICS = [
+  { id: "fee", name: "Monthly fee", status: "adopted", glance: "EUR 240 per unit, since 1 Mar 2026",
+    now: "EUR 240 per unit per month, from 1 March 2026.", set: "Board minutes, 20 Jan 2026, carried 3-0",
+    ev: [
+      { d: "2026-03-01", v: "EUR 240", k: "current", s: "minutes-2026-01-20.pdf", q: "the monthly common charge is set at EUR 240 per unit, effective 1 March 2026" },
+      { d: "2025-12", v: "EUR 250?", k: "info", s: "newsletter-2025-12.pdf", q: "Many of you have asked whether charges will rise to EUR 250 next year", n: "A question in a newsletter. Sets nothing." },
+      { d: "2025-03-01", v: "EUR 225", k: "superseded", s: "minutes-2025-01-23.pdf", q: "the monthly common charge is set at EUR 225 per unit, effective 1 March 2025", n: "In force 1 Mar 2025 to 1 Mar 2026." },
+      { d: "2025-02-10", v: "EUR 230", k: "corrected", s: "notice-2025-02-10-fees.pdf", q: "the monthly common charge will be EUR 230 per unit", n: "Corrected in minutes-2025-04-15.docx: “the notice of 10 February 2025 stating EUR 230 was in error”." },
+      { d: "2025-01-23", v: "EUR 235", k: "proposed", s: "agenda-2025-01-23.pdf", q: "proposed monthly common charge of EUR 235", n: "Amended to EUR 225 at the meeting. Never adopted." },
+      { d: "2024-03-01", v: "EUR 210", k: "superseded", s: "minutes-2024-01-18.pdf", q: "the monthly common charge is set at EUR 210 per unit", n: "In force 1 Mar 2024 to 1 Mar 2025." }
+    ] },
+  { id: "pets", name: "Pets", status: "adopted", glance: "Up to 2 per unit, no weight limit",
+    now: "Up to 2 pets per unit. Registration required. No weight limit.", set: "Board minutes, 15 Apr 2025, carried 3-0",
+    ev: [
+      { d: "2025-12", v: "“Pets welcome!”", k: "info", s: "newsletter-2025-12.pdf", q: "Holiday party in the community room on 13 December. Pets welcome!", n: "About a party, not the pet rule." },
+      { d: "2025-04-15", v: "Up to 2 pets, no weight limit", k: "current", s: "minutes-2025-04-15.docx", q: "a maximum of two (2) pets; the 15 kg limit for dogs is removed" },
+      { d: "2019-05-01", v: "1 pet, dogs up to 15 kg", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "Each unit may keep one (1) pet. Dogs may not exceed 15 kg." }
+    ] },
+  { id: "reno", name: "Renovation hours", status: "adopted", glance: "Mon to Fri 08:00 to 17:00, Sat 09:00 to 13:00",
+    now: "Monday to Friday 08:00 to 17:00, Saturday 09:00 to 13:00. No work on Sundays or holidays.", set: "Board minutes, 12 Jun 2024, carried 3-0, effective 15 Jul 2024",
+    ev: [
+      { d: "2024-07-15", v: "Saturday 09:00 to 13:00 allowed", k: "current", s: "minutes-2024-06-12.docx", q: "permit renovation work on Saturdays from 09:00 to 13:00, effective 15 July 2024" },
+      { d: "2024-07-01", v: "Notice restates the new hours", k: "info", s: "notice-2024-07-01-renovation-hours.pdf", q: "Saturday 09:00 to 13:00", n: "Agrees with the minutes: evidence, not a new rule." },
+      { d: "2019-05-01", v: "No work on Saturdays", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "No work is permitted on Saturdays, Sundays or public holidays." }
+    ] },
+  { id: "balc", name: "Balconies", status: "adopted", glance: "Heat pumps with approval; barbecues prohibited",
+    now: "Fixtures need written board approval. Heat pump units are allowed if floor-mounted and rated 60 dB(A) or less. Barbecues and open flames are prohibited.", set: "Board minutes, 23 Jan 2025, carried 2-1; House Rule 7 (2019)",
+    ev: [
+      { d: "2026-06-18", v: "Electric barbecues: support, no vote", k: "provisional", s: "board-meeting-2026-06-18.m4a", q: "So we all lean towards allowing electric barbecues. Let's not vote tonight.", n: "From a recording only. Barbecues stay prohibited until minutes adopt a change." },
+      { d: "2025-01-23", v: "Heat pumps allowed with conditions", k: "current", s: "minutes-2025-01-23.pdf", q: "floor-mounted and not attached to the railing, and have a rated sound level of no more than 60 dB(A)", n: "Carried 2-1." },
+      { d: "2024-11-07", v: "Heat pumps tabled", k: "info", s: "minutes-2024-11-07.pdf", q: "The item was tabled." },
+      { d: "2019-05-01", v: "Approval for fixtures; no barbecues", k: "current", s: "bylaws-house-rules-2019.pdf", q: "Barbecues and open flames are prohibited on balconies." }
+    ] },
+  { id: "quiet", name: "Quiet hours", status: "adopted", changedIn: "v2",
+    glance: { v1: "22:00 to 07:00 every night", v2: "Fri and Sat 23:00; other nights 22:00" },
+    now: { v1: "22:00 to 07:00 every night.", v2: "Friday and Saturday nights 23:00 to 07:00. All other nights 22:00 to 07:00." },
+    set: { v1: "House Rule 6, 2019", v2: "Board minutes, 15 Sep 2026, carried 3-0, effective 1 Oct 2026 (Fri and Sat); House Rule 6 (other nights)" },
+    ev: [
+      { d: "2026-10-01", v: "Fri and Sat nights 23:00 to 07:00", k: "current", only: "v2", s: "minutes-2026-09-15.docx", q: "quiet hours on Friday and Saturday nights are 23:00 to 07:00. Quiet hours on all other nights remain 22:00 to 07:00" },
+      { d: "2019-05-01", v: "22:00 to 07:00 every night", k: { v1: "current", v2: "partial" }, s: "bylaws-house-rules-2019.pdf", q: "Quiet hours are 22:00 to 07:00 every night.", n: { v2: "Replaced for Friday and Saturday nights only. Still the rule on other nights." } }
+    ] },
+  { id: "lease", name: "Rentals and leasing", status: "adopted", glance: "Minimum lease 30 days",
+    now: "Minimum lease term 30 days.", set: "Board minutes, 15 Apr 2025, carried 2-1",
+    ev: [
+      { d: "2025-04-15", v: "Minimum 30 days", k: "current", s: "minutes-2025-04-15.docx", q: "the minimum lease term is thirty (30) days", n: "Carried 2-1." },
+      { d: "2025-04-15", v: "Leases of 7 days", k: "failed", s: "minutes-2025-04-15.docx", q: "permit leases of seven (7) days or more. Motion failed 1-2." },
+      { d: "2019-05-01", v: "Minimum 6 months", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "a term of less than six (6) months" }
+    ] },
+  { id: "park", name: "Parking", status: "adopted", glance: "Guest parking up to 48 hours",
+    now: "One assigned space per unit. Guest vehicles up to 48 hours.", set: "Board minutes, 10 Sep 2025, carried 3-0, effective 1 Oct 2025",
+    ev: [
+      { d: "2025-10-01", v: "Guests up to 48 hours", k: "current", s: "minutes-2025-09-10.pdf", q: "no more than 48 hours. Effective 1 October 2025" },
+      { d: "2019-05-01", v: "Guests up to 72 hours", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "no more than 72 hours" }
+    ] },
+  { id: "ev", name: "EV charging", status: "adopted", glance: "In assigned space, with approval",
+    now: "Owners may install a charger in their assigned space with written board approval, installed by a licensed electrician at their own cost.", set: "Board minutes, 20 Jan 2026, carried 3-0",
+    ev: [ { d: "2026-01-20", v: "Allowed with approval", k: "current", s: "minutes-2026-01-20.pdf", q: "with written board approval, installed by a licensed electrician at the owner's cost" } ] },
+  { id: "pool", name: "Pool hours", status: "conflict", glance: "22:00 or 21:00 closing? Documents disagree",
+    now: "The documents disagree on 2026 pool hours: 08:00 to 22:00 in the board minutes, 08:00 to 21:00 in the notice.", set: "Open conflict. The almanac quotes both and does not pick one.",
+    ev: [
+      { d: "2026-06-18", v: "Raised, not resolved", k: "info", s: "board-meeting-2026-06-18.m4a", q: "Someone said the notice says nine pm, but I thought we said ten." },
+      { d: "2026-05-01", v: "08:00 to 21:00", k: "conflict", s: "notice-2026-05-01-pool.pdf", q: "Hours: 08:00 to 21:00 daily." },
+      { d: "2025-09-10", v: "08:00 to 22:00 for 2026", k: "conflict", s: "minutes-2025-09-10.pdf", q: "for the 2026 season the pool is open 08:00 to 22:00 daily", n: "Carried 3-0." },
+      { d: "2019-05-01", v: "09:00 to 21:00", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "The pool is open 09:00 to 21:00 daily during the season", n: "Through the 2025 season." }
+    ] },
+  { id: "land", name: "Landscaping contract", status: "adopted", glance: "Non-renewal notice sent 3 days late",
+    now: "Bramblewick Grounds, EUR 1,450 per month. Renews for a year unless notice is given 60 days before the term ends; renewal increase capped at 4%.", set: "Contract signed 25 Jan 2024; awarded in minutes of 18 Jan 2024, 3-0",
+    ev: [
+      { d: "2026-02-02", v: "Non-renewal notice sent", k: "late", s: "email-2026-02-02-landscaping.txt", q: "will not renew the Landscaping Services Agreement that ends on 31 March 2026", n: "Due 30 Jan 2026. Whether the contract renewed is for the board to check; the Skill does not judge it." },
+      { d: "2025-09-10", v: "Decision: do not renew", k: "info", s: "minutes-2025-09-10.pdf", q: "The Secretary is to send written notice of non-renewal by 30 January 2026." },
+      { d: "2024-01-25", v: "Contract terms", k: "current", s: "contract-bramblewick-landscaping-2024.pdf", q: "at least sixty (60) days before the end of the current term … no more than four percent (4%)" }
+    ] },
+  { id: "gov", name: "Officers and governance", status: "adopted", glance: "Bylaws 2/3 of owners; house rules board majority",
+    now: "Bylaws change only by a two-thirds vote of owners. House rules change by a board majority. A new Treasurer was appointed on 10 Sep 2025.", set: "Bylaws Article 1 and 3 (2019); minutes of 10 Sep 2025",
+    ev: [
+      { d: "2025-09-10", v: "New Treasurer appointed", k: "current", s: "minutes-2025-09-10.pdf", q: "The board appointed a new Treasurer to serve until the next general meeting." },
+      { d: "2019-05-01", v: "Amendment thresholds", k: "current", s: "bylaws-house-rules-2019.pdf", q: "may be amended only by a two-thirds (2/3) vote of unit owners … by a majority vote of the board" }
+    ] }
+];
+
+const KIND = { current: "in force", superseded: "replaced", proposed: "proposed, not adopted", corrected: "error, corrected", failed: "motion failed", conflict: "conflict", provisional: "provisional", info: "informational", late: "late", partial: "replaced in part" };
+
+const LINT = [
+  { c: "conflict", k: "Open conflict", t: "Pool hours for 2026: 22:00 or 21:00?", s: "minutes-2025-09-10.pdf says 08:00 to 22:00; notice-2026-05-01-pool.pdf says 08:00 to 21:00. No later document explains the difference." },
+  { c: "late", k: "Late action", t: "Landscaping non-renewal notice sent after the deadline", s: "Due 30 Jan 2026 (minutes-2025-09-10.pdf, contract clause 3); sent 2 Feb 2026 (email-2026-02-02-landscaping.txt). The agreement may have renewed to 31 Mar 2027." },
+  { c: "deadline", k: "Deadline within 90 days", t: "If the contract renewed, the next notice is due 30 Jan 2027", s: "69 days after the compile date. Renewal increase capped at 4%." },
+  { c: "provisional", k: "Provisional", t: "Electric barbecues: discussed, never voted", s: "From board-meeting-2026-06-18.m4a only. The September minutes do not mention it. Barbecues remain prohibited." },
+  { c: "overdue", k: "Overdue, provisional", t: "Ask the insurer about electric barbecues", s: "Secretary, due 31 Jul 2026, from the recording. No document shows it done." },
+  { c: "overdue", k: "Overdue", t: "Send the 2024 budget to owners", s: "Treasurer, due 15 Feb 2024 (minutes-2024-01-18.pdf). No document shows it done." },
+  { c: "info", k: "Checked, nothing found", t: "No files changed since v2; no failed files; no rule changes take effect in the next 90 days", s: "Quiet-hours change took effect 1 Oct 2026." }
+];
+
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pick = (x, v) => (x && typeof x === "object" && !Array.isArray(x)) ? (x[v] ?? x.v1 ?? "") : x;
+const state = { tab: "folder", file: "minutes-2025-04-15.docx", v: "v1", topic: "fee", q: "Q1" };
+
+function store(k, val) { try { if (val === undefined) return localStorage.getItem(k); localStorage.setItem(k, val); } catch (e) { return null; } }
+
+/* Tabs */
+function renderTabs() {
+  $("#tabs").innerHTML = TABS.map(([id, label], i) =>
+    `<button role="tab" type="button" id="tab-${id}" aria-controls="p-${id}" aria-selected="${state.tab === id}" data-tab="${id}"><span class="n">${i + 1}</span><span class="t">${label}</span></button>`).join("");
+}
+function go(tab) {
+  if (!TABS.some(t => t[0] === tab)) tab = "folder";
+  state.tab = tab;
+  TABS.forEach(([id]) => { $("#p-" + id).hidden = id !== tab; });
+  renderTabs();
+  if (location.hash !== "#" + tab) history.replaceState(null, "", "#" + tab);
+  if (tab === "lint" || tab === "update") setVersion("v2", true);
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (b) { go(b.dataset.tab); window.scrollTo({ top: 0 }); } });
+window.addEventListener("hashchange", () => go(location.hash.slice(1)));
+
+/* Folder */
+function renderFiles() {
+  const files = DATA.files;
+  let html = "", yr = "";
+  files.forEach(f => {
+    const y = f.date.slice(0, 4);
+    if (y !== yr) { yr = y; html += `<li class="yr">${y}</li>`; }
+    const later = f.phase === 2 ? " (added for v2)" : "";
+    html += `<li><button type="button" data-file="${esc(f.name)}" aria-current="${state.file === f.name}"><span class="type">${f.type}</span><span class="fn">${esc(f.name)}${later}</span>${TRAPS[f.name] ? `<span class="trap">${esc(TRAPS[f.name])}</span>` : ""}</button></li>`;
+  });
+  $("#filelist").innerHTML = html;
+  const f = files.find(x => x.name === state.file) || files[0];
+  const paras = f.paras.map(p => p === "" ? "" : (/^PART /.test(p) ? `<p class="part">${esc(p)}</p>` : `<p>${esc(p)}</p>`)).join("");
+  $("#docview").className = "sheet doc" + (f.type === "recording" ? " transcript" : "");
+  $("#docview").innerHTML = `<div class="meta"><span>${esc(f.name)}</span><span>${f.type}</span><span>${f.date}</span></div>` +
+    (TRAPS[f.name] ? `<div class="trapnote">${esc(TRAPS[f.name])}.</div>` : "") +
+    `<h3>${esc(f.title)}</h3>${paras}`;
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-file]"); if (b) { selectFile(b.dataset.file); } });
+function selectFile(n) { state.file = n; renderFiles(); }
+
+/* Compile */
+function renderRun(shown = STEPS.length, active = -1) {
+  $("#run").innerHTML = STEPS.map((s, i) => {
+    const d = s.d === null ? null : DATA.delegates[s.d];
+    const cls = "sheet" + (i >= shown ? " pending" : "") + (i === active ? " active" : "");
+    return `<li class="${cls}"><span class="stepno">${i + 1}</span><div style="min-width:0"><div class="stephead"><strong>${esc(s.t)}</strong><span class="agent ${s.a === "Skill" ? "skill" : ""}">${esc(s.a)}</span>${s.ap ? `<span class="approval">${esc(s.ap)}</span>` : ""}</div>
+      <div class="result">${s.r}</div>${d ? `<details class="deleg"><summary>Delegation, quoted from SKILL.md</summary><pre>delegate --target ${esc(d.agent)} --instruction '${esc(d.instruction)}'</pre></details>` : ""}</div></li>`;
+  }).join("");
+}
+let runTimer = null;
+function replay() {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  clearInterval(runTimer);
+  if (reduce) { renderRun(); return; }
+  let i = 0; $("#replay").disabled = true; renderRun(0, 0);
+  runTimer = setInterval(() => {
+    i++;
+    if (i > STEPS.length) { clearInterval(runTimer); $("#replay").disabled = false; $("#runstate").textContent = "Run complete · 9 of 9 steps"; renderRun(); return; }
+    $("#runstate").textContent = `Step ${Math.min(i + 1, STEPS.length)} of ${STEPS.length}`;
+    renderRun(i, i < STEPS.length ? i : -1);
+    const el = $("#run").children[Math.min(i, STEPS.length - 1)];
+    if (el && window.__demoScroll) el.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, 1100);
+}
+$("#replay").addEventListener("click", replay);
+
+/* Almanac */
+function topicVisible(ev, v) { return !ev.only || ev.only === v; }
+function renderAlmanac() {
+  const v = state.v;
+  document.querySelectorAll(".vtoggle button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v));
+  $("#glance").innerHTML = TOPICS.map(t => {
+    const changed = t.changedIn === v && v === "v2";
+    const pill = changed ? `<span class="pill changed">changed in v2</span>` : `<span class="pill ${t.status}">${t.status}</span>`;
+    return `<li><button type="button" data-topic="${t.id}" aria-current="${state.topic === t.id}"><span class="tn">${esc(t.name)}</span>${pill}<span class="tv">${esc(pick(t.glance, v))}</span></button></li>`;
+  }).join("");
+  const t = TOPICS.find(x => x.id === state.topic) || TOPICS[0];
+  const items = t.ev.filter(e => topicVisible(e, v)).map(e => {
+    const k = pick(e.k, v), n = pick(e.n, v);
+    return `<li class="${k}"><div class="tl-head"><span class="tl-date">${e.d}</span><span class="tl-val">${esc(e.v)}</span><span class="kind">${KIND[k]}</span></div>
+      <div class="tl-src"><span class="mono">${esc(e.s)}</span>: <q>${esc(e.q)}</q></div>${n ? `<div class="tl-note">${esc(n)}</div>` : ""}</li>`;
+  }).join("");
+  $("#topic").innerHTML = `<div class="stephead"><h3 style="margin:0">${esc(t.name)}</h3><span class="pill ${t.status}">${t.status}</span></div>
+    <p class="now">${esc(pick(t.now, v))}</p><div class="setby">${esc(pick(t.set, v))} · from almanac ${v}</div><ol class="timeline">${items}</ol>`;
+  const name = `almanac-2026-11-22-${v}.md`;
+  $("#mdname").textContent = name;
+  $("#md").innerHTML = md(DATA.almanac[v]);
+}
+function setVersion(v, quiet) { state.v = v; renderAlmanac(); if (!quiet) store("almanac-v", v); }
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-topic]"); if (b) { state.topic = b.dataset.topic; renderAlmanac(); }
+  const vb = e.target.closest(".vtoggle button"); if (vb) setVersion(vb.dataset.v);
+});
+
+function md(src) {
+  const lines = src.replace(/<!--[\s\S]*?-->/g, "").split("\n");
+  let out = "", i = 0;
+  const inline = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+  while (i < lines.length) {
+    const l = lines[i];
+    if (/^#{1,3} /.test(l)) { const n = l.match(/^#+/)[0].length; out += `<h${n}>${inline(l.slice(n + 1))}</h${n}>`; i++; continue; }
+    if (/^\|/.test(l)) {
+      const rows = []; while (i < lines.length && /^\|/.test(lines[i])) rows.push(lines[i++]);
+      const cells = r => r.replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      out += "<table><tr>" + cells(rows[0]).map(c => `<th>${inline(c)}</th>`).join("") + "</tr>" +
+        rows.slice(2).map(r => "<tr>" + cells(r).map(c => `<td>${inline(c)}</td>`).join("") + "</tr>").join("") + "</table>";
+      continue;
+    }
+    if (/^\s*- /.test(l)) {
+      let items = ""; while (i < lines.length && /^\s*- /.test(lines[i])) { let it = lines[i++].replace(/^\s*- /, ""); while (i < lines.length && /^\s{2,}\S/.test(lines[i])) it += " " + lines[i++].trim(); items += `<li>${inline(it)}</li>`; }
+      out += `<ul>${items}</ul>`; continue;
+    }
+    if (l.trim() === "") { i++; continue; }
+    out += `<p>${inline(l)}</p>`; i++;
+  }
+  return out;
+}
+
+/* Ask */
+const COMPARE = ["Q1", "Q3", "Q7", "Q16", "Q17"];
+const RAWNOTES = {
+  Q1: ["Gives EUR 230, from a notice the board later corrected", "Misses the current fee, EUR 240", "Does not cite the minutes that set it"],
+  Q3: ["Gives the 2019 rule, replaced on 15 Apr 2025", "Misses the current rule: 2 pets, no weight limit"],
+  Q7: ["Gives one side of an open conflict as if it were settled", "Misses the 22:00 closing set in the board minutes"],
+  Q16: ["Invents hours: no document mentions a gym", "Should say the documents do not cover it"],
+  Q17: ["Treats an agenda proposal as a decision", "Misses EUR 225, the amount actually adopted"]
+};
+function friendly(p) {
+  if (p.startsWith("no citation:")) return "Does not cite " + p.slice(13).split(" | ")[0];
+  if (p.startsWith("missing:")) {
+    const alt = p.slice(9).split(" | ")[0].replace(/\\b/g, "").replace(/\\/g, "").replace(/[()?^$]/g, "").replace(/\|.*/, "").trim();
+    return "Missing a required fact: " + alt;
+  }
+  if (p.startsWith("forbidden:")) return "Gives a value the answer key marks as wrong or out of date";
+  return p;
+}
+function renderAsk() {
+  const qs = DATA.ask;
+  const chip = q => `<button type="button" data-q="${q.id}" aria-pressed="${state.q === q.id}">${esc(q.q)}</button>`;
+  $("#qgroups").innerHTML = `<div><div class="qlabel">Where raw search goes wrong</div><div class="chips">${qs.filter(q => COMPARE.includes(q.id)).map(chip).join("")}</div></div>
+    <div><div class="qlabel">More questions from the answer key</div><div class="chips">${qs.filter(q => !COMPARE.includes(q.id)).map(chip).join("")}</div></div>`;
+  const q = qs.find(x => x.id === state.q) || qs[0];
+  const ver = q.phase === "after_update" ? "v2" : "v1";
+  const alm = `<div class="sheet pad ans"><h3><span>Almanac answer</span><span class="verdict ${q.almanacScore ? "pass" : "fail"}">answer key: ${q.almanacScore ? "pass" : "fail"}</span></h3><div class="body">${esc(q.almanac)}</div><p class="tl-note" style="margin-top:10px;color:var(--muted)">Read from almanac-2026-11-22-${ver}.md by document-agent.</p></div>`;
+  const raw = q.raw ? `<div class="sheet pad ans raw"><h3><span>Raw folder search</span><span class="verdict fail">answer key: fail, ${q.rawProblems.length} checks</span></h3><div class="body">${esc(q.raw)}</div><ul class="problems">${(RAWNOTES[q.id] || q.rawProblems.map(friendly)).map(p => `<li>${esc(p)}</li>`).join("")}</ul><p class="tl-note" style="margin-top:10px;color:var(--muted)">Illustrative example of a typical mistake, written for this test kit. Not a measured result.</p></div>`
+    : `<div class="sheet pad ans raw"><h3>Raw folder search</h3><p class="empty">No comparison example for this question yet. On the NAS test day all 20 questions are run through plain file chat and scored the same way.</p></div>`;
+  $("#answer").innerHTML = `<p class="question">${esc(q.q)}</p><div class="answers">${alm}${raw}</div>`;
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (b) { state.q = b.dataset.q; renderAsk(); } });
+
+/* Update */
+function renderUpdate() {
+  $("#inv").innerHTML = "<tr><th>File</th><th>Ledger</th></tr>" + DATA.files.map(f =>
+    `<tr class="${f.phase === 2 ? "new" : ""}"><td class="f">${esc(f.name)}</td><td>${f.phase === 2 ? "new: extract" : "unchanged: skip"}</td></tr>`).join("");
+  $("#ba").innerHTML = `<div><div class="lbl">v1</div><div>Every night 22:00 to 07:00</div></div><div><div class="lbl">v2</div><div><b>Fri and Sat nights 23:00 to 07:00</b><br>Other nights 22:00 to 07:00</div></div>`;
+  const v2 = DATA.almanac.v2;
+  const cl = v2.slice(v2.indexOf("## v2")); $("#cl2").innerHTML = md(cl.slice(0, cl.indexOf("## v1")).replace("## v2", ""));
+}
+
+/* Lint */
+function renderLint() {
+  $("#lint").innerHTML = LINT.map(l => `<li class="sheet ${l.c}"><div><div class="lk">${esc(l.k)}</div><div class="lt">${esc(l.t)}</div><div class="ls">${esc(l.s)}</div></div></li>`).join("");
+}
+
+window.demo = { go, selectFile, setVersion, replay, run: (n, a) => renderRun(n, a), topic: id => { state.topic = id; renderAlmanac(); }, ask: id => { state.q = id; renderAsk(); } };
+
+renderFiles(); renderRun(); renderAsk(); renderUpdate(); renderLint();
+state.v = store("almanac-v") === "v2" ? "v2" : "v1"; renderAlmanac();
+go(location.hash.slice(1) || "folder");
+</script>

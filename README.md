@@ -7,6 +7,13 @@ Condo associations, HOAs and clubs keep their rules in years of bylaws, meeting 
 
 Almanac compiles that folder into a versioned Markdown rulebook on the NAS and answers one question well: **what is the rule now, since when, and says who?**
 
+## Demo
+
+- **Interactive demo:** [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source: [`docs/index.html`](docs/index.html)). Walk through the board folder, the compile run, the almanac with each rule's history, cited answers next to raw-search mistakes, an incremental update and lint.
+- **Video (2:47, captioned):** [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4)
+
+Both are a **replay** on the synthetic test folder: the delegation text is quoted from `SKILL.md` and the answers are the test kit's reference answers. The Skill itself runs on a UGREEN AI NAS, and on-device results come after the NAS test day.
+
 ## How it works
 
 ```text
@@ -47,8 +54,9 @@ Retrieval finds passages that match a question. It cannot tell a 2019 rule from 
 | `skill/almanac/` | The Skill package: `SKILL.md` and six reference files |
 | `validation/` | Synthetic corpus and generator, answer key, scorer, expected first almanac, recording script ([readme](validation/README.md)) |
 | `proposal/` | Round 1 proposal source and rendered PDF |
+| `demo/` | Demo page source (`template.html`, `build_demo.py`) and the video with its filming scripts |
+| `docs/` | Built demo page (`index.html`, served by GitHub Pages) and checker output |
 | `scripts/package.sh` | Builds `dist/almanac.zip` and runs the official checker |
-| `docs/` | Checker output |
 
 ## Try the validation kit
 
@@ -57,6 +65,12 @@ pip install reportlab python-docx        # only needed to regenerate the corpus
 python3 validation/build_corpus.py       # writes validation/corpus/
 python3 validation/score.py validation/selftest/gold_answers.jsonl --recording
 python3 validation/score.py validation/selftest/raw_search_example.jsonl
+```
+
+## Rebuild the demo
+
+```bash
+python3 demo/build_demo.py               # writes docs/index.html from the repo's own files
 ```
 
 ## Build the Skill package

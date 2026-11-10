@@ -3,13 +3,13 @@ Version: 1
 Compiled: (set at compile)
 Compiled-through: (latest modification time of the files processed)
 Board folder: Board Documents
-Sources: 15 processed, 0 failed, 0 pending
+Sources: 16 processed, 0 failed, 0 pending
 Open conflicts: 1
-Provisional items: 0
+Provisional items: 1
 Run status: complete
 Model route: NAS local model
 
-<!-- Hand-written reference: what a correct first compile of the 15 synthetic files should contain. Used to review compile output on the test day. Without the June 2026 recording, Provisional items is 0. With it, see recording-script-2026-06.md. -->
+<!-- Hand-written reference: what a correct first compile should contain, for reviewing real output on the test day. Assumes the 15 generated files plus the June 2026 recording (recording-script-2026-06.md, saved as board-meeting-2026-06-18.m4a), as in the test-day procedure. Without the recording: 15 sources, 0 provisional items, and no barbecue or insurer entries. -->
 
 ## At a glance
 
@@ -18,7 +18,7 @@ Model route: NAS local model
 | Monthly fee and budget | EUR 240 per unit per month | 2026-03-01 | adopted |
 | Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | adopted |
 | Renovations and work hours | Mon to Fri 08:00 to 17:00, Sat 09:00 to 13:00, no Sun or holidays | 2024-07-15 | adopted |
-| Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited | 2025-01-23 | adopted |
+| Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited (electric barbecues discussed, provisional) | 2025-01-23 | adopted |
 | Quiet hours | 22:00 to 07:00 every night | 2019-05-01 | adopted |
 | Rentals and leasing | Minimum lease 30 days | 2025-04-15 | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | adopted |
@@ -76,6 +76,10 @@ Set by: Board meeting minutes, 2025-01-23, motion carried 2-1; bylaws-house-rule
 Evidence: minutes-2025-01-23.pdf: "floor-mounted and not attached to the railing, and have a rated sound level of no more than 60 dB(A)"; bylaws-house-rules-2019.pdf: "Barbecues and open flames are prohibited on balconies"
 
 Superseded: none. The 2025 heat pump rule adds conditions under the 2019 approval rule.
+
+Open conflicts: none
+Provisional:
+- board-meeting-2026-06-18.m4a (recording, 2026-06-18): the three board members leaned towards allowing electric barbecues; no vote was taken and a motion was planned for the September agenda. Not confirmed by adopted minutes. Barbecues remain prohibited.
 
 ## Quiet hours
 
@@ -152,6 +156,7 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 | Obtain engineer opinion on balcony heat pumps | Secretary | 2025-01-31 | Done 2025-01-15 | minutes-2024-11-07.pdf; minutes-2025-01-23.pdf |
 | Publish renovation hours notice | Secretary | 2024-07-01 | Done 2024-07-01 | minutes-2024-06-12.docx; notice-2024-07-01-renovation-hours.pdf |
 | Send 2024 budget to owners | Treasurer | 2024-02-15 | No document shows it done | minutes-2024-01-18.pdf |
+| Ask the insurer about electric barbecues | Secretary | 2026-07-31 | Provisional (recording only); no document shows it done | board-meeting-2026-06-18.m4a |
 
 ## Sources
 
@@ -172,10 +177,12 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 | minutes-2026-01-20.pdf | minutes | 2026-01-20 | | | processed |
 | email-2026-02-02-landscaping.txt | email | 2026-02-02 | | | processed |
 | notice-2026-05-01-pool.pdf | notice | 2026-05-01 | | | processed |
+| board-meeting-2026-06-18.m4a | recording | 2026-06-18 | | | processed |
 
 ## Changelog
 
 ## v1
-- First compile. Processed 15 files.
+- First compile. Processed 16 files (15 documents, 1 recording).
 - 12 topics compiled. 1 open conflict: Pool hours for 2026.
 - 1 correction applied: the EUR 230 notice of 2025-02-10.
+- 1 provisional item: electric barbecues, from the June 2026 recording.
