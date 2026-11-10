@@ -37,11 +37,11 @@ The almanac reports what the documents record. It does not give legal advice or 
 
 An interactive demo is available at [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source in [`docs/index.html`](docs/index.html)). It walks through the board folder, the compile run, the resulting almanac with the history of each rule, answers to sample questions, an incremental update and the lint report. A captioned video of the same walkthrough is in [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4).
 
-Both replay the expected behaviour on the synthetic test archive. The delegation text is quoted from `SKILL.md`, and the answers are the reference answers from the validation kit. Results from a real NAS will follow the hackathon's device testing.
+Both replay the expected behavior on the synthetic test archive. The delegation text is quoted from `SKILL.md`, and the answers are the reference answers from the validation kit. Results from a real NAS will follow the hackathon's device testing.
 
 ## Status
 
-The Skill (`SKILL.md` and six reference files) is complete and passes the official kit checker for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, a 20-question answer key and a scorer. Runtime behaviour on a UGREEN AI NAS has not yet been tested.
+The Skill (`SKILL.md` and six reference files) is complete and passes the official kit checker for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, a 20-question answer key and a scorer. Runtime behavior on a UGREEN AI NAS has not yet been tested.
 
 ## Repository layout
 

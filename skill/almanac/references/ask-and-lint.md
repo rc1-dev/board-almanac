@@ -6,18 +6,18 @@ Every answer from the almanac has these parts, in this order:
 
 1. **Answer**: the currently documented rule in one or two sentences. It reports what the documents record, not legal advice.
 2. **Since and source**: the effective date and the document that set it, with the vote if recorded.
-3. **History**: earlier rules for the same subject, only if they help, for example "Before 15 Apr 2025: one pet per unit."
+3. **History**: earlier rules for the same subject, only if they help, for example "Before Apr 15, 2025: one pet per unit."
 4. **Open conflicts or provisional items** on the same topic, quoted. If the documents disagree, say so first and give both statements instead of a single answer.
-5. **Almanac version**: for example "From almanac v7, compiled through 15 Sep 2026."
+5. **Almanac version**: for example "From almanac v7, compiled through Sep 15, 2026."
 
 Example:
 
 ```text
 Yes. You can install a heat pump outdoor unit on your balcony with written board approval.
 It must be floor-mounted, not on the railing, and rated at 60 dB or less.
-Set by board minutes of 23 Jan 2025, motion carried 2-1, replacing the 2019 rule that
+Set by board minutes of Jan 23, 2025, motion carried 2-1, replacing the 2019 rule that
 banned all exterior fixtures without approval.
-From almanac v7, compiled through 15 Sep 2026.
+From almanac v7, compiled through Sep 15, 2026.
 ```
 
 ## When the almanac does not cover the question

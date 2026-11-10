@@ -10,11 +10,11 @@
   "files": [
     {
       "path": "references/almanac-format.md",
-      "sha256": "43da316ab8e5439eacbb4bd5741a67942baffbea9571c71aff4985e6a112300a"
+      "sha256": "ffd787530a9380ffe7ca5358dfd97d06c6952643fa0d684f0a4072aeda9ea8bb"
     },
     {
       "path": "references/ask-and-lint.md",
-      "sha256": "f9fc23948995a32acecac21dca46a24706f257f8ea34381da94ff88f2e268a4c"
+      "sha256": "cc73e3ca3fa1d77d8bb12e6c0cb8e95673eec1b52e74c3ab513be3fd508967b2"
     },
     {
       "path": "references/compile-protocol.md",
@@ -26,11 +26,11 @@
     },
     {
       "path": "references/supersession-rules.md",
-      "sha256": "4ceba459aa2be5d4171ef4eef8f13d4ab237cd99d6b25bc2ee9a9ad97dca734d"
+      "sha256": "3283907ba8f4e7572a0b5d67a3b4d0412678b93d55c73c704fa83b4d9664371d"
     },
     {
       "path": "references/test-plan.md",
-      "sha256": "237c7a3bf601b6fe5732f3e0663c7015f5f34aa338968c024d8c6ba8882b791d"
+      "sha256": "7af72e84321cf4a204f05b2424bdbbaafa5423ed15923869a9d2773b092f8aa6"
     },
     {
       "path": "SKILL.md",

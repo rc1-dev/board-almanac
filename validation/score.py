@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 def normalize(text):
-    text = text.replace("€", "EUR ").replace("–", "-").replace("—", "-")
+    text = text.replace("–", "-").replace("—", "-")
     text = text.replace("’", "'")
     return re.sub(r"[ \t]+", " ", text)
 

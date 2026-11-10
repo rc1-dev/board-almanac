@@ -6,7 +6,7 @@ Speakers are board roles. Read naturally; small slips are fine and test transcri
 
 ---
 
-**President:** Okay, we're recording. Board meeting, eighteenth of June twenty twenty-six. All three of us are here.
+**President:** Okay, we're recording. Board meeting, June eighteenth, twenty twenty-six. All three of us are here.
 
 **Secretary:** Before the pool item, can we talk about barbecues? Two owners asked again about grilling on balconies.
 
@@ -31,5 +31,5 @@ Speakers are board roles. Read naturally; small slips are fine and test transcri
 Expected effect on the almanac:
 
 - Balconies and exterior fixtures: barbecues remain prohibited. A provisional item records the informal support for electric barbecues, citing the recording.
-- Open items: Secretary to ask the insurer about electric barbecues by 31 July 2026, marked provisional (from a recording).
+- Open items: Secretary to ask the insurer about electric barbecues by July 31, 2026, marked provisional (from a recording).
 - Pool hours: still an open conflict. The recording does not resolve it.

@@ -21,9 +21,9 @@ Twenty questions with expected facts, forbidden facts and the source file that m
 
 | Question | Must include | Must not include | Must cite |
 |---|---|---|---|
-| What is the monthly fee now? | EUR 240 | EUR 230, EUR 235 | minutes-2026-01-20 |
-| How many pets can a unit have? | 2 | 15 kg as a current limit | minutes-2025-04-15 |
-| What are the pool hours this season? | Both 22:00 and 21:00, stated as a conflict | A single answer | minutes-2025-09-10 and notice-2026-05-01-pool |
+| What is the monthly fee now? | $240 | $230, $235 | minutes-2026-01-20 |
+| How many pets can a unit have? | 2 | 35 lb as a current limit | minutes-2025-04-15 |
+| What are the pool hours this season? | Both 10:00 p.m. and 9:00 p.m., stated as a conflict | A single answer | minutes-2025-09-10 and notice-2026-05-01-pool |
 | Can I use a barbecue on my balcony? | Still prohibited; electric barbecues discussed, provisional | Allowed | bylaws-house-rules-2019 |
 | Is the gym open on Sundays? | Not covered | Any hours | none |
 

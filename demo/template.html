@@ -202,7 +202,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
   <p class="eyebrow">UGREEN Hackathon 2026 · Skill <code>almanac</code> · Automate Your Workflow</p>
   <h1>Board Almanac</h1>
   <p class="lede">Which rule applies now, since when, and on whose authority?</p>
-  <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behaviour of the <code>almanac</code> Skill on a synthetic archive for a fictional 48-unit building. The Skill runs on a UGREEN AI NAS, and results from the device will follow the hackathon's device testing. The delegation text is quoted from the Skill, and the answers are the reference answers from the validation kit.</span></div>
+  <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behavior of the <code>almanac</code> Skill on a synthetic archive for a fictional 48-unit building. The Skill runs on a UGREEN AI NAS, and results from the device will follow the hackathon's device testing. The delegation text is quoted from the Skill, and the answers are the reference answers from the validation kit.</span></div>
   <div class="links"><a href="https://github.com/rc1-dev/board-almanac" target="_blank" rel="noopener">Source on GitHub</a><span>Board folder: Harbor View Condominium Association, 2019 to 2026</span></div>
 </header>
 
@@ -239,7 +239,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
         <div class="bigstat"><div><b>1</b>new file processed</div><div><b>16</b>unchanged, skipped</div><div><b>0</b>overwritten</div></div>
         <div class="scroll"><table class="inv" id="inv"></table></div></div>
       <div style="display:grid; gap:14px; align-content:start; min-width:0">
-        <div class="sheet pad"><h3>What changed</h3><div class="beforeafter" id="ba"></div><p class="tl-note" style="margin-top:10px">Only Friday and Saturday nights changed. A search that found 23:00 in the newest minutes could easily apply it to every night.</p></div>
+        <div class="sheet pad"><h3>What changed</h3><div class="beforeafter" id="ba"></div><p class="tl-note" style="margin-top:10px">Only Friday and Saturday nights changed. A search that found 11:00 p.m. in the newest minutes could easily apply it to every night.</p></div>
         <div class="sheet pad"><h3>Almanac folder after the run</h3><div class="md" style="padding:0"><table><tr><th>File</th><th>State</th></tr><tr><td class="mono">almanac-2026-11-22-v1.md</td><td>kept, unchanged</td></tr><tr><td class="mono"><b>almanac-2026-11-22-v2.md</b></td><td>new, saved after approval</td></tr></table></div></div>
         <div class="sheet pad"><h3>Changelog v2</h3><div class="md" style="padding:0" id="cl2"></div></div>
       </div>
@@ -247,7 +247,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
   </section>
 
   <section class="panel" id="p-lint" role="tabpanel" hidden>
-    <div class="intro"><div><h2>Lint report</h2><p>Lint reads almanac v2 as of its compile date, 22 Nov 2026, and saves nothing unless asked.</p></div></div>
+    <div class="intro"><div><h2>Lint report</h2><p>Lint reads almanac v2 as of its compile date, Nov 22, 2026, and saves nothing unless asked.</p></div></div>
     <ul class="lint" id="lint"></ul>
   </section>
 </main>
@@ -273,8 +273,8 @@ const STEPS = [
   { t: "Read the current almanac", a: "file-agent", d: 0, r: "No almanac file found in <code>Almanac/</code>. This is a first compile, so every file counts as new. On later runs the whole file is read, or the run stops." },
   { t: "Inventory the board folder", a: "file-agent", d: 1, r: "16 files with type, size, modification time and SHA-256: 15 documents and 1 recording. All new." },
   { t: "Transcribe the recording", a: "knowledge-agent", d: 2, r: "<code>board-meeting-2026-06-18.m4a</code> transcribed. Electric barbecues discussed, no vote: recorded as provisional." },
-  { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first, in two requests: the contract with the contract schema, the rest with the mixed schema. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 15 kg limit for dogs is removed</q></li><li>Fee: EUR 235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
-  { t: "Reconcile", a: "document-agent", d: 4, r: "Documents checked against each other, never against the almanac itself. Disagreements reported, not decided:<ul><li>Fee EUR 230 (notice) vs EUR 225 (minutes): a later document says the notice was in error.</li><li>Pool 22:00 (minutes) vs 21:00 (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
+  { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first, in two requests: the contract with the contract schema, the rest with the mixed schema. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 35-pound limit for dogs is removed</q></li><li>Fee: $235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
+  { t: "Reconcile", a: "document-agent", d: 4, r: "Documents checked against each other, never against the almanac itself. Disagreements reported, not decided:<ul><li>Fee $230 (notice) vs $225 (minutes): a later document says the notice was in error.</li><li>Pool 10:00 p.m. (minutes) vs 9:00 p.m. (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
   { t: "Compile version 1", a: "Skill", d: null, r: "Supersession rules applied topic by topic: 12 topics, 1 correction, 1 open conflict, 1 provisional item, 6 open items." },
   { t: "Review before saving", a: "Skill", d: null, ap: "asks the user", r: "The user sees the At a glance table, every conflict and provisional item, and any topic in full on request; on later runs, each changed rule beside the rule it replaces, with its effective date and quote. Then the file name <code>almanac-2026-11-22-v1.md</code>, and the user confirms." },
   { t: "Prepare the almanac folder", a: "file-agent", d: 5, ap: "approval", r: "<code>Almanac/</code> created inside the board folder, then the file name checked: <code>almanac-2026-11-22-v1.md</code> is free. Nothing else touched." },
@@ -283,32 +283,32 @@ const STEPS = [
 
 // Topic history, newest first. kind: current | superseded | proposed | corrected | failed | conflict | provisional | info | late | partial
 const TOPICS = [
-  { id: "fee", name: "Monthly fee", status: "adopted", glance: "EUR 240 per unit, since 1 Mar 2026",
-    now: "EUR 240 per unit per month, from 1 March 2026.", set: "Board minutes, 20 Jan 2026, carried 3-0",
+  { id: "fee", name: "Monthly fee", status: "adopted", glance: "$240 per unit, since Mar 1, 2026",
+    now: "$240 per unit per month, from March 1, 2026.", set: "Board minutes, Jan 20, 2026, carried 3-0",
     ev: [
-      { d: "2026-03-01", v: "EUR 240", k: "current", s: "minutes-2026-01-20.pdf", q: "the monthly common charge is set at EUR 240 per unit, effective 1 March 2026" },
-      { d: "2025-12", v: "EUR 250?", k: "info", s: "newsletter-2025-12.pdf", q: "Many of you have asked whether charges will rise to EUR 250 next year", n: "A question in a newsletter. Sets nothing." },
-      { d: "2025-03-01", v: "EUR 225", k: "superseded", s: "minutes-2025-01-23.pdf", q: "the monthly common charge is set at EUR 225 per unit, effective 1 March 2025", n: "In force 1 Mar 2025 to 1 Mar 2026." },
-      { d: "2025-02-10", v: "EUR 230", k: "corrected", s: "notice-2025-02-10-fees.pdf", q: "the monthly common charge will be EUR 230 per unit", n: "Corrected in minutes-2025-04-15.docx: “the notice of 10 February 2025 stating EUR 230 was in error”." },
-      { d: "2025-01-23", v: "EUR 235", k: "proposed", s: "agenda-2025-01-23.pdf", q: "proposed monthly common charge of EUR 235", n: "Amended to EUR 225 at the meeting. Never adopted." },
-      { d: "2024-03-01", v: "EUR 210", k: "superseded", s: "minutes-2024-01-18.pdf", q: "the monthly common charge is set at EUR 210 per unit", n: "In force 1 Mar 2024 to 1 Mar 2025." }
+      { d: "2026-03-01", v: "$240", k: "current", s: "minutes-2026-01-20.pdf", q: "the monthly common charge is set at $240 per unit, effective March 1, 2026" },
+      { d: "2025-12", v: "$250?", k: "info", s: "newsletter-2025-12.pdf", q: "Many of you have asked whether charges will rise to $250 next year", n: "A question in a newsletter. Sets nothing." },
+      { d: "2025-03-01", v: "$225", k: "superseded", s: "minutes-2025-01-23.pdf", q: "the monthly common charge is set at $225 per unit, effective March 1, 2025", n: "In force Mar 1, 2025 to Mar 1, 2026." },
+      { d: "2025-02-10", v: "$230", k: "corrected", s: "notice-2025-02-10-fees.pdf", q: "the monthly common charge will be $230 per unit", n: "Corrected in minutes-2025-04-15.docx: “the notice of February 10, 2025 stating $230 was in error”." },
+      { d: "2025-01-23", v: "$235", k: "proposed", s: "agenda-2025-01-23.pdf", q: "proposed monthly common charge of $235", n: "Amended to $225 at the meeting. Never adopted." },
+      { d: "2024-03-01", v: "$210", k: "superseded", s: "minutes-2024-01-18.pdf", q: "the monthly common charge is set at $210 per unit", n: "In force Mar 1, 2024 to Mar 1, 2025." }
     ] },
   { id: "pets", name: "Pets", status: "adopted", glance: "Up to 2 per unit, no weight limit",
-    now: "Up to 2 pets per unit. Registration required. No weight limit.", set: "Board minutes, 15 Apr 2025, carried 3-0",
+    now: "Up to 2 pets per unit. Registration required. No weight limit.", set: "Board minutes, Apr 15, 2025, carried 3-0",
     ev: [
-      { d: "2025-12", v: "“Pets welcome!”", k: "info", s: "newsletter-2025-12.pdf", q: "Holiday party in the community room on 13 December. Pets welcome!", n: "About a party, not the pet rule." },
-      { d: "2025-04-15", v: "Up to 2 pets, no weight limit", k: "current", s: "minutes-2025-04-15.docx", q: "a maximum of two (2) pets; the 15 kg limit for dogs is removed" },
-      { d: "2019-05-01", v: "1 pet, dogs up to 15 kg", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "Each unit may keep one (1) pet. Dogs may not exceed 15 kg." }
+      { d: "2025-12", v: "“Pets welcome!”", k: "info", s: "newsletter-2025-12.pdf", q: "Holiday party in the community room on December 13. Pets welcome!", n: "About a party, not the pet rule." },
+      { d: "2025-04-15", v: "Up to 2 pets, no weight limit", k: "current", s: "minutes-2025-04-15.docx", q: "a maximum of two (2) pets; the 35-pound limit for dogs is removed" },
+      { d: "2019-05-01", v: "1 pet, dogs up to 35 lb", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "Each unit may keep one (1) pet. Dogs may not exceed 35 pounds." }
     ] },
-  { id: "reno", name: "Renovation hours", status: "adopted", glance: "Mon to Fri 08:00 to 17:00, Sat 09:00 to 13:00",
-    now: "Monday to Friday 08:00 to 17:00, Saturday 09:00 to 13:00. No work on Sundays or holidays.", set: "Board minutes, 12 Jun 2024, carried 3-0, effective 15 Jul 2024",
+  { id: "reno", name: "Renovation hours", status: "adopted", glance: "Mon to Fri 8:00 a.m. to 5:00 p.m., Sat 9:00 a.m. to 1:00 p.m.",
+    now: "Monday to Friday 8:00 a.m. to 5:00 p.m., Saturday 9:00 a.m. to 1:00 p.m. No work on Sundays or holidays.", set: "Board minutes, Jun 12, 2024, carried 3-0, effective Jul 15, 2024",
     ev: [
-      { d: "2024-07-15", v: "Saturday 09:00 to 13:00 allowed", k: "current", s: "minutes-2024-06-12.docx", q: "permit renovation work on Saturdays from 09:00 to 13:00, effective 15 July 2024" },
-      { d: "2024-07-01", v: "Notice restates the new hours", k: "info", s: "notice-2024-07-01-renovation-hours.pdf", q: "Saturday 09:00 to 13:00", n: "Agrees with the minutes: evidence, not a new rule." },
-      { d: "2019-05-01", v: "No work on Saturdays", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "No work is permitted on Saturdays, Sundays or public holidays." }
+      { d: "2024-07-15", v: "Saturday 9:00 a.m. to 1:00 p.m. allowed", k: "current", s: "minutes-2024-06-12.docx", q: "permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024" },
+      { d: "2024-07-01", v: "Notice restates the new hours", k: "info", s: "notice-2024-07-01-renovation-hours.pdf", q: "Saturday 9:00 a.m. to 1:00 p.m.", n: "Agrees with the minutes: evidence, not a new rule." },
+      { d: "2019-05-01", v: "No work on Saturdays", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "No work is permitted on Saturdays, Sundays or holidays." }
     ] },
   { id: "balc", name: "Balconies", status: "adopted", glance: "Heat pumps with approval; barbecues prohibited",
-    now: "Fixtures need written board approval. Heat pump units are allowed if floor-mounted and rated 60 dB(A) or less. Barbecues and open flames are prohibited.", set: "Board minutes, 23 Jan 2025, carried 2-1; House Rule 7 (2019)",
+    now: "Fixtures need written board approval. Heat pump units are allowed if floor-mounted and rated 60 dB(A) or less. Barbecues and open flames are prohibited.", set: "Board minutes, Jan 23, 2025, carried 2-1; House Rule 7 (2019)",
     ev: [
       { d: "2026-06-18", v: "Electric barbecues: support, no vote", k: "provisional", s: "board-meeting-2026-06-18.m4a", q: "So we all lean towards allowing electric barbecues. Let's not vote tonight.", n: "From a recording only. Barbecues stay prohibited until minutes adopt a change." },
       { d: "2025-01-23", v: "Heat pumps allowed with conditions", k: "current", s: "minutes-2025-01-23.pdf", q: "floor-mounted and not attached to the railing, and have a rated sound level of no more than 60 dB(A)", n: "Carried 2-1." },
@@ -316,48 +316,48 @@ const TOPICS = [
       { d: "2019-05-01", v: "Approval for fixtures; no barbecues", k: "current", s: "bylaws-house-rules-2019.pdf", q: "Barbecues and open flames are prohibited on balconies." }
     ] },
   { id: "quiet", name: "Quiet hours", status: "adopted", changedIn: "v2",
-    glance: { v1: "22:00 to 07:00 every night", v2: "Fri and Sat 23:00; other nights 22:00" },
-    now: { v1: "22:00 to 07:00 every night.", v2: "Friday and Saturday nights 23:00 to 07:00. All other nights 22:00 to 07:00." },
-    set: { v1: "House Rule 6, 2019", v2: "Board minutes, 15 Sep 2026, carried 3-0, effective 1 Oct 2026 (Fri and Sat); House Rule 6 (other nights)" },
+    glance: { v1: "10:00 p.m. to 7:00 a.m. every night", v2: "Fri and Sat 11:00 p.m.; other nights 10:00 p.m." },
+    now: { v1: "10:00 p.m. to 7:00 a.m. every night.", v2: "Friday and Saturday nights 11:00 p.m. to 7:00 a.m. All other nights 10:00 p.m. to 7:00 a.m." },
+    set: { v1: "House Rule 6, 2019", v2: "Board minutes, Sep 15, 2026, carried 3-0, effective Oct 1, 2026 (Fri and Sat); House Rule 6 (other nights)" },
     ev: [
-      { d: "2026-10-01", v: "Fri and Sat nights 23:00 to 07:00", k: "current", only: "v2", s: "minutes-2026-09-15.docx", q: "quiet hours on Friday and Saturday nights are 23:00 to 07:00. Quiet hours on all other nights remain 22:00 to 07:00" },
-      { d: "2019-05-01", v: "22:00 to 07:00 every night", k: { v1: "current", v2: "partial" }, s: "bylaws-house-rules-2019.pdf", q: "Quiet hours are 22:00 to 07:00 every night.", n: { v2: "Replaced for Friday and Saturday nights only. Still the rule on other nights." } }
+      { d: "2026-10-01", v: "Fri and Sat nights 11:00 p.m. to 7:00 a.m.", k: "current", only: "v2", s: "minutes-2026-09-15.docx", q: "quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m. Quiet hours on all other nights remain 10:00 p.m. to 7:00 a.m." },
+      { d: "2019-05-01", v: "10:00 p.m. to 7:00 a.m. every night", k: { v1: "current", v2: "partial" }, s: "bylaws-house-rules-2019.pdf", q: "Quiet hours are 10:00 p.m. to 7:00 a.m. every night.", n: { v2: "Replaced for Friday and Saturday nights only. Still the rule on other nights." } }
     ] },
   { id: "lease", name: "Rentals and leasing", status: "adopted", glance: "Minimum lease 30 days",
-    now: "Minimum lease term 30 days.", set: "Board minutes, 15 Apr 2025, carried 2-1",
+    now: "Minimum lease term 30 days.", set: "Board minutes, Apr 15, 2025, carried 2-1",
     ev: [
       { d: "2025-04-15", v: "Minimum 30 days", k: "current", s: "minutes-2025-04-15.docx", q: "the minimum lease term is thirty (30) days", n: "Carried 2-1." },
       { d: "2025-04-15", v: "Leases of 7 days", k: "failed", s: "minutes-2025-04-15.docx", q: "permit leases of seven (7) days or more. Motion failed 1-2." },
       { d: "2019-05-01", v: "Minimum 6 months", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "a term of less than six (6) months" }
     ] },
   { id: "park", name: "Parking", status: "adopted", glance: "Guest parking up to 48 hours",
-    now: "One assigned space per unit. Guest vehicles up to 48 hours.", set: "Board minutes, 10 Sep 2025, carried 3-0, effective 1 Oct 2025",
+    now: "One assigned space per unit. Guest vehicles up to 48 hours.", set: "Board minutes, Sep 10, 2025, carried 3-0, effective Oct 1, 2025",
     ev: [
-      { d: "2025-10-01", v: "Guests up to 48 hours", k: "current", s: "minutes-2025-09-10.pdf", q: "no more than 48 hours. Effective 1 October 2025" },
+      { d: "2025-10-01", v: "Guests up to 48 hours", k: "current", s: "minutes-2025-09-10.pdf", q: "no more than 48 hours. Effective October 1, 2025" },
       { d: "2019-05-01", v: "Guests up to 72 hours", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "no more than 72 hours" }
     ] },
   { id: "ev", name: "EV charging", status: "adopted", glance: "In assigned space, with approval",
-    now: "Owners may install a charger in their assigned space with written board approval, installed by a licensed electrician at their own cost.", set: "Board minutes, 20 Jan 2026, carried 3-0",
+    now: "Owners may install a charger in their assigned space with written board approval, installed by a licensed electrician at their own cost.", set: "Board minutes, Jan 20, 2026, carried 3-0",
     ev: [ { d: "2026-01-20", v: "Allowed with approval", k: "current", s: "minutes-2026-01-20.pdf", q: "with written board approval, installed by a licensed electrician at the owner's cost" } ] },
-  { id: "pool", name: "Pool hours", status: "conflict", glance: "22:00 or 21:00 closing? Documents disagree",
-    now: "The documents disagree on 2026 pool hours: 08:00 to 22:00 in the board minutes, 08:00 to 21:00 in the notice.", set: "Open conflict. The almanac quotes both and does not pick one.",
+  { id: "pool", name: "Pool hours", status: "conflict", glance: "10:00 p.m. or 9:00 p.m. closing? Documents disagree",
+    now: "The documents disagree on 2026 pool hours: 8:00 a.m. to 10:00 p.m. in the board minutes, 8:00 a.m. to 9:00 p.m. in the notice.", set: "Open conflict. The almanac quotes both and does not pick one.",
     ev: [
       { d: "2026-06-18", v: "Raised, not resolved", k: "info", s: "board-meeting-2026-06-18.m4a", q: "Someone said the notice says nine pm, but I thought we said ten." },
-      { d: "2026-05-01", v: "08:00 to 21:00", k: "conflict", s: "notice-2026-05-01-pool.pdf", q: "Hours: 08:00 to 21:00 daily." },
-      { d: "2025-09-10", v: "08:00 to 22:00 for 2026", k: "conflict", s: "minutes-2025-09-10.pdf", q: "for the 2026 season the pool is open 08:00 to 22:00 daily", n: "Carried 3-0." },
-      { d: "2019-05-01", v: "09:00 to 21:00", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "The pool is open 09:00 to 21:00 daily during the season", n: "Through the 2025 season." }
+      { d: "2026-05-01", v: "8:00 a.m. to 9:00 p.m.", k: "conflict", s: "notice-2026-05-01-pool.pdf", q: "Hours: 8:00 a.m. to 9:00 p.m. daily." },
+      { d: "2025-09-10", v: "8:00 a.m. to 10:00 p.m. for 2026", k: "conflict", s: "minutes-2025-09-10.pdf", q: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily", n: "Carried 3-0." },
+      { d: "2019-05-01", v: "9:00 a.m. to 9:00 p.m.", k: "superseded", s: "bylaws-house-rules-2019.pdf", q: "The pool is open 9:00 a.m. to 9:00 p.m. daily during the season", n: "Through the 2025 season." }
     ] },
   { id: "land", name: "Landscaping contract", status: "adopted", glance: "Non-renewal notice sent 3 days late",
-    now: "Bramblewick Grounds, EUR 1,450 per month. Renews for a year unless notice is given 60 days before the term ends; renewal increase capped at 4%.", set: "Contract signed 25 Jan 2024; awarded in minutes of 18 Jan 2024, 3-0",
+    now: "Bramblewick Grounds, $1,450 per month. Renews for a year unless notice is given 60 days before the term ends; renewal increase capped at 4%.", set: "Contract signed Jan 25, 2024; awarded in minutes of Jan 18, 2024, 3-0",
     ev: [
-      { d: "2026-02-02", v: "Non-renewal notice sent", k: "late", s: "email-2026-02-02-landscaping.txt", q: "will not renew the Landscaping Services Agreement that ends on 31 March 2026", n: "Due 30 Jan 2026. Whether the contract renewed is for the board to check; the Skill does not judge it." },
-      { d: "2025-09-10", v: "Decision: do not renew", k: "info", s: "minutes-2025-09-10.pdf", q: "The Secretary is to send written notice of non-renewal by 30 January 2026." },
+      { d: "2026-02-02", v: "Non-renewal notice sent", k: "late", s: "email-2026-02-02-landscaping.txt", q: "will not renew the Landscaping Services Agreement that ends on March 31, 2026", n: "Due Jan 30, 2026. Whether the contract renewed is for the board to check; the Skill does not judge it." },
+      { d: "2025-09-10", v: "Decision: do not renew", k: "info", s: "minutes-2025-09-10.pdf", q: "The Secretary is to send written notice of non-renewal by January 30, 2026." },
       { d: "2024-01-25", v: "Contract terms", k: "current", s: "contract-bramblewick-landscaping-2024.pdf", q: "at least sixty (60) days before the end of the current term … no more than four percent (4%)" }
     ] },
   { id: "gov", name: "Officers and governance", status: "adopted", glance: "Bylaws 2/3 of owners; house rules board majority",
-    now: "Bylaws change only by a two-thirds vote of owners. House rules change by a board majority. A new Treasurer was appointed on 10 Sep 2025.", set: "Bylaws Article 1 and 3 (2019); minutes of 10 Sep 2025",
+    now: "Bylaws change only by a two-thirds vote of owners. House rules change by a board majority. A new Treasurer was appointed on Sep 10, 2025.", set: "Bylaws Article 1 and 3 (2019); minutes of Sep 10, 2025",
     ev: [
-      { d: "2025-09-10", v: "New Treasurer appointed", k: "current", s: "minutes-2025-09-10.pdf", q: "The board appointed a new Treasurer to serve until the next general meeting." },
+      { d: "2025-09-10", v: "New Treasurer appointed", k: "current", s: "minutes-2025-09-10.pdf", q: "The board appointed a new Treasurer to serve until the next annual meeting." },
       { d: "2019-05-01", v: "Amendment thresholds", k: "current", s: "bylaws-house-rules-2019.pdf", q: "may be amended only by a two-thirds (2/3) vote of unit owners … by a majority vote of the board" }
     ] }
 ];
@@ -365,13 +365,13 @@ const TOPICS = [
 const KIND = { current: "in force", superseded: "replaced", proposed: "proposed, not adopted", corrected: "error, corrected", failed: "motion failed", conflict: "conflict", provisional: "provisional", info: "informational", late: "late", partial: "replaced in part" };
 
 const LINT = [
-  { c: "conflict", k: "Open conflict", t: "Pool hours for 2026: 22:00 or 21:00?", s: "minutes-2025-09-10.pdf says 08:00 to 22:00; notice-2026-05-01-pool.pdf says 08:00 to 21:00. No later document explains the difference." },
-  { c: "late", k: "Late action", t: "Landscaping non-renewal notice sent after the deadline", s: "Due 30 Jan 2026 (minutes-2025-09-10.pdf, contract clause 3); sent 2 Feb 2026 (email-2026-02-02-landscaping.txt). The agreement may have renewed to 31 Mar 2027." },
-  { c: "deadline", k: "Deadline within 90 days", t: "If the contract renewed, the next notice is due 30 Jan 2027", s: "69 days after the compile date. Renewal increase capped at 4%." },
+  { c: "conflict", k: "Open conflict", t: "Pool hours for 2026: 10:00 p.m. or 9:00 p.m.?", s: "minutes-2025-09-10.pdf says 8:00 a.m. to 10:00 p.m.; notice-2026-05-01-pool.pdf says 8:00 a.m. to 9:00 p.m. No later document explains the difference." },
+  { c: "late", k: "Late action", t: "Landscaping non-renewal notice sent after the deadline", s: "Due Jan 30, 2026 (minutes-2025-09-10.pdf, contract clause 3); sent Feb 2, 2026 (email-2026-02-02-landscaping.txt). The agreement may have renewed to Mar 31, 2027." },
+  { c: "deadline", k: "Deadline within 90 days", t: "If the contract renewed, the next notice is due Jan 30, 2027", s: "69 days after the compile date. Renewal increase capped at 4%." },
   { c: "provisional", k: "Provisional", t: "Electric barbecues: discussed, never voted", s: "From board-meeting-2026-06-18.m4a only. The September minutes do not mention it. Barbecues remain prohibited." },
-  { c: "overdue", k: "Overdue, provisional", t: "Ask the insurer about electric barbecues", s: "Secretary, due 31 Jul 2026, from the recording. No document shows it done." },
-  { c: "overdue", k: "Overdue", t: "Send the 2024 budget to owners", s: "Treasurer, due 15 Feb 2024 (minutes-2024-01-18.pdf). No document shows it done." },
-  { c: "info", k: "Checked, nothing found", t: "No files changed since v2; no failed files; no rule changes take effect in the next 90 days", s: "Quiet-hours change took effect 1 Oct 2026." }
+  { c: "overdue", k: "Overdue, provisional", t: "Ask the insurer about electric barbecues", s: "Secretary, due Jul 31, 2026, from the recording. No document shows it done." },
+  { c: "overdue", k: "Overdue", t: "Send the 2024 budget to owners", s: "Treasurer, due Feb 15, 2024 (minutes-2024-01-18.pdf). No document shows it done." },
+  { c: "info", k: "Checked, nothing found", t: "No files changed since v2; no failed files; no rule changes take effect in the next 90 days", s: "Quiet-hours change took effect Oct 1, 2026." }
 ];
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -499,11 +499,11 @@ function md(src) {
 /* Ask */
 const COMPARE = ["Q1", "Q3", "Q7", "Q16", "Q17"];
 const RAWNOTES = {
-  Q1: ["Gives EUR 230, from a notice the board later corrected", "Misses the current fee, EUR 240", "Does not cite the minutes that set it"],
-  Q3: ["Gives the 2019 rule, replaced on 15 Apr 2025", "Misses the current rule: 2 pets, no weight limit"],
-  Q7: ["Gives one side of an open conflict as if it were settled", "Misses the 22:00 closing set in the board minutes"],
+  Q1: ["Gives $230, from a notice the board later corrected", "Misses the current fee, $240", "Does not cite the minutes that set it"],
+  Q3: ["Gives the 2019 rule, replaced on Apr 15, 2025", "Misses the current rule: 2 pets, no weight limit"],
+  Q7: ["Gives one side of an open conflict as if it were settled", "Misses the 10:00 p.m. closing set in the board minutes"],
   Q16: ["Invents hours: no document mentions a gym", "Should say the documents do not cover it"],
-  Q17: ["Treats an agenda proposal as a decision", "Misses EUR 225, the amount actually adopted"]
+  Q17: ["Treats an agenda proposal as a decision", "Misses $225, the amount actually adopted"]
 };
 function friendly(p) {
   if (p.startsWith("no citation:")) return "Does not cite " + p.slice(13).split(" | ")[0];
@@ -532,7 +532,7 @@ document.addEventListener("click", e => { const b = e.target.closest("[data-q]")
 function renderUpdate() {
   $("#inv").innerHTML = "<tr><th>File</th><th>Ledger</th></tr>" + DATA.files.map(f =>
     `<tr class="${f.phase === 2 ? "new" : ""}"><td class="f">${esc(f.name)}</td><td>${f.phase === 2 ? "new: extract" : "unchanged: skip"}</td></tr>`).join("");
-  $("#ba").innerHTML = `<div><div class="lbl">v1</div><div>Every night 22:00 to 07:00</div></div><div><div class="lbl">v2</div><div><b>Fri and Sat nights 23:00 to 07:00</b><br>Other nights 22:00 to 07:00</div></div>`;
+  $("#ba").innerHTML = `<div><div class="lbl">v1</div><div>Every night 10:00 p.m. to 7:00 a.m.</div></div><div><div class="lbl">v2</div><div><b>Fri and Sat nights 11:00 p.m. to 7:00 a.m.</b><br>Other nights 10:00 p.m. to 7:00 a.m.</div></div>`;
   const v2 = DATA.almanac.v2;
   const cl = v2.slice(v2.indexOf("## v2")); $("#cl2").innerHTML = md(cl.slice(0, cl.indexOf("## v1")).replace("## v2", ""));
 }

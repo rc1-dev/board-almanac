@@ -36,7 +36,7 @@ Use the document date and effective date, never the file modification date. The 
 
 ## 4. Corrections
 
-If a later adopted document says an earlier statement was an error (for example, "the February notice stating EUR 230 was in error; the adopted fee is EUR 225"), record the corrected value as current for that period, keep the erroneous statement in Superseded marked "corrected", and close any conflict it caused.
+If a later adopted document says an earlier statement was an error (for example, "the February notice stating $230 was in error; the adopted fee is $225"), record the corrected value as current for that period, keep the erroneous statement in Superseded marked "corrected", and close any conflict it caused.
 
 ## 5. Failed and proposed motions
 

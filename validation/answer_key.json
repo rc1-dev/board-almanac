@@ -50,8 +50,8 @@
     [
      "no weight limit",
      "limit (was|is|has been) removed",
-     "removed the 15 ?kg",
-     "15 ?kg limit[^.]{0,30}removed"
+     "removed the 35[- ]?(lb|pound)",
+     "35[- ]?(lb|pound)s? limit[^.]{0,30}removed"
     ]
    ],
    "must_not_include": [],
@@ -67,12 +67,12 @@
    "question": "Can I do renovation work on a Saturday?",
    "must_include": [
     [
-     "09:00",
-     "\\b9 ?(am|a\\.m\\.)"
+     "\\b9(:00)? ?(am|a\\.m\\.)",
+     "09:00"
     ],
     [
-     "13:00",
-     "\\b1 ?(pm|p\\.m\\.)"
+     "\\b1(:00)? ?(pm|p\\.m\\.)",
+     "13:00"
     ]
    ],
    "must_not_include": [
@@ -141,12 +141,12 @@
    "question": "What are the pool hours this season?",
    "must_include": [
     [
-     "22:00",
-     "\\b10 ?(pm|p\\.m\\.)"
+     "\\b10(:00)? ?(pm|p\\.m\\.)",
+     "22:00"
     ],
     [
-     "21:00",
-     "\\b9 ?(pm|p\\.m\\.)"
+     "\\b9(:00)? ?(pm|p\\.m\\.)",
+     "21:00"
     ],
     [
      "conflict",
@@ -189,8 +189,8 @@
    "question": "When do quiet hours start on Saturday nights?",
    "must_include": [
     [
-     "23:00",
-     "\\b11 ?(pm|p\\.m\\.)"
+     "\\b11(:00)? ?(pm|p\\.m\\.)",
+     "23:00"
     ]
    ],
    "must_not_include": [],
@@ -206,12 +206,12 @@
    "question": "When do quiet hours start on a Tuesday night?",
    "must_include": [
     [
-     "22:00",
-     "\\b10 ?(pm|p\\.m\\.)"
+     "\\b10(:00)? ?(pm|p\\.m\\.)",
+     "22:00"
     ]
    ],
    "must_not_include": [
-    "tuesday[^.]{0,40}23:00"
+    "tuesday[^.]{0,40}(23:00|\\b11(:00)? ?p)"
    ],
    "must_cite": [
     [
@@ -357,7 +357,7 @@
   {
    "id": "Q17",
    "phase": "initial",
-   "question": "Was the EUR 235 monthly charge ever adopted?",
+   "question": "Was the $235 monthly charge ever adopted?",
    "must_include": [
     [
      "not adopted",

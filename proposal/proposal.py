@@ -45,7 +45,7 @@ ITEMS = [
         "SKILL.md and six references are complete and pass the official checker (catalog 2.0.0) without errors or warnings. A synthetic archive, answer key and scorer are ready; runtime accuracy and timing await NAS testing.",
     ]),
     ("9. Validation plan", [
-        "Core case 1, supersession: the fee and pet-rule answers give EUR 240 and two pets with dates, votes and citations, never the EUR 235 proposal or the erroneous EUR 230 notice.",
+        "Core case 1, supersession: the fee and pet-rule answers give $240 and two pets with dates, votes and citations, never the $235 proposal or the erroneous $230 notice.",
         "Core case 2, answering from the almanac: a heat-pump question returns the conditions, 2-1 vote and version; a gym question is reported as not covered.",
         "Edge case: after minutes changing only weekend quiet hours are added, the recompile processes that file alone and keeps every other rule and the open pool conflict. All 20 questions also go to plain file chat.",
     ]),

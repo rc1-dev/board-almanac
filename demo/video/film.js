@@ -80,73 +80,58 @@ const shots = [];
     <div>Later decisions replace earlier ones, notices contain errors, and deadlines are missed.</div>
     <div>A search returns every version and leaves the reader to decide which one applies.</div></div>`, 9);
 
-  // 2. Folder
+  // 2. Outcome first: one fee, three figures
   await open("folder"); await toPanel(-8);
-  await cue("The board folder holds 16 files from 2019 to 2026, including bylaws, minutes, notices, a contract, an email and a meeting recording.", 6);
   await p.evaluate(() => window.demo.selectFile("notice-2025-02-10-fees.pdf"));
-  await cue("This notice states a fee of EUR 230. The fee the board adopted was EUR 225.", 6);
-  await p.evaluate(() => window.demo.selectFile("notice-2026-05-01-pool.pdf"));
-  await cue("This notice gives the pool closing time as 21:00. The board minutes say 22:00.", 5.5);
-  await p.evaluate(() => window.demo.selectFile("board-meeting-2026-06-18.m4a"));
-  await cue("This recording captures a discussion that ended without a vote, so it cannot change a rule.", 5);
-
-  // 3. Compile
-  await p.evaluate(() => window.demo.go("compile")); await toPanel(-8);
-  await p.evaluate(() => window.demo.run(0, -1));
-  await cue("Compiling version 1. The Skill delegates every step to the UGOS agents.", 6);
-  const stepCaps = [
-    "Step 1. The Skill looks for a previous almanac. None exists, so this is a first compile.",
-    "Step 2. The folder is inventoried with checksums, which makes later compiles incremental.",
-    "Step 3. The recording is transcribed on the NAS. Anything decided only there is marked provisional.",
-    "Step 4. Decisions are extracted, each with a quotation and its source file.",
-    "Step 5. The sources are reconciled, and disagreements are reported for the board to resolve.",
-    "Step 6. The supersession rules are applied topic by topic.",
-    "Step 7. The user reviews each changed rule and its quotation before anything is saved.",
-    "Step 8. The almanac folder is created with the user's approval.",
-    "Step 9. Version 1 is saved, then read back to confirm it is complete."
-  ];
-  for (let i = 0; i < 9; i++) {
-    await p.evaluate(i => window.demo.run(i + 1, i), i);
-    await scrollTo(`#run > li:nth-child(${i + 1})`, 120);
-    await cue(stepCaps[i], i === 3 || i === 4 ? 5 : 4);
-    if (i === 3) {
-      await p.evaluate(() => { document.querySelector("#run > li:nth-child(4) details").open = true; });
-      await scrollTo("#run > li:nth-child(4) details", 60);
-      await cue("The delegation text is quoted directly from SKILL.md.", 5.5);
-    }
-  }
-
-  // 4. Almanac
+  await cue("This board's documents give three different monthly fees: $230 in a notice, $235 on an agenda and $240 in the latest minutes.", 7);
   await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v1", true); window.demo.topic("fee"); });
   await toPanel(-8);
-  await cue("Each topic shows the documented rule, its source and quotation, and every rule it replaced.", 6);
+  await cue("Almanac records which one is in force, who set it and when, quoting the minutes.", 6);
   await scrollTo("#topic .timeline", 20);
-  await cue("EUR 235 was proposed but never adopted, and the EUR 230 notice was corrected. EUR 240 has applied since March 2026.", 7.5);
-  await p.evaluate(() => window.demo.topic("pool")); await toPanel(-8);
-  await cue("Where documents disagree and nothing resolves the difference, the almanac quotes both.", 6);
-  await p.evaluate(() => { document.querySelector("details.mdfile").open = true; });
-  await scrollTo("details.mdfile", 10);
-  await cue("The almanac is a plain Markdown file on the NAS, readable without any special software.", 5);
-
-  // 5. Ask
+  await cue("The $235 proposal was never adopted, and the $230 notice was corrected by the board. $240 has applied since March 1, 2026.", 7.5);
   await p.evaluate(() => { window.demo.go("ask"); window.demo.ask("Q1"); }); await toPanel(-8);
-  await cue("Answers come from the almanac and cite the source file and almanac version.", 6);
-  await cue("A search of the raw folder can return the wrong notice. Both answers are scored with the same answer key.", 6);
-  await p.evaluate(() => window.demo.ask("Q5"));
+  await cue("Questions are answered from the almanac. A search of the raw folder can return the corrected notice instead.", 7);
+
+  // 3. A change that applies to part of a rule
+  await p.evaluate(() => window.demo.go("update")); await toPanel(-8);
+  await cue("New minutes change quiet hours on Friday and Saturday nights only. The next compile processes that file and skips the 16 unchanged ones.", 7);
+  await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v2", true); window.demo.topic("quiet"); }); await toPanel(-8);
+  await cue("Version 2 applies 11:00 p.m. to those two nights and keeps 10:00 p.m. for every other night, with the earlier rule recorded.", 7);
+
+  // 4. A disagreement the documents do not resolve
+  await p.evaluate(() => window.demo.topic("pool")); await toPanel(-8);
+  await cue("When documents disagree and nothing resolves it, the almanac quotes both and leaves the decision to the board.", 6.5);
+
+  // 5. How it works
+  await p.evaluate(() => window.demo.go("folder")); await toPanel(-8);
+  await p.evaluate(() => window.demo.selectFile("board-meeting-2026-06-18.m4a"));
+  await cue("The test archive holds 16 files from 2019 to 2026, including a meeting recording that ended without a vote.", 6);
+  await p.evaluate(() => window.demo.go("compile")); await toPanel(-8);
+  await p.evaluate(() => window.demo.run(0, -1));
+  await cue("Each compile is carried out by the UGOS agents on the NAS. The Skill delegates every step.", 6);
+  const stepCaps = {
+    1: "The folder is inventoried with checksums, so later compiles process only new or changed files.",
+    3: "Decisions are extracted with a quotation and source file. A recording can only create provisional items.",
+    4: "Sources are reconciled against each other, and disagreements are reported for the board to resolve.",
+    6: "The user reviews each changed rule and its quotation before anything is saved.",
+    8: "The new version is saved beside the old one and read back to confirm it is complete."
+  };
+  for (const i of [1, 3, 4, 6, 8]) {
+    await p.evaluate(i => window.demo.run(i + 1, i), i);
+    await scrollTo(`#run > li:nth-child(${i + 1})`, 120);
+    await cue(stepCaps[i], 5);
+  }
+
+  // 6. More answers and the lint report
+  await p.evaluate(() => { window.demo.go("ask"); window.demo.ask("Q5"); }); await toPanel(-8);
   await cue("The heat-pump answer gives the conditions, the vote and the date.", 5);
   await p.evaluate(() => window.demo.ask("Q16"));
   await cue("When the documents do not cover a question, the answer says so.", 5);
-
-  // 6. Update
-  await p.evaluate(() => window.demo.go("update")); await toPanel(-8);
-  await cue("New minutes arrive. The next compile processes the new file and skips the 16 unchanged ones.", 6);
-  await cue("Only Friday and Saturday quiet hours changed. Version 2 is saved beside version 1.", 6.5);
-  await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v2", true); window.demo.topic("quiet"); }); await toPanel(-8);
-  await cue("The history shows what was replaced and what still applies on other nights.", 5.5);
-
-  // 7. Lint
   await p.evaluate(() => window.demo.go("lint")); await toPanel(-8);
   await cue("Lint lists what needs attention: an open conflict, a late contract notice, a deadline in 69 days and items that were never voted on.", 7.5);
+  await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v2", true); window.demo.topic("fee"); document.querySelector("details.mdfile").open = true; });
+  await scrollTo("details.mdfile", 10);
+  await cue("The almanac itself is a plain Markdown file on the NAS, readable without any special software.", 5);
 
   // 8. Close
   await cardShot(`<div class="eyebrow">UGREEN Hackathon 2026 · Skill: almanac</div><h1>Board Almanac</h1>

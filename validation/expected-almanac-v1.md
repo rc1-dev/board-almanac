@@ -15,32 +15,32 @@ Model route: NAS local model
 
 | Topic | Current rule | Since | Status |
 |---|---|---|---|
-| Monthly fee and budget | EUR 240 per unit per month | 2026-03-01 | adopted |
+| Monthly fee and budget | $240 per unit per month | 2026-03-01 | adopted |
 | Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | adopted |
-| Renovations and work hours | Mon to Fri 08:00 to 17:00, Sat 09:00 to 13:00, no Sun or holidays | 2024-07-15 | adopted |
+| Renovations and work hours | Mon to Fri 8:00 a.m. to 5:00 p.m., Sat 9:00 a.m. to 1:00 p.m., no Sun or holidays | 2024-07-15 | adopted |
 | Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited (electric barbecues discussed, provisional) | 2025-01-23 | adopted |
-| Quiet hours | 22:00 to 07:00 every night | 2019-05-01 | adopted |
+| Quiet hours | 10:00 p.m. to 7:00 a.m. every night | 2019-05-01 | adopted |
 | Rentals and leasing | Minimum lease 30 days | 2025-04-15 | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | adopted |
 | Electric vehicle charging | Allowed in assigned space with approval and licensed electrician | 2026-01-20 (decision date) | adopted |
-| Pool and amenities | 08:00 to 22:00 or 08:00 to 21:00 for 2026 | 2026 season | conflict |
-| Vendor contracts | Landscaping: Bramblewick Grounds, EUR 1,450 per month, 4% renewal cap, non-renewal notice sent late | 2024-04-01 | adopted |
+| Pool and amenities | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. for 2026 | 2026 season | conflict |
+| Vendor contracts | Landscaping: Bramblewick Grounds, $1,450 per month, 4% renewal cap, non-renewal notice sent late | 2024-04-01 | adopted |
 | Officers and elections | Board of President, Treasurer, Secretary; Treasurer replaced 2025-09-10 | 2025-09-10 | adopted |
 | Governance and amendments | Bylaws: 2/3 of owners. House rules: board majority | 2019-05-01 | adopted |
 
 ## Monthly fee and budget
 
-Current rule: EUR 240 per unit per month.
+Current rule: $240 per unit per month.
 Effective: 2026-03-01
 Set by: Board meeting minutes, 2026-01-20, motion carried 3-0
-Evidence: minutes-2026-01-20.pdf: "the monthly common charge is set at EUR 240 per unit, effective 1 March 2026"
+Evidence: minutes-2026-01-20.pdf: "the monthly common charge is set at $240 per unit, effective March 1, 2026"
 
 Superseded:
-- 2025-03-01 to 2026-03-01: EUR 225. Source: minutes-2025-01-23.pdf: "the monthly common charge is set at EUR 225 per unit, effective 1 March 2025" (3-0)
-- 2024-03-01 to 2025-03-01: EUR 210. Source: minutes-2024-01-18.pdf (3-0)
-- Proposed, not adopted: EUR 235. Source: agenda-2025-01-23.pdf; amended in minutes-2025-01-23.pdf
-- Corrected: EUR 230 stated in notice-2025-02-10-fees.pdf. Source of correction: minutes-2025-04-15.docx: "the notice of 10 February 2025 stating EUR 230 was in error. The adopted charge is EUR 225"
-- Informational, not a rule: newsletter-2025-12.pdf mentions owners asking about EUR 250
+- 2025-03-01 to 2026-03-01: $225. Source: minutes-2025-01-23.pdf: "the monthly common charge is set at $225 per unit, effective March 1, 2025" (3-0)
+- 2024-03-01 to 2025-03-01: $210. Source: minutes-2024-01-18.pdf (3-0)
+- Proposed, not adopted: $235. Source: agenda-2025-01-23.pdf; amended in minutes-2025-01-23.pdf
+- Corrected: $230 stated in notice-2025-02-10-fees.pdf. Source of correction: minutes-2025-04-15.docx: "the notice of February 10, 2025 stating $230 was in error. The adopted charge is $225"
+- Informational, not a rule: newsletter-2025-12.pdf mentions owners asking about $250
 
 Open conflicts: none
 Provisional: none
@@ -50,20 +50,20 @@ Provisional: none
 Current rule: Up to 2 pets per unit. Registration with management is required. No weight limit.
 Effective: 2025-04-15
 Set by: Board meeting minutes, 2025-04-15, motion carried 3-0
-Evidence: minutes-2025-04-15.docx: "a maximum of two (2) pets; the 15 kg limit for dogs is removed"
+Evidence: minutes-2025-04-15.docx: "a maximum of two (2) pets; the 35-pound limit for dogs is removed"
 
 Superseded:
-- 2019-05-01 to 2025-04-15: One pet per unit, dogs up to 15 kg. Source: bylaws-house-rules-2019.pdf, Rule 4
+- 2019-05-01 to 2025-04-15: One pet per unit, dogs up to 35 lb. Source: bylaws-house-rules-2019.pdf, Rule 4
 
 Open conflicts: none (newsletter-2025-12.pdf "Pets welcome!" refers to a party, not to the rule)
 Provisional: none
 
 ## Renovations and work hours
 
-Current rule: Monday to Friday 08:00 to 17:00; Saturday 09:00 to 13:00; no work on Sundays or public holidays.
+Current rule: Monday to Friday 8:00 a.m. to 5:00 p.m.; Saturday 9:00 a.m. to 1:00 p.m.; no work on Sundays or holidays.
 Effective: 2024-07-15
 Set by: Board meeting minutes, 2024-06-12, motion carried 3-0; restated in notice-2024-07-01-renovation-hours.pdf
-Evidence: minutes-2024-06-12.docx: "permit renovation work on Saturdays from 09:00 to 13:00, effective 15 July 2024"
+Evidence: minutes-2024-06-12.docx: "permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024"
 
 Superseded:
 - 2019-05-01 to 2024-07-15: No work on Saturdays. Source: bylaws-house-rules-2019.pdf, Rule 5
@@ -83,10 +83,10 @@ Provisional:
 
 ## Quiet hours
 
-Current rule: 22:00 to 07:00 every night.
+Current rule: 10:00 p.m. to 7:00 a.m. every night.
 Effective: 2019-05-01
 Set by: bylaws-house-rules-2019.pdf, Rule 6
-Evidence: "Quiet hours are 22:00 to 07:00 every night"
+Evidence: "Quiet hours are 10:00 p.m. to 7:00 a.m. every night"
 
 ## Rentals and leasing
 
@@ -104,7 +104,7 @@ Superseded:
 Current rule: One assigned space per unit. Guest vehicles up to 48 hours.
 Effective: 2025-10-01
 Set by: Board meeting minutes, 2025-09-10, motion carried 3-0
-Evidence: minutes-2025-09-10.pdf: "no more than 48 hours. Effective 1 October 2025"
+Evidence: minutes-2025-09-10.pdf: "no more than 48 hours. Effective October 1, 2025"
 
 Superseded:
 - 2019-05-01 to 2025-10-01: Guest parking up to 72 hours. Source: bylaws-house-rules-2019.pdf, Rule 9
@@ -118,33 +118,33 @@ Evidence: minutes-2026-01-20.pdf: "with written board approval, installed by a l
 
 ## Pool and amenities
 
-Current rule: The documents disagree on 2026 pool hours: 08:00 to 22:00 (board minutes) or 08:00 to 21:00 (notice).
+Current rule: The documents disagree on 2026 pool hours: 8:00 a.m. to 10:00 p.m. (board minutes) or 8:00 a.m. to 9:00 p.m. (notice).
 Effective: 2026 season
 Set by: see conflict
 
 Superseded:
-- Up to the 2025 season: 09:00 to 21:00, 1 June to 15 September. Source: bylaws-house-rules-2019.pdf, Rule 10
+- Up to the 2025 season: 9:00 a.m. to 9:00 p.m., June 1 to September 15. Source: bylaws-house-rules-2019.pdf, Rule 10
 
 Open conflicts:
-- minutes-2025-09-10.pdf (2025-09-10): "for the 2026 season the pool is open 08:00 to 22:00 daily" (3-0)
-- notice-2026-05-01-pool.pdf (2026-05-01): "Hours: 08:00 to 21:00 daily"
+- minutes-2025-09-10.pdf (2025-09-10): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily" (3-0)
+- notice-2026-05-01-pool.pdf (2026-05-01): "Hours: 8:00 a.m. to 9:00 p.m. daily"
   No later document explains the difference.
 
 ## Vendor contracts
 
-Current rule: Landscaping by Bramblewick Grounds Ltd, EUR 1,450 per month, term 2024-04-01 to 2026-03-31, renews for one year unless notice is given at least 60 days before the end of the term; price increase on renewal capped at 4%.
+Current rule: Landscaping by Bramblewick Grounds LLC, $1,450 per month, term 2024-04-01 to 2026-03-31, renews for one year unless notice is given at least 60 days before the end of the term; price increase on renewal capped at 4%.
 Set by: contract-bramblewick-landscaping-2024.pdf; awarded in minutes-2024-01-18.pdf (3-0)
 Evidence: contract: "at least sixty (60) days before the end of the current term"; "no more than four percent (4%)"
 Decision: not to renew, minutes-2025-09-10.pdf (3-0). Notice sent 2026-02-02 (email-2026-02-02-landscaping.txt), after the 2026-01-30 due date. Whether the agreement renewed is not decided here.
 
 ## Officers and elections
 
-Current rule: Board of three: President, Treasurer, Secretary; quorum two. A new Treasurer was appointed on 2025-09-10 to serve until the next general meeting.
+Current rule: Board of three: President, Treasurer, Secretary; quorum two. A new Treasurer was appointed on 2025-09-10 to serve until the next annual meeting.
 Set by: bylaws-house-rules-2019.pdf, Article 1; minutes-2025-09-10.pdf (3-0)
 
 ## Governance and amendments
 
-Current rule: Bylaws (Part A) are amended only by a two-thirds vote of unit owners at a general meeting. House rules (Part B) are amended by a majority vote of the board.
+Current rule: Bylaws (Part A) are amended only by a two-thirds vote of unit owners at an annual meeting. House rules (Part B) are amended by a majority vote of the board.
 Set by: bylaws-house-rules-2019.pdf, Article 3
 
 ## Open items
@@ -184,7 +184,7 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 ## v1
 - First compile. Processed 16 files (15 documents, 1 recording).
 - 12 topics compiled. 1 open conflict: Pool hours for 2026.
-- 1 correction applied: the EUR 230 notice of 2025-02-10.
+- 1 correction applied: the $230 notice of 2025-02-10.
 - 1 provisional item: electric barbecues, from the June 2026 recording.
 
 End of almanac v1.

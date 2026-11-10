@@ -34,9 +34,9 @@ One line per topic, current value only, so that a reader or the local model can 
 ```text
 | Topic | Current rule | Since | Status |
 |---|---|---|---|
-| Monthly fee | EUR 240 per unit | 2026-03-01 | adopted |
+| Monthly fee | $240 per unit | 2026-03-01 | adopted |
 | Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | adopted |
-| Pool hours | 08:00 to 22:00 or 08:00 to 21:00 | 2026 season | conflict |
+| Pool hours | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. | 2026 season | conflict |
 ```
 
 Status is one of `adopted`, `conflict`, `provisional` or `incomplete`.
@@ -51,10 +51,10 @@ One subsection per topic, using the topic list below. Each topic has these parts
 Current rule: Up to 2 pets per unit. Registration with management is required. No weight limit.
 Effective: 2025-04-15
 Set by: Board meeting minutes, 2025-04-15, motion carried 3-0
-Evidence: minutes-2025-04-15.docx: "maximum of two (2) pets per unit ... the 15 kg limit for dogs is removed"
+Evidence: minutes-2025-04-15.docx: "maximum of two (2) pets per unit ... the 35-pound limit for dogs is removed"
 
 Superseded:
-- 2019-05-01 to 2025-04-15: One pet per unit, dogs up to 15 kg. Source: bylaws-house-rules-2019.pdf: "one (1) pet per unit"
+- 2019-05-01 to 2025-04-15: One pet per unit, dogs up to 35 lb. Source: bylaws-house-rules-2019.pdf: "one (1) pet per unit"
 
 Open conflicts: none
 Provisional: none
@@ -99,7 +99,7 @@ Newest first. Each entry lists what this run added, changed, superseded, marked 
 ```text
 ## v7, 2026-11-22
 - Processed 1 new file: minutes-2026-09-15.docx
-- Changed: Quiet hours. Friday and Saturday nights now 23:00 to 07:00; other nights unchanged at 22:00 to 07:00.
+- Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m.; other nights unchanged at 10:00 p.m. to 7:00 a.m.
 - No new conflicts.
 ```
 
