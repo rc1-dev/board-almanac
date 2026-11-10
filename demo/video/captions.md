@@ -18,7 +18,7 @@ demo/video/encode.sh /tmp/shots demo/video/almanac-demo.mp4
 - Version 2 applies 11:00 p.m. to those two nights and keeps 10:00 p.m. for every other night, with the earlier rule recorded.
 - When documents disagree and nothing resolves it, the almanac quotes both and leaves the decision to the board.
 - The test archive holds 16 files from 2019 to 2026, including a meeting recording that ended without a vote.
-- Each compile is carried out by the UGOS agents on the NAS. The Skill delegates every step.
+- On the NAS, the Skill is designed to delegate every step of a compile to the UGOS agents.
 - The folder is inventoried with checksums, so later compiles process only new or changed files.
 - Decisions are extracted with a quotation and source file. A recording can only create provisional items.
 - Sources are reconciled against each other, and disagreements are reported for the board to resolve.

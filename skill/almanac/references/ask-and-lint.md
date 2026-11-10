@@ -29,7 +29,7 @@ Say "The almanac does not cover this." Do not answer from general knowledge. Off
 
 ## Freshness warning
 
-Count the board files that are not in the almanac's Sources ledger, whose size or modification time differs from the ledger, or whose ledger status is pending or failed. If the count is above zero, add: "N board files are new, changed or not yet processed since this almanac was compiled. The answer may be out of date. Say compile to update it."
+Count the board files that are not in the almanac's Sources ledger, whose size or modification time differs from the ledger, or whose ledger status is pending, partial or failed. If the count is above zero, add: "N board files are new, changed or not yet processed since this almanac was compiled. The answer may be out of date. Say compile to update it."
 
 Ledger files that are no longer in the folder are counted too. This is a quick check that compares size and modification time, not content, so a file changed without any change to either would not be counted. A compile confirms every change by checksum, and the user can ask for that definitive check at any time.
 

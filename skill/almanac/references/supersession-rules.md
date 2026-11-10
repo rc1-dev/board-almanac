@@ -15,10 +15,10 @@ Two statements can only replace or contradict each other if they are about the s
 
 ## 2. Authority ranking
 
-When statements about the same subject and scope disagree, the higher-ranked source type wins only where the lower one has no authority to change it:
+When statements about the same subject and scope disagree, the higher-ranked source type wins only where the lower one has no authority to change it. Rank a statement by the provision it comes from, not by the file it sits in: one document can hold both bylaws, which only an owner vote can amend, and house rules, which the board can amend by resolution.
 
-1. Bylaws and declaration (change only by the owner vote the bylaws require)
-2. Adopted board resolutions in signed or approved minutes, and signed contracts
+1. Bylaws and declaration provisions (changed only by the owner vote the bylaws require)
+2. House rules, adopted board resolutions in signed or approved minutes, and signed contracts. A board resolution replaces a house rule when the governing documents give the board that power, as a board majority does in the test archive.
 3. Board notices to residents
 4. Agendas, newsletters and emails
 5. Meeting recording transcripts (always provisional)

@@ -17,13 +17,13 @@ The Sources ledger in the newest almanac records every processed file with its c
 | Same path, same checksum, ledger status `processed` | Unchanged: skip |
 | Same path, same checksum, ledger status `pending`, `failed` or `partial` | Process again: an unfinished or failed run never leaves a file behind |
 | Ledger status `missing`, file is back in the folder | Process again, as for a changed file |
-| In the ledger, not in the folder | Missing: keep its claims, mark the file `missing`, and list affected topics as `incomplete` in the changelog |
+| In the ledger, not in the folder | Missing: mark the file `missing`; rebuild every record that cited it from the surviving evidence, keeping its claims only as history marked source missing |
 
 Only files that need processing are sent to extraction, so a routine update after one meeting processes one or two files.
 
 ## Evidence dependencies
 
-Every topic depends on the files it cites. When a file changes or goes missing, every topic that cites it is rebuilt from the original evidence that remains, even if the new extraction returns nothing for that topic. A claim that a corrected document no longer contains is dropped. If no remaining source supports a rule, the topic is marked `incomplete` and the changelog says why, so an obsolete rule is never kept as current. Only topics whose cited sources are all unchanged are carried forward word for word.
+Every topic and every open item depends on the files it cites. When a file changes or goes missing, every record that cites it is rebuilt from the original evidence that remains, even if the new extraction returns nothing for it. The previous almanac shows which files to look at; those surviving files are extracted again for the affected records, because the almanac itself is never evidence. A claim that a corrected document no longer contains is dropped. If no remaining source supports a rule, the topic is marked `incomplete` and the changelog says why, so an obsolete rule is never kept as current. Only topics whose cited sources are all unchanged are carried forward word for word.
 
 ## Reading the previous almanac
 

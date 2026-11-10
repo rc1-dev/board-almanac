@@ -108,7 +108,7 @@ const shots = [];
   await cue("The test archive holds 16 files from 2019 to 2026, including a meeting recording that ended without a vote.", 6);
   await p.evaluate(() => window.demo.go("compile")); await toPanel(-8);
   await p.evaluate(() => window.demo.run(0, -1));
-  await cue("Each compile is carried out by the UGOS agents on the NAS. The Skill delegates every step.", 6);
+  await cue("On the NAS, the Skill is designed to delegate every step of a compile to the UGOS agents.", 6);
   const stepCaps = {
     1: "The folder is inventoried with checksums, so later compiles process only new or changed files.",
     3: "Decisions are extracted with a quotation and source file. A recording can only create provisional items.",
