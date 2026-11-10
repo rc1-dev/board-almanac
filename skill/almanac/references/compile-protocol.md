@@ -21,6 +21,10 @@ The Sources ledger in the newest almanac records every processed file with its c
 
 Only files that need processing are sent to extraction, so a routine update after one meeting processes one or two files.
 
+## Evidence dependencies
+
+Every topic depends on the files it cites. When a file changes or goes missing, every topic that cites it is rebuilt from the original evidence that remains, even if the new extraction returns nothing for that topic. A claim that a corrected document no longer contains is dropped. If no remaining source supports a rule, the topic is marked `incomplete` and the changelog says why, so an obsolete rule is never kept as current. Only topics whose cited sources are all unchanged are carried forward word for word.
+
 ## Reading the previous almanac
 
 The previous almanac is read completely, in parts of 4,000 characters, before anything is compiled. The read is complete only if all six sections are present and the end line is reached. If not, the compile stops and saves nothing, because a new version built from part of the old one would silently drop rules.
@@ -86,7 +90,7 @@ The previous almanac is state to update, never evidence. Reconciliation compares
 
 ## Saving
 
-Before saving, confirm that the file name is free. After saving, accept the result only if the expert reports it completed and verified, and a read-back of the last 4,000 characters ends with this version's end line. If the saved name differs from the one supplied, report the actual name.
+Before saving, confirm that the file name is free. A taken name means another version was saved after this compile began, so the compile stops without saving and starts again from the newest version. The version number is set once, in Step 6, and used in the file name, header, changelog entry and end line. After saving, accept the result only if the expert reports it completed and verified, and a read-back of the last 4,000 characters ends with this version's end line. If the saved name differs from the one supplied, report the actual name.
 
 ## What the compile must never do
 

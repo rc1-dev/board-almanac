@@ -14,11 +14,11 @@
     },
     {
       "path": "references/ask-and-lint.md",
-      "sha256": "4cda5b02c7a2c1c50ba7ffc4ad1603d0789c188d37bc72b3f568a2f12233baa8"
+      "sha256": "f9fc23948995a32acecac21dca46a24706f257f8ea34381da94ff88f2e268a4c"
     },
     {
       "path": "references/compile-protocol.md",
-      "sha256": "918f67907bb4fe4cd70af0beab5699f3baa649bdc65324ef8113f9e85f6b2d09"
+      "sha256": "fb976ed8340898073a9d51d9bd03b6b85cd3414e5f3da1cca716b2569740d58c"
     },
     {
       "path": "references/readme.md",
@@ -26,15 +26,15 @@
     },
     {
       "path": "references/supersession-rules.md",
-      "sha256": "7c2c7c94943141f2ae9cf210330a2b322085b02bb08372df000094b5f324655f"
+      "sha256": "4ceba459aa2be5d4171ef4eef8f13d4ab237cd99d6b25bc2ee9a9ad97dca734d"
     },
     {
       "path": "references/test-plan.md",
-      "sha256": "4c3eac5d7c039eec5b1b3b739e83777f0cdfc176069c7fb33a29c404af229bd1"
+      "sha256": "237c7a3bf601b6fe5732f3e0663c7015f5f34aa338968c024d8c6ba8882b791d"
     },
     {
       "path": "SKILL.md",
-      "sha256": "e52f326f1558251de3120e6cae0b93d359897b043d54a451c5796149fb75436a"
+      "sha256": "6f7d27570ab50892444791c9548e6f1f1fd1b844984868e7d5c6fe765953c9df"
     }
   ],
   "summary": {

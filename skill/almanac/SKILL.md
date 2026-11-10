@@ -16,7 +16,7 @@ The Skill has four modes:
 - **Lint**: report open conflicts, provisional decisions, overdue actions, coming effective dates and files that changed since the last compile.
 - **Status**: report the newest almanac version, when it was compiled and how many source files changed since.
 
-Scope limits: the Skill reports what the documents record, not which rule is legally enforceable. It does not give legal advice, judge whether a vote was valid, resolve a conflict by guessing, or send anything outside the NAS itself.
+Scope limits: the Skill reports what the documents record, not which rule is legally enforceable. It does not give legal advice, judge whether a vote was valid, or resolve a conflict by guessing. Processing is meant to stay on the NAS: the Skill cannot enforce UGOS model routing, so it asks for explicit approval before any document is processed by a configured third-party model.
 
 # Required input
 
@@ -63,6 +63,8 @@ Step 2. Inventory the board folder. Delegate:
 
 Compare the real result with the Sources ledger from Step 1 and classify each file as set out in [the compile protocol](references/compile-protocol.md): new, changed, unchanged and processed (skip), unchanged but pending, failed, partial or previously missing in the ledger (process again), or missing. If nothing needs processing and nothing is missing, report that the almanac is current, name its version, and stop. If the folder is empty, report that and stop.
 
+Then list the affected topics: every topic in the previous almanac whose Evidence, Superseded, Open conflicts or Provisional lines cite a file that is changed or missing. These topics are rebuilt in Step 6 even if the new extraction returns nothing for them.
+
 Step 3. Transcribe new, changed, pending or failed recordings, if any. Delegate one request for those audio files only:
 
 `delegate --target knowledge-agent --instruction 'Transcribe only the audio recordings from the board folder that are listed in this request, and return the transcript text, segments and quality warnings for each. For each recording also list every decision, proposal, vote, objection and action item that is spoken, each with a short verbatim quote and the segment time. Do not save any file. If a recording cannot be transcribed, report it as a failure for that file and continue with the others.'`
@@ -75,15 +77,15 @@ Step 4. Extract claims from the documents to process. Choose at most 60 document
 
 Give each delegated request the real document paths from Step 2 and its schema. A completed request is not proof that every decision was found: mark a file partial if it was not read completely, process it again next run, and mark its topics incomplete. If more than 60 documents need processing, mark the rest pending, mark the run partial in the almanac header, and tell the user how many remain.
 
-Step 5. Check new claims against the original sources. From the previous almanac, take the source files cited for each topic that a new claim touches. Delegate:
+Step 5. Check new claims against the original sources. The topics to check are the affected topics from Step 2 and every topic a new claim touches. From the previous almanac, take the source files cited for those topics. Delegate:
 
 `delegate --target document-agent --instruction 'Reconcile the board documents listed in this request against each other. Report every pair of statements about the same topic, subject and scope that disagree in value, date or status, with both quotes and file paths. Report statements where a later document explicitly replaces, amends, corrects or repeals an earlier one, with the quote that shows it. If there are no disagreements, return an empty result. Do not decide which statement is correct.'`
 
-Give the delegated request the real paths of the processed documents and of the original source files cited for the affected topics, never the almanac itself. Send at most 60 files per request; if there are more, split the request by topic. On a first compile, reconcile the processed documents with each other.
+Give the delegated request the real paths of the processed documents and of the original source files cited for the affected topics, never the almanac itself. Send at most 60 files per request; if there are more, split the request by topic. On a first compile, reconcile the processed documents with each other. An empty result means no disagreements were found. That is a valid outcome, and the compile continues to Step 6.
 
-Step 6. Compile the new version. Start from the full previous almanac text. Using only the real results from Steps 2 to 5, apply [the supersession and conflict rules](references/supersession-rules.md) topic by topic, in document date order, and write the full almanac text in [the almanac format](references/almanac-format.md). Carry unchanged topics forward word for word. Increase the version number by one. Then check that every topic and open item in the previous version is still present, or that the changelog says why it changed. If the check fails, stop and report it; save nothing.
+Step 6. Compile the new version. Start from the full previous almanac text. Using only the real results from Steps 2 to 5, apply [the supersession and conflict rules](references/supersession-rules.md) topic by topic, in document date order, and write the full almanac text in [the almanac format](references/almanac-format.md). Rebuild every affected topic from the original evidence that remains: claims from a changed file that its new extraction no longer contains are dropped, and if no remaining source supports a rule, mark the topic incomplete and explain why in the changelog instead of keeping the old rule as current. Carry forward word for word only the topics whose cited sources are all unchanged. Increase the version number by one, and use it in the file name, header, changelog entry and end line. Then check that every topic and open item in the previous version is still present, or that the changelog says why it changed. If the check fails, stop and report it; save nothing.
 
-Step 7. Review before saving. For each topic that is new or changed in this version, show the user the proposed documented rule, the rule it replaces, the effective date, the supporting quote with its file, and any open conflict. On a first compile, show the At a glance table, every conflict and provisional item, and offer any topic in full on request. Then show the proposed file name almanac-YYYY-MM-DD-vN.md and the almanac folder, and ask for confirmation. If the user says a change is wrong, keep that topic as in the previous version, record in the changelog that it was held back for review, and show the review again. If the user declines, stop and keep nothing.
+Step 7. Review before saving. For each topic that is new or changed in this version, show the user the proposed documented rule, the rule it replaces, the effective date, the supporting quote with its file, and any open conflict. On a first compile, show every topic's documented rule with its supporting quote in a compact list, with conflicts and provisional items first, and make clear that the user is approving the whole list. Then show the proposed file name almanac-YYYY-MM-DD-vN.md and the almanac folder, and ask for confirmation. If the user says a change is wrong, keep that topic as in the previous version, record in the changelog that it was held back for review, and show the review again. If the user declines, stop and keep nothing.
 
 Step 8. Prepare the almanac folder. If the folder is missing and the user confirmed creating it, delegate:
 
@@ -93,7 +95,7 @@ Then confirm that the file name is free. Delegate:
 
 `delegate --target file-agent --instruction 'Check whether a file with the name supplied in this request already exists in the almanac folder the user confirmed, and return yes or no with its path. Read only.'`
 
-If the name is taken, increase the version number in the name and the header, and check again.
+If the name is taken, another version was saved after Step 1. Stop without saving, tell the user, and start again from Step 1 so that the new version is built on the latest one.
 
 Step 9. Save and verify the new version. Delegate:
 
@@ -111,7 +113,7 @@ Step A1. Delegate:
 
 `delegate --target file-agent --instruction 'In the almanac folder the user confirmed, find the newest Markdown file whose name starts with almanac- and return its path, the first 4000 characters, and the section titled Sources unchanged. Then list the files in the board folder, outside the almanac folder, with path, size and modification time. If there are no results, return an empty result. Read only.'`
 
-If no almanac exists, say so, offer to compile, and stop. Do not answer from raw files unless the user asks for that. Count the files that are not in the Sources ledger, or whose size or modification time differs from the ledger, or whose ledger status is pending or failed.
+If no almanac exists, say so, offer to compile, and stop. Do not answer from raw files unless the user asks for that. As a quick freshness check, count the files that are not in the Sources ledger, ledger files that are no longer in the folder, files whose size or modification time differs from the ledger, and files whose ledger status is pending, partial or failed. This check does not compare checksums; if the user asks for a definitive check, run Step 2 and compare checksums.
 
 Step A2. Delegate:
 
@@ -137,7 +139,7 @@ Run Step A1 only and report the newest version, its compiled time, the number of
 
 Handle every delegation state:
 
-- **completed**: use only the real result returned. An empty result is a valid answer: report "no results" for that step in plain words and stop dependent steps instead of widening the scope or switching folders.
+- **completed**: use only the real result returned. Whether an empty result ends the run depends on the step. An empty result is an expected outcome when the Skill looks for something that may not exist: no previous almanac in Step 1, no recordings in Step 3, no disagreements in Step 5. Those steps continue. An empty result ends the run, with a plain report, when later steps need the data: an empty board folder in Step 2, or no claims from any file in Step 4. Never widen the scope or switch folders to fill an empty result.
 - **failed**: report which step failed and why, keep any verified partial results, and do not save an almanac built from incomplete extraction unless the user accepts a version marked partial.
 - **cancelled**: stop, report what was completed before cancellation, and save nothing further.
 - **waiting_user**: ask the user the pending question in plain words, then continue only with the user's answer.

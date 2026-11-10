@@ -31,7 +31,7 @@ Say "The almanac does not cover this." Do not answer from general knowledge. Off
 
 Count the board files that are not in the almanac's Sources ledger, whose size or modification time differs from the ledger, or whose ledger status is pending or failed. If the count is above zero, add: "N board files are new, changed or not yet processed since this almanac was compiled. The answer may be out of date. Say compile to update it."
 
-This check compares every file with the ledger rather than with a single time, so a changed file is caught even if its modification time is older. The next compile confirms changes by checksum.
+Ledger files that are no longer in the folder are counted too. This is a quick check that compares size and modification time, not content, so a file changed without any change to either would not be counted. A compile confirms every change by checksum, and the user can ask for that definitive check at any time.
 
 ## Lint checks
 
