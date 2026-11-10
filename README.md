@@ -1,93 +1,78 @@
 # Board Almanac
 
-**A living, cited rulebook for board documents on the UGREEN AI NAS.**
-UGREEN Hackathon 2026 entry · Track: Automate Your Workflow · Skill name: `almanac`
+Board Almanac is a Skill for the UGREEN AI NAS. It compiles the document archive of a condo association, homeowners' association or club board into a versioned, cited rulebook, and answers questions about which rule currently applies, since when, and on whose authority.
 
-Condo associations, HOAs and clubs keep their rules in years of bylaws, meeting minutes, notices, contracts and recordings. Later votes quietly replace earlier ones, notices contain mistakes, and deadlines slip. Searching the folder returns every version of a rule and leaves people to guess which one is current.
+It was written for the UGREEN Hackathon 2026 (track: Automate Your Workflow). The Skill is named `almanac`.
 
-Almanac compiles that folder into a versioned Markdown rulebook on the NAS and answers one question well: **what is the rule now, since when, and says who?**
+## The problem
+
+A board's rules are rarely kept in one place. They are set in bylaws, changed in meeting minutes, announced in notices, constrained by contracts and sometimes discussed in recorded meetings. Over the years, later decisions replace earlier ones, a notice occasionally states the wrong figure, and a proposal that failed can be mistaken for one that passed. Anyone trying to answer a simple question, such as how many pets a unit may keep, has to read the whole history and work out which statement is still in force.
+
+## The approach
+
+Almanac does that work once, when documents arrive, and keeps the result. Each compile produces a Markdown file in an almanac folder on the NAS. For every topic, the file records the currently documented rule, its effective date, the vote or document that established it, a quotation from the source, the rules it replaced and the period each applied, and any conflict the documents leave unresolved. Older versions are never modified, so the folder also serves as an audit trail.
+
+The rules for deciding which statement is current are written out explicitly in [the supersession rules](skill/almanac/references/supersession-rules.md). A later adopted decision replaces an earlier one only for the same subject and scope, so an amendment that changes quiet hours on Friday and Saturday nights leaves the other nights untouched. Failed motions and agenda proposals never change a rule. A notice that contradicts the minutes is recorded as a conflict unless a later document corrects it. When nothing resolves a disagreement, the almanac quotes both statements and leaves the decision to the board.
+
+Questions are answered from the newest almanac rather than from the raw archive. Each answer gives the rule, its source and the almanac version it came from, and says so plainly when the almanac does not cover the question.
+
+## How a compile runs
+
+The Skill delegates every step to the UGOS agents (`file-agent`, `document-agent` and `knowledge-agent`) and never calls a command-line tool directly.
+
+1. The previous almanac is read in full. If any section is missing, the run stops without saving.
+2. The board folder is inventoried with checksums and compared with the ledger of processed files. Only new, changed, unfinished or previously failed files are processed, up to 60 documents per run.
+3. Meeting recordings are transcribed. Anything decided only in a recording is marked provisional.
+4. Decisions, rules, votes, effective dates, action items and contract terms are extracted, each with a quotation and its source file.
+5. The new material is reconciled with the original documents behind the affected topics. The previous almanac is treated as state to update, never as evidence.
+6. The supersession rules are applied and the new version is written, carrying unchanged topics forward exactly.
+7. The user reviews each new or changed rule beside the rule it replaces, with its effective date and quotation, before anything is saved.
+8. The file name is checked, the version is saved after approval, and the saved file is read back to confirm it is complete.
+
+The Skill asks which model the NAS uses for document processing. The intended setting is the NAS local model, and a third-party model is used only with the user's explicit authorization. Model routing itself is a UGOS setting that the Skill can confirm but not change. People are recorded by board role, and residents' private matters are left out.
+
+The almanac reports what the documents record. It does not give legal advice or judge whether a vote or notice was valid.
 
 ## Demo
 
-- **Interactive demo:** [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source: [`docs/index.html`](docs/index.html)). Walk through the board folder, the compile run, the almanac with each rule's history, cited answers next to raw-search mistakes, an incremental update and lint.
-- **Video (2:47, captioned):** [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4)
+An interactive demo is available at [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source in [`docs/index.html`](docs/index.html)). It walks through the board folder, the compile run, the resulting almanac with the history of each rule, answers to sample questions, an incremental update and the lint report. A captioned video of the same walkthrough is in [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4).
 
-Both are a **replay** on the synthetic test folder: the delegation text is quoted from `SKILL.md` and the answers are the test kit's reference answers. The Skill itself runs on a UGREEN AI NAS, and on-device results come after the NAS test day.
-
-## How it works
-
-```text
-Board Documents/            almanac (compile)               Almanac/
-  bylaws-2019.pdf     ─┐    1 read previous almanac          almanac-2026-11-22-v1.md
-  minutes-*.pdf/docx   ├──▶ 2 inventory + SHA-256       ──▶  almanac-2026-11-29-v2.md
-  notices, contract    │    3 transcribe recordings          (one new file per run;
-  email, recordings   ─┘    4 extract cited claims             older versions kept)
-                            5 reconcile against almanac
-                            6 apply supersession rules
-                            7 show changelog → approve → save
-```
-
-- **Compile once, answer many times.** Each compile reads only files that are new or changed since the last version (tracked in a Sources ledger of checksums), applies explicit [supersession and conflict rules](skill/almanac/references/supersession-rules.md), and saves a new version.
-- **Every fact is cited.** Each topic records the current rule, effective date, the vote or document that set it, a verbatim quote, the rules it replaced, open conflicts and provisional items.
-- **Conflicts are reported, not guessed.** If minutes say the pool closes at 22:00 and a later notice says 21:00, the almanac says the documents disagree and quotes both.
-- **Four modes:** Compile, Ask (answers only from the newest almanac), Lint (conflicts, provisional decisions, late or overdue actions, coming deadlines) and Status.
-- **Careful by design:** the parent Skill only delegates to UGOS experts (`file-agent`, `document-agent`, `knowledge-agent`); it never asks them to overwrite, move or delete files, checks the file name before saving and reads the file back after; each save follows a review of every changed rule with its quote; the intended model is the NAS local model (routing is a UGOS setting the Skill confirms but cannot change); people are recorded by board role.
-- **Documented, not adjudicated:** the almanac reports what adopted documents record, with conflicts left open. It is not legal advice.
-
-See [SKILL.md](skill/almanac/SKILL.md) for the full workflow and [the almanac format](skill/almanac/references/almanac-format.md) for what a compiled file looks like.
-
-## Why not just file chat or RAG?
-
-Retrieval finds passages that match each question and leaves every answer to work out which rule replaced which: the 2019 rule or the 2025 vote, a proposal or an adopted motion, a notice with a typo or the corrected minutes. Well-built retrieval can get this right, but it repeats the work on every question. Almanac settles it once, when files arrive, with rules written for boards: effective dates, failed motions, corrections, partial-scope amendments and unresolved conflicts. Answers then come from one small reconciled file, which also suits a small on-device model.
-
-Safeguards in the compile: the previous almanac is read completely or the run stops; it is state to update, never evidence, so every rule cites an original document; failed and pending files are retried on the next run; the file name is checked before saving and the saved file is read back.
+Both replay the expected behaviour on the synthetic test archive. The delegation text is quoted from `SKILL.md`, and the answers are the reference answers from the validation kit. Results from a real NAS will follow the hackathon's device testing.
 
 ## Status
 
-| Item | State |
-|---|---|
-| Skill (`skill/almanac`) | Implemented. Official kit checker (catalog 2.0.0): `static-pass`, 0 errors, 0 warnings ([result](docs/checker-result.json)) |
-| Validation kit (`validation/`) | Synthetic board folder, 20-question answer key, scorer; self-test 20/20 on hand-written reference answers |
-| Runtime on a UGREEN AI NAS | **Pending.** Scheduled for the finalist NAS test day. No on-device results are claimed yet. |
+The Skill (`SKILL.md` and six reference files) is complete and passes the official kit checker for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, a 20-question answer key and a scorer. Runtime behaviour on a UGREEN AI NAS has not yet been tested.
 
 ## Repository layout
 
 | Path | Contents |
 |---|---|
 | `skill/almanac/` | The Skill package: `SKILL.md` and six reference files |
-| `validation/` | Synthetic corpus and generator, answer key, scorer, expected first almanac, recording script ([readme](validation/README.md)) |
-| `proposal/` | Round 1 proposal source and rendered PDF |
-| `demo/` | Demo page source (`template.html`, `build_demo.py`) and the video with its filming scripts |
-| `docs/` | Built demo page (`index.html`, served by GitHub Pages) and checker output |
+| `validation/` | Synthetic archive and its generator, answer key, scorer, expected almanac versions and recording script ([details](validation/README.md)) |
+| `demo/` | Demo page source and build script, and the video with its filming scripts |
+| `docs/` | Built demo page for GitHub Pages, and the checker result |
+| `proposal/` | Round 1 proposal source and PDF |
 | `scripts/package.sh` | Builds `dist/almanac.zip` and runs the official checker |
 
-## Try the validation kit
+## Running the validation kit
 
 ```bash
-pip install reportlab python-docx        # only needed to regenerate the corpus
+pip install reportlab python-docx        # only needed to regenerate the archive
 python3 validation/build_corpus.py       # writes validation/corpus/
 python3 validation/score.py validation/selftest/gold_answers.jsonl --recording
-python3 validation/score.py validation/selftest/raw_search_example.jsonl
 ```
 
-## Rebuild the demo
+The reference answers in `validation/selftest/` are written by hand. They confirm that the answer key and scorer agree, and serve as the standard that output from the NAS will be measured against.
+
+## Building
 
 ```bash
-python3 demo/build_demo.py               # writes docs/index.html from the repo's own files
+python3 demo/build_demo.py                                  # rebuilds docs/index.html
+UGREEN_KIT=/path/to/uliya-skill-kit scripts/package.sh      # builds and checks the Skill package
 ```
 
-## Build the Skill package
-
-```bash
-UGREEN_KIT=/path/to/uliya-skill-kit scripts/package.sh
-```
-
-The UGREEN skill kit is not included; download it from the hackathon resources.
+The UGREEN skill kit is not included in this repository and can be downloaded from the hackathon resources.
 
 ## Disclosure
 
-- The workflow was designed and written during the UGREEN Hackathon 2026.
-- AI assistance: Claude (Anthropic) helped draft and review the Skill files, test materials, proposal and this README.
-- The Skill bundles no third-party code, models or services. The validation generator uses reportlab (BSD) and python-docx (MIT).
-- All test data is synthetic and fictional; people appear by board role only.
-- Not legal advice. The Skill reports what documents say; it does not judge whether votes or notices were valid.
+The workflow was designed and written during the UGREEN Hackathon 2026. Claude (Anthropic) assisted with drafting and reviewing the Skill files, test materials, proposal and documentation. The Skill bundles no third-party code, models or services. The validation generator uses reportlab (BSD license) and python-docx (MIT license). All test data is synthetic and fictional, and people appear by board role only.

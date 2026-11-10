@@ -1,6 +1,6 @@
 ---
 name: almanac
-description: Living, cited rulebook for a condo association, HOA or club board folder on the NAS, compiled from bylaws, meeting minutes, notices, contracts and meeting recordings, and kept current version by version. Use when the user asks what the current rule, fee, policy or contract term is, how a rule changed over time, which board documents disagree, what is open or overdue, or asks to compile, update or check the almanac.
+description: Versioned, cited rulebook for a condo association, HOA or club board folder on the NAS, compiled from bylaws, meeting minutes, notices, contracts and meeting recordings, and kept current version by version. Use when the user asks what the current rule, fee, policy or contract term is, how a rule changed over time, which board documents disagree, what is open or overdue, or asks to compile, update or check the almanac.
 ---
 
 # Goal
