@@ -1,0 +1,453 @@
+{
+ "corpus": "Harbor View Condominium Association (synthetic)",
+ "notes": "Patterns are case-insensitive regular expressions. Each entry in must_include is a list of alternatives; at least one alternative of every entry must match. must_cite works the same way on file names. must_not_include fails the answer if any pattern matches. phase 'initial' runs after the first compile of 'Board Documents'; 'after_update' runs after adding add-later/minutes-2026-09-15.docx and compiling again.",
+ "questions": [
+  {
+   "id": "Q1",
+   "phase": "initial",
+   "question": "What is the monthly common charge now?",
+   "must_include": [
+    [
+     "\\b240\\b"
+    ]
+   ],
+   "must_not_include": [
+    "\\b(is|now|currently)\\b[^.]{0,30}\\b23[05]\\b"
+   ],
+   "must_cite": [
+    [
+     "minutes-2026-01-20"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "phase": "initial",
+   "question": "What was the monthly common charge in July 2025?",
+   "must_include": [
+    [
+     "\\b225\\b"
+    ]
+   ],
+   "must_not_include": [
+    "\\b(was|charge of)\\b[^.]{0,20}\\b230\\b(?![^.]*\\berror)"
+   ],
+   "must_cite": [
+    [
+     "minutes-2025-01-23",
+     "minutes-2025-04-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "phase": "initial",
+   "question": "How many pets may a unit keep, and is there a weight limit for dogs?",
+   "must_include": [
+    [
+     "\\b(2|two)\\b"
+    ],
+    [
+     "no weight limit",
+     "limit (was|is|has been) removed",
+     "removed the 15 ?kg",
+     "15 ?kg limit[^.]{0,30}removed"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2025-04-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q4",
+   "phase": "initial",
+   "question": "Can I do renovation work on a Saturday?",
+   "must_include": [
+    [
+     "09:00",
+     "\\b9 ?(am|a\\.m\\.)"
+    ],
+    [
+     "13:00",
+     "\\b1 ?(pm|p\\.m\\.)"
+    ]
+   ],
+   "must_not_include": [
+    "^\\s*no\\b"
+   ],
+   "must_cite": [
+    [
+     "minutes-2024-06-12",
+     "notice-2024-07-01"
+    ]
+   ]
+  },
+  {
+   "id": "Q5",
+   "phase": "initial",
+   "question": "Can I install a heat pump outdoor unit on my balcony?",
+   "must_include": [
+    [
+     "approv"
+    ],
+    [
+     "floor"
+    ],
+    [
+     "60 ?db"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2025-01-23"
+    ]
+   ]
+  },
+  {
+   "id": "Q6",
+   "phase": "initial",
+   "question": "Can I use a barbecue on my balcony?",
+   "must_include": [
+    [
+     "prohibit",
+     "not (allowed|permitted)"
+    ]
+   ],
+   "must_not_include": [
+    "^\\s*yes\\b"
+   ],
+   "must_cite": [
+    [
+     "bylaws-house-rules-2019"
+    ]
+   ],
+   "if_recording": {
+    "must_include": [
+     [
+      "provisional",
+      "not (yet )?adopted",
+      "not confirmed"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "Q7",
+   "phase": "initial",
+   "question": "What are the pool hours this season?",
+   "must_include": [
+    [
+     "22:00",
+     "\\b10 ?(pm|p\\.m\\.)"
+    ],
+    [
+     "21:00",
+     "\\b9 ?(pm|p\\.m\\.)"
+    ],
+    [
+     "conflict",
+     "disagree",
+     "inconsisten"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2025-09-10"
+    ],
+    [
+     "notice-2026-05-01"
+    ]
+   ]
+  },
+  {
+   "id": "Q8",
+   "phase": "initial",
+   "question": "What is the minimum lease term?",
+   "must_include": [
+    [
+     "\\b30 days\\b",
+     "thirty"
+    ]
+   ],
+   "must_not_include": [
+    "\\bsix \\(?6?\\)? ?months\\b(?![^.]*(before|until|earlier|replaced|superseded|2019))"
+   ],
+   "must_cite": [
+    [
+     "minutes-2025-04-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q9",
+   "phase": "after_update",
+   "question": "When do quiet hours start on Saturday nights?",
+   "must_include": [
+    [
+     "23:00",
+     "\\b11 ?(pm|p\\.m\\.)"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2026-09-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q10",
+   "phase": "after_update",
+   "question": "When do quiet hours start on a Tuesday night?",
+   "must_include": [
+    [
+     "22:00",
+     "\\b10 ?(pm|p\\.m\\.)"
+    ]
+   ],
+   "must_not_include": [
+    "tuesday[^.]{0,40}23:00"
+   ],
+   "must_cite": [
+    [
+     "bylaws-house-rules-2019",
+     "minutes-2026-09-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q11",
+   "phase": "initial",
+   "question": "Did we give the landscaping contractor notice of non-renewal in time?",
+   "must_include": [
+    [
+     "2 feb(ruary)? 2026",
+     "2026-02-02",
+     "february 2,? 2026"
+    ],
+    [
+     "30 jan(uary)? 2026",
+     "2026-01-30",
+     "january 30,? 2026"
+    ],
+    [
+     "\\blate\\b",
+     "after the (due date|deadline)",
+     "\\bno\\b",
+     "missed"
+    ]
+   ],
+   "must_not_include": [
+    "^\\s*yes\\b"
+   ],
+   "must_cite": [
+    [
+     "email-2026-02-02"
+    ],
+    [
+     "minutes-2025-09-10",
+     "contract-bramblewick"
+    ]
+   ]
+  },
+  {
+   "id": "Q12",
+   "phase": "initial",
+   "question": "How did the board vote on heat pumps, and when?",
+   "must_include": [
+    [
+     "\\b2-1\\b",
+     "two to one"
+    ],
+    [
+     "23 jan(uary)? 2025",
+     "2025-01-23",
+     "january 23,? 2025"
+    ]
+   ],
+   "must_not_include": [
+    "\\b3-0\\b[^.]{0,30}heat"
+   ],
+   "must_cite": [
+    [
+     "minutes-2025-01-23"
+    ]
+   ]
+  },
+  {
+   "id": "Q13",
+   "phase": "initial",
+   "question": "How long can a guest car stay in guest parking?",
+   "must_include": [
+    [
+     "\\b48 ?(h|hours)\\b"
+    ]
+   ],
+   "must_not_include": [
+    "\\b(is|now|currently|limit of)\\b[^.]{0,20}\\b72\\b"
+   ],
+   "must_cite": [
+    [
+     "minutes-2025-09-10"
+    ]
+   ]
+  },
+  {
+   "id": "Q14",
+   "phase": "initial",
+   "question": "Can I install an electric vehicle charger?",
+   "must_include": [
+    [
+     "approv"
+    ],
+    [
+     "electrician"
+    ],
+    [
+     "assigned"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2026-01-20"
+    ]
+   ]
+  },
+  {
+   "id": "Q15",
+   "phase": "initial",
+   "question": "How much can the landscaping fee rise on renewal?",
+   "must_include": [
+    [
+     "\\b4 ?%",
+     "four percent",
+     "4 percent"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "contract-bramblewick"
+    ]
+   ]
+  },
+  {
+   "id": "Q16",
+   "phase": "initial",
+   "question": "Is the gym open on Sundays?",
+   "must_include": [
+    [
+     "not cover",
+     "does not cover",
+     "no (information|record)",
+     "not in the almanac"
+    ]
+   ],
+   "must_not_include": [
+    "\\b\\d{1,2}:\\d{2}\\b"
+   ],
+   "must_cite": []
+  },
+  {
+   "id": "Q17",
+   "phase": "initial",
+   "question": "Was the EUR 235 monthly charge ever adopted?",
+   "must_include": [
+    [
+     "not adopted",
+     "never adopted",
+     "was amended",
+     "only (a )?propos",
+     "was not"
+    ],
+    [
+     "\\b225\\b"
+    ]
+   ],
+   "must_not_include": [
+    "^\\s*yes\\b"
+   ],
+   "must_cite": [
+    [
+     "minutes-2025-01-23"
+    ]
+   ]
+  },
+  {
+   "id": "Q18",
+   "phase": "initial",
+   "question": "When did the weight limit for dogs end?",
+   "must_include": [
+    [
+     "15 apr(il)? 2025",
+     "2025-04-15",
+     "april 15,? 2025"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "minutes-2025-04-15"
+    ]
+   ]
+  },
+  {
+   "id": "Q19",
+   "phase": "initial",
+   "question": "Check the almanac: what needs attention?",
+   "must_include": [
+    [
+     "pool"
+    ],
+    [
+     "landscap"
+    ],
+    [
+     "conflict"
+    ],
+    [
+     "late",
+     "after the (due date|deadline)"
+    ]
+   ],
+   "must_not_include": [
+    "no issues"
+   ],
+   "must_cite": [],
+   "if_recording": {
+    "must_include": [
+     [
+      "barbecue",
+      "grill"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "Q20",
+   "phase": "initial",
+   "question": "What vote is needed to change the bylaws, and to change the house rules?",
+   "must_include": [
+    [
+     "two-thirds",
+     "2/3"
+    ],
+    [
+     "majority"
+    ]
+   ],
+   "must_not_include": [],
+   "must_cite": [
+    [
+     "bylaws-house-rules-2019"
+    ]
+   ]
+  }
+ ]
+}

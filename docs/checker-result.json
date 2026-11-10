@@ -1,0 +1,46 @@
+{
+  "checkFormatVersion": "2.0.0",
+  "status": "static-pass",
+  "target": {
+    "skillName": "almanac"
+  },
+  "catalog": {
+    "checkedVersion": "2.0.0"
+  },
+  "files": [
+    {
+      "path": "references/almanac-format.md",
+      "sha256": "a86b7b4036b43868fe1091807e47e30e1106ff7df636f49a7d75ffa23350ae0a"
+    },
+    {
+      "path": "references/ask-and-lint.md",
+      "sha256": "4e9fbea16d6a2497eca9bacb4a75431822bdfa2b2d8706860a94f9e2293fa9e0"
+    },
+    {
+      "path": "references/compile-protocol.md",
+      "sha256": "3ab7007af1b4cee39ab79b168d57dd4c1be58a6f73183217e182dd27783c20dc"
+    },
+    {
+      "path": "references/readme.md",
+      "sha256": "fd3f54eac651d33eb0ee547a2b1af7b4d0efb860908650f9dcef9b89582e169f"
+    },
+    {
+      "path": "references/supersession-rules.md",
+      "sha256": "e377d822a8a66a620ab05e42213ac44ee1a713788c58807316a84a7f7a3ba180"
+    },
+    {
+      "path": "references/test-plan.md",
+      "sha256": "ec7702803c1253f3e7e5dd6e7d4728acb37e2a76bf8e362fb4d70786d7619c5e"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "9664d5a797dbd2c3ee76c201fc04b4dd45e09a5b7a6a2791284503376d9daf0f"
+    }
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "info": 0
+  },
+  "diagnostics": []
+}
