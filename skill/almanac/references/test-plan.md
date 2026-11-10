@@ -39,7 +39,7 @@ Ask whether a heat pump unit may go on a balcony. Pass if the answer gives the c
 
 ## Edge case: incremental update and an open conflict
 
-Add one new minutes file that changes quiet hours on Friday and Saturday nights only, then compile again. Pass if only that file is processed, a new version is saved next to the old one, Friday and Saturday quiet hours change while other nights stay unchanged, the changelog names the change, and the pool hours remain an open conflict rather than being resolved.
+Add one new minutes file that changes quiet hours on Friday and Saturday nights only, then compile again. Pass if claims are extracted only from the new minutes, the quiet-hours rule is rechecked against the unchanged bylaws, other topics are carried forward, a new version is saved next to the old one, Friday and Saturday quiet hours change while other nights stay unchanged, the changelog names the change, and the pool hours remain an open conflict rather than being resolved.
 
 ## Further checks on the device
 

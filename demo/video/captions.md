@@ -14,7 +14,7 @@ demo/video/encode.sh /tmp/shots demo/video/almanac-demo.mp4
 - Almanac records which one is in force, who set it and when, quoting the minutes.
 - The $235 proposal was never adopted, and the $230 notice was corrected by the board. $240 has applied since March 1, 2026.
 - Questions are answered from the almanac. A search of the raw folder can return the corrected notice instead.
-- New minutes change quiet hours on Friday and Saturday nights only. The next compile processes that file and skips the 16 unchanged ones.
+- New minutes change quiet hours on Friday and Saturday nights only. The next compile extracts that file, rechecks the bylaws it amends, and carries the other topics forward.
 - Version 2 applies 11:00 p.m. to those two nights and keeps 10:00 p.m. for every other night, with the earlier rule recorded.
 - When documents disagree and nothing resolves it, the almanac quotes both and leaves the decision to the board.
 - The test archive holds 16 files from 2019 to 2026, including a meeting recording that ended without a vote.

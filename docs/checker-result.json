@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "references/almanac-format.md",
-      "sha256": "ffd787530a9380ffe7ca5358dfd97d06c6952643fa0d684f0a4072aeda9ea8bb"
+      "sha256": "2f82c35b94076e9f2ad2ce1a649ab3b8c770d6f761b49e44d1f2365a3219197b"
     },
     {
       "path": "references/ask-and-lint.md",
@@ -18,7 +18,7 @@
     },
     {
       "path": "references/compile-protocol.md",
-      "sha256": "79d34074ecbc13f9518b6f2ccbe0dfe58f44710653c0dbd238f06a7dd8cb419b"
+      "sha256": "9f0fe4cbaa2d5f3f9c13974a8cc21c2f07db59dad3a702f3ab27643a467c42fc"
     },
     {
       "path": "references/readme.md",
@@ -30,11 +30,11 @@
     },
     {
       "path": "references/test-plan.md",
-      "sha256": "2e025e6dd0d58b3bb98ab0212cb6fbde99a208394d80761d8ed3c2e39ae29f2f"
+      "sha256": "d36a91275db2937f4a429926876270bc6964cecb77578e1494b3a7ba445aafe4"
     },
     {
       "path": "SKILL.md",
-      "sha256": "6a3f3f1887f5996be2340ee4816478e5095973085ab04434fa6d06de60cbc837"
+      "sha256": "08fafc8484f3fe15275d7a49ebd86f89a2c916e855f74fdd298951fb1531152e"
     }
   ],
   "summary": {

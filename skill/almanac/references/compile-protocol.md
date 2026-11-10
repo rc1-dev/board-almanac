@@ -19,7 +19,7 @@ The Sources ledger in the newest almanac records every processed file with its c
 | Ledger status `missing`, file is back in the folder | Process again, as for a changed file |
 | In the ledger, not in the folder | Missing: mark the file `missing`; rebuild every record that cited it from the surviving evidence, keeping its claims only as history marked source missing |
 
-Only files that need processing are sent to extraction, so a routine update after one meeting processes one or two files.
+Only files that need processing are sent to extraction. A routine update after one meeting extracts claims from one or two new files; the unchanged documents that those decisions amend are read again during reconciliation, and every other topic is carried forward.
 
 ## Evidence dependencies
 

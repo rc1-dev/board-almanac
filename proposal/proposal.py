@@ -47,7 +47,7 @@ ITEMS = [
     ("9. Validation plan", [
         "Core case 1, supersession: the fee and pet-rule answers give $240 and two pets with dates, votes and citations, never the $235 proposal or the erroneous $230 notice.",
         "Core case 2, answering from the almanac: a heat-pump question returns the conditions, 2-1 vote and version; a gym question is reported as not covered.",
-        "Edge case: after minutes changing only weekend quiet hours are added, the recompile processes that file alone and keeps every other rule and the open pool conflict. All 20 questions also go to plain file chat.",
+        "Edge case: minutes changing only weekend quiet hours are added. The recompile extracts the new minutes, rechecks the bylaws they amend, and preserves weekday hours, every other rule and the open pool conflict. All 20 questions also go to plain file chat.",
     ]),
     ("10. Limitations", [
         "Accuracy depends on on-device extraction, OCR and transcription. The almanac is not legal advice. Model routing is a UGOS setting the Skill confirms but cannot enforce. Testing so far is synthetic.",

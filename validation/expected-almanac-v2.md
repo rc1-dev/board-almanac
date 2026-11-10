@@ -186,7 +186,7 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 ## Changelog
 
 ## v2
-- Processed 1 new file: minutes-2026-09-15.docx. 16 files unchanged (checksums match), skipped.
+- Extracted 1 new file: minutes-2026-09-15.docx. Rechecked the quiet-hours rule against bylaws-house-rules-2019.pdf (unchanged). The other 15 sources are unchanged and their topics were carried forward.
 - Changed: Quiet hours. Friday and Saturday nights 11:00 p.m. to 7:00 a.m. from 2026-10-01; other nights unchanged.
 - Still open: Pool hours conflict. Still provisional: electric barbecues (not on the September minutes).
 

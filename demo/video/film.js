@@ -94,7 +94,7 @@ const shots = [];
 
   // 3. A change that applies to part of a rule
   await p.evaluate(() => window.demo.go("update")); await toPanel(-8);
-  await cue("New minutes change quiet hours on Friday and Saturday nights only. The next compile processes that file and skips the 16 unchanged ones.", 7);
+  await cue("New minutes change quiet hours on Friday and Saturday nights only. The next compile extracts that file, rechecks the bylaws it amends, and carries the other topics forward.", 7);
   await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v2", true); window.demo.topic("quiet"); }); await toPanel(-8);
   await cue("Version 2 applies 11:00 p.m. to those two nights and keeps 10:00 p.m. for every other night, with the earlier rule recorded.", 7);
 

@@ -98,7 +98,7 @@ Newest first. Each entry lists what this run added, changed, superseded, marked 
 
 ```text
 ## v7, 2026-11-22
-- Processed 1 new file: minutes-2026-09-15.docx
+- Extracted 1 new file: minutes-2026-09-15.docx. Rechecked against bylaws-house-rules-2019.pdf (unchanged).
 - Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m.; other nights unchanged at 10:00 p.m. to 7:00 a.m.
 - No new conflicts.
 ```

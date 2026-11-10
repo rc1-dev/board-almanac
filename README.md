@@ -21,7 +21,7 @@ Questions are answered from the newest almanac rather than from the raw archive.
 The Skill delegates every step to the UGOS agents (`file-agent`, `document-agent` and `knowledge-agent`) and never calls a command-line tool directly.
 
 1. The previous almanac is read in full. If any section is missing, the run stops without saving.
-2. The board folder is inventoried with checksums and compared with the ledger of processed files. Only new, changed, unfinished or previously failed files are processed, up to 60 documents per run.
+2. The board folder is inventoried with checksums and compared with the ledger of processed files. Claims are extracted from new, changed, unfinished or previously failed files, up to 60 documents per run, and from unchanged files that support a record affected by a change. The documents a new decision amends are read again during reconciliation, and all other topics are carried forward.
 3. Meeting recordings are transcribed. Anything decided only in a recording is marked provisional.
 4. Decisions, rules, votes, effective dates, action items and contract terms are extracted, each with a quotation and its source file.
 5. The new material is reconciled with the original documents behind the affected topics. The previous almanac is treated as state to update, never as evidence.

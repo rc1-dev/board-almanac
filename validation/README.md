@@ -21,7 +21,7 @@ The archive is designed to exercise the cases that make board rules hard to foll
 2. Run a compile and compare the result with `expected-almanac-v1.md`.
 3. Ask the eighteen initial questions, save the answers as JSON Lines, and score them with `--phase initial --recording`.
 4. Ask the same questions through plain file chat over the raw folder and score those answers the same way.
-5. Add `corpus/add-later/minutes-2026-09-15.docx` to the board folder and compile again. Confirm that only that file was processed, that a new version was saved beside the first, and that every other rule is unchanged. Then ask the two update questions with `--phase after_update`.
+5. Add `corpus/add-later/minutes-2026-09-15.docx` to the board folder and compile again. Confirm that claims were extracted only from the new minutes, that the quiet-hours rule was rechecked against the bylaws, that a new version was saved beside the first, and that every other rule is unchanged. Then ask the two update questions with `--phase after_update`.
 6. Record run times, approval prompts and any files that failed.
 
 All results will be reported as measured on the device.
