@@ -10,19 +10,19 @@
   "files": [
     {
       "path": "references/almanac-format.md",
-      "sha256": "68475e997e1cf087be4f642e430ad270b1db95dc4a6b1f10dab2ffe13b1c99d7"
+      "sha256": "43da316ab8e5439eacbb4bd5741a67942baffbea9571c71aff4985e6a112300a"
     },
     {
       "path": "references/ask-and-lint.md",
-      "sha256": "cb873bddffefc4ff40fa0a1f756ac11bf145094844d644a2ffe61a716e547011"
+      "sha256": "4cda5b02c7a2c1c50ba7ffc4ad1603d0789c188d37bc72b3f568a2f12233baa8"
     },
     {
       "path": "references/compile-protocol.md",
-      "sha256": "50aca55e12572311c34591ae2abcaeee126804d43aa2788852347d0b223b94f0"
+      "sha256": "918f67907bb4fe4cd70af0beab5699f3baa649bdc65324ef8113f9e85f6b2d09"
     },
     {
       "path": "references/readme.md",
-      "sha256": "fd3f54eac651d33eb0ee547a2b1af7b4d0efb860908650f9dcef9b89582e169f"
+      "sha256": "aff3ee5a137405aeddd6f72970bfe5c222d760fe016fbb97ed163075fd431174"
     },
     {
       "path": "references/supersession-rules.md",
@@ -30,11 +30,11 @@
     },
     {
       "path": "references/test-plan.md",
-      "sha256": "efa3bdf69ee1fbf6e55d3a151a3008c67a33ac4fc8781b12cb417840c5df1118"
+      "sha256": "4c3eac5d7c039eec5b1b3b739e83777f0cdfc176069c7fb33a29c404af229bd1"
     },
     {
       "path": "SKILL.md",
-      "sha256": "a86d5bf00da8e493d67fc4247be590e5b3e43a5379c5c5c9f349230bd5de437c"
+      "sha256": "ea6d39f25d6eab988e289694da55f7ea41e9bc14f3a6232839e03ad2785f011e"
     }
   ],
   "summary": {

@@ -4,7 +4,7 @@
 
 Every answer from the almanac has these parts, in this order:
 
-1. **Answer**: the current rule in one or two sentences.
+1. **Answer**: the currently documented rule in one or two sentences. It reports what the documents record, not legal advice.
 2. **Since and source**: the effective date and the document that set it, with the vote if recorded.
 3. **History**: earlier rules for the same subject, only if they help, for example "Before 15 Apr 2025: one pet per unit."
 4. **Open conflicts or provisional items** on the same topic, quoted. If the documents disagree, say so first and give both statements instead of a single answer.

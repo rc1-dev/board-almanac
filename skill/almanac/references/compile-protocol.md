@@ -15,7 +15,8 @@ The Sources ledger in the newest almanac records every processed file with its c
 | File not in the ledger | New: extract and reconcile |
 | Same path, different checksum | Changed: extract again, then reconcile; treat the old claims from this file as replaced by the new ones |
 | Same path, same checksum, ledger status `processed` | Unchanged: skip |
-| Same path, same checksum, ledger status `pending` or `failed` | Process again: a partial or failed run never leaves a file behind |
+| Same path, same checksum, ledger status `pending`, `failed` or `partial` | Process again: an unfinished or failed run never leaves a file behind |
+| Ledger status `missing`, file is back in the folder | Process again, as for a changed file |
 | In the ledger, not in the folder | Missing: keep its claims, mark the file `missing`, and list affected topics as `incomplete` in the changelog |
 
 Only files that need processing are sent to extraction, so a routine update after one meeting processes one or two files.
@@ -49,6 +50,8 @@ Each extracted claim must carry:
 | Vote | The recorded result, for example 3-0, if any |
 | Quote | Short verbatim words that support the claim |
 | Source | The file path |
+
+Extraction reports, per file, whether the file was read completely and how many items were found. A completed request is not proof of completeness: a file that was not read completely is marked `partial`, processed again next run, and its topics are marked `incomplete`. The per-topic review before saving is where a person checks what was found.
 
 A claim without a quote is not compiled. It is listed in the changelog as "unverified, not compiled" so that a person can check it.
 

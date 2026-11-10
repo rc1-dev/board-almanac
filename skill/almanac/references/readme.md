@@ -20,7 +20,7 @@ Almanac compiles a board folder (bylaws, minutes, notices, contracts and meeting
 
 ## What it changes on the NAS
 
-It creates the almanac folder once, if needed, and adds one new Markdown file per compile run. It never changes, moves or deletes board documents or older almanac versions. Each save asks for approval.
+It creates the almanac folder once, if needed, and adds one new Markdown file per compile run. It never asks an expert to change, move or delete board documents or older almanac versions. Before each save it checks that the file name is free, and after saving it reads the file back. Each save asks for approval after a review of every changed rule.
 
 ## Removal
 
@@ -28,7 +28,7 @@ Uninstall the Skill. To remove its output, delete the almanac folder yourself; t
 
 ## Privacy
 
-Board documents are processed by the NAS experts and, by default, the NAS local model. Nothing is sent to a third-party model unless the user explicitly authorizes it for a run. The almanac records people by board role, and leaves out residents' private matters.
+Board documents are processed by the NAS experts. The intended setting is the NAS local model. Model routing is a UGOS setting that the Skill cannot change: it asks which model the NAS uses, and if that is a third-party model it asks for explicit authorization before reading any document. The almanac records people by board role, and leaves out residents' private matters.
 
 ## Limits
 

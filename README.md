@@ -31,7 +31,8 @@ Board Documents/            almanac (compile)               Almanac/
 - **Every fact is cited.** Each topic records the current rule, effective date, the vote or document that set it, a verbatim quote, the rules it replaced, open conflicts and provisional items.
 - **Conflicts are reported, not guessed.** If minutes say the pool closes at 22:00 and a later notice says 21:00, the almanac says the documents disagree and quotes both.
 - **Four modes:** Compile, Ask (answers only from the newest almanac), Lint (conflicts, provisional decisions, late or overdue actions, coming deadlines) and Status.
-- **Safe by design:** the parent Skill only delegates to UGOS experts (`file-agent`, `document-agent`, `knowledge-agent`); it never overwrites, moves or deletes files; each save needs approval; the NAS local model is the default; people are recorded by board role.
+- **Careful by design:** the parent Skill only delegates to UGOS experts (`file-agent`, `document-agent`, `knowledge-agent`); it never asks them to overwrite, move or delete files, checks the file name before saving and reads the file back after; each save follows a review of every changed rule with its quote; the intended model is the NAS local model (routing is a UGOS setting the Skill confirms but cannot change); people are recorded by board role.
+- **Documented, not adjudicated:** the almanac reports what adopted documents record, with conflicts left open. It is not legal advice.
 
 See [SKILL.md](skill/almanac/SKILL.md) for the full workflow and [the almanac format](skill/almanac/references/almanac-format.md) for what a compiled file looks like.
 

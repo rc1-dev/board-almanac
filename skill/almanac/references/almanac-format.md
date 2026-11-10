@@ -62,7 +62,7 @@ Provisional: none
 
 Rules for the parts:
 
-- **Current rule** states the rule in plain words. If the topic is in conflict, state both values and say that the documents disagree.
+- **Current rule** states the currently documented rule in plain words: what the adopted documents record, not a ruling on legal validity. If the topic is in conflict, state both values and say that the documents disagree.
 - **Effective** is the effective date if a document states one, otherwise the decision date, labelled as such.
 - **Set by** names the document type, its date and the vote if one is recorded. People are named by board role only.
 - **Evidence** gives the file name and a verbatim quote of the decisive words.
@@ -90,7 +90,7 @@ The ledger that makes incremental compiles possible. One row per file in the boa
 | minutes-2025-04-15.docx | minutes | 2025-04-15 | 36846 | 2025-04-20 09:12 | 3f9c0a17b2d4e8c1 | processed |
 ```
 
-Status is `processed`, `failed` (with the reason), `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder). Only `processed` files are skipped by the next compile; `failed` and `pending` files are processed again.
+Status is `processed`, `partial` (not read completely), `failed` (with the reason), `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder). Only `processed` files whose checksum is unchanged are skipped by the next compile; every other file is processed again.
 
 ### 6. Changelog
 

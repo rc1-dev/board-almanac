@@ -101,7 +101,7 @@ const shots = [];
     "Step 4: extract claims. Every claim needs a verbatim quote and its source file.",
     "Step 5: reconcile. Disagreements are reported, never settled by guessing.",
     "Step 6: apply the supersession rules, topic by topic.",
-    "Step 7: show the changelog and ask before saving anything.",
+    "Step 7: show each changed rule with its quote, and ask before saving anything.",
     "Step 8: create the Almanac folder, with approval.",
     "Step 9: save almanac v1 as a new file. Success only when the save is verified."
   ];
@@ -151,7 +151,7 @@ const shots = [];
   // 8. Close
   await cardShot(`<div class="eyebrow">Board Almanac</div><h1>Compile once.<br>Answer many times.</h1>
     <div class="lines"><div>Every rule cited to a file and a quote. Every version kept on the NAS.</div>
-    <div>Conflicts reported, never guessed. Nothing leaves the NAS without consent.</div></div>
+    <div>Conflicts reported, never guessed. Every changed rule reviewed before it is saved.</div></div>
     <div class="foot">github.com/rc1-dev/board-almanac · Replay on synthetic data · On-device results after the NAS test day</div>`, 8);
 
   fs.writeFileSync(path.join(out, "shots.json"), JSON.stringify(shots, null, 1)); fs.rmSync(path.join(out, "card.html"), { force: true });

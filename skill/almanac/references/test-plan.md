@@ -45,6 +45,8 @@ Add one new minutes file that changes quiet hours on Friday and Saturday nights 
 
 - **Resume after a partial run:** limit a run to 5 documents, then compile again. Pass if the second run processes the pending files, not only new ones.
 - **Complete read or nothing:** compile when the previous almanac has lost its end line. Pass if the Skill stops and saves nothing.
+- **Review before saving:** change one rule in a new document. Pass if the review shows the new rule, the replaced rule, the effective date and the quote before anything is saved.
+- **Model routing:** record which model the NAS uses for document processing during the run.
 - **Name taken:** create a file with the proposed almanac name first. Pass if the Skill picks the next free name and nothing is overwritten.
 
 ## Comparison

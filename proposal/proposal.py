@@ -16,50 +16,50 @@ LINKS = "Source, demo and video: github.com/rc1-dev/board-almanac"
 # (heading, [paragraphs or ("ul", [items])])
 ITEMS = [
     ("1. What it does", [
-        "Almanac compiles condo, HOA or club board documents on the NAS into a versioned, cited rulebook that answers \"what is the rule now, since when, says who?\"",
+        "Almanac compiles condo, HOA or club board documents on the NAS into a versioned, cited rulebook that answers \"what is the documented rule now, since when, says who?\"",
     ]),
     ("2. User and problem", [
-        "Volunteer boards and managers of small associations. Rules span years of bylaws, minutes, notices, contracts and recordings; later votes replace earlier ones, notices contain errors, deadlines slip.",
+        "Volunteer boards and managers of small associations, whose rules sit across years of minutes, notices and recordings. A new pet policy passes, yet residents quote the old one; a notice states the wrong fee; a failed motion is mistaken for a rule.",
     ]),
     ("3. Solution", [
-        "Each compile processes only new, changed or unfinished files, applies explicit supersession rules, and saves a new Markdown version recording, per topic, the current rule, effective date, vote, quote, source, replaced rules, conflicts and action items.",
+        "Each compile applies explicit supersession rules and, after the user reviews every changed rule with its quote, saves a new Markdown version: per topic, the documented rule, effective date, vote, source quote, replaced rules, conflicts and action items.",
     ]),
     ("4. Core user flow", [
-        "\"Compile the almanac for Board Documents\" → confirm folders → inventory, transcribe, extract, reconcile → approve changelog and save → almanac-2026-11-22-v1.md. \"Can I put a heat pump on my balcony?\" → conditions, vote, source, version. \"Check the almanac\" → conflicts, late notices, deadlines.",
+        "\"Compile the almanac for Board Documents\" → confirm folders → inventory, transcribe, extract, reconcile → review changed rules, approve save → almanac-2026-11-22-v1.md. \"Can I put a heat pump on my balcony?\" → conditions, vote, source, version. \"Check the almanac\" → conflicts, deadlines.",
     ]),
     ("5. Difference", [
-        "File chat retrieves passages, leaving each answer to work out which rule replaced which. Almanac settles this once, as files arrive, with board-specific rules: effective dates, failed motions, corrections, partial amendments (weekend-only quiet hours) and unresolved conflicts are explicit, never guessed. Answers come from one small reconciled file, which suits a local model; versions remain an audit trail.",
+        "File chat retrieves passages; each answer must work out which rule replaced which. Almanac settles this once, as files arrive: effective dates, failed motions, corrections, partial amendments (weekend-only quiet hours) and unresolved conflicts are explicit, never guessed. Answers come from one small reconciled file, which suits a local model.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
-            "file-agent (ug-filesystem): previous almanac (step 1, Ask, Lint), checksummed inventory (2), folder creation (8).",
+            "file-agent (ug-filesystem): previous almanac (1, Ask, Lint), checksummed inventory (2), name check and read-back (8, 9).",
             "knowledge-agent (ug-knowledge): transcription (3), saving versions (9).",
             "document-agent (ug-document): claim extraction (4), reconciliation (5), answers (Ask).",
-            "NAS local model by default.",
+            "Intended model: NAS local.",
         ]),
     ]),
     ("7. Technical approach", [
-        "The parent Skill only delegates to these experts. Inputs: two folders, mode, model route. Permissions: reads, plus approvals to create the folder and save versions; nothing is overwritten or deleted. A Sources ledger (checksum, status) drives resumable compiles, 60 documents per run. The previous almanac is read completely or the run stops; it is state, never evidence, so every rule cites an original quote. Transcript claims stay provisional. Third-party models need consent.",
+        "The parent Skill only delegates to these experts. Inputs: two folders, mode, model route. Permissions: reads plus approved folder creation and saves; nothing overwritten or deleted. A Sources ledger (checksum, status) drives resumable compiles, 60 documents per run. The previous almanac is read completely or the run stops; it is state, never evidence, so every rule cites an original quote.",
     ]),
     ("8. Status", [
         "Implemented: SKILL.md and six references; official checker (catalog 2.0.0): static-pass, 0 errors, 0 warnings. Validation kit: synthetic board folder, 20-question answer key, scorer. Pending NAS validation: runtime behaviour, accuracy, timing.",
     ]),
     ("9. Validation plan", [
         "Core 1, supersession: fee and pet rule. Pass: EUR 240 and two pets with dates, votes and citations; never the EUR 235 proposal or erroneous EUR 230 notice.",
-        "Core 2, answering from the almanac: heat-pump conditions with the 2-1 vote and version; a gym question returns \"not covered\".",
-        "Edge: add weekend quiet-hours minutes and recompile. Pass: only that file processed, new version saved, weekday hours unchanged, pool conflict still open.",
+        "Core 2, from the almanac: heat-pump conditions with the 2-1 vote and version; a gym question returns \"not covered\".",
+        "Edge: add weekend quiet-hours minutes and recompile. Pass: only that file processed, weekdays unchanged, every other rule and the pool conflict preserved.",
         "All 20 questions also run against plain file chat.",
     ]),
     ("10. Limitations", [
-        "Quality depends on on-device extraction, OCR and transcription; failed files are flagged and retried. Not legal advice. Large archives need several runs. Tested only on synthetic data so far; accuracy is unmeasured until the NAS run.",
+        "Quality depends on on-device extraction, OCR and transcription; incomplete files are retried. Not legal advice. Model routing is a UGOS setting the Skill confirms but cannot enforce. Tested on synthetic data only.",
     ]),
 ]
 
 DISCLOSURE = [
     ("Third-party components, licenses and data flows", [
         ("ul", [
-            "Skill package: no bundled third-party code, models, libraries or external services. It uses only UGOS experts (file-agent, document-agent, knowledge-agent) and the NAS local model.",
-            "Data flow: board files are read and processed on the NAS; almanac versions are saved to a NAS folder the user confirms. Nothing leaves the NAS unless the user explicitly authorizes a third-party model for a run.",
+            "Skill package: no bundled third-party code, models, libraries or external services. It uses only UGOS experts (file-agent, document-agent, knowledge-agent).",
+            "Data flow: board files are read and processed by UGOS experts on the NAS; almanac versions are saved to a NAS folder the user confirms. The intended model is the NAS local model. Model routing is a UGOS setting: the Skill asks which model is used and requires explicit authorization before any document reaches a third-party model.",
             "Validation kit only (not in the Skill): reportlab 5.0.1 (BSD license) and python-docx 1.2.0 (MIT license) generate the synthetic test documents; the scorer uses the Python standard library.",
             "Checked with the official UGREEN skill kit 0.7.3 checker.",
             "AI assistance: Claude (Anthropic) helped draft and review the Skill files, test materials and this proposal.",

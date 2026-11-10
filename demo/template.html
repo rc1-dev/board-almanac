@@ -215,7 +215,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
   </section>
 
   <section class="panel" id="p-compile" role="tabpanel" hidden>
-    <div class="intro"><div><h2>Compile: version 1</h2><p>The Skill only delegates to UGOS experts. It never overwrites, moves or deletes a file, and it asks before creating the folder and before saving.</p></div>
+    <div class="intro"><div><h2>Compile: version 1</h2><p>The Skill only delegates to UGOS experts. It never asks them to overwrite, move or delete a file, and nothing is saved until the user has reviewed every changed rule.</p></div>
       <div class="run-bar"><button class="btn" id="replay" type="button">Replay the run</button><span class="mono" id="runstate">Run complete · 9 of 9 steps</span></div></div>
     <ol class="run" id="run"></ol>
   </section>
@@ -276,7 +276,7 @@ const STEPS = [
   { t: "Extract cited claims", a: "document-agent", d: 3, r: "15 documents, oldest first, in two requests: the contract with the contract schema, the rest with the mixed schema. Every claim carries a topic, status, dates, vote and a verbatim quote, for example:<ul><li>Pets: up to 2, no weight limit. Adopted 3-0. <q>the 15 kg limit for dogs is removed</q></li><li>Fee: EUR 235. Proposed only (agenda).</li><li>Leases of 7 days: motion failed 1-2.</li></ul>" },
   { t: "Reconcile", a: "document-agent", d: 4, r: "Documents checked against each other, never against the almanac itself. Disagreements reported, not decided:<ul><li>Fee EUR 230 (notice) vs EUR 225 (minutes): a later document says the notice was in error.</li><li>Pool 22:00 (minutes) vs 21:00 (notice): nothing resolves it.</li></ul>Replacements found for fee, pets, renovation hours, leasing and guest parking." },
   { t: "Compile version 1", a: "Skill", d: null, r: "Supersession rules applied topic by topic: 12 topics, 1 correction, 1 open conflict, 1 provisional item, 6 open items." },
-  { t: "Show the changelog and ask", a: "Skill", d: null, ap: "asks the user", r: "The user sees the changelog and the file name <code>almanac-2026-11-22-v1.md</code>, and confirms." },
+  { t: "Review before saving", a: "Skill", d: null, ap: "asks the user", r: "The user sees the At a glance table, every conflict and provisional item, and any topic in full on request; on later runs, each changed rule beside the rule it replaces, with its effective date and quote. Then the file name <code>almanac-2026-11-22-v1.md</code>, and the user confirms." },
   { t: "Prepare the almanac folder", a: "file-agent", d: 5, ap: "approval", r: "<code>Almanac/</code> created inside the board folder, then the file name checked: <code>almanac-2026-11-22-v1.md</code> is free. Nothing else touched." },
   { t: "Save and verify version 1", a: "knowledge-agent", d: 7, ap: "approval", r: "Saved <code>Almanac/almanac-2026-11-22-v1.md</code>, verified, then read back by file-agent: it ends with <code>End of almanac v1.</code> Only now does the Skill report success." }
 ];

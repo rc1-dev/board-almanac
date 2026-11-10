@@ -7,7 +7,7 @@ description: Living, cited rulebook for a condo association, HOA or club board f
 
 Give a board and its members one trustworthy answer to "what is the rule now, since when, and says who?"
 
-Board knowledge is scattered across years of bylaws, minutes, notices, contracts and recordings, and later decisions quietly replace earlier ones, sometimes only in part. This Skill compiles that folder into an almanac: one Markdown file per compile run that records, for each topic, the current rule, its effective date, the vote or document that set it, the rules it replaced and over what scope, failed motions, corrections, open conflicts and open action items. Every fact cites an original source file and a quote.
+Board knowledge is scattered across years of bylaws, minutes, notices, contracts and recordings, and later decisions quietly replace earlier ones, sometimes only in part. This Skill compiles that folder into an almanac: one Markdown file per compile run that records, for each topic, the currently documented rule, its effective date, the vote or document that set it, the rules it replaced and over what scope, failed motions, corrections, open conflicts and open action items. Every fact cites an original source file and a quote.
 
 The Skill has four modes:
 
@@ -16,7 +16,7 @@ The Skill has four modes:
 - **Lint**: report open conflicts, provisional decisions, overdue actions, coming effective dates and files that changed since the last compile.
 - **Status**: report the newest almanac version, when it was compiled and how many source files changed since.
 
-Scope limits: the Skill compiles what the documents say. It does not give legal advice, judge whether a vote was valid, resolve a conflict by guessing, or send anything outside the NAS.
+Scope limits: the Skill reports what the documents record, not which rule is legally enforceable. It does not give legal advice, judge whether a vote was valid, resolve a conflict by guessing, or send anything outside the NAS itself.
 
 # Required input
 
@@ -25,7 +25,7 @@ Collect only these from the user, and confirm them before any NAS work:
 1. **Board folder**: the shared NAS folder that holds the board documents. The user names it. Never guess a folder, widen the scope, or read outside it.
 2. **Almanac folder**: where almanac versions are saved. Default suggestion: a subfolder named Almanac inside the board folder. If it does not exist, it is created only after the user confirms.
 3. **Mode**: compile, ask, lint or status, inferred from the request and confirmed if unclear. For ask, the question itself.
-4. **Model route**: the NAS local model is the default. A third-party model is used only if the user explicitly authorizes it for this run, because board documents contain personal data.
+4. **Model route**: confirm with the user which model the NAS is set to use for document processing. The intended setting is the NAS local model. If the NAS is set to use a third-party model, get the user's explicit authorization for this run before any document is read, because board documents contain personal data. The Skill cannot change this setting itself.
 
 Do not pre-collect parameters that belong to a child expert.
 
@@ -61,7 +61,7 @@ Step 2. Inventory the board folder. Delegate:
 
 `delegate --target file-agent --instruction 'List every file in the board folder the user confirmed, including subfolders, except files inside the almanac folder. For each file return the path, type, size, modification time and SHA-256 checksum. Return no file contents. If there are no results, return an empty result. Read only; do not create, change or delete anything.'`
 
-Compare the real result with the Sources ledger from Step 1 and classify each file as set out in [the compile protocol](references/compile-protocol.md): new, changed, unchanged and processed (skip), unchanged but pending or failed in the ledger (process again), or missing. If nothing needs processing and nothing is missing, report that the almanac is current, name its version, and stop. If the folder is empty, report that and stop.
+Compare the real result with the Sources ledger from Step 1 and classify each file as set out in [the compile protocol](references/compile-protocol.md): new, changed, unchanged and processed (skip), unchanged but pending, failed, partial or previously missing in the ledger (process again), or missing. If nothing needs processing and nothing is missing, report that the almanac is current, name its version, and stop. If the folder is empty, report that and stop.
 
 Step 3. Transcribe new, changed, pending or failed recordings, if any. Delegate one request for those audio files only:
 
@@ -71,9 +71,9 @@ Give the delegated request the real file paths from Step 2. Every item from a re
 
 Step 4. Extract claims from the documents to process. Choose at most 60 documents per run, oldest first by the date in the file name, or by modification time when the name has none. Make one request for contracts with the contract schema and one for all other documents with the mixed schema. Delegate each:
 
-`delegate --target document-agent --instruction 'From the board documents listed in this request, extract every decision, rule, fee, amount, effective date, vote result, failed motion, correction, action item with owner role and due date, and contract term including notice periods, renewal and price clauses. For each item return the topic, the subject, the scope it applies to (for example which nights, units or season), the claim, the document date, the document type (bylaws, minutes, notice, contract, agenda, newsletter, email or other), whether it was adopted, proposed or failed, the effective date if stated, and a short verbatim quote with the file path. Use the schema named in this request. Return failures per file. If a document contains no decisions or rules, return an empty result for that file. Do not infer missing values.'`
+`delegate --target document-agent --instruction 'From the board documents listed in this request, extract every decision, rule, fee, amount, effective date, vote result, failed motion, correction, action item with owner role and due date, and contract term including notice periods, renewal and price clauses. For each item return the topic, the subject, the scope it applies to (for example which nights, units or season), the claim, the document date, the document type (bylaws, minutes, notice, contract, agenda, newsletter, email or other), whether it was adopted, proposed or failed, the effective date if stated, and a short verbatim quote with the file path. Use the schema named in this request. For each file, report whether it was read completely and how many items were found. Return failures per file. If a document contains no decisions or rules, return an empty result for that file. Do not infer missing values.'`
 
-Give each delegated request the real document paths from Step 2 and its schema. If more than 60 documents need processing, mark the rest pending, mark the run partial in the almanac header, and tell the user how many remain.
+Give each delegated request the real document paths from Step 2 and its schema. A completed request is not proof that every decision was found: mark a file partial if it was not read completely, process it again next run, and mark its topics incomplete. If more than 60 documents need processing, mark the rest pending, mark the run partial in the almanac header, and tell the user how many remain.
 
 Step 5. Check new claims against the original sources. From the previous almanac, take the source files cited for each topic that a new claim touches. Delegate:
 
@@ -83,7 +83,7 @@ Give the delegated request the real paths of the processed documents and of the 
 
 Step 6. Compile the new version. Start from the full previous almanac text. Using only the real results from Steps 2 to 5, apply [the supersession and conflict rules](references/supersession-rules.md) topic by topic, in document date order, and write the full almanac text in [the almanac format](references/almanac-format.md). Carry unchanged topics forward word for word. Increase the version number by one. Then check that every topic and open item in the previous version is still present, or that the changelog says why it changed. If the check fails, stop and report it; save nothing.
 
-Step 7. Show before saving. Show the user the changelog, the number of topics, open conflicts and provisional items, the proposed file name almanac-YYYY-MM-DD-vN.md and the almanac folder, and ask for confirmation. If the user declines, stop and keep nothing.
+Step 7. Review before saving. For each topic that is new or changed in this version, show the user the proposed documented rule, the rule it replaces, the effective date, the supporting quote with its file, and any open conflict. On a first compile, show the At a glance table, every conflict and provisional item, and offer any topic in full on request. Then show the proposed file name almanac-YYYY-MM-DD-vN.md and the almanac folder, and ask for confirmation. If the user says a change is wrong, keep that topic as in the previous version, record in the changelog that it was held back for review, and show the review again. If the user declines, stop and keep nothing.
 
 Step 8. Prepare the almanac folder. If the folder is missing and the user confirmed creating it, delegate:
 
