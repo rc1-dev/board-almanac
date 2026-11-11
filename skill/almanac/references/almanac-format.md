@@ -36,7 +36,7 @@ One line per topic, with the current value and any adopted change that has not y
 |---|---|---|---|---|
 | Monthly fee | $240 per unit | 2026-03-01 | none | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | Up to 24 hours from 2027-01-01 | adopted |
-| Pool hours | 2026 season: 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m.; other seasons: 9:00 a.m. to 9:00 p.m. | 2026 season; 2019-05-01 | none | conflict |
+| Gym hours | Holiday week 2026-12-21 to 2026-12-27: 9:00 a.m. to 1:00 p.m.; other weeks: 6:00 a.m. to 10:00 p.m. | 2026-12-21; 2020-01-01 | none | adopted |
 ```
 
 Status is one of `adopted`, `conflict`, `provisional` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`. A line never says more than its topic: if the topic says an outcome is not established, so does the line. A topic that no document mentions is left out.
@@ -96,7 +96,7 @@ Status is `processed`, or `excluded` with the reason and the note that the user 
 
 ### 6. Changelog
 
-Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status, and lists every open item added, closed or dropped. Any difference in meaning is a change; only a difference in wording is not. The comparison is proposed for the user to review before saving.
+Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status, and discloses every meaningful change to an open item's description, owner, due date or status, not just items added or removed. Any difference in meaning is a change; only a difference in wording is not. The comparison is proposed for the user to review before saving.
 
 ```text
 ## v7, 2026-11-22

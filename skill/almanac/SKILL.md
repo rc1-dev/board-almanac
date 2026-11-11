@@ -71,7 +71,7 @@ An empty result means no disagreements, and the compile continues.
 
 Step 5. Build the almanac from the records of Steps 2 to 4 only. Apply the supersession rules as of the board's local date and write the complete almanac in the almanac format: fixed topic order and names, one record per rule, scheduled changes for adopted changes that take effect later, the Sources ledger from the snapshot, and the version number one above the previous one. Write the changelog by comparing each topic's rule, scope, effective date, authority and status with the previous At a glance table, and the open items with the previous Open items section. Any difference in meaning is a change; only a difference in wording is not.
 
-Step 6. Review before saving. Show the user the changelog, with each new, changed or removed rule beside the previous one, its effective date and quotation, every open item added, closed or dropped, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
+Step 6. Review before saving. Before approval, verify that At a glance, Current rule, Superseded and the user review agree on amounts, dates and scope; a standing rule remains current outside an expressly limited exception. Show the user the changelog, with each new, changed or removed rule beside the previous one, its effective date and quotation, every meaningful change to an open item's description, owner, due date or status, not just items added or removed, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
 
 Step 7. Check, save and verify.
 
@@ -112,7 +112,7 @@ Run Step A1 and report the version, compile date, completeness, source count, co
 # Completion and failure
 
 - **completed**: use only the real result. An empty result is normal when there is no previous almanac, no recording, no record in a document, or no disagreement; continue. Never widen the scope to fill an empty result.
-- **failed**: report the step and reason. In Step 3, follow the exclusion rule; elsewhere, save nothing.
+- **failed**: report the step and reason. In Step 3, follow the exclusion rule; elsewhere, save nothing. Treat a malformed expert reply as a failure: retry once, disclose the failure even if the retry succeeds, and stop without saving if no valid result is obtained.
 - **cancelled**: stop and save nothing.
 - **waiting_user**: ask the pending question plainly and continue only with the answer.
 - **waiting_approval**: name the action awaiting approval and wait. A pending approval is not success.
