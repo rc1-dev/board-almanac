@@ -1,7 +1,7 @@
 # Almanac: Harbor View Condominium Association
 Version: 2
 Compiled: (set at compile)
-As of: 2026-11-29 (board local date)
+As of: 2026-11-22 (board local date)
 Board folder: Board Documents
 Sources: 17 processed, 0 excluded
 Completeness: complete
@@ -187,7 +187,7 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 
 ## Changelog
 
-## v2, 2026-11-29
+## v2, 2026-11-22
 - Rebuilt from 17 files. New since v1: minutes-2026-09-15.docx.
 - Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m., effective 2026-10-01 (minutes-2026-09-15.docx, 3-0). Other nights unchanged at 10:00 p.m. to 7:00 a.m. Previously 10:00 p.m. to 7:00 a.m. every night.
 - Open items: none added, closed or changed.

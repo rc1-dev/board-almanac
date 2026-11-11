@@ -94,13 +94,13 @@ const shots = [];
 
   // 3. A change that applies to part of a rule
   await p.evaluate(() => window.demo.go("update")); await toPanel(-8);
-  await cue("New minutes change quiet hours on Friday and Saturday nights only. The next compile extracts that file, rechecks the bylaws it amends, and carries the other topics forward.", 7);
+  await cue("New minutes change quiet hours on Friday and Saturday nights only. The next compile reads every document again and builds version 2 from them, so nothing outdated is carried over.", 7);
   await p.evaluate(() => { window.demo.go("almanac"); window.demo.setVersion("v2", true); window.demo.topic("quiet"); }); await toPanel(-8);
   await cue("Version 2 applies 11:00 p.m. to those two nights and keeps 10:00 p.m. for every other night, with the earlier rule recorded.", 7);
 
   // 4. A disagreement the documents do not resolve
   await p.evaluate(() => window.demo.topic("pool")); await toPanel(-8);
-  await cue("When documents disagree and nothing resolves it, the almanac quotes both and leaves the decision to the board.", 6.5);
+  await cue("When documents disagree and nothing resolves it, the almanac quotes both and leaves the decision to the board. The 2019 hours still apply to other seasons.", 7);
 
   // 5. How it works
   await p.evaluate(() => window.demo.go("folder")); await toPanel(-8);
@@ -110,16 +110,17 @@ const shots = [];
   await p.evaluate(() => window.demo.run(0, -1));
   await cue("On the NAS, the Skill is designed to delegate every step of a compile to the UGOS agents.", 6);
   const stepCaps = {
-    1: "The folder is inventoried with checksums, so later compiles process only new or changed files.",
-    3: "Decisions are extracted with a quotation and source file. A recording can only create provisional items.",
-    4: "Sources are reconciled against each other, and disagreements are reported for the board to resolve.",
-    6: "The user reviews each changed rule and its quotation before anything is saved.",
-    8: "The new version is saved beside the old one and read back to confirm it is complete."
+    0: "The folder is listed with checksums. Every compile reads every document again, so a corrected or deleted file cannot leave an outdated rule behind.",
+    2: "Decisions are extracted with a quotation and source file. A recording can only create provisional items.",
+    3: "Sources are reconciled against each other, and disagreements are reported for the board to resolve.",
+    5: "Before anything is saved, the user reviews each rule and its quotation.",
+    6: "The folder is checked again before saving. If a file changed during the compile, nothing is saved.",
+    7: "The new version is saved beside the old one and read back to confirm it is complete."
   };
-  for (const i of [1, 3, 4, 6, 8]) {
+  for (const i of [0, 2, 3, 5, 6, 7]) {
     await p.evaluate(i => window.demo.run(i + 1, i), i);
     await scrollTo(`#run > li:nth-child(${i + 1})`, 120);
-    await cue(stepCaps[i], 5);
+    await cue(stepCaps[i], i === 0 ? 6.5 : 5);
   }
 
   // 6. More answers and the lint report
