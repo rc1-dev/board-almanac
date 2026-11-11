@@ -64,7 +64,7 @@ Provisional: none
 Rules for the parts:
 
 - **Current rule** states the currently documented rule in plain words: what the adopted documents record, not a ruling on legal validity. If the topic is in conflict, state both values and say that the documents disagree.
-- **Effective** is the effective date if a document states one, otherwise the decision date, labelled as such.
+- **Effective** is the effective date the extracted record gives, even if its quote does not show it; otherwise the decision date, labelled as such.
 - **Set by** names the document type, its date and the vote if one is recorded. People are named by board role only.
 - **Evidence** gives the file's path relative to the board folder and a verbatim quote of the decisive words. Mark omitted words with ... and add no punctuation of your own. Paths, not bare file names, keep two files with the same name in different subfolders apart.
 - **Superseded** lists earlier rules for the same subject, newest first, each with its date range and source.
