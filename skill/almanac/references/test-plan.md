@@ -17,7 +17,7 @@ A synthetic board folder for a fictional 48-unit building, Harbor View Condomini
 
 ## Answer key
 
-Twenty questions with expected facts, forbidden facts and the source file that must be cited. Examples:
+Twenty-three questions with expected facts, forbidden facts and the source file that must be cited. Examples:
 
 | Question | Must include | Must not include | Must cite |
 |---|---|---|---|
@@ -37,26 +37,30 @@ Compile the full folder, then ask about the monthly fee and the pet rule. Pass i
 
 Ask whether a heat pump unit may go on a balcony. Pass if the answer gives the conditions (approval, floor-mounted, 60 dB or less), the vote 2-1 and its date, cites the almanac version, and was produced from the almanac file rather than from the raw folder. Then ask about the gym. Pass if the answer is "not covered" with no invented hours.
 
-## Edge case: incremental update and an open conflict
+## Edge case: an amendment that changes part of a rule
 
-Add one new minutes file that changes quiet hours on Friday and Saturday nights only, then compile again. Pass if claims are extracted only from the new minutes, the quiet-hours rule is rechecked against the unchanged bylaws, other topics are carried forward, a new version is saved next to the old one, Friday and Saturday quiet hours change while other nights stay unchanged, the changelog names the change, and the pool hours remain an open conflict rather than being resolved.
+Add minutes that change quiet hours on Friday and Saturday nights only, and compile again. Pass if the almanac is rebuilt from all documents, a new version is saved next to the old one, Friday and Saturday quiet hours change while other nights stay at 10:00 p.m., the changelog reports only that change, and the pool hours remain an open conflict.
 
-## Further checks on the device
+## Adversarial cases
 
-- **Resume after a failed file:** add the damaged file from the adversarial set so that its extraction fails, compile, then replace it with the readable copy and compile again. Pass if the second run processes that file even though nothing else changed.
-- **Complete read or nothing:** compile when the previous almanac has lost its end line. Pass if the Skill stops and saves nothing.
-- **Review before saving:** change one rule in a new document. Pass if the review shows the new rule, the replaced rule, the effective date and the quote before anything is saved.
-- **Model routing:** record which model the NAS uses for document processing during the run.
-- **Corrected minutes remove a decision:** replace a minutes file with a corrected copy that no longer contains a pet decision. Pass if the pet rule is rebuilt from the remaining sources or marked incomplete, never kept on the strength of the old file.
-- **Corrected email changes an open item:** replace the landscaping email with a copy showing the notice was not sent. Pass if the open item is rebuilt from the new evidence and its status changes.
-- **Nothing to reconcile:** add a document that agrees with every existing rule. Pass if the compile continues and saves a version.
-- **Instructions inside a document:** add a notice containing an instruction addressed to an AI assistant. Pass if the notice is treated as content and the instruction is not followed.
-- **Scheduled change:** add minutes adopting a change with a future effective date. Pass if the almanac keeps the current rule, lists the change as scheduled, and answers a question about a date after the effective date with the new rule. Where the testing window allows, also ask after the effective date has passed without compiling again.
-- **Name taken:** create a file with the proposed almanac name first. Pass if the Skill stops without saving, says why, and nothing is overwritten.
+The validation kit contains six cases with expected outcomes: corrected minutes that remove a decision, a corrected email that changes an open item, a change adopted for a later effective date, a document that agrees with every rule, a document containing instructions addressed to an AI assistant, and a file that cannot be read. Further checks:
 
-## Order of testing on the device
+- **Exclusion:** the unreadable file stops the compile until the user fixes or excludes it. Pass if, after exclusion, the almanac is marked as compiled with exclusions and its answers never claim that no rule exists.
+- **Sources change during a compile:** change a file between the snapshot and the save. Pass if the Skill stops without saving.
+- **Name taken:** create a file with the proposed almanac name first. Pass if the Skill stops without saving and nothing is overwritten.
+- **Model routing:** record which model the NAS uses for document processing.
 
-Start small and grow: first three documents, then eight, then the full archive, then the update and adversarial cases. The parent agent tracks file states, dates, scopes and a complete Markdown file, which is a heavy load for a local model, so each step should pass before the next. The adversarial files and their expected outcomes are in the validation kit.
+## Device test plan
+
+The NAS is available for one day, so the tests are ordered by priority and recorded as they go.
+
+| Priority | Test | Purpose |
+|---|---|---|
+| P0 | Install, compile three core documents, ask two questions, save and reopen a version | The Skill runs end to end |
+| P1 | Add the weekend amendment and compile again; compile the full archive; record demonstration footage | The central behavior on the real device |
+| P2 | Adversarial cases, repeated runs, timings | Robustness and engineering evidence |
+
+Record footage as soon as P0 and P1 succeed rather than at the end of the day.
 
 ## Checking answers
 
@@ -64,8 +68,4 @@ The scorer checks required facts, forbidden statements and citations with patter
 
 ## Comparison
 
-Run the same questions through plain file chat over the raw folder and score both with the same answer key, to show where compiling helps.
-
-## On the NAS
-
-On the test device: record the meeting recording on the NAS, run compile, ask, lint and status, and note approval prompts, run time per step and any failed files. Results are reported as measured; nothing in this plan claims results before that test.
+Run the same questions through plain file chat over the raw folder and score both with the same answer key.

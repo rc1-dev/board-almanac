@@ -1,12 +1,12 @@
 # Almanac format
 
-An almanac is one Markdown file per compile run, saved as `almanac-YYYY-MM-DD-vN.md` in the almanac folder. Older versions are never changed, so the folder is also the history.
+An almanac is one Markdown file per compile, rebuilt from the original documents and saved as `almanac-YYYY-MM-DD-vN.md` in the almanac folder. Older versions are never changed, so the folder is also the history.
 
-Keep the whole file under 60,000 characters so it can be read completely in parts of 4,000 characters. If it would be longer, shorten quotes to the decisive words and condense superseded entries older than five years to a single line each that names the older almanac version holding the full entry. Never drop an entry: older versions are kept unchanged, so the full history stays on the NAS.
+Keep the whole file under 60,000 characters so it can be read completely in parts of 4,000 characters. If it would be longer, shorten quotes to the decisive words. Keep topics in the order of the topic list below and use the same field names in every version, so that versions can be compared field by field.
 
 ## Section order
 
-The file has exactly these sections, in this order, followed by an end line. Section titles are fixed so that later runs can find them and check that a read was complete.
+The file has exactly these sections, in this order, followed by an end line. Section titles are fixed so that reads can be checked for completeness.
 
 ### 1. Header
 
@@ -16,16 +16,16 @@ The first lines of the file:
 # Almanac: Harbor View Condominium Association
 Version: 7
 Compiled: 2026-11-22 14:05
-Compiled-through: 2026-09-15 18:40
+As of: 2026-11-22 (board local date)
 Board folder: Board Documents
-Sources: 18 processed, 0 failed, 0 pending
+Sources: 18 processed, 0 excluded
+Completeness: complete
 Open conflicts: 1
 Provisional items: 1
-Run status: complete
 Model route: NAS local model
 ```
 
-`Run status` is `complete` or `partial`. A partial run lists the number of files still pending in `Sources`.
+`Completeness` is `complete` when every file in the snapshot was processed, or `compiled with exclusions` when the user excluded files that could not be read. An almanac compiled with exclusions says in its header that the excluded files may contain decisions on any topic, and its answers never treat the absence of a rule or conflict as established.
 
 ### 2. At a glance
 
@@ -39,7 +39,7 @@ One line per topic, with the current value and any adopted change that has not y
 | Pool hours | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. | 2026 season | none | conflict |
 ```
 
-Status is one of `adopted`, `conflict`, `provisional`, `disputed` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`.
+Status is one of `adopted`, `conflict`, `provisional` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`.
 
 ### 3. Topics
 
@@ -68,7 +68,7 @@ Rules for the parts:
 - **Set by** names the document type, its date and the vote if one is recorded. People are named by board role only.
 - **Evidence** gives the file's path relative to the board folder and a verbatim quote of the decisive words. Paths, not bare file names, keep two files with the same name in different subfolders apart.
 - **Superseded** lists earlier rules for the same subject, newest first, each with its date range and source.
-- **Scheduled** lists adopted changes whose effective date is after the compile date, each with the date, the decision that set it and a quote. The current rule stays in force until that date, and Ask and Lint compare the date with today.
+- **Scheduled** lists adopted changes whose effective date is after the board's local date at compile time, each with the date, the decision that set it and a quote. The current rule stays in force until that date. Ask and Lint compare the date with today, and a compile runs again once it has passed.
 - **Open conflicts** lists disagreements that no document resolves, with both quotes.
 - **Provisional** lists items that come only from a recording, an agenda or an email and are not confirmed by adopted minutes.
 
@@ -84,7 +84,7 @@ Action items with owner role, due date, status and source, and contract deadline
 
 ### 5. Sources
 
-The ledger that makes incremental compiles possible. One row per file in the board folder.
+The snapshot this version was built from: one row per file in the board folder, with its path relative to the board folder. The next compile compares it with the folder to decide whether anything changed.
 
 ```text
 | File | Type | Document date | Size | Modified | SHA-256 (first 16) | Status |
@@ -92,17 +92,17 @@ The ledger that makes incremental compiles possible. One row per file in the boa
 | minutes-2025-04-15.docx | minutes | 2025-04-15 | 36846 | 2025-04-20 09:12 | 3f9c0a17b2d4e8c1 | processed |
 ```
 
-Status is `processed`, `partial` (not read completely), `failed` (with the reason), `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder). Only `processed` files whose checksum is unchanged are skipped by the next compile; every other file is processed again.
+Status is `processed`, or `excluded` with the reason and the note that the user approved the exclusion.
 
 ### 6. Changelog
 
-Newest first. Each entry lists what this run added, changed, superseded, marked as conflict, marked as provisional or left incomplete, and which files it processed.
+Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status. A difference in wording alone is not a change. The comparison is proposed for the user to review before saving.
 
 ```text
 ## v7, 2026-11-22
-- Extracted 1 new file: minutes-2026-09-15.docx. Rechecked against bylaws-house-rules-2019.pdf (unchanged).
+- Rebuilt from 18 files. New since v6: minutes-2026-09-15.docx.
 - Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m.; other nights unchanged at 10:00 p.m. to 7:00 a.m.
-- No new conflicts.
+- No new conflicts. No exclusions.
 ```
 
 ### End line

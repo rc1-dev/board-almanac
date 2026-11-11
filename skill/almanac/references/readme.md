@@ -20,7 +20,7 @@ Almanac compiles a board folder (bylaws, minutes, notices, contracts and meeting
 
 ## What it changes on the NAS
 
-It creates the almanac folder once, if needed, and adds one new Markdown file per compile run. It never asks an expert to change, move or delete board documents or older almanac versions. Before each save it checks that the file name is free, and after saving it reads the file back. Each save asks for approval after a review of every changed rule.
+It creates the almanac folder once, if needed, and adds one new Markdown file per compile run, rebuilt from the original documents. It never asks an expert to change, move or delete board documents or older almanac versions. Before each save it checks that the file name is free, and after saving it reads the file back. Each save asks for approval after a review of every changed rule.
 
 ## Removal
 
@@ -32,7 +32,7 @@ Board documents are processed by the NAS experts. The intended setting is the NA
 
 ## Limits
 
-The Skill reports what the documents say. It is not legal advice, does not judge whether votes or notices were valid, and records conflicts instead of resolving them. Scanned documents and recordings depend on extraction and transcription quality on the device.
+The Skill reports what the documents say. It is not legal advice, does not judge whether votes or notices were valid, and records conflicts instead of resolving them. Scanned documents and recordings depend on extraction and transcription quality on the device. This version supports up to 60 source files per compile as a conservative design limit. Every compile re-reads all documents, so a larger folder takes longer to compile.
 
 ## Disclosure
 

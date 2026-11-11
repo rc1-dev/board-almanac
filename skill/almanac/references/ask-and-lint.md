@@ -29,17 +29,19 @@ Say "The almanac does not cover this." Do not answer from general knowledge. Off
 
 ## Freshness warning
 
-Count the board files that are not in the almanac's Sources ledger, whose size or modification time differs from the ledger, or whose ledger status is pending, partial or failed. If the count is above zero, add: "N board files are new, changed or not yet processed since this almanac was compiled. The answer may be out of date. Say compile to update it."
-
-Ledger files that are no longer in the folder are counted too. This is a quick check that compares size and modification time, not content, so a file changed without any change to either would not be counted. A compile confirms every change by checksum, and the user can ask for that definitive check at any time.
+Count the board files that are not in the almanac's Sources ledger or whose size or modification time differs from it, and the ledger files that are no longer in the folder. If the count is above zero, add: "N board files are new, changed or missing since this almanac was compiled. The answer may be out of date. Say compile to update it." This is a quick check that compares size and modification time, not content, so a file changed without any change to either would not be counted. A compile confirms every change by checksum, and the user can ask for that definitive check at any time.
 
 ## Scheduled changes
 
-Before answering, compare today's date with every scheduled effective date in the At a glance table. If a scheduled change has taken effect since the compile, it is the current rule: answer with it, cite the decision that adopted it, and say that the almanac was compiled before it took effect. For a question about a particular date, answer from the effective dates and history recorded for that topic as of that date.
+Before answering, compare today's date with every scheduled effective date in the At a glance table. If a scheduled change has taken effect since the compile, it is the current rule: answer with it, cite the decision that adopted it, and say that the almanac was compiled before it took effect. For a question about a particular date, answer from the effective dates and history recorded for that topic as of that date. Dates use the board's local calendar.
+
+## Exclusions
+
+If the almanac was compiled with exclusions, say so in every answer and name the excluded files. Never state that no rule or no conflict exists on a topic, because an excluded file may contain one.
 
 ## Coverage
 
-Ask the document expert to read the whole almanac, not a preview, and to say whether it did. If it did not, read the file completely and answer from the topic's own section. If the history the question needs was condensed into a reference to an older almanac version, read that version or say where the detail is.
+Ask the document expert to read the whole almanac, not a preview, and to say whether it did. If it did not, read the file completely and answer from the topic's own section.
 
 ## Lint checks
 
@@ -53,7 +55,7 @@ Lint reads the newest almanac and the inventory of changed files. It reports, in
 6. **Coming effective dates** within 90 days.
 7. **Contract deadlines** within 90 days, such as renewal notice periods.
 8. **Files changed since the last compile**, by count and name.
-9. **Incomplete or disputed topics** caused by failed or missing files.
+9. **Exclusions**: files excluded from the compile, and the reminder that they may affect any topic.
 
 If every check is empty, report "Lint found no issues" with the almanac version.
 

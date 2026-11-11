@@ -1,105 +1,67 @@
 # Compile protocol
 
-This reference explains the compile steps in [SKILL.md](../SKILL.md) in more detail. It adds no new NAS actions.
+This reference explains the Compile steps in [SKILL.md](../SKILL.md). It adds no new NAS actions.
 
-## Why compile instead of searching every time
+## Why every compile is a rebuild
 
-A board folder is small in bytes but large in history: one rule may be set in the 2019 bylaws, changed in 2024 minutes, announced with a typo in a 2025 notice, and corrected again in 2025. A search over raw files returns all four statements and leaves the reader, or a small local model, to work out which one is current. Compiling does that work once, carefully, when a file arrives, and stores the result with its evidence. Later questions read a short, reconciled file instead of the whole folder.
+A board folder is small in bytes but long in history: one rule may be set in the 2019 bylaws, changed in 2024 minutes, misstated in a 2025 notice and corrected later. Each compile reads every original document again and builds the almanac from what they say. Nothing is carried over from the previous almanac except its version number and, for the changelog, its At a glance table. A corrected or deleted document therefore cannot leave an outdated rule behind, and an amendment is always read together with the rule it amends.
 
-## Incremental compile
+The cost is time: every compile re-reads the whole folder. This version supports up to 60 source files per compile as a conservative design limit; the capacity that works in practice will be measured on the NAS.
 
-The Sources ledger in the newest almanac records every processed file with its checksum and modification time. On the next run:
+## When to compile
 
-| Inventory result | Action |
-|---|---|
-| File not in the ledger | New: extract and reconcile |
-| Same path, different checksum | Changed: extract again, then reconcile; treat the old claims from this file as replaced by the new ones |
-| Same path, same checksum, ledger status `processed` | Unchanged: skip |
-| Same path, same checksum, ledger status `pending`, `failed` or `partial` | Process again: an unfinished or failed run never leaves a file behind |
-| Ledger status `missing`, file is back in the folder | Process again, as for a changed file |
-| In the ledger, not in the folder | Missing: mark the file `missing`; rebuild every record that cited it from the surviving evidence, keeping its claims only as history marked source missing |
+A compile is needed when a file in the board folder is new, changed or missing compared with the Sources ledger of the newest almanac, or when a scheduled change in that almanac has reached its effective date. Otherwise the almanac is current.
 
-Only files that need processing are sent to extraction. A routine update after one meeting extracts claims from one or two new files; the unchanged documents that those decisions amend are read again during reconciliation, and every other topic is carried forward.
+## Snapshot
 
-## Evidence dependencies
+Step 1 records every source file with its path relative to the board folder, size, modification time and SHA-256 checksum. This snapshot becomes the Sources ledger. Before saving, Step 7 lists the files again; if anything differs, the compile stops, because the almanac would mix two states of the folder. The check narrows the window for such a change but cannot close it entirely.
 
-The records to rebuild are the union of two sets: records that cite a changed or missing file, and records whose subject and scope overlap a claim from a new or changed document or recording. Unchanged sources alone never mean a record is current, because a new amendment can change a topic whose earlier sources are untouched.
+## Claim records
 
-Every topic and every open item depends on the files it cites. When a file changes or goes missing, every record that cites it is rebuilt from the original evidence that remains, even if the new extraction returns nothing for it. The previous almanac shows which files to look at; those surviving files are extracted again for the affected records, because the almanac itself is never evidence. A claim that a corrected document no longer contains is dropped. If no remaining source supports a rule, the topic is marked `incomplete` and the changelog says why, so an obsolete rule is never kept as current. Only topics whose cited sources are all unchanged are carried forward word for word.
-
-## Reading the previous almanac
-
-The previous almanac is read completely, in parts of 4,000 characters, before anything is compiled. The read is complete only if all six sections are present and the end line is reached. If not, the compile stops and saves nothing, because a new version built from part of the old one would silently drop rules.
-
-## Batching
-
-- Process at most 60 documents per run, the default extraction limit.
-- Choose the batch oldest first by the date in the file name, or by modification time when the name has none. During compiling, order claims by the document date the extraction returned, so that later decisions are applied after the rules they replace.
-- Send contracts in their own extraction request with the contract schema, and other documents with the mixed schema, because each request takes one schema.
-- Send at most 60 files per reconcile request, the default limit, and split by topic when there are more.
-- Recordings are transcribed in their own step and never sent to document extraction. Their spoken decisions are mapped to the same claim fields as document claims.
-- If a source that an affected record needs is still pending at the end of a run, that record is marked `incomplete` rather than rebuilt from part of its evidence.
-- If documents remain, mark the run `partial`, list the remaining files as `pending`, and tell the user to run compile again.
-
-## Claim fields
-
-Each extracted claim must carry:
+Each extracted record carries:
 
 | Field | Meaning |
 |---|---|
 | Topic | One of the topics in [the almanac format](almanac-format.md) |
-| Subject | The specific thing within the topic, for example "dog weight limit" within Pets |
-| Scope | What the claim applies to, for example "Friday and Saturday nights", "the 2026 season" or "all units" |
+| Subject | The specific matter within the topic, for example "dog weight limit" within Pets |
+| Scope | What it applies to, for example "Friday and Saturday nights", "the 2026 season" or "all units" |
 | Value | The rule, amount, time range or date in plain words |
-| Status | adopted, proposed, failed, provisional or informational |
-| Document type | bylaws, minutes, notice, contract, agenda, newsletter, email, transcript or other |
-| Document date | The date the document states, not the file date |
-| Effective date | Only if the document states one |
-| Vote | The recorded result, for example 3-0, if any |
-| Quote | Short verbatim words that support the claim |
+| Status | adopted, proposed, failed or informational |
+| Document type and date | As stated in the document, not the file date |
+| Effective date and vote | Only if stated |
+| Quote | Verbatim, at most 30 words |
 | Source | The file path |
 
-Extraction reports, per file, whether the file was read completely and how many items were found. A completed request is not proof of completeness: a file that was not read completely is marked `partial`, processed again next run, and its topics are marked `incomplete`. The per-topic review before saving is where a person checks what was found.
-
-A claim without a quote is not compiled. It is listed in the changelog as "unverified, not compiled" so that a person can check it.
+A record without a quote is not used. Keep records compact: the build step needs every record from every document at once.
 
 ## Recordings
 
-Meeting recordings are transcribed by the knowledge expert, which also lists each spoken decision, proposal, vote, objection and action item with a quote and the segment time. These items go through the same claim fields as documents, with the recording path and segment time as the source. Claims from a transcript:
+Recordings are transcribed by the knowledge agent and never sent to document extraction. Spoken decisions become records with the recording path and segment time as source. They are always provisional, never replace an adopted rule, and become adopted only when written minutes adopt the same decision.
 
-- are always `provisional`;
-- become `adopted` only when written minutes adopted later state the same decision;
-- are never used to supersede a rule from bylaws, minutes or a contract.
+## Documents that never set a rule
 
-## Document types that never set a rule on their own
+An agenda lists proposals. A newsletter is informational, though it can reveal a conflict. An email is evidence of an action, such as when a notice was sent, not of a rule.
 
-- **Agenda**: lists proposals. A proposal is compiled as `proposed`, and only the minutes record whether it passed.
-- **Newsletter**: informational. It can trigger a conflict entry if it states a rule that disagrees with adopted documents, but it never supersedes one.
-- **Email**: evidence of an action (for example, that a notice was sent on a date), not of a rule change.
+## Unreadable files and exclusions
 
-## Provenance
+A file that fails or is not read completely blocks the compile until the user either fixes it or explicitly excludes it. An excluded file is listed in the Sources ledger as excluded, with the reason. The almanac is then marked "compiled with exclusions" and states that the excluded files may contain decisions on any topic, because their contents are unknown. Its answers never treat the absence of a rule or a conflict as established.
 
-The previous almanac is state to update, never evidence. Reconciliation compares the new documents with the original source files cited for the affected topics, not with the almanac text, so an earlier conclusion can never support a new one. Every current rule, replaced rule and conflict in the new version cites an original document or recording.
+## Building the almanac
 
-## Building the new version
-
-1. Start from the full previous almanac text, or from an empty almanac on the first run. Carry unchanged topics forward word for word.
-2. For each claim, in document date order, apply [the supersession and conflict rules](supersession-rules.md).
-3. Rebuild the At a glance table from the topic sections.
-4. Update Open items: add new action items, and mark items done only when a document says they were done.
-5. Update the Sources ledger and the header counts.
-6. Write the changelog entry for this run.
-7. Check the size limit in [the almanac format](almanac-format.md), and end the file with its end line.
-8. Check that every topic and open item of the previous version is still present, or that the changelog says why it changed. If not, stop and save nothing.
+1. Group the records by topic, subject and scope.
+2. Apply [the supersession rules](supersession-rules.md) in document date order, as of the board's local date.
+3. Record adopted changes with a later effective date as scheduled.
+4. Write every section of the almanac in the fixed topic order, with the Sources ledger from the snapshot and the end line.
+5. Compare each topic's rule, scope, effective date, authority and status with the previous At a glance table to write the changelog. A difference in wording alone is not a change.
 
 ## Saving
 
-Before saving, confirm that the file name is free. A taken name means another version was saved after this compile began, so the compile stops without saving and starts again from the newest version. The version number is set once, in Step 6, and used in the file name, header, changelog entry and end line. After saving, accept the result only if the expert reports it completed and verified, the saved name is the one supplied, the file size matches the content size the save reported, and a complete read-back contains every section, topic and open item of the approved text with this version in every version field. Anything else is an unresolved save: name the file that was written and do not describe it as the new version. The interface offers no byte-for-byte comparison, so this confirms structure and size rather than every character.
+The version number is one above the previous version and appears in the file name, header, changelog entry and end line. Before saving, the snapshot is checked and the file name must be free; a taken name means another version was saved meanwhile, so the compile stops. After saving, the file is read back completely. The save counts only if it was verified, the name and size match, and every section and topic is present with this version number. The interface offers no byte-for-byte comparison, so this confirms structure and size rather than every character.
 
-## What the compile must never do
+## What a compile never does
 
+- Use the previous almanac as evidence for a rule.
 - Invent a value, date, vote or quote that no expert returned.
-- Resolve a conflict by choosing the more common value or the more plausible one.
-- Rewrite or delete an older almanac version.
-- Cite the almanac itself as the source of a rule.
-- Copy personal details of residents into the almanac.
+- Resolve a conflict by choosing the more common or more plausible value.
+- Overwrite, move or delete any file.
+- Copy residents' personal details into the almanac.

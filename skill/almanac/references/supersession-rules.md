@@ -44,7 +44,7 @@ A failed motion or an agenda proposal never changes a rule. Record it under Supe
 
 ## 6. Effective dates
 
-If a decision has a future effective date, the current rule stays until that date. Show both: the current rule, and the adopted change under Scheduled with its effective date. Once that date has passed, the scheduled change is the current rule, even if no document has changed since the compile. Ask, Lint and Status check this against today's date.
+Apply the rules as of the board's local date. If a decision has a future effective date, the current rule stays until that date. Show both: the current rule, and the adopted change under Scheduled with its effective date. Once that date has passed, the scheduled change is the current rule, even if no document has changed since the compile. Ask, Lint and Status check this against today's date.
 
 ## 7. Conflicts
 
