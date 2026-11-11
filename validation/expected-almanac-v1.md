@@ -1,12 +1,12 @@
 # Almanac: Harbor View Condominium Association
 Version: 1
 Compiled: (set at compile)
-Compiled-through: (latest modification time of the files processed)
+As of: 2026-11-22 (board local date)
 Board folder: Board Documents
-Sources: 16 processed, 0 failed, 0 pending
+Sources: 16 processed, 0 excluded
+Completeness: complete
 Open conflicts: 1
-Provisional items: 1
-Run status: complete
+Provisional items: 2
 Model route: NAS local model
 
 <!-- Hand-written reference: what a correct first compile should contain, for reviewing real output on the test day. Assumes the 15 generated files plus the June 2026 recording (recording-script-2026-06.md, saved as board-meeting-2026-06-18.m4a), as in the test-day procedure. Without the recording: 15 sources, 0 provisional items, and no barbecue or insurer entries. -->
@@ -129,6 +129,8 @@ Open conflicts:
 - minutes-2025-09-10.pdf (2025-09-10): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily" (3-0)
 - notice-2026-05-01-pool.pdf (2026-05-01): "Hours: 8:00 a.m. to 9:00 p.m. daily"
   No later document explains the difference.
+Provisional:
+- board-meeting-2026-06-18.m4a (recording, 2026-06-18): a board member noted that the notice says 9:00 p.m. while the board had said 10:00 p.m.; the matter was deferred. Not a decision. The conflict stays open.
 
 ## Vendor contracts
 
@@ -181,10 +183,9 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 
 ## Changelog
 
-## v1
-- First compile. Processed 16 files (15 documents, 1 recording).
-- 12 topics compiled. 1 open conflict: Pool hours for 2026.
-- 1 correction applied: the $230 notice of 2025-02-10.
-- 1 provisional item: electric barbecues, from the June 2026 recording.
+## v1, 2026-11-22
+- First compile, built from 16 files (15 documents, 1 recording); none excluded.
+- 12 topics. 1 open conflict: 2026 pool hours. 2 provisional items from the June 2026 recording: electric barbecues, and the deferred question about the pool notice.
+- 1 correction applied: the $230 stated in notice-2025-02-10-fees.pdf, corrected by minutes-2025-04-15.docx.
 
 End of almanac v1.

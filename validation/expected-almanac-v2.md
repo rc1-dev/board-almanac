@@ -1,12 +1,12 @@
 # Almanac: Harbor View Condominium Association
 Version: 2
 Compiled: (set at compile)
-Compiled-through: (latest modification time of the files processed)
+As of: 2026-11-29 (board local date)
 Board folder: Board Documents
-Sources: 17 processed, 0 failed, 0 pending
+Sources: 17 processed, 0 excluded
+Completeness: complete
 Open conflicts: 1
-Provisional items: 1
-Run status: complete
+Provisional items: 2
 Model route: NAS local model
 
 <!-- Hand-written reference: what a correct second compile, after adding add-later/minutes-2026-09-15.docx, should contain, for reviewing real output on the test day. Assumes the 15 generated files plus the June 2026 recording (recording-script-2026-06.md, saved as board-meeting-2026-06-18.m4a), as in the test-day procedure. Without the recording: 15 sources, 0 provisional items, and no barbecue or insurer entries. -->
@@ -19,7 +19,7 @@ Model route: NAS local model
 | Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | none | adopted |
 | Renovations and work hours | Mon to Fri 8:00 a.m. to 5:00 p.m., Sat 9:00 a.m. to 1:00 p.m., no Sun or holidays | 2024-07-15 | none | adopted |
 | Balconies and exterior fixtures | Fixtures need written approval; heat pumps allowed with conditions; barbecues prohibited (electric barbecues discussed, provisional) | 2025-01-23 | none | adopted |
-| Quiet hours | 10:00 p.m. to 7:00 a.m.; Friday and Saturday nights 11:00 p.m. to 7:00 a.m. | 2026-10-01 | none | adopted |
+| Quiet hours | Friday and Saturday nights 11:00 p.m. to 7:00 a.m.; other nights 10:00 p.m. to 7:00 a.m. | 2026-10-01 (Fri and Sat); 2019-05-01 (other nights) | none | adopted |
 | Rentals and leasing | Minimum lease 30 days | 2025-04-15 | none | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | none | adopted |
 | Electric vehicle charging | Allowed in assigned space with approval and licensed electrician | 2026-01-20 (decision date) | none | adopted |
@@ -132,6 +132,8 @@ Open conflicts:
 - minutes-2025-09-10.pdf (2025-09-10): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily" (3-0)
 - notice-2026-05-01-pool.pdf (2026-05-01): "Hours: 8:00 a.m. to 9:00 p.m. daily"
   No later document explains the difference.
+Provisional:
+- board-meeting-2026-06-18.m4a (recording, 2026-06-18): a board member noted that the notice says 9:00 p.m. while the board had said 10:00 p.m.; the matter was deferred. Not a decision. The conflict stays open.
 
 ## Vendor contracts
 
@@ -185,15 +187,15 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 
 ## Changelog
 
-## v2
-- Extracted 1 new file: minutes-2026-09-15.docx. Rechecked the quiet-hours rule against bylaws-house-rules-2019.pdf (unchanged). The other 15 sources are unchanged and their topics were carried forward.
-- Changed: Quiet hours. Friday and Saturday nights 11:00 p.m. to 7:00 a.m. from 2026-10-01; other nights unchanged.
-- Still open: Pool hours conflict. Still provisional: electric barbecues (not on the September minutes).
+## v2, 2026-11-29
+- Rebuilt from 17 files. New since v1: minutes-2026-09-15.docx.
+- Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m., effective 2026-10-01 (minutes-2026-09-15.docx, 3-0). Other nights unchanged at 10:00 p.m. to 7:00 a.m. Previously 10:00 p.m. to 7:00 a.m. every night.
+- Open items: none added, closed or changed.
+- Unchanged: all other topics. Still open: 2026 pool hours. Still provisional: electric barbecues and the deferred pool-notice question. No exclusions.
 
-## v1
-- First compile. Processed 16 files (15 documents, 1 recording).
-- 12 topics compiled. 1 open conflict: Pool hours for 2026.
-- 1 correction applied: the $230 notice of 2025-02-10.
-- 1 provisional item: electric barbecues, from the June 2026 recording.
+## v1, 2026-11-22
+- First compile, built from 16 files (15 documents, 1 recording); none excluded.
+- 12 topics. 1 open conflict: 2026 pool hours. 2 provisional items from the June 2026 recording: electric barbecues, and the deferred question about the pool notice.
+- 1 correction applied: the $230 stated in notice-2025-02-10-fees.pdf, corrected by minutes-2025-04-15.docx.
 
 End of almanac v2.

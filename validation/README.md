@@ -22,9 +22,9 @@ The archive is designed to exercise the cases that make board rules hard to foll
 2. Run a compile and compare the result with `expected-almanac-v1.md`.
 3. Ask the eighteen initial questions, save the answers as JSON Lines, and score them with `--phase initial --recording`.
 4. Ask the same questions through plain file chat over the raw folder and score those answers the same way.
-5. Add `corpus/add-later/minutes-2026-09-15.docx` to the board folder and compile again. Confirm that claims were extracted only from the new minutes, that the quiet-hours rule was rechecked against the bylaws, that a new version was saved beside the first, and that every other rule is unchanged. Then ask the two update questions with `--phase after_update`.
+5. Add `corpus/add-later/minutes-2026-09-15.docx` to the board folder and compile again. Confirm that every document was read again, that the changelog shown before approval lists only the quiet-hours change, that the 10:00 p.m. rule still applies on other nights, that a new version was saved beside the first, and that every other rule is unchanged. Then ask the two update questions with `--phase after_update`.
 6. Apply the adversarial cases one at a time, as described in `corpus/adversarial/EXPECTED.md`, and score the `corrected` and `scheduled` questions.
-7. Record run times, approval prompts and any files that failed, and review every answer by hand as well as with the scorer.
+7. Record run times, approval prompts and any files that failed, and review every answer by hand as well as with the scorer. Check in particular that a change limited to one season or one part of a rule leaves the rest in force: the 2019 pool hours outside the 2026 season, the weekday renovation hours after the Saturday change, and the quiet hours on other nights.
 
 Run the device tests from small to large: three documents, then eight, then the full archive, then the update and the adversarial cases.
 
