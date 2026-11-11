@@ -11,7 +11,7 @@ Two statements can only replace or contradict each other if they are about the s
 - Different subjects do not conflict. "Quiet hours on Friday and Saturday nights" does not replace "quiet hours on other nights".
 - Different periods do not conflict. A 2025 fee and a 2026 fee are a history, not a contradiction.
 - Different units, rooms, seasons or groups do not conflict unless a document says the rule applies to all of them.
-- Partly overlapping scopes: when a later adopted statement covers only part of an earlier rule's scope, for example Friday and Saturday nights within a rule for every night, it replaces the earlier rule only for the overlap. Record the earlier rule as replaced for the overlap and still current for the rest of its scope, subject to the authority and effective-date rules below. The same holds for periods: a rule set for one season or year leaves the standing rule in force for other periods. If the two scopes cannot be compared clearly, record a conflict instead.
+- Partly overlapping scopes: when a later adopted statement covers only part of an earlier rule's scope, for example Friday and Saturday nights within a rule for every night, it replaces the earlier rule only for the overlap. Record the earlier rule as replaced for the overlap and still current for the rest of its scope, subject to the authority and effective-date rules below. The same holds for periods: a rule set for one season or year leaves the standing rule in force for other periods, so the standing rule stays under Current rule and in At a glance, not under Superseded. If the two scopes cannot be compared clearly, record a conflict instead.
 
 ## 2. Authority ranking
 

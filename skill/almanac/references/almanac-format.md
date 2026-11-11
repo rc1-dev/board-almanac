@@ -36,7 +36,7 @@ One line per topic, with the current value and any adopted change that has not y
 |---|---|---|---|---|
 | Monthly fee | $240 per unit | 2026-03-01 | none | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | Up to 24 hours from 2027-01-01 | adopted |
-| Pool hours | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. | 2026 season | none | conflict |
+| Pool hours | 2026 season: 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m.; other seasons: 9:00 a.m. to 9:00 p.m. | 2026 season; 2019-05-01 | none | conflict |
 ```
 
 Status is one of `adopted`, `conflict`, `provisional` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`. A line never says more than its topic: if the topic says an outcome is not established, so does the line. A topic that no document mentions is left out.
