@@ -23,8 +23,8 @@ Model route: NAS local model
 | Rentals and leasing | Minimum lease 30 days | 2025-04-15 | none | adopted |
 | Parking | Guest parking up to 48 hours | 2025-10-01 | none | adopted |
 | Electric vehicle charging | Allowed in assigned space with approval and licensed electrician | 2026-01-20 (decision date) | none | adopted |
-| Pool and amenities | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. for 2026 | 2026 season | none | conflict |
-| Vendor contracts | Landscaping: Bramblewick Grounds, $1,450 per month, 4% renewal cap, non-renewal notice sent late | 2024-04-01 | none | adopted |
+| Pool and amenities | 2026 season: 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m.; other seasons: 9:00 a.m. to 9:00 p.m., June 1 to September 15 | 2026 season | none | conflict |
+| Vendor contracts | Landscaping: Bramblewick Grounds, $1,450 per month, 4% renewal cap; non-renewal notice sent late; whether the agreement ended is not established | 2024-04-01 | none | incomplete |
 | Officers and elections | Board of President, Treasurer, Secretary; Treasurer replaced 2025-09-10 | 2025-09-10 | none | adopted |
 | Governance and amendments | Bylaws: 2/3 of owners. House rules: board majority | 2019-05-01 | none | adopted |
 
@@ -121,12 +121,12 @@ Evidence: minutes-2026-01-20.pdf: "with written board approval, installed by a l
 
 ## Pool and amenities
 
-Current rule: The documents disagree on 2026 pool hours: 8:00 a.m. to 10:00 p.m. (board minutes) or 8:00 a.m. to 9:00 p.m. (notice).
-Effective: 2026 season
-Set by: see conflict
+Current rule: The documents disagree on 2026 pool hours: 8:00 a.m. to 10:00 p.m. (board minutes) or 8:00 a.m. to 9:00 p.m. (notice). For other seasons, House Rule 10 applies: 9:00 a.m. to 9:00 p.m., June 1 to September 15.
+Effective: 2026 season (conflict); 2019-05-01 (House Rule 10)
+Set by: see conflict; bylaws-house-rules-2019.pdf, Rule 10
+Evidence: bylaws-house-rules-2019.pdf: "The pool is open 9:00 a.m. to 9:00 p.m. daily during the season"
 
-Superseded:
-- Up to the 2025 season: 9:00 a.m. to 9:00 p.m., June 1 to September 15. Source: bylaws-house-rules-2019.pdf, Rule 10
+Superseded: none. The 2026 decision applies to the 2026 season only.
 
 Open conflicts:
 - minutes-2025-09-10.pdf (2025-09-10): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily" (3-0)
@@ -138,7 +138,7 @@ Open conflicts:
 Current rule: Landscaping by Bramblewick Grounds LLC, $1,450 per month, term 2024-04-01 to 2026-03-31, renews for one year unless notice is given at least 60 days before the end of the term; price increase on renewal capped at 4%.
 Set by: contract-bramblewick-landscaping-2024.pdf; awarded in minutes-2024-01-18.pdf (3-0)
 Evidence: contract: "at least sixty (60) days before the end of the current term"; "no more than four percent (4%)"
-Decision: not to renew, minutes-2025-09-10.pdf (3-0). Notice sent 2026-02-02 (email-2026-02-02-landscaping.txt), after the 2026-01-30 due date. Whether the agreement renewed is not decided here.
+Decision: not to renew, minutes-2025-09-10.pdf (3-0). Notice sent 2026-02-02 (email-2026-02-02-landscaping.txt), after the 2026-01-30 due date. Whether the agreement ended or renewed is not established; the topic is incomplete.
 
 ## Officers and elections
 
