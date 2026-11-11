@@ -4,7 +4,7 @@ This reference explains the Compile steps in [SKILL.md](../SKILL.md). It adds no
 
 ## Why every compile is a rebuild
 
-A board folder is small in bytes but long in history: one rule may be set in the 2019 bylaws, changed in 2024 minutes, misstated in a 2025 notice and corrected later. Each compile reads every original document again and builds the almanac from what they say. Nothing is carried over from the previous almanac except its version number and, for the changelog, its At a glance table. A corrected or deleted document therefore cannot leave an outdated rule behind, and an amendment is always read together with the rule it amends.
+A board folder is small in bytes but long in history: one rule may be set in the 2019 bylaws, changed in 2024 minutes, misstated in a 2025 notice and corrected later. Each compile reads every original document again and builds the almanac from what they say. Nothing is carried over from the previous almanac except its version number and, for the changelog, its At a glance table and Open items. A corrected or deleted document therefore cannot leave an outdated rule behind, and an amendment is always read together with the rule it amends.
 
 The cost is time: every compile re-reads the whole folder. This version supports up to 60 source files per compile as a conservative design limit; the capacity that works in practice will be measured on the NAS.
 
@@ -14,7 +14,7 @@ A compile is needed when a file in the board folder is new, changed or missing c
 
 ## Snapshot
 
-Step 1 records every source file with its path relative to the board folder, size, modification time and SHA-256 checksum. This snapshot becomes the Sources ledger. Before saving, Step 7 lists the files again; if anything differs, the compile stops, because the almanac would mix two states of the folder. The check narrows the window for such a change but cannot close it entirely.
+Step 1 records every source file with its path relative to the board folder, size, modification time and SHA-256 checksum. This snapshot becomes the Sources ledger. Before saving, Step 7 lists the files again; if anything differs, the compile stops, because the almanac would mix two states of the folder. A new compile starts again at Step 1 and reads every document. The check narrows the window for such a change but cannot close it entirely.
 
 ## Claim records
 
@@ -52,7 +52,7 @@ A file that fails or is not read completely blocks the compile until the user ei
 2. Apply [the supersession rules](supersession-rules.md) in document date order, as of the board's local date.
 3. Record adopted changes with a later effective date as scheduled.
 4. Write every section of the almanac in the fixed topic order, with the Sources ledger from the snapshot and the end line.
-5. Compare each topic's rule, scope, effective date, authority and status with the previous At a glance table to write the changelog. A difference in wording alone is not a change.
+5. Compare each topic's rule, scope, effective date, authority and status with the previous At a glance table, and the open items with the previous Open items section, to write the changelog. Any difference in meaning is a change; only a difference in wording is not.
 
 ## Saving
 

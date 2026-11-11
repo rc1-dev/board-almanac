@@ -39,7 +39,7 @@ One line per topic, with the current value and any adopted change that has not y
 | Pool hours | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. | 2026 season | none | conflict |
 ```
 
-Status is one of `adopted`, `conflict`, `provisional` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`.
+Status is one of `adopted`, `conflict`, `provisional` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`. A line never says more than its topic: if the topic says an outcome is not established, so does the line. A topic that no document mentions is left out.
 
 ### 3. Topics
 
@@ -66,7 +66,7 @@ Rules for the parts:
 - **Current rule** states the currently documented rule in plain words: what the adopted documents record, not a ruling on legal validity. If the topic is in conflict, state both values and say that the documents disagree.
 - **Effective** is the effective date if a document states one, otherwise the decision date, labelled as such.
 - **Set by** names the document type, its date and the vote if one is recorded. People are named by board role only.
-- **Evidence** gives the file's path relative to the board folder and a verbatim quote of the decisive words. Paths, not bare file names, keep two files with the same name in different subfolders apart.
+- **Evidence** gives the file's path relative to the board folder and a verbatim quote of the decisive words. Mark omitted words with ... and add no punctuation of your own. Paths, not bare file names, keep two files with the same name in different subfolders apart.
 - **Superseded** lists earlier rules for the same subject, newest first, each with its date range and source.
 - **Scheduled** lists adopted changes whose effective date is after the board's local date at compile time, each with the date, the decision that set it and a quote. The current rule stays in force until that date. Ask and Lint compare the date with today, and a compile runs again once it has passed.
 - **Open conflicts** lists disagreements that no document resolves, with both quotes.
@@ -74,7 +74,7 @@ Rules for the parts:
 
 ### 4. Open items
 
-Action items with owner role, due date, status and source, and contract deadlines such as notice periods.
+Action items with owner role, due date, status and source, and contract deadlines such as notice periods. Owner and due date come from a document; otherwise write `not stated`.
 
 ```text
 | Item | Owner | Due | Status | Source |
@@ -96,7 +96,7 @@ Status is `processed`, or `excluded` with the reason and the note that the user 
 
 ### 6. Changelog
 
-Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status. A difference in wording alone is not a change. The comparison is proposed for the user to review before saving.
+Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status, and lists every open item added, closed or dropped. Any difference in meaning is a change; only a difference in wording is not. The comparison is proposed for the user to review before saving.
 
 ```text
 ## v7, 2026-11-22

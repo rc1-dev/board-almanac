@@ -42,7 +42,7 @@ Pass only real expert results between steps. Read only the references the mode n
 
 Step 1. Take a snapshot. Delegate:
 
-`delegate --target file-agent --instruction 'List every file in the board folder the user confirmed, including subfolders, except the almanac folder, with path, size, modification time and SHA-256 checksum. Then, in the almanac folder, find Markdown files whose names start with almanac- and return the path of the one with the highest version number in its name, its first 4000 characters, and its section titled Sources. Return no other file contents. If something is not found, return an empty result for it. Read only.'`
+`delegate --target file-agent --instruction 'List every file in the board folder the user confirmed, including subfolders, except the almanac folder, with path, size, modification time and SHA-256 checksum. Then, in the almanac folder, find Markdown files whose names start with almanac- and return the path of the one with the highest version number in its name, its first 4000 characters, and its sections titled Open items and Sources. Return no other file contents. If something is not found, return an empty result for it. Read only.'`
 
 Then decide:
 
@@ -69,13 +69,13 @@ Step 4. Reconcile all documents in the snapshot, at most 60 per request. Delegat
 
 An empty result means no disagreements, and the compile continues.
 
-Step 5. Build the almanac from the records of Steps 2 to 4 only. Apply the supersession rules as of the board's local date and write the complete almanac in the almanac format: fixed topic order and names, one record per rule, scheduled changes for adopted changes that take effect later, the Sources ledger from the snapshot, and the version number one above the previous one. Write the changelog by comparing each topic's rule, scope, effective date, authority and status with the previous version's At a glance table; a difference in wording alone is not a change.
+Step 5. Build the almanac from the records of Steps 2 to 4 only. Apply the supersession rules as of the board's local date and write the complete almanac in the almanac format: fixed topic order and names, one record per rule, scheduled changes for adopted changes that take effect later, the Sources ledger from the snapshot, and the version number one above the previous one. Write the changelog by comparing each topic's rule, scope, effective date, authority and status with the previous At a glance table, and the open items with the previous Open items section. Any difference in meaning is a change; only a difference in wording is not.
 
-Step 6. Review before saving. Show the user the changelog, with each new, changed or removed rule beside the previous one, its effective date and quotation, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
+Step 6. Review before saving. Show the user the changelog, with each new, changed or removed rule beside the previous one, its effective date and quotation, every open item added, closed or dropped, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
 
 Step 7. Check, save and verify.
 
-1. Run the Step 1 delegation again and compare the file list and checksums with the snapshot. If anything changed, stop: the sources changed during the compile, so compile again.
+1. Run the Step 1 delegation again and compare the file list and checksums with the snapshot. If anything changed, stop and tell the user that the sources changed during the compile. If the user asks to compile again, start at Step 1 and read every document again.
 2. If the almanac folder is missing, delegate: `delegate --target file-agent --instruction 'Create the almanac folder the user confirmed inside the board folder, only if it does not already exist. Change nothing else.'`
 3. Delegate: `delegate --target file-agent --instruction 'Check whether a file with the name supplied in this request exists in the almanac folder the user confirmed. Return yes or no. Read only.'` If it exists, another version was saved meanwhile: stop and compile again.
 4. Delegate: `delegate --target knowledge-agent --instruction 'Save the almanac text supplied in this request as a new Markdown file in the almanac folder the user confirmed, with the file name supplied as the file name hint. Never overwrite a file. Return the saved path, content size and verification result.'`

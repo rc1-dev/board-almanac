@@ -11,7 +11,7 @@ Two statements can only replace or contradict each other if they are about the s
 - Different subjects do not conflict. "Quiet hours on Friday and Saturday nights" does not replace "quiet hours on other nights".
 - Different periods do not conflict. A 2025 fee and a 2026 fee are a history, not a contradiction.
 - Different units, rooms, seasons or groups do not conflict unless a document says the rule applies to all of them.
-- Partly overlapping scopes: when a later adopted statement covers only part of an earlier rule's scope, for example Friday and Saturday nights within a rule for every night, it replaces the earlier rule only for the overlap. Record the earlier rule as replaced for the overlap and still current for the rest of its scope, subject to the authority and effective-date rules below. If the two scopes cannot be compared clearly, record a conflict instead.
+- Partly overlapping scopes: when a later adopted statement covers only part of an earlier rule's scope, for example Friday and Saturday nights within a rule for every night, it replaces the earlier rule only for the overlap. Record the earlier rule as replaced for the overlap and still current for the rest of its scope, subject to the authority and effective-date rules below. The same holds for periods: a rule set for one season or year leaves the standing rule in force for other periods. If the two scopes cannot be compared clearly, record a conflict instead.
 
 ## 2. Authority ranking
 
@@ -48,9 +48,9 @@ Apply the rules as of the board's local date. If a decision has a future effecti
 
 ## 7. Conflicts
 
-Record a conflict when two statements about the same subject and scope disagree and none of rules 2 to 6 decides. A conflict entry quotes both statements with file and date. The At a glance status becomes `conflict`. Never pick a winner by majority, recency of file date or plausibility.
+Record a conflict when two statements about the same subject and scope disagree and none of rules 2 to 6 decides. A conflict entry quotes both statements with file and date. The At a glance status becomes `conflict`. Never pick a winner by majority, recency of file date or plausibility, and never turn a conflict into an action item with an owner that no document names.
 
 ## 8. Things the Skill does not judge
 
 - Whether a vote met a quorum or the bylaws threshold. If the documents state a threshold and a vote, record both; do not rule on validity.
-- Whether a contract notice was legally effective. Record the deadline and the date the documents show for the action, and flag a late or missing action in Open items.
+- Whether a contract ended, renewed or continued when that depends on whether a notice or deadline was met. Record the deadline and the date of the action, state that the outcome is not established, and mark the topic `incomplete`, in At a glance and in the topic alike. State an outcome only if a document records it.
