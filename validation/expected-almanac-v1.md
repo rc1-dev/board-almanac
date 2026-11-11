@@ -152,7 +152,7 @@ Set by: bylaws-house-rules-2019.pdf, Article 3
 | Item | Owner | Due | Status | Source |
 |---|---|---|---|---|
 | Send landscaping non-renewal notice | Secretary | 2026-01-30 | Sent 2026-02-02, after the due date | minutes-2025-09-10.pdf; email-2026-02-02-landscaping.txt |
-| Next landscaping notice deadline, if the agreement renewed to 2027-03-31 | Board | 2027-01-30 | Check | contract-bramblewick-landscaping-2024.pdf |
+| Next landscaping notice deadline, if the agreement renewed to 2027-03-31 | not stated | 2027-01-30 | Check | contract-bramblewick-landscaping-2024.pdf |
 | Obtain engineer opinion on balcony heat pumps | Secretary | 2025-01-31 | Done 2025-01-15 | minutes-2024-11-07.pdf; minutes-2025-01-23.pdf |
 | Publish renovation hours notice | Secretary | 2024-07-01 | Done 2024-07-01 | minutes-2024-06-12.docx; notice-2024-07-01-renovation-hours.pdf |
 | Send 2024 budget to owners | Treasurer | 2024-02-15 | No document shows it done | minutes-2024-01-18.pdf |
