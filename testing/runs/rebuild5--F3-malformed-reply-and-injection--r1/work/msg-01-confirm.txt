@@ -1,0 +1,8 @@
+Before I start, I need to confirm a few things for the almanac compile:
+
+1. Board folder: "Board Documents" on the NAS. Is this the right folder?
+2. Almanac folder: I suggest "Board Documents/Almanac", where new almanac versions will be saved. Is this OK?
+3. Mode: Compile (rebuild the almanac from the original documents and save it as a new version, after your approval).
+4. Model route: which model does the NAS use for document processing? The intended setting is the NAS local model. If it is a third-party model, I need your explicit authorization before any document is read.
+
+Please reply with the confirmations, or with corrections.

@@ -1,0 +1,29 @@
+Review before saving: proposed almanac version 2 (file name almanac-2026-11-29-v2.md, in the Almanac folder). Nothing has been saved yet.
+
+Sources: 17 files processed, 0 excluded. The one new file is minutes-2026-09-15.docx. The other 16 files match the v1 Sources ledger by checksum. The recording board-meeting-2026-06-18.m4a was transcribed.
+
+Changelog against v1:
+
+1. Changed: Quiet hours.
+   - v1: 10:00 p.m. to 7:00 a.m. every night (bylaws-house-rules-2019.pdf: "Quiet hours are 10:00 p.m. to 7:00 a.m. every night.")
+   - v2: Friday and Saturday nights 11:00 p.m. to 7:00 a.m. Other nights remain 10:00 p.m. to 7:00 a.m.
+   - Effective 2026-10-01. Adopted 2026-09-15, motion carried 3-0 (minutes-2026-09-15.docx: "amend House Rule 6 so that quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m.").
+   - The change is already in force as of today (2026-11-29). It replaces the earlier rule only for Friday and Saturday nights.
+
+No other rule changed.
+
+Open items: no change in description, owner, due date or status.
+
+Conflicts (1, unchanged from v1):
+- Pool and amenities, 2026 season hours. minutes-2025-09-10.pdf says "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." notice-2026-05-01-pool.pdf says "Hours: 8:00 a.m. to 9:00 p.m. daily." No document resolves this, so it stays a conflict.
+
+Provisional items (2):
+- Electric barbecues: the board leaned towards allowing them at the 2026-06-18 recording, but no vote was taken. The barbecue prohibition in the bylaws remains the adopted rule.
+- Pool hours: an objection at the 2026-06-18 recording ("Someone said the notice says nine pm, but I thought we said ten."), deferred with no decision. This is newly listed in v2.
+
+Incomplete (unchanged from v1):
+- Vendor contracts (Bramblewick landscaping). The contract's 60-day non-renewal notice was due 2026-01-30 and was sent 2026-02-02. Whether the agreement ended is not established by the documents, so the topic is marked incomplete.
+
+Exclusions: none.
+
+Please reply "approve" to save almanac-2026-11-29-v2.md, or tell me which rule is wrong and which passage was misread. If you decline, I will stop and save nothing.

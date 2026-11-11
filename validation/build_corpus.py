@@ -3,7 +3,7 @@
 Everything here is fictional. People appear by board role only.
 Output:
   corpus/Board Documents/      files present at the first compile
-  corpus/add-later/            the file added for the incremental-compile edge case
+  corpus/add-later/            the file added for the update edge case
   corpus/adversarial/          files for the adversarial cases (see corpus/adversarial/EXPECTED.md)
 Run: python3 build_corpus.py
 """

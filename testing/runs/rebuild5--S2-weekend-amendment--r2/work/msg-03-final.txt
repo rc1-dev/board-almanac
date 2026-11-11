@@ -1,0 +1,5 @@
+The almanac is updated and saved as Almanac/almanac-2026-11-29-v2.md (version 2). The save was verified: the file was read back in full, and its size matches.
+
+What changed: Quiet hours. Friday and Saturday nights are now 11:00 p.m. to 7:00 a.m., effective 2026-10-01, as adopted in the 2026-09-15 minutes. All other nights remain 10:00 p.m. to 7:00 a.m.
+
+Still open: the 2026 pool hours conflict (minutes say 10:00 p.m., the May notice says 9:00 p.m.), and the Bramblewick landscaping contract is marked incomplete because the documents do not show whether the non-renewal notice met its 60-day requirement.

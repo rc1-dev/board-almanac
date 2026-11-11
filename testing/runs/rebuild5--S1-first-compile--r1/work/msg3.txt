@@ -1,0 +1,8 @@
+The almanac is saved and verified.
+
+Saved file: Board Documents/Almanac/almanac-2026-11-22-v1.md (version 1, 17,610 bytes).
+Verification: the file was read back completely. The size matches and every section, topic and the end line "End of almanac v1." are present.
+
+Sources: 16 files processed, 0 excluded. Open conflict: 1 (pool hours for the 2026 season, minutes of 2025-09-10 versus the notice of 2026-05-01). Provisional items: 3, all from the 2026-06-18 recording. Incomplete: vendor contracts (landscaping renewal outcome not established, because the non-renewal notice of 2026-02-02 came after the 2026-01-30 deadline).
+
+One note on the process: the first read-back request to the file agent failed with "request not understood". I retried once with the full file path and it succeeded.

@@ -1,0 +1,935 @@
+{
+ "state": "completed",
+ "result": {
+  "results": [
+   {
+    "file": "agenda-2025-01-23.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 2,
+    "records": [
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "proposed monthly common charge",
+      "scope": "per unit",
+      "value": "$235 from March 1, 2025",
+      "status": "proposed",
+      "document_type": "agenda",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Budget 2025: proposed monthly common charge of $235 per unit from March 1, 2025.",
+      "file": "agenda-2025-01-23.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "heat pump policy",
+      "scope": "balconies",
+      "value": "On the agenda",
+      "status": "proposed",
+      "document_type": "agenda",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Heat pump policy.",
+      "file": "agenda-2025-01-23.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "bylaws-house-rules-2019.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 17,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "adoption of bylaws and house rules",
+      "scope": "association",
+      "value": "Bylaws and house rules adopted by unit owners",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Adopted by the unit owners on May 1, 2019. Effective May 1, 2019.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Officers and elections",
+      "subject": "board composition and quorum",
+      "scope": "board",
+      "value": "Board of three directors (President, Treasurer, Secretary); quorum is two",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "The Association is governed by a board of three directors: a President, a Treasurer and a Secretary. A quorum is two directors.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "who sets the monthly charge",
+      "scope": "association",
+      "value": "Board sets monthly common charges in the annual budget",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Monthly common charges are set by the board in the annual budget and take effect on the date the board states.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Governance and amendments",
+      "subject": "bylaw amendment threshold",
+      "scope": "Part A bylaws",
+      "value": "Two-thirds vote of unit owners at an annual meeting",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "These Bylaws (Part A) may be amended only by a two-thirds (2/3) vote of unit owners at an annual meeting.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Governance and amendments",
+      "subject": "house rule amendment threshold",
+      "scope": "Part B house rules",
+      "value": "Majority vote of the board",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "The House Rules (Part B) may be amended by a majority vote of the board.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Pets",
+      "subject": "number of pets",
+      "scope": "per unit",
+      "value": "One pet per unit",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Each unit may keep one (1) pet.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Pets",
+      "subject": "dog weight limit",
+      "scope": "dogs",
+      "value": "Dogs may not exceed 35 pounds",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Dogs may not exceed 35 pounds.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Pets",
+      "subject": "pet registration",
+      "scope": "all pets",
+      "value": "All pets must be registered with management",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "All pets must be registered with management.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Renovations and work hours",
+      "subject": "permitted work hours",
+      "scope": "Monday to Friday",
+      "value": "8:00 a.m. to 5:00 p.m.",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Renovation and construction work is permitted Monday to Friday, 8:00 a.m. to 5:00 p.m.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Renovations and work hours",
+      "subject": "weekend and holiday work",
+      "scope": "Saturdays, Sundays and holidays",
+      "value": "No work permitted",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "No work is permitted on Saturdays, Sundays or holidays.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Quiet hours",
+      "subject": "quiet hours",
+      "scope": "every night",
+      "value": "10:00 p.m. to 7:00 a.m.",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Quiet hours are 10:00 p.m. to 7:00 a.m. every night.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "fixtures on balconies",
+      "scope": "balconies and exterior walls",
+      "value": "No fixtures, appliances or equipment without written board approval",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "No fixtures, appliances or equipment may be mounted on balconies or exterior walls without written board approval.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "barbecues and open flames",
+      "scope": "balconies",
+      "value": "Prohibited",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Barbecues and open flames are prohibited on balconies.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Rentals and leasing",
+      "subject": "minimum lease term",
+      "scope": "all units",
+      "value": "Six months",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Units may not be leased for a term of less than six (6) months.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Parking",
+      "subject": "assigned spaces",
+      "scope": "per unit",
+      "value": "One assigned space per unit",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Each unit has one assigned space.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Parking",
+      "subject": "guest parking limit",
+      "scope": "guest vehicles",
+      "value": "No more than 72 hours",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "Guest vehicles may stay in guest parking for no more than 72 hours.",
+      "file": "bylaws-house-rules-2019.pdf"
+     },
+     {
+      "topic": "Pool and amenities",
+      "subject": "pool hours",
+      "scope": "season June 1 to September 15",
+      "value": "9:00 a.m. to 9:00 p.m. daily",
+      "status": "adopted",
+      "document_type": "bylaws",
+      "document_date": "2019-05-01",
+      "effective_date": "2019-05-01",
+      "vote": null,
+      "quote": "The pool is open 9:00 a.m. to 9:00 p.m. daily during the season, June 1 to September 15.",
+      "file": "bylaws-house-rules-2019.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "email-2026-02-02-landscaping.txt",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 1,
+    "records": [
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping non-renewal notice sent",
+      "scope": "Bramblewick agreement",
+      "value": "Notice sent February 2, 2026",
+      "status": "informational",
+      "document_type": "email",
+      "document_date": "2026-02-02",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Please accept this message as written notice that Harbor View Condominium Association will not renew the Landscaping Services Agreement that ends on March 31, 2026.",
+      "file": "email-2026-02-02-landscaping.txt"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2024-01-18.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 4,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "attendance and quorum",
+      "scope": "meeting",
+      "value": "President, Treasurer and Secretary present; quorum present",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2024-01-18",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Present: President, Treasurer, Secretary. Quorum present.",
+      "file": "minutes-2024-01-18.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "monthly common charge",
+      "scope": "per unit",
+      "value": "$210",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-01-18",
+      "effective_date": "2024-03-01",
+      "vote": "3-0",
+      "quote": "the monthly common charge is set at $210 per unit, effective March 1, 2024. Motion carried 3-0.",
+      "file": "minutes-2024-01-18.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping contract award",
+      "scope": "common grounds",
+      "value": "Awarded to Bramblewick Grounds LLC, April 1, 2024 to March 31, 2026",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-01-18",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "award the landscaping contract to Bramblewick Grounds LLC on the terms of the attached agreement, for the period April 1, 2024 to March 31, 2026. Motion carried 3-0.",
+      "file": "minutes-2024-01-18.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "action: send 2024 budget to owners",
+      "scope": "Treasurer",
+      "value": "Due February 15, 2024",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-01-18",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Action: Treasurer to send the 2024 budget to all owners by February 15, 2024.",
+      "file": "minutes-2024-01-18.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2024-06-12.docx",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 5,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of January 18, 2024 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2024-06-12",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of January 18, 2024 approved 3-0.",
+      "file": "minutes-2024-06-12.docx"
+     },
+     {
+      "topic": "Renovations and work hours",
+      "subject": "Saturday work hours",
+      "scope": "Saturdays",
+      "value": "9:00 a.m. to 1:00 p.m.",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-06-12",
+      "effective_date": "2024-07-15",
+      "vote": "3-0",
+      "quote": "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024.",
+      "file": "minutes-2024-06-12.docx"
+     },
+     {
+      "topic": "Renovations and work hours",
+      "subject": "Sunday and holiday work",
+      "scope": "Sundays and holidays",
+      "value": "Remains prohibited; weekday hours unchanged",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-06-12",
+      "effective_date": "2024-07-15",
+      "vote": "3-0",
+      "quote": "Work on Sundays and holidays remains prohibited. Weekday hours are unchanged. Motion carried 3-0.",
+      "file": "minutes-2024-06-12.docx"
+     },
+     {
+      "topic": "Pets",
+      "subject": "pet registration form",
+      "scope": "management",
+      "value": "Registration form adopted; no change to pet rule",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2024-06-12",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The board adopted a pet registration form for use by management. No change to the pet rule.",
+      "file": "minutes-2024-06-12.docx"
+     },
+     {
+      "topic": "Renovations and work hours",
+      "subject": "action: publish renovation notice",
+      "scope": "Secretary",
+      "value": "Due July 1, 2024",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-06-12",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Action: Secretary to publish a notice of the new renovation hours by July 1, 2024.",
+      "file": "minutes-2024-06-12.docx"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2024-11-07.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 3,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "attendance and quorum",
+      "scope": "meeting",
+      "value": "Quorum present",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2024-11-07",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Present: President, Treasurer, Secretary. Quorum present.",
+      "file": "minutes-2024-11-07.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "heat pumps on balconies",
+      "scope": "balconies",
+      "value": "Discussed and tabled",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2024-11-07",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Several owners asked to install heat pump outdoor units on balconies. Discussion of load and noise. The item was tabled.",
+      "file": "minutes-2024-11-07.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "action: engineer opinion on balcony load and noise",
+      "scope": "Secretary",
+      "value": "Due January 31, 2025",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2024-11-07",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Action: Secretary to obtain a structural engineer's opinion on balcony load and noise by January 31, 2025.",
+      "file": "minutes-2024-11-07.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2025-01-23.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 5,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of November 7, 2024 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of November 7, 2024 approved 3-0.",
+      "file": "minutes-2025-01-23.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "engineer opinion received",
+      "scope": "Secretary",
+      "value": "Received January 15, 2025",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The Secretary presented the structural engineer's opinion, received January 15, 2025.",
+      "file": "minutes-2025-01-23.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "proposed $235 charge",
+      "scope": "per unit",
+      "value": "Amended, not adopted",
+      "status": "failed",
+      "document_type": "minutes",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The proposed charge of $235 was amended.",
+      "file": "minutes-2025-01-23.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "monthly common charge",
+      "scope": "per unit",
+      "value": "$225",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-01-23",
+      "effective_date": "2025-03-01",
+      "vote": "3-0",
+      "quote": "the monthly common charge is set at $225 per unit, effective March 1, 2025. Motion carried 3-0.",
+      "file": "minutes-2025-01-23.pdf"
+     },
+     {
+      "topic": "Balconies and exterior fixtures",
+      "subject": "heat pumps on balconies",
+      "scope": "balconies",
+      "value": "Permitted with written approval if floor-mounted, not on railing, at most 60 dB(A)",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-01-23",
+      "effective_date": null,
+      "vote": "2-1",
+      "quote": "heat pump outdoor units are permitted on balconies with written board approval, provided they are floor-mounted and not attached to the railing, and have a rated sound level of no more than 60 dB(A).",
+      "file": "minutes-2025-01-23.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2025-04-15.docx",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 5,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of January 23, 2025 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2025-04-15",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of January 23, 2025 approved 3-0.",
+      "file": "minutes-2025-04-15.docx"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "correction of February 10 notice",
+      "scope": "per unit",
+      "value": "Notice stating $230 was in error; adopted charge is $225",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-04-15",
+      "effective_date": null,
+      "vote": null,
+      "quote": "the notice of February 10, 2025 stating $230 was in error. The adopted charge is $225 per unit.",
+      "file": "minutes-2025-04-15.docx"
+     },
+     {
+      "topic": "Pets",
+      "subject": "number of pets and dog weight limit",
+      "scope": "per unit",
+      "value": "Maximum of two pets; 35-pound limit for dogs removed; registration still required",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-04-15",
+      "effective_date": "2025-04-15",
+      "vote": "3-0",
+      "quote": "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed; registration with management is still required.",
+      "file": "minutes-2025-04-15.docx"
+     },
+     {
+      "topic": "Rentals and leasing",
+      "subject": "minimum lease term",
+      "scope": "all units",
+      "value": "Thirty days",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-04-15",
+      "effective_date": "2025-04-15",
+      "vote": "2-1",
+      "quote": "amend House Rule 8 so that the minimum lease term is thirty (30) days. Effective immediately. Motion carried 2-1.",
+      "file": "minutes-2025-04-15.docx"
+     },
+     {
+      "topic": "Rentals and leasing",
+      "subject": "leases of seven days or more",
+      "scope": "all units",
+      "value": "Motion failed",
+      "status": "failed",
+      "document_type": "minutes",
+      "document_date": "2025-04-15",
+      "effective_date": null,
+      "vote": "1-2",
+      "quote": "permit leases of seven (7) days or more. Motion failed 1-2.",
+      "file": "minutes-2025-04-15.docx"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2025-09-10.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 6,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of April 15, 2025 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of April 15, 2025 approved 3-0.",
+      "file": "minutes-2025-09-10.pdf"
+     },
+     {
+      "topic": "Officers and elections",
+      "subject": "Treasurer",
+      "scope": "board",
+      "value": "Treasurer resigned; new Treasurer appointed until next annual meeting",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "The Treasurer resigned. The board appointed a new Treasurer to serve until the next annual meeting. Motion carried 3-0.",
+      "file": "minutes-2025-09-10.pdf"
+     },
+     {
+      "topic": "Pool and amenities",
+      "subject": "pool hours",
+      "scope": "2026 season",
+      "value": "8:00 a.m. to 10:00 p.m. daily",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily. Motion carried 3-0.",
+      "file": "minutes-2025-09-10.pdf"
+     },
+     {
+      "topic": "Parking",
+      "subject": "guest parking limit",
+      "scope": "guest vehicles",
+      "value": "No more than 48 hours",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": "2025-10-01",
+      "vote": "3-0",
+      "quote": "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025.",
+      "file": "minutes-2025-09-10.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping renewal decision",
+      "scope": "Bramblewick agreement",
+      "value": "Will not renew at end of term",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "the Association will not renew the Bramblewick Grounds agreement at the end of its term.",
+      "file": "minutes-2025-09-10.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "action: send non-renewal notice",
+      "scope": "Secretary",
+      "value": "Due January 30, 2026",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2025-09-10",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The Secretary is to send written notice of non-renewal by January 30, 2026. Motion carried 3-0.",
+      "file": "minutes-2025-09-10.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2026-01-20.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 3,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of September 10, 2025 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2026-01-20",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of September 10, 2025 approved 3-0.",
+      "file": "minutes-2026-01-20.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "monthly common charge",
+      "scope": "per unit",
+      "value": "$240",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2026-01-20",
+      "effective_date": "2026-03-01",
+      "vote": "3-0",
+      "quote": "the monthly common charge is set at $240 per unit, effective March 1, 2026. Motion carried 3-0.",
+      "file": "minutes-2026-01-20.pdf"
+     },
+     {
+      "topic": "Electric vehicle charging",
+      "subject": "EV chargers in assigned spaces",
+      "scope": "assigned parking spaces",
+      "value": "Allowed with written board approval, licensed electrician, owner's cost",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2026-01-20",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "owners may install an electric vehicle charger in their assigned parking space with written board approval, installed by a licensed electrician at the owner's cost.",
+      "file": "minutes-2026-01-20.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "minutes-2026-09-15.docx",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 3,
+    "records": [
+     {
+      "topic": "Governance and amendments",
+      "subject": "approval of previous minutes",
+      "scope": "meeting",
+      "value": "Minutes of January 20, 2026 approved 3-0",
+      "status": "informational",
+      "document_type": "minutes",
+      "document_date": "2026-09-15",
+      "effective_date": null,
+      "vote": "3-0",
+      "quote": "Minutes of January 20, 2026 approved 3-0.",
+      "file": "minutes-2026-09-15.docx"
+     },
+     {
+      "topic": "Quiet hours",
+      "subject": "quiet hours",
+      "scope": "Friday and Saturday nights",
+      "value": "11:00 p.m. to 7:00 a.m.",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2026-09-15",
+      "effective_date": "2026-10-01",
+      "vote": "3-0",
+      "quote": "amend House Rule 6 so that quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m.",
+      "file": "minutes-2026-09-15.docx"
+     },
+     {
+      "topic": "Quiet hours",
+      "subject": "quiet hours",
+      "scope": "all other nights",
+      "value": "Remain 10:00 p.m. to 7:00 a.m.",
+      "status": "adopted",
+      "document_type": "minutes",
+      "document_date": "2026-09-15",
+      "effective_date": "2026-10-01",
+      "vote": "3-0",
+      "quote": "Quiet hours on all other nights remain 10:00 p.m. to 7:00 a.m. Effective October 1, 2026. Motion carried 3-0.",
+      "file": "minutes-2026-09-15.docx"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "newsletter-2025-12.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 3,
+    "records": [
+     {
+      "topic": "Pool and amenities",
+      "subject": "holiday party",
+      "scope": "community room",
+      "value": "Party on December 13; pets welcome",
+      "status": "informational",
+      "document_type": "newsletter",
+      "document_date": "2025-12",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Holiday party in the community room on December 13. Pets welcome!",
+      "file": "newsletter-2025-12.pdf"
+     },
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "question about $250 charges",
+      "scope": "next year",
+      "value": "Board will discuss 2026 budget in January",
+      "status": "informational",
+      "document_type": "newsletter",
+      "document_date": "2025-12",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Many of you have asked whether charges will rise to $250 next year. The board will discuss the 2026 budget in January.",
+      "file": "newsletter-2025-12.pdf"
+     },
+     {
+      "topic": "Pool and amenities",
+      "subject": "pool closed for winter",
+      "scope": "winter",
+      "value": "Closed",
+      "status": "informational",
+      "document_type": "newsletter",
+      "document_date": "2025-12",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The pool is closed for the winter.",
+      "file": "newsletter-2025-12.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "notice-2024-07-01-renovation-hours.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 1,
+    "records": [
+     {
+      "topic": "Renovations and work hours",
+      "subject": "renovation hours",
+      "scope": "Monday to Saturday",
+      "value": "Mon to Fri 8:00 a.m. to 5:00 p.m.; Sat 9:00 a.m. to 1:00 p.m.; no Sundays or holidays",
+      "status": "informational",
+      "document_type": "notice",
+      "document_date": "2024-07-01",
+      "effective_date": "2024-07-15",
+      "vote": null,
+      "quote": "From July 15, 2024, renovation work is permitted Monday to Friday 8:00 a.m. to 5:00 p.m. and Saturday 9:00 a.m. to 1:00 p.m.",
+      "file": "notice-2024-07-01-renovation-hours.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "notice-2025-02-10-fees.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 1,
+    "records": [
+     {
+      "topic": "Monthly fee and budget",
+      "subject": "monthly common charge",
+      "scope": "per unit",
+      "value": "$230 from March 1, 2025",
+      "status": "informational",
+      "document_type": "notice",
+      "document_date": "2025-02-10",
+      "effective_date": "2025-03-01",
+      "vote": null,
+      "quote": "From March 1, 2025 the monthly common charge will be $230 per unit.",
+      "file": "notice-2025-02-10-fees.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   },
+   {
+    "file": "notice-2026-05-01-pool.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 2,
+    "records": [
+     {
+      "topic": "Pool and amenities",
+      "subject": "pool opening",
+      "scope": "2026 season",
+      "value": "Opens June 1, 2026",
+      "status": "informational",
+      "document_type": "notice",
+      "document_date": "2026-05-01",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The pool opens on June 1, 2026.",
+      "file": "notice-2026-05-01-pool.pdf"
+     },
+     {
+      "topic": "Pool and amenities",
+      "subject": "pool hours",
+      "scope": "2026 season",
+      "value": "8:00 a.m. to 9:00 p.m. daily",
+      "status": "informational",
+      "document_type": "notice",
+      "document_date": "2026-05-01",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Hours: 8:00 a.m. to 9:00 p.m. daily.",
+      "file": "notice-2026-05-01-pool.pdf"
+     }
+    ],
+    "schema_used": "mixed"
+   }
+  ]
+ }
+}

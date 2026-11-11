@@ -19,38 +19,38 @@ ITEMS = [
         "Almanac turns a board's document archive on the NAS into a versioned, cited rulebook showing which rule applies, since when, and on whose authority.",
     ]),
     ("2. User and problem", [
-        "Volunteer board members and managers of condo, HOA and club associations. Rules build up over years of minutes, notices and recordings, and later decisions replace earlier ones, so residents quote repealed rules and mistake failed motions for policy.",
+        "Volunteer boards of condo, HOA and club associations. Rules accumulate over years of minutes, notices and recordings; later decisions replace earlier ones, so residents quote repealed rules and mistake failed motions for policy.",
     ]),
     ("3. Solution", [
-        "Almanac compiles the archive into a Markdown rulebook on the NAS. Each topic records the documented rule, its effective date, the authorizing vote or document, a supporting quotation, replaced rules and open conflicts. Versions are saved only after the user reviews the changes.",
+        "The rulebook is a Markdown file kept on the NAS. Each topic records the documented rule, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts. Each version records what changed, with evidence, and is saved only after user review.",
     ]),
     ("4. Core user flow", [
-        "The Skill inventories the folder, transcribes recordings, extracts and reconciles decisions, and saves a version once the user approves. Members can then ask whether a heat pump may go on a balcony and receive the conditions, vote and source.",
+        "The Skill snapshots the folder with checksums, transcribes recordings, extracts and reconciles decisions from every document, and saves a version after user approval. Members can then ask whether a balcony heat pump is allowed and get its conditions, vote and source.",
     ]),
     ("5. Difference", [
-        "File chat retrieves passages and leaves each answer to decide which version applies; errors mean a refused Saturday renovation, a wrong fee or a missed contract deadline. Almanac decides once, as documents arrive, with explicit rules for effective dates, scheduled changes, failed motions, corrections, partial amendments and conflicts.",
+        "File chat retrieves passages and leaves each answer to decide which version applies; errors mean a refused Saturday renovation, a wrong fee or a missed contract deadline. Almanac decides once, with explicit rules for effective dates, scheduled changes, failed motions, corrections, partial amendments and conflicts.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
-            "file-agent (ug-filesystem): previous almanac (step 1), checksummed inventory (2), checks around saving (8, 9).",
-            "knowledge-agent (ug-knowledge): transcription (3), saving each version (9).",
-            "document-agent (ug-document): extraction (4), reconciliation (5), answers.",
+            "file-agent (ug-filesystem): checksummed snapshot (step 1), checks around saving (7).",
+            "knowledge-agent (ug-knowledge): transcription (2), saving each version (7).",
+            "document-agent (ug-document): extraction (3), reconciliation (4), answers.",
             "Intended model: the NAS local model.",
         ]),
     ]),
     ("7. Technical approach", [
-        "The parent Skill only delegates to these agents. Inputs are the two folders, the mode and the model setting. It needs approval to create the folder or save, and never overwrites or deletes. A ledger of checksums and processing states makes compiles incremental and resumable, up to 60 documents per run. The previous almanac is read in full or the run stops, and every rule cites an original document.",
+        "The Skill takes two folders, a mode and the model setting. It only delegates to these agents, needs approval to create the folder or save, and never overwrites or deletes. Each compile rebuilds the almanac from every original document (up to 60), so a corrected or deleted document cannot leave an outdated rule behind. It recompiles when a scheduled change takes effect and saves nothing if a file changes mid-run.",
     ]),
     ("8. Status", [
-        "SKILL.md and six references are complete and pass the official checker (catalog 2.0.0) without errors or warnings. A synthetic archive, answer key and scorer are ready; runtime accuracy and timing await NAS testing.",
+        "SKILL.md and six references pass the official checker (catalog 2.0.0) cleanly. In 64 simulated runs with a small model playing the Skill, none saved without approval or followed instructions planted in a document; their results prompted four rounds of fixes. Device accuracy and timing await NAS testing.",
     ]),
     ("9. Validation plan", [
-        "Core case 1, supersession: the fee and pet-rule answers give $240 and two pets with dates, votes and citations, never the $235 proposal or the erroneous $230 notice.",
-        "Core case 2, answering from the almanac: a heat-pump question returns the conditions, 2-1 vote and version; a gym question is reported as not covered.",
-        "Edge case: minutes changing weekend quiet hours are added; the recompile rechecks the amended bylaws and preserves weekday hours, other rules and the pool conflict. All questions also go to plain file chat.",
+        "Core case 1, supersession: fee and pet answers give $240 and two pets with citations, never the $235 proposal or wrong $230 notice.",
+        "Core case 2, answering: a heat-pump question returns conditions, 2-1 vote and version; a gym question is reported as not covered.",
+        "Edge case: added minutes change weekend quiet hours only; version 2 keeps 10:00 p.m. on other nights, other rules and the pool conflict. File chat is scored on the same questions.",
     ]),
     ("10. Limitations", [
-        "Accuracy depends on on-device extraction, OCR and transcription. The almanac is not legal advice. Model routing is a UGOS setting the Skill confirms but cannot enforce. Testing so far is synthetic.",
+        "Accuracy depends on on-device extraction, OCR and transcription. Tests showed partial changes sometimes recorded as ending a whole rule; the pre-save review shows each change beside the replaced rule, and a planned fix has the document agent report which parts stay in force.",
     ]),
 ]
 
@@ -61,8 +61,9 @@ DISCLOSURE = [
             "Board files are read and processed by UGOS agents on the NAS, and almanac versions are saved to a NAS folder the user confirms. The intended model is the NAS local model. Model routing is a UGOS setting; the Skill asks which model is in use and requires explicit authorization before any document is sent to a third-party model.",
             "The validation kit, which is not part of the Skill, uses reportlab 5.0.1 (BSD license) and python-docx 1.2.0 (MIT license) to generate synthetic test documents. Its scorer uses only the Python standard library.",
             "The package was checked with the official UGREEN skill kit 0.7.3.",
-            "Claude (Anthropic) assisted with drafting and reviewing the Skill files, test materials and this proposal.",
+            "Claude (Anthropic) assisted with drafting and reviewing the Skill files, test materials and this proposal, and Claude models played the Skill and graded the runs in the simulated tests.",
             "All test data is synthetic and fictional. The workflow was designed and written during the hackathon.",
+            "The almanac reports what the documents record and is not legal advice.",
         ]),
     ]),
 ]

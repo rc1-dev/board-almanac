@@ -1,0 +1,7 @@
+Before I start the compile, please confirm three things:
+
+1. Board folder: "Board Documents" (I will not read outside it).
+2. Almanac folder: "Board Documents/Almanac" (a new subfolder inside the board folder, where the almanac versions will be saved). Say if you want a different location.
+3. Model route: which model does the NAS use for document processing? The intended setting is the NAS local model. If it is a third-party model, I need your explicit authorization before any document is read.
+
+Mode: Compile (update the almanac from the new minutes).
