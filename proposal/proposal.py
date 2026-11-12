@@ -50,10 +50,9 @@ ITEMS = [
             "Core test 2: when asked about balcony heat pumps, it should give the conditions and 2-1 vote; for gym hours, which no document covers, it should say so.",
             "Edge case: after new minutes change quiet hours on Friday and Saturday only, version 2 should change those nights and keep 10:00 p.m. on others.",
         ]),
-        "File chat gets the same questions.",
     ]),
     ("10. Limitations", [
-        "Answer quality depends on the NAS's document reading, OCR and transcription. In simulations, the model sometimes treated a partial change, such as new Saturday hours, as ending the whole rule. The review before saving shows each change beside the earlier rule so users can catch this. One compile handles up to 60 files.",
+        "Answer quality depends on the NAS's document reading, OCR and transcription. In simulations, the model sometimes treated a partial change, such as new Saturday hours, as ending the whole rule. The review before saving shows each change beside the earlier rule, but some reviews were incomplete. One compile handles up to 60 files.",
     ]),
 ]
 
