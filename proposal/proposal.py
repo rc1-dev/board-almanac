@@ -22,13 +22,13 @@ ITEMS = [
         "Volunteer boards of condo, HOA and club associations. Rules accumulate over years of minutes, notices and recordings; later decisions replace earlier ones, so residents quote repealed rules and mistake failed motions for policy.",
     ]),
     ("3. Solution", [
-        "Each topic of the Markdown rulebook records the documented rule, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts. Each version records what changed, with evidence, and is saved only after user review.",
+        "Each topic of the Markdown rulebook records the documented rule, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts. Each version records what changed, with evidence, and is saved after user review.",
     ]),
     ("4. Core user flow", [
-        "The Skill snapshots the folder, transcribes recordings, extracts and reconciles decisions from every document, and saves a version after user approval. Members then ask whether a balcony heat pump is allowed and get its conditions, vote and source.",
+        "The Skill snapshots the folder, has the NAS transcribe recordings, extracts and reconciles decisions from every document, and saves a version once approved. Members can then ask questions such as whether a balcony heat pump is allowed, and get the conditions, vote and source.",
     ]),
     ("5. Difference", [
-        "Hosted HOA platforms such as HOALife and HOA Hub already answer questions from governing documents, and HOA Hub adds AI-assisted amendment review with version history. Almanac instead rebuilds a reviewed rulebook from the board's archive on the NAS, reconciling decisions across minutes, notices, recordings and corrections, including failed motions, future effective dates and conflicts. With the UGOS local model, documents need not be sent to a hosted AI service.",
+        "Hosted HOA platforms such as HOALife and HOA Hub answer questions from governing documents, and HOA Hub adds AI-assisted amendment review with version history. Almanac instead rebuilds a reviewed rulebook from the board's archive on the NAS, reconciling decisions across minutes, notices, recordings and corrections, including failed motions, future effective dates and conflicts. With the UGOS local model, documents need not be sent to a hosted AI service.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
@@ -39,10 +39,10 @@ ITEMS = [
         ]),
     ]),
     ("7. Technical approach", [
-        "The Skill takes two folders, a mode and the model setting. It only delegates, needs approval to create the folder or save, and never overwrites or deletes. Each compile rebuilds the almanac from every original document (up to 60), so a corrected or deleted document leaves no outdated rule behind. It recompiles when a scheduled change takes effect and saves nothing if a file changes mid-run.",
+        "The Skill takes two folders, a mode and the model setting, only delegates, needs approval to create the folder or save, and never overwrites or deletes. Each compile rebuilds the almanac from every original document (up to 60), so a corrected or deleted document leaves no outdated rule behind. It recompiles when a scheduled change takes effect and saves nothing if a file changes mid-run.",
     ]),
     ("8. Status", [
-        "The package passes the official checker (catalog 2.0.0). In 64 simulated runs with a small model as the Skill, none saved without approval or followed instructions planted in documents; they prompted four rounds of fixes. NAS accuracy and timing are untested.",
+        "The package passes the official checker (catalog 2.0.0). In 64 simulated runs driven by a small model, none saved without approval or followed instructions planted in documents; they prompted four rounds of fixes. NAS accuracy and timing are untested.",
     ]),
     ("9. Validation plan", [
         "Core case 1, supersession: fee and pet answers give $240 and two pets with citations, never the $235 proposal or wrong $230 notice.",
