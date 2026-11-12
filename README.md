@@ -10,7 +10,7 @@ A board's rules are rarely kept in one place. They are set in bylaws, changed in
 
 ## The approach
 
-Almanac does that work in a compile and keeps the result. Each compile produces a Markdown file in an almanac folder on the NAS. For every topic, the file records the currently documented rule, its effective date, the vote or document that established it, a quotation from the source, the rules it replaced and the period each applied, and any conflict the documents leave unresolved. Each version also has a changelog of what changed since the previous one, with the evidence, and the user reviews it before the version is saved. Older versions are never modified, so the folder also serves as an audit trail.
+Almanac does that work in a compile and keeps the result. Each compile produces a Markdown file in an almanac folder on the NAS. For every topic, the file records the currently documented rule, its effective date, the vote or document that established it, a quotation from the source, the rules it replaced and the period each applied, and any conflict the documents leave unresolved. Each version also has a changelog of what changed since the previous one, and the user reviews it before the version is saved. The changelog compares each topic's summary (rule, scope, effective date and status) and the open items; a change only to a topic's authority or evidence, such as a corrected vote count, appears in the topic but is not flagged as a change. Older versions are never modified, so the folder also serves as an audit trail.
 
 The rules for deciding which statement is current are written out explicitly in [the supersession rules](skill/almanac/references/supersession-rules.md). A later adopted decision replaces an earlier one only for the same subject and scope, so an amendment that changes quiet hours on Friday and Saturday nights leaves the other nights untouched. Failed motions and agenda proposals never change a rule. A notice that contradicts the minutes is recorded as a conflict unless a later document corrects it. When nothing resolves a disagreement, the almanac quotes both statements and leaves the decision to the board.
 
@@ -27,12 +27,18 @@ The Skill delegates every step to the UGOS agents (`file-agent`, `document-agent
 3. Every document is read again, up to 60 files per compile. Decisions, rules, votes, effective dates, action items and contract terms are extracted, each with a quotation and its source file. A file that cannot be read stops the compile until the user fixes it or explicitly excludes it, and an almanac built without it is marked as compiled with exclusions.
 4. The documents are reconciled against each other, and every disagreement is reported rather than decided.
 5. The supersession rules are applied and the whole almanac is written again from these records. Because nothing is carried over from the previous version, a corrected or deleted document cannot leave an outdated rule behind.
-6. Before approval, the Skill checks that the summary table, each topic and the review agree. The user then reviews each new or changed rule beside the rule it replaces, with its effective date and quotation, and every change to an open item.
+6. Before approval, the Skill checks that the summary table, each topic and the review agree. The user then reviews each new or changed rule beside its previous summary, with the new rule's effective date and quotation, and every change to an open item.
 7. The folder is checked again, and if any file changed during the compile, nothing is saved. Otherwise the version is saved after approval under a new name and read back to confirm that it is complete.
 
 The Skill asks which model the NAS uses for document processing. The intended setting is the NAS local model, and a third-party model is used only with the user's explicit authorization. Model routing itself is a UGOS setting that the Skill can confirm but not change. People are recorded by board role, and residents' private matters are left out.
 
 The almanac reports what the documents record. It does not give legal advice or judge whether a vote or notice was valid.
+
+## Existing tools
+
+Hosted HOA platforms already offer AI help with association documents. [HOALife](https://www.hoalife.com/features/ai-features) offers an AI chat whose answers are drawn from an HOA's governing documents. [HOA Hub](https://www.hoahub.app/features/documents/) answers residents' questions from uploaded documents with [EasyAsk](https://www.hoahub.app/features/easyask/), and its document hub offers AI-assisted amendment review, which compares an uploaded amendment with the governing document, with version history.
+
+Almanac takes a different approach. It rebuilds a reviewed rulebook from the board's whole archive on the NAS, reconciling decisions across minutes, notices, recordings and corrections: which motions passed or failed, when each change takes effect, and where documents disagree. With the UGOS local model, the documents need not be sent to a hosted AI service.
 
 ## Demo
 
