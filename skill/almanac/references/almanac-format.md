@@ -96,7 +96,7 @@ Status is `processed`, or `excluded` with the reason and the note that the user 
 
 ### 6. Changelog
 
-Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date, authority and status, and discloses every meaningful change to an open item's description, owner, due date or status, not just items added or removed. Any difference in meaning is a change; only a difference in wording is not. The comparison is proposed for the user to review before saving.
+Newest first. Each entry compares this version with the previous one, topic by topic, on rule, scope, effective date and status as shown in At a glance, and discloses every meaningful change to an open item's description, owner, due date or status, not just items added or removed. Any difference in meaning is a change; only a difference in wording is not. The comparison is proposed for the user to review before saving.
 
 ```text
 ## v7, 2026-11-22

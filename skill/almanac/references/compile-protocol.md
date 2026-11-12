@@ -52,7 +52,7 @@ A file that fails or is not read completely blocks the compile until the user ei
 2. Apply [the supersession rules](supersession-rules.md) in document date order, as of the board's local date.
 3. Record adopted changes with a later effective date as scheduled.
 4. Write every section of the almanac in the fixed topic order, with the Sources ledger from the snapshot and the end line.
-5. Compare each topic's rule, scope, effective date, authority and status with the previous At a glance table, and the open items with the previous Open items section, to write the changelog. Any difference in meaning is a change; only a difference in wording is not.
+5. Compare each topic's rule, scope, effective date and status with the previous At a glance table, and the open items with the previous Open items section, to write the changelog. Any difference in meaning is a change; only a difference in wording is not. The comparison is at summary level: a change only in a topic's authority or evidence, such as a corrected vote count, appears in the new topic but is not detected as a change.
 
 ## Saving
 

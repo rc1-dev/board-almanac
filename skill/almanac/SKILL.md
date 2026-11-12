@@ -69,9 +69,9 @@ Step 4. Reconcile all documents in the snapshot, at most 60 per request. Delegat
 
 An empty result means no disagreements, and the compile continues.
 
-Step 5. Build the almanac from the records of Steps 2 to 4 only. Apply the supersession rules as of the board's local date and write the complete almanac in the almanac format: fixed topic order and names, one record per rule, scheduled changes for adopted changes that take effect later, the Sources ledger from the snapshot, and the version number one above the previous one. Write the changelog by comparing each topic's rule, scope, effective date, authority and status with the previous At a glance table, and the open items with the previous Open items section. Any difference in meaning is a change; only a difference in wording is not.
+Step 5. Build the almanac from the records of Steps 2 to 4 only. Apply the supersession rules as of the board's local date and write the complete almanac in the almanac format: fixed topic order and names, one record per rule, scheduled changes for adopted changes that take effect later, the Sources ledger from the snapshot, and the version number one above the previous one. Write the changelog by comparing each topic's rule, scope, effective date and status with the previous At a glance table, and the open items with the previous Open items section. Any difference in meaning is a change; only a difference in wording is not.
 
-Step 6. Review before saving. Before approval, verify that At a glance, Current rule, Superseded and the user review agree on amounts, dates and scope; a standing rule remains current outside an expressly limited exception. Show the user the changelog, with each new, changed or removed rule beside the previous one, its effective date and quotation, every meaningful change to an open item's description, owner, due date or status, not just items added or removed, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
+Step 6. Review before saving. Before approval, verify that At a glance, Current rule, Superseded and the user review agree on amounts, dates and scope; a standing rule remains current outside an expressly limited exception. Show the user the changelog, with each new, changed or removed rule beside its previous At a glance value, and the new rule's effective date and quotation, every meaningful change to an open item's description, owner, due date or status, not just items added or removed, then every conflict, provisional item and exclusion. On a first compile, list every topic's rule with its quotation. Then show the file name almanac-YYYY-MM-DD-vN.md and ask for approval. If the user says a rule is wrong, save nothing and ask which passage was misread; if the user points to one, extract that document again and rebuild. If the user declines, stop.
 
 Step 7. Check, save and verify.
 
@@ -103,7 +103,7 @@ Run Step A1, then delegate:
 
 `delegate --target file-agent --instruction 'Read the almanac file supplied in this request completely in parts of 4000 characters and return the text unchanged. Report a failure if it cannot be read completely.'`
 
-Report the checks listed in ask and lint. Save nothing unless asked; then use Step 7 with a file name starting with lint-.
+Report the checks listed in ask and lint. Save nothing unless asked. With the user's approval, use the name check, save and read-back delegations of Step 7 (items 3 to 5) with a new file name starting with lint-; never overwrite a file. Report success only if the save was verified, the saved path and size match, and the read-back contains the complete report and the almanac version it checked. Otherwise report an unresolved save and name any file that was written.
 
 ## Status
 
