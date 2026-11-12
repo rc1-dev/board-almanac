@@ -1,0 +1,15 @@
+Lint is done and the report is saved as Almanac/lint-2026-11-29-v2.md in Board Documents. The save was read back and verified (2,677 bytes).
+
+Checked against almanac v2 (compiled 2026-11-29, as of 2026-11-22):
+
+1. Scheduled changes now in force: none.
+2. Open conflict: 2026 pool hours. The 2025-09-10 minutes say 8:00 a.m. to 10:00 p.m.; the 2026-05-01 notice says 8:00 a.m. to 9:00 p.m. No later document explains the difference.
+3. Provisional items (recording only): electric barbecues, which were not voted on and remain prohibited; and the deferred pool-notice question.
+4. Overdue action items: sending the 2024 budget to owners (due 2024-02-15, no document shows it done), and asking the insurer about electric barbecues (due 2026-07-31, provisional, no document shows it done).
+5. Late action: the landscaping non-renewal notice was sent 2026-02-02, after its 2026-01-30 due date.
+6. Effective dates within 90 days: none.
+7. Contract deadline within 90 days: the Bramblewick landscaping notice deadline of 2027-01-30, which applies only if the contract renewed to 2027-03-31. Whether it ended or renewed is not established.
+8. Files changed since the compile: none. All 17 board files match the Sources ledger by name, size and modification time. This check does not compare checksums.
+9. Exclusions: none.
+
+Lint found issues, so the report says so in its result line.

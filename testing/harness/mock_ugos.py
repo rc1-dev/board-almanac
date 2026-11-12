@@ -214,7 +214,8 @@ class Run:
                 if n in fail or t is None:
                     out.append({"file": f, "status": "failed", "error": "the document could not be read"}); continue
                 seen, rows = set(), []
-                for r in recs.get(n, []):
+                pinned = self.scn.get("record_set", {}).get(n)
+                for r in (base.VARIANTS[f"{n}#{pinned}"] if pinned else recs.get(n, [])):
                     key = (r["subject"], r["quote"])
                     if key not in seen and contains(t, r["quote"]):
                         seen.add(key); rows.append(dict(r, file=f))

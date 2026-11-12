@@ -1,0 +1,1 @@
+Saved the lint report as Almanac/lint-2026-11-29-v3.md, because lint-2026-11-29-v2.md was already taken and I did not overwrite it. The save was verified: 2518 bytes, read back completely. The report checks almanac v2 and lists the open pool-hours conflict, the overdue budget and insurer items, the late landscaping notice, and the provisional items.

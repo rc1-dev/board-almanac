@@ -1,0 +1,8 @@
+Before I start the almanac update, I need to confirm four things:
+
+1. Board folder: I will use "Board Documents" as the board folder, as set for this run. Confirm, or tell me a different folder.
+2. Almanac folder: I suggest a subfolder named "Almanac" inside Board Documents, where the new almanac version will be saved. Confirm, or tell me a different folder.
+3. Mode: I will run Compile, which rebuilds the almanac from every original document in the board folder and saves a new version. Confirm.
+4. Model route: the intended setting is the NAS local model. Which model does the NAS use for document processing? If it is a third-party model, I need your explicit authorization before any document is read. I cannot change this setting.
+
+Once you confirm these, I will take the snapshot of the board folder and continue the compile.

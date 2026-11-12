@@ -30,7 +30,7 @@ def skill_files(version):
     if out.exists():
         return out
     out.mkdir(parents=True)
-    ref = {"rebuild": "8a5473e", "rebuild2": "3f37702", "rebuild3": "bafceeb", "rebuild4": "97fdfc7", "rebuild5": "9f08a78", "baseline": "main"}[version]
+    ref = {"rebuild": "8a5473e", "rebuild2": "3f37702", "rebuild3": "bafceeb", "rebuild4": "97fdfc7", "rebuild5": "9f08a78", "rebuild6": "d60eaa3", "baseline": "main"}[version]
     names = subprocess.run(["git", "-C", str(REPO), "ls-tree", "-r", "--name-only", ref, "skill/almanac"], capture_output=True, text=True, check=True).stdout.split()
     for n in names:
         data = subprocess.run(["git", "-C", str(REPO), "show", f"{ref}:{n}"], capture_output=True, check=True).stdout
@@ -112,6 +112,10 @@ SCENARIOS = {
                                     mutate_after_extract_calls={"count": 1, "file": "notice-2026-05-01-pool.pdf", "append": "\n% revised\n"}),
  "F3-malformed-reply-and-injection": dict(today="2026-11-29", request="New documents were added. Update the almanac.", reconcile_malformed_once=True),
  "F4-unexpected-save-name": dict(today="2026-11-29", request="New minutes were added. Update the almanac.", save_rename=True),
+ "S7-corrected-vote": dict(today="2026-12-01", request="The April 2025 minutes were corrected and replaced. Update the almanac.",
+                           record_set={"minutes-2025-04-15.docx": "vote"}),
+ "L1-lint-save": dict(today="2026-11-29", request="Run lint on the almanac and save the report as lint-2026-11-29-v2.md."),
+ "L2-lint-name-taken": dict(today="2026-11-29", request="Run lint on the almanac and save the report as lint-2026-11-29-v2.md."),
 }
 
 
@@ -137,6 +141,10 @@ def build_board(sid, board):
     seed(board, V2, "almanac-2026-11-29-v2.md", "2026-11-29 10:00")
     if sid == "S3-corrected-minutes":
         put(board, ADV / "corrected-minutes" / "minutes-2025-04-15.docx")
+    if sid == "S7-corrected-vote":
+        put(board, ROOT / "variants" / "vote-corrected" / "minutes-2025-04-15.docx")
+    if sid == "L2-lint-name-taken":
+        (board / "Almanac" / "lint-2026-11-29-v2.md").write_text("# Lint report (earlier)\nKept by the board. Must not be overwritten.\n")
     if sid in ("S4-scheduled-change", "S5-date-passes"):
         put(board, ADV / "scheduled-change" / "minutes-2026-11-10.docx")
     if sid == "S5-date-passes":
@@ -160,7 +168,10 @@ def main(plan, only=None, index="index.json"):
                 shutil.copytree(sk, rd / "skill")
                 scn = {"id": sid, "version": version, "repeat": r, "today": cfg["today"], "request": cfg["request"],
                        "user_replies": REPLIES, "default_reply": "Yes, please continue."}
-                for k in ("mutate_after_extract_calls", "reconcile_malformed_once", "save_rename"):
+                alm = rd / "board" / "Almanac"
+                if alm.exists():  # fingerprints of what was in the almanac folder before the run
+                    scn["almanac_before"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(alm.iterdir())}
+                for k in ("mutate_after_extract_calls", "reconcile_malformed_once", "save_rename", "record_set"):
                     if k in cfg:
                         scn[k] = cfg[k]
                 (rd / "scenario.json").write_text(json.dumps(scn, indent=1))
@@ -172,7 +183,10 @@ def main(plan, only=None, index="index.json"):
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["final"]:
+    if sys.argv[1:] == ["targeted"]:
+        main({"rebuild6": 2}, only={"S2-weekend-amendment"}, index="index-targeted-s2.json")
+        main({"rebuild6": 1}, only={"S7-corrected-vote", "L1-lint-save", "L2-lint-name-taken"}, index="index-targeted-new.json")
+    elif sys.argv[1:] == ["final"]:
         main({"rebuild5": 3}, only={"S1-first-compile"}, index="index-final-s1.json")
         main({"rebuild5": 2}, only={"S2-weekend-amendment", "F3-malformed-reply-and-injection"}, index="index-final-upd.json")
     elif sys.argv[1:] == ["retest4"]:

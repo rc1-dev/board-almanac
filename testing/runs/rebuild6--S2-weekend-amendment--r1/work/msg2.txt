@@ -1,0 +1,33 @@
+Review before saving: the almanac v2 draft is ready. It is not saved yet. The proposed file name is almanac-2026-11-29-v2.md in Board Documents/Almanac.
+
+Sources: 17 files processed, 0 excluded. The one new file since v1 is minutes-2026-09-15.docx.
+
+CHANGES FROM v1
+
+1. Quiet hours (changed)
+   - v1 At a glance: 10:00 p.m. to 7:00 a.m. every night, since 2019-05-01, no scheduled change.
+   - New rule: Friday and Saturday nights 11:00 p.m. to 7:00 a.m., effective 2026-10-01 (now in force). Other nights are unchanged at 10:00 p.m. to 7:00 a.m.
+   - Quote, minutes-2026-09-15.docx: "amend House Rule 6 so that quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m." Vote 3-0.
+   - Quote, minutes-2026-09-15.docx: "Quiet hours on all other nights remain 10:00 p.m. to 7:00 a.m. Effective October 1, 2026. Motion carried 3-0."
+
+2. Open item: insurer question on electric barbecues (status changed)
+   - v1: Secretary to ask the insurer by 2026-07-31; provisional, from the recording only.
+   - v2: the due date has passed and no document shows it done. Still provisional.
+
+3. Open item added: pool hours (provisional)
+   - Treasurer said "We'll look at that next time" about the 9 p.m. notice versus the 10 p.m. minutes. Source: board-meeting-2026-06-18.m4a, recording only. No due date is stated.
+
+UNCHANGED FROM v1
+Monthly fee $240 (2026-03-01); pets; renovations and work hours; rentals (30 days); parking (48 hours); EV charging; officers; governance; vendor contracts (still incomplete). The landscaping outcome is not established because the 2026-02-02 notice was after the 2026-01-30 deadline.
+
+CONFLICTS (1)
+- Pool and amenities, 2026 season. minutes-2025-09-10.pdf (adopted 3-0): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." notice-2026-05-01-pool.pdf: "Hours: 8:00 a.m. to 9:00 p.m. daily." A board notice does not replace adopted minutes, and no later document explains the difference. Not resolved.
+
+PROVISIONAL ITEMS (2), recording only
+- Electric barbecues: "So we all lean towards allowing electric barbecues. Let's not vote tonight." (board-meeting-2026-06-18.m4a, 00:01:10). No vote was taken, and no adopted minutes record a motion.
+- Pool hours objection, 00:01:45, deferred.
+
+EXCLUSIONS
+None.
+
+Do you approve saving almanac-2026-11-29-v2.md? Reply yes to save, or tell me which passage was misread and I will extract that document again and rebuild. Saying no stops the compile and saves nothing.

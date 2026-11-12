@@ -118,6 +118,10 @@ RECORDS = {
 # Variants keyed by "<file>#<variant>"; the stand-in picks the variant whose source text matches the file on disk.
 VARIANTS = {
  "minutes-2025-04-15.docx#corrected": [r for r in RECORDS["minutes-2025-04-15.docx"] if r["topic"] != "Pets"],
+ "minutes-2025-04-15.docx#vote": [r for r in RECORDS["minutes-2025-04-15.docx"] if r["topic"] != "Pets"] + [
+  R("Pets", "number of pets and dog weight limit", "per unit", "Maximum of two pets; 35-pound limit for dogs removed; registration still required", "adopted", M, "2025-04-15", "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed; registration with management is still required. Effective immediately. Motion carried 2-1.", eff="2025-04-15", vote="2-1"),
+  R("Pets", "correction of recorded vote", "item 2", "Vote on the pet rule corrected from 3-0 to 2-1", "informational", M, "2025-04-15", "Corrected copy, approved by the board on November 20, 2026. It replaces the earlier copy: the vote on item 2 was 2-1, not 3-0 as first recorded."),
+ ],
  "email-2026-02-02-landscaping.txt#corrected": [
   R("Vendor contracts", "landscaping non-renewal notice", "Bramblewick agreement", "Draft only; not sent", "informational", "email", "2026-02-02", "Draft for the board to review. This notice has not been sent to Bramblewick Grounds LLC."),
  ],

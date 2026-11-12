@@ -1,0 +1,16 @@
+The lint is done. I checked almanac v2 (Almanac/almanac-2026-11-29-v2.md), read it completely, and found:
+
+- Scheduled changes now in force: none.
+- Open conflict: 2026 pool hours. minutes-2025-09-10.pdf says 8:00 a.m. to 10:00 p.m.; notice-2026-05-01-pool.pdf says 8:00 a.m. to 9:00 p.m. No later document explains it.
+- Provisional items: electric barbecues, and the deferred pool-notice question (both from the 2026-06-18 recording). The insurer question on electric barbecues is also provisional, and it is overdue (due 2026-07-31, no document shows it done). The almanac header counts 2 provisional items, but the body lists 3.
+- Overdue: sending the 2024 budget to owners (due 2024-02-15, no document shows it done).
+- Late: the landscaping non-renewal notice was sent 2026-02-02, after its 2026-01-30 due date. Whether the contract renewed is not established.
+- Contract deadline within 90 days: landscaping notice deadline 2027-01-30 (62 days away), only if the contract renewed to 2027-03-31.
+- Files changed since the last compile: none. All 17 files match the Sources ledger by size and modification time.
+- Exclusions: none.
+
+The name lint-2026-11-29-v2.md is already used in the Almanac folder, so I have not saved anything. I will not overwrite it. Please choose one:
+
+1. Save as lint-2026-11-29-v3.md.
+2. Save under another name you choose.
+3. Do not save the report.

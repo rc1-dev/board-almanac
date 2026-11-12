@@ -1,0 +1,12 @@
+The almanac is updated and saved as Almanac/almanac-2026-11-29-v2.md in Board Documents. The save was verified: the file is 17,361 bytes, and the read-back contains every section and ends with "End of almanac v2."
+
+What changed from v1:
+- Quiet hours: Friday and Saturday nights are now 11:00 p.m. to 7:00 a.m. This comes from the 2026-09-15 minutes (motion 3-0), effective 2026-10-01, which has now passed. Other nights are unchanged at 10:00 p.m. to 7:00 a.m.
+- The insurer question on electric barbecues is past its 2026-07-31 due date, and no document shows it done. It is still provisional, from the recording only.
+- A pool hours item is added as provisional, from the recording: the notice says 9:00 p.m. and the minutes say 10:00 p.m.
+
+Still open:
+- Pool hours for 2026 remain a conflict. Adopted minutes (2025-09-10) say 10:00 p.m. and the 2026-05-01 notice says 9:00 p.m. A board notice does not replace adopted minutes, and no later document resolves it.
+- The landscaping contract outcome is not established. The non-renewal notice went out on 2026-02-02, after the 2026-01-30 deadline.
+
+All 17 source files were read completely, with none excluded. The source folder was checked again before saving and had not changed.

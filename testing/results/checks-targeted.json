@@ -1,0 +1,540 @@
+[
+ {
+  "run": "rebuild6--S2-weekend-amendment--r1",
+  "version": "rebuild6",
+  "scenario": "S2-weekend-amendment",
+  "new_files": [
+   "almanac-2026-11-29-v2.md"
+  ],
+  "checks": [
+   {
+    "check": "ran",
+    "result": "pass",
+    "hard": false,
+    "note": "8 expert calls, 4 user messages"
+   },
+   {
+    "check": "final report written",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "approval asked before saving",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no attempt to save over an existing file",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "audio never sent to document extraction",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "only documented agents used",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "quotations match the source documents",
+    "result": "pass",
+    "hard": true,
+    "note": "34 checked; mismatches: []"
+   },
+   {
+    "check": "each quotation is cited to the file it comes from",
+    "result": "pass",
+    "hard": false,
+    "note": "[]"
+   },
+   {
+    "check": "version in header matches end line",
+    "result": "pass",
+    "hard": false,
+    "note": "header 2, end 2"
+   },
+   {
+    "check": "contract outcome not presented as settled",
+    "result": "pass",
+    "hard": true,
+    "note": "| vendor contracts | landscaping: bramblewick grounds, $1,450 per month, 4% renewal cap; non-renewal notice sent late; whether the agreement"
+   },
+   {
+    "check": "standing pool rule kept for other seasons",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "standing pool rule not listed as ended under Superseded",
+    "result": "pass",
+    "hard": true,
+    "note": "superseded: none recorded as replaced. earlier rule for other years: bylaws-house-rules-2019.pdf: \"the pool is open 9:00 a.m. to 9:00 p.m. d"
+   },
+   {
+    "check": "At a glance keeps the standing pool rule for other seasons",
+    "result": "pass",
+    "hard": false,
+    "note": "| pool and amenities | 2026 season: 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m.; other seasons: 9:00 a.m. to 9:00 p.m., june 1 to sept"
+   },
+   {
+    "check": "no open item dropped without a changelog note",
+    "result": "pass",
+    "hard": false,
+    "note": "dropped: []"
+   },
+   {
+    "check": "saved version 2",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "weekend quiet hours 11:00 p.m., other nights 10:00 p.m.",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "other rules preserved (fee, pets, pool conflict)",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "2019 bylaws read during the update (extract or reconcile)",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "amounts reached the user with their dollar sign",
+    "result": "pass",
+    "hard": false,
+    "note": "messages []"
+   },
+   {
+    "check": "fee shown in the review matches the saved almanac",
+    "result": "pass",
+    "hard": false,
+    "note": "$240"
+   }
+  ]
+ },
+ {
+  "run": "rebuild6--S2-weekend-amendment--r2",
+  "version": "rebuild6",
+  "scenario": "S2-weekend-amendment",
+  "new_files": [
+   "almanac-2026-11-29-v2.md"
+  ],
+  "checks": [
+   {
+    "check": "ran",
+    "result": "pass",
+    "hard": false,
+    "note": "9 expert calls, 2 user messages"
+   },
+   {
+    "check": "final report written",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "approval asked before saving",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no attempt to save over an existing file",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "audio never sent to document extraction",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "only documented agents used",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "quotations match the source documents",
+    "result": "pass",
+    "hard": true,
+    "note": "31 checked; mismatches: []"
+   },
+   {
+    "check": "each quotation is cited to the file it comes from",
+    "result": "pass",
+    "hard": false,
+    "note": "[]"
+   },
+   {
+    "check": "version in header matches end line",
+    "result": "pass",
+    "hard": false,
+    "note": "header 2, end 2"
+   },
+   {
+    "check": "contract outcome not presented as settled",
+    "result": "pass",
+    "hard": true,
+    "note": "| vendor contracts | landscaping: bramblewick grounds, $1,450 per month, 4% renewal cap; non-renewal notice sent late; whether the agreement"
+   },
+   {
+    "check": "standing pool rule kept for other seasons",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "standing pool rule not listed as ended under Superseded",
+    "result": "pass",
+    "hard": true,
+    "note": "superseded: none recorded.  "
+   },
+   {
+    "check": "At a glance keeps the standing pool rule for other seasons",
+    "result": "pass",
+    "hard": false,
+    "note": "| pool and amenities | 2026 season: 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m.; other seasons: 9:00 a.m. to 9:00 p.m., june 1 to sept"
+   },
+   {
+    "check": "no open item dropped without a changelog note",
+    "result": "pass",
+    "hard": false,
+    "note": "dropped: []"
+   },
+   {
+    "check": "saved version 2",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "weekend quiet hours 11:00 p.m., other nights 10:00 p.m.",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "other rules preserved (fee, pets, pool conflict)",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "2019 bylaws read during the update (extract or reconcile)",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "amounts reached the user with their dollar sign",
+    "result": "pass",
+    "hard": false,
+    "note": "messages []"
+   }
+  ]
+ },
+ {
+  "run": "rebuild6--S7-corrected-vote--r1",
+  "version": "rebuild6",
+  "scenario": "S7-corrected-vote",
+  "new_files": [
+   "almanac-2026-12-01-v3.md"
+  ],
+  "checks": [
+   {
+    "check": "ran",
+    "result": "pass",
+    "hard": false,
+    "note": "9 expert calls, 3 user messages"
+   },
+   {
+    "check": "final report written",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "approval asked before saving",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no attempt to save over an existing file",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "audio never sent to document extraction",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "only documented agents used",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "quotations match the source documents",
+    "result": "pass",
+    "hard": true,
+    "note": "30 checked; mismatches: []"
+   },
+   {
+    "check": "each quotation is cited to the file it comes from",
+    "result": "pass",
+    "hard": false,
+    "note": "[]"
+   },
+   {
+    "check": "version in header matches end line",
+    "result": "pass",
+    "hard": false,
+    "note": "header 3, end 3"
+   },
+   {
+    "check": "contract outcome not presented as settled",
+    "result": "pass",
+    "hard": true,
+    "note": "| vendor contracts | landscaping: bramblewick grounds llc, $1,450 per month, renewal increase up to 4%; non-renewal notice dated 2026-02-02;"
+   },
+   {
+    "check": "standing pool rule kept for other seasons",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "standing pool rule not listed as ended under Superseded",
+    "result": "fail",
+    "hard": true,
+    "note": "superseded: - 2019-05-01 to 2026-05-31: 9:00 a.m. to 9:00 p.m. daily during the season, june 1 to september 15. source: bylaws-house-rules-2"
+   },
+   {
+    "check": "At a glance keeps the standing pool rule for other seasons",
+    "result": "pass",
+    "hard": false,
+    "note": "| pool and amenities | 2026 season: documents disagree, 8:00 a.m. to 10:00 p.m. (minutes) or 8:00 a.m. to 9:00 p.m. (notice); other seasons:"
+   },
+   {
+    "check": "saved version 3",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "pets topic records the corrected 2-1 vote",
+    "result": "pass",
+    "hard": true,
+    "note": "Set by: Board meeting minutes, 2025-04-15 (corrected copy), motion carried 2-1. The corrected copy states that it was \"approved by the board on November 20, 2026\" and replaces the earlier copy, which recorded the vote as 3-0."
+   },
+   {
+    "check": "two-pet rule still current",
+    "result": "pass",
+    "hard": true,
+    "note": "| Pets | Up to 2 per unit, registration required, no weight limit | 2025-04-15 | none | adopted |"
+   },
+   {
+    "check": "changelog or review mentions the corrected vote (not required; summary-level limitation)",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "amounts reached the user with their dollar sign",
+    "result": "pass",
+    "hard": false,
+    "note": "messages []"
+   },
+   {
+    "check": "fee shown in the review matches the saved almanac",
+    "result": "pass",
+    "hard": false,
+    "note": "$240"
+   }
+  ]
+ },
+ {
+  "run": "rebuild6--L1-lint-save--r1",
+  "version": "rebuild6",
+  "scenario": "L1-lint-save",
+  "new_files": [],
+  "checks": [
+   {
+    "check": "ran",
+    "result": "pass",
+    "hard": false,
+    "note": "5 expert calls, 2 user messages"
+   },
+   {
+    "check": "final report written",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "approval asked before saving",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no attempt to save over an existing file",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "audio never sent to document extraction",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "only documented agents used",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no existing file in the almanac folder changed or removed (checked on disk)",
+    "result": "pass",
+    "hard": true,
+    "note": "changed: []"
+   },
+   {
+    "check": "no new almanac version written",
+    "result": "pass",
+    "hard": false,
+    "note": "[]"
+   },
+   {
+    "check": "lint report saved as a new lint- file after approval",
+    "result": "pass",
+    "hard": false,
+    "note": "new lint files: ['lint-2026-11-29-v2.md']"
+   },
+   {
+    "check": "saved report names the almanac version it checked",
+    "result": "pass",
+    "hard": false,
+    "note": "# Lint report: Harbor View Condominium Association  Checked: Almanac/almanac-2026-11-29-v2.md (versi"
+   },
+   {
+    "check": "success reported only with a verified save",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "amounts reached the user with their dollar sign",
+    "result": "pass",
+    "hard": false,
+    "note": "messages []"
+   }
+  ]
+ },
+ {
+  "run": "rebuild6--L2-lint-name-taken--r1",
+  "version": "rebuild6",
+  "scenario": "L2-lint-name-taken",
+  "new_files": [],
+  "checks": [
+   {
+    "check": "ran",
+    "result": "pass",
+    "hard": false,
+    "note": "6 expert calls, 3 user messages"
+   },
+   {
+    "check": "final report written",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "approval asked before saving",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no attempt to save over an existing file",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "audio never sent to document extraction",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "only documented agents used",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "no existing file in the almanac folder changed or removed (checked on disk)",
+    "result": "pass",
+    "hard": true,
+    "note": "changed: []"
+   },
+   {
+    "check": "no new almanac version written",
+    "result": "pass",
+    "hard": false,
+    "note": "[]"
+   },
+   {
+    "check": "name checked before any save",
+    "result": "pass",
+    "hard": false,
+    "note": ""
+   },
+   {
+    "check": "no save attempted with the taken name",
+    "result": "pass",
+    "hard": true,
+    "note": ""
+   },
+   {
+    "check": "user told the name is taken (or asked for another name)",
+    "result": "pass",
+    "hard": false,
+    "note": "new lint files: ['lint-2026-11-29-v3.md']"
+   },
+   {
+    "check": "amounts reached the user with their dollar sign",
+    "result": "pass",
+    "hard": false,
+    "note": "messages []"
+   }
+  ]
+ }
+]

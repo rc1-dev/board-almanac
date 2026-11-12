@@ -1,0 +1,7 @@
+Before I start the lint on the almanac, I need to confirm three things:
+
+1. Board folder: "Board Documents" (the folder with the board documents). Is that correct?
+2. Almanac folder: where the almanac versions are saved. I suggest "Board Documents/Almanac". Is that correct?
+3. Model route: which model does the NAS use for document processing? The intended setting is the NAS local model. If it is a third-party model, I need your explicit authorization before any document is read. Please confirm it is the NAS local model.
+
+Once you confirm these, I will run the lint. The report will be saved only if you approve it, under the name lint-2026-11-29-v2.md.
