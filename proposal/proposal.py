@@ -41,7 +41,7 @@ ITEMS = [
         "The Skill only delegates to these agents. Each compile rebuilds the rulebook from every original document, so a corrected or deleted document leaves no outdated rule. A compile after a scheduled date makes that change current. Saving needs approval, never overwrites, and is cancelled if a file changes mid-run.",
     ]),
     ("8. Status", [
-        "Implemented: the Skill, which follows the Uliya Skill Development Standard and passes the skill kit's static check, and a validation kit. In 64 simulated runs with a small stand-in model, no run saved without approval or obeyed instructions hidden in documents. Pending NAS validation: accuracy and run time.",
+        "Implemented: the Skill, which follows the Uliya Skill Development Standard and passes the skill kit's static check, and a validation kit. In 64 simulated runs with a small stand-in model, the checks found no save without approval or obeyed instructions hidden in documents. Pending NAS validation: accuracy and run time.",
     ]),
     ("9. Validation plan", [
         "On the NAS, Almanac will compile the validation kit's synthetic condo archive, including the fee history above.",
