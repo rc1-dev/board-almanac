@@ -62,7 +62,7 @@ def pdf_items(path):
     t = subprocess.run(["pdftotext", str(path), "-"], capture_output=True, text=True, check=True).stdout
     a, b = t.index("1. What"), t.index("Third-party")
     body = t[a:b]
-    parts = re.split(r"(?m)^(\d+\. [A-Z][^\n]*)$", body)
+    parts = re.split(r"(?m)^\f?(\d+\. [A-Z][^\n]*)$", body)
     return [(parts[i].strip(), parts[i + 1]) for i in range(1, len(parts) - 1, 2)]
 
 

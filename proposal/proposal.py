@@ -16,41 +16,44 @@ LINKS = "Source, demo and video: github.com/rc1-dev/board-almanac"
 # (heading, [paragraphs or ("ul", [items])])
 ITEMS = [
     ("1. What the Skill does", [
-        "Almanac turns an HOA or condo board's document archive on the NAS into a versioned, cited rulebook showing which rule applies, since when, and on whose authority.",
+        "Almanac turns an HOA or condo board's archive on the NAS into a versioned, cited rulebook: which rule applies now, since when, and on whose authority.",
     ]),
     ("2. User and problem", [
-        "Volunteer boards of condo, HOA and club associations. Rules accumulate over years of minutes, notices and recordings; later decisions replace earlier ones, so residents quote repealed rules and mistake failed motions for policy.",
+        "Users: volunteer boards and managers of HOA, condo and club associations. Rules are spread across years of minutes, notices, recordings and corrections. One archive can hold a proposed $235 fee, a notice wrongly saying $230 and the vote setting $240. Search finds all three; which governs?",
     ]),
     ("3. Solution", [
-        "Each topic of the Markdown rulebook records the documented rule, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts. Each version records what changed, with evidence, and is saved after user review.",
+        "A Markdown rulebook on the NAS recording, for each topic, the current rule, scope, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts.",
     ]),
     ("4. Core user flow", [
-        "The Skill snapshots the folder, has the NAS transcribe recordings, extracts and reconciles decisions from every document, and saves a version once approved. Members can then ask questions such as whether a balcony heat pump is allowed, and get the conditions, vote and source.",
+        "A board member points Almanac at the board folder and asks it to compile. It reads every document and recording, shows the proposed changes with quotations, and saves it once approved. Members can then ask questions and get the rule, vote and source.",
     ]),
     ("5. Difference", [
-        "Hosted HOA platforms such as HOALife and HOA Hub answer questions from governing documents, and HOA Hub adds AI-assisted amendment review with version history. Almanac instead rebuilds a reviewed rulebook from the board's archive on the NAS, reconciling decisions across minutes, notices, recordings and corrections, including failed motions, future effective dates and conflicts. With the UGOS local model, documents need not be sent to a hosted AI service.",
+        "Search finds what documents say; Almanac reconstructs which decisions still apply. Hosted HOA platforms, such as HOALife and HOA Hub, answer questions from uploaded governing documents. Almanac instead reconciles decisions across minutes, notices, recordings and corrections. With the UGOS local model, documents need not go to a hosted AI service.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
-            "file-agent (ug-filesystem): checksummed snapshot (step 1), checks around saving (7).",
-            "knowledge-agent (ug-knowledge): transcription (2), saving each version (7).",
-            "document-agent (ug-document): extraction (3), reconciliation (4), answers.",
-            "Intended model: the NAS local model.",
+            "file-agent (ug-filesystem): snapshot and checks before saving.",
+            "knowledge-agent (ug-knowledge): transcription and saving.",
+            "document-agent (ug-document): extraction, reconciliation and answers.",
         ]),
     ]),
     ("7. Technical approach", [
-        "The Skill takes two folders, a mode and the model setting, only delegates, needs approval to create the folder or save, and never overwrites or deletes. Each compile rebuilds the almanac from every original document (up to 60), so a corrected or deleted document leaves no outdated rule behind. It recompiles when a scheduled change takes effect and saves nothing if a file changes mid-run.",
+        "The Skill only delegates to these agents. Each compile rebuilds the rulebook from every original document, so a corrected or deleted document leaves no outdated rule. A compile after a scheduled date makes that change current. Saving needs approval, never overwrites, and is cancelled if a file changes mid-run.",
     ]),
     ("8. Status", [
-        "The package passes the official checker (catalog 2.0.0). In 64 simulated runs driven by a small model, none saved without approval or followed instructions planted in documents; they prompted four rounds of fixes. NAS accuracy and timing are untested.",
+        "Implemented: the Skill, which follows the Uliya Skill Development Standard and passes the skill kit's static check, and a validation kit. In 64 simulated runs with a small stand-in model, no run saved without approval or obeyed instructions hidden in documents. Pending NAS validation: accuracy and run time.",
     ]),
     ("9. Validation plan", [
-        "Core case 1, supersession: fee and pet answers give $240 and two pets with citations, never the $235 proposal or wrong $230 notice.",
-        "Core case 2, answering: a heat-pump question returns conditions, 2-1 vote and version; a gym question is reported as not covered.",
-        "Edge case: added minutes change weekend quiet hours only; version 2 keeps 10:00 p.m. on other nights, other rules and the pool conflict. File chat is scored on the same questions.",
+        "On the NAS, Almanac will compile the validation kit's synthetic condo archive, including the fee history above.",
+        ("ul", [
+            "Core test 1: when asked the monthly fee, it should answer $240 with the vote and minutes, not $235 or $230.",
+            "Core test 2: when asked about balcony heat pumps, it should give the conditions and 2-1 vote; for gym hours, which no document covers, it should say so.",
+            "Edge case: after new minutes change quiet hours on Friday and Saturday only, version 2 should change those nights and keep 10:00 p.m. on others.",
+        ]),
+        "File chat gets the same questions.",
     ]),
     ("10. Limitations", [
-        "Accuracy depends on on-device extraction, OCR and transcription. Tests showed partial changes sometimes recorded as ending a whole rule; the pre-save review shows each change beside the replaced rule, and a planned fix has the document agent report which parts stay in force.",
+        "Answer quality depends on the NAS's document reading, OCR and transcription. In simulations, the model sometimes treated a partial change, such as new Saturday hours, as ending the whole rule. The review before saving shows each change beside the earlier rule so users can catch this. One compile handles up to 60 files.",
     ]),
 ]
 
