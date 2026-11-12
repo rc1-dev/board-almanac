@@ -1,4 +1,4 @@
-<title>Board Almanac</title>
+<title>Almanac</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,9 @@ h1 { font: 700 clamp(34px, 6vw, 54px)/1 var(--f-display); letter-spacing: -0.01e
 .lede { font: 400 clamp(18px, 2.4vw, 22px)/1.35 var(--f-doc); margin: 10px 0 0; max-width: 40ch; text-wrap: balance; }
 .notice { margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; background: var(--note); border: 1px solid var(--note-rule); border-radius: 6px; padding: 10px 14px; max-width: 860px; font-size: 14px; }
 .notice b { white-space: nowrap; }
+.for { margin: 6px 0 0; color: var(--muted); max-width: 70ch; }
+.problem { margin: 18px 0 0; max-width: 1000px; }
+.problem svg { display: block; width: 100%; height: auto; }
 .links { margin-top: 12px; font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
 
 nav.steps { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
@@ -202,8 +205,10 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
 
 <header class="top wrap">
   <p class="eyebrow">UGREEN Hackathon 2026 · Skill <code>almanac</code> · Automate Your Workflow</p>
-  <h1>Board Almanac</h1>
+  <h1>Almanac</h1>
   <p class="lede">Which rule applies now, since when, and on whose authority?</p>
+  <p class="for">A versioned, cited rulebook for HOA, condo and club associations, compiled from their records on the NAS.</p>
+  <figure class="problem"><!--PROBLEM--></figure>
   <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behavior of the <code>almanac</code> Skill on a synthetic archive for a fictional 48-unit building. The Skill is designed to run on a UGREEN AI NAS, and results from the device will follow the hackathon's device testing. The delegation text is quoted from the Skill, and the answers are the reference answers from the validation kit.</span></div>
   <div class="links"><a href="https://github.com/rc1-dev/board-almanac" target="_blank" rel="noopener">Source on GitHub</a><span>Board folder: Harbor View Condominium Association, 2019 to 2026</span></div>
 </header>
@@ -524,7 +529,7 @@ function renderAsk() {
   const ver = q.phase === "after_update" ? "v2" : "v1";
   const alm = `<div class="sheet pad ans"><h3><span>Expected almanac answer (reference)</span><span class="verdict ${q.almanacScore ? "pass" : "fail"}">checked against key: ${q.almanacScore ? "pass" : "fail"}</span></h3><div class="body">${esc(q.almanac)}</div><p class="tl-note" style="margin-top:10px;color:var(--muted)">Reference answer from the validation kit, written for almanac ${ver}. Not yet measured on a NAS.</p></div>`;
   const raw = q.raw ? `<div class="sheet pad ans raw"><h3><span>Illustrative raw-search answer</span><span class="verdict fail">checked against key: fail, ${q.rawProblems.length} checks</span></h3><div class="body">${esc(q.raw)}</div><ul class="problems">${(RAWNOTES[q.id] || q.rawProblems.map(friendly)).map(p => `<li>${esc(p)}</li>`).join("")}</ul><p class="tl-note" style="margin-top:10px;color:var(--muted)">Illustrative example of a typical mistake, written for this test kit. Not a measured result.</p></div>`
-    : `<div class="sheet pad ans raw"><h3>Illustrative raw-search answer</h3><p class="empty">No comparison example for this question yet. On the NAS test day all 20 questions are run through plain file chat and scored the same way.</p></div>`;
+    : `<div class="sheet pad ans raw"><h3>Illustrative raw-search answer</h3><p class="empty">No comparison example for this question yet. On the NAS, all 20 questions will also be put to plain file chat and scored the same way.</p></div>`;
   $("#answer").innerHTML = `<p class="question">${esc(q.q)}</p><div class="answers">${alm}${raw}</div>`;
 }
 document.addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (b) { state.q = b.dataset.q; renderAsk(); } });

@@ -1,12 +1,14 @@
-# Board Almanac
+# Almanac
 
-Board Almanac is a Skill for the UGREEN AI NAS. It compiles the document archive of a condo association, homeowners' association or club board into a versioned, cited rulebook, and answers questions about which rule currently applies, since when, and on whose authority.
+Almanac is a Skill for the UGREEN AI NAS. It compiles the records of an HOA, condo or club association into a versioned, cited rulebook, and answers questions about which rule currently applies, since when, and on whose authority. It is meant for the volunteer boards and managers who keep those records.
 
 It was written for the UGREEN Hackathon 2026 (track: Automate Your Workflow). The Skill is named `almanac`.
 
 ## The problem
 
-A board's rules are rarely kept in one place. They are set in bylaws, changed in meeting minutes, announced in notices, constrained by contracts and sometimes discussed in recorded meetings. Over the years, later decisions replace earlier ones, a notice occasionally states the wrong figure, and a proposal that failed can be mistaken for one that passed. In the validation archive, an agenda proposes a monthly fee of $235, a notice wrongly states $230 and a later vote sets $240. A search for the fee finds all three. Anyone trying to answer a simple question, such as the current fee or how many pets a unit may keep, has to read the whole history and work out which statement still governs.
+An association's rules are rarely kept in one place. They are set in bylaws, changed in meeting minutes, announced in notices, constrained by contracts and sometimes discussed in recorded meetings. Over the years, later decisions replace earlier ones, a notice occasionally states the wrong figure, and a proposal that failed can be mistaken for one that passed. In the validation archive, a search for the monthly fee returns seven documents and six different figures: a $235 proposal that was never adopted, a notice that wrongly gave $230, a newsletter question about $250, two fees that applied in earlier years and the current fee of $240. Anyone trying to answer a simple question, such as the current fee or how many pets a unit may keep, has to read the whole history and work out which statement still governs.
+
+![A search for the monthly fee returns seven documents with six different figures. The almanac records that $240 has applied since March 1, 2026, and what each other figure was.](docs/search-vs-almanac.svg)
 
 ## The approach
 
@@ -38,7 +40,7 @@ The almanac reports what the documents record. It does not give legal advice or 
 
 Hosted HOA platforms such as HOALife and HOA Hub answer questions from an association's uploaded governing documents. [HOALife](https://www.hoalife.com/features/ai-features) offers an AI chat that draws on an HOA's governing documents. HOA Hub answers residents' questions with [EasyAsk](https://www.hoahub.app/features/easyask/), and its [document hub](https://www.hoahub.app/features/documents/) compares an uploaded amendment with the governing document and keeps a version history.
 
-Almanac instead reconciles decisions across the board's whole archive on the NAS, including minutes, notices, recordings and corrections. It records which motions passed or failed, when each change takes effect and where documents disagree, and the user reviews each version before it is saved. With the UGOS local model, the documents need not go to a hosted AI service.
+Almanac instead reconciles decisions across the association's whole archive on the NAS, including minutes, notices, recordings and corrections. It records which motions passed or failed, when each change takes effect and where documents disagree, and the user reviews each version before it is saved. With the UGOS local model, the documents need not go to a hosted AI service.
 
 ## Demo
 
@@ -63,7 +65,7 @@ Answer quality on the device will depend on how well the NAS reads documents, re
 | `skill/almanac/` | The Skill package: `SKILL.md` and six reference files |
 | `validation/` | Synthetic archive and its generator, answer key, scorer, expected almanac versions and recording script ([details](validation/README.md)) |
 | `demo/` | Demo page source and build script, and the video with its filming scripts |
-| `docs/` | Built demo page for GitHub Pages, and the checker result |
+| `docs/` | Built demo page for GitHub Pages, the problem graphic and its script, and the checker result |
 | `testing/` | Simulated-test harness, the unseen club archive, and the runs, checks and grades of the final round ([details](testing/README.md)) |
 | `proposal/` | Round 1 proposal source and PDF |
 | `scripts/package.sh` | Builds `dist/almanac.zip` and runs the skill kit's static check on it |

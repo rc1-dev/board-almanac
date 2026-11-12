@@ -1,4 +1,4 @@
-"""Build the Board Almanac demo page from the repository's own files.
+"""Build the Almanac demo page from the repository's own files.
 
 Reads the synthetic corpus text, SKILL.md delegate lines, expected almanac
 versions, answer key, reference answers and scorer results, and writes:
@@ -110,6 +110,8 @@ def main():
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     tpl = (ROOT / "demo" / "template.html").read_text(encoding="utf-8")
     body = tpl.replace("/*DATA*/null", blob)
+    svg = (ROOT / "docs" / "search-vs-almanac.svg").read_text(encoding="utf-8")
+    body = body.replace("<!--PROBLEM-->", svg.strip())
     (ROOT / "demo" / "almanac-demo.html").write_text(body, encoding="utf-8")
 
     head_end = body.index("</style>") + len("</style>")
