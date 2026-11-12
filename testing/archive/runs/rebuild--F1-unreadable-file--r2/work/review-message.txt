@@ -1,0 +1,31 @@
+Review before saving. This is a first compile, so there is no previous version to compare. The draft is almanac-2026-11-22-v1.md (work copy: <runs>/rebuild--F1-unreadable-file--r2/work/almanac-2026-11-22-v1.md). It is marked "compiled with exclusions".
+
+Current rule per topic, with its quotation (file in brackets):
+- Monthly fee and budget: $240 per unit per month from 2026-03-01. "the monthly common charge is set at $240 per unit, effective March 1, 2026." [minutes-2026-01-20.pdf]. The $230 notice of 2025-02-10 was corrected by the 2025-04-15 minutes. The $235 proposal was amended and not adopted.
+- Pets: up to two per unit from 2025-04-15; registration still required; no dog weight limit. "each unit may keep a maximum of two (2) pets" [minutes-2025-04-15.docx]. Replaces one pet and the 35 lb dog limit (2019).
+- Renovations and work hours: Mon-Fri 8:00 a.m.-5:00 p.m.; Saturday 9:00 a.m.-1:00 p.m. from 2024-07-15; no Sundays or holidays. "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024." [minutes-2024-06-12.docx]
+- Quiet hours: 10:00 p.m.-7:00 a.m. every night (2019, unchanged). "Quiet hours are 10:00 p.m. to 7:00 a.m. every night." [bylaws-house-rules-2019.pdf]
+- Balconies and exterior fixtures: heat pumps permitted with written approval if floor-mounted, not on the railing, at most 60 dB(A), from 2025-01-23 (vote 2-1). "heat pump outdoor units are permitted on balconies with written board approval" [minutes-2025-01-23.pdf]. Barbecues remain prohibited (2019).
+- Rentals and leasing: minimum lease term 30 days from 2025-04-15, replacing six months. "the minimum lease term is thirty (30) days. Effective immediately. Motion carried 2-1." [minutes-2025-04-15.docx]. A seven-day minimum motion failed 1-2.
+- Parking: one assigned space per unit; guest vehicles up to 48 hours from 2025-10-01, replacing 72 hours. "no more than 48 hours. Effective October 1, 2025." [minutes-2025-09-10.pdf]
+- Electric vehicle charging: allowed with written board approval, a licensed electrician and at the owner's cost (decision 2026-01-20; no effective date stated). [minutes-2026-01-20.pdf]
+- Officers and elections: board of three, quorum two; new Treasurer appointed 2025-09-10 until the next annual meeting. [minutes-2025-09-10.pdf]
+- Governance and amendments: Part A bylaws need a two-thirds owner vote at an annual meeting; Part B house rules need a board majority. [bylaws-house-rules-2019.pdf]
+- Vendor contracts: the Bramblewick landscaping agreement (term to 2026-03-31, $1,450 per month) was not renewed. The non-renewal notice was due 2026-01-30 and is recorded as sent 2026-02-02. The almanac records this and does not judge whether the notice was effective. Status: incomplete.
+- Special assessments, Waste and recycling: no record in the readable documents. Status: incomplete.
+- Insurance: no rule recorded.
+
+Conflicts (1):
+- Pool and amenities, 2026 season: minutes-2025-09-10.pdf says "8:00 a.m. to 10:00 p.m. daily"; notice-2026-05-01-pool.pdf says "8:00 a.m. to 9:00 p.m. daily". Both are recorded; no winner is chosen.
+
+Provisional (2), from board-meeting-2026-06-18.m4a only, not adopted:
+- Electric barbecues: the board leans towards allowing them; no vote; a motion is planned for September.
+- Pool hours objection (nine or ten p.m.): deferred.
+
+Exclusions (1): notice-2026-10-20-elevator.pdf, which could not be read. The almanac says it may contain decisions on any topic.
+
+Open items include the non-renewal notice sent after its due date, the insurer question due end of July 2026, and the pool-hours check.
+
+Changelog: v1, first compile, built from 17 listed files (16 processed, 1 excluded).
+
+Please approve saving almanac-2026-11-22-v1.md, or tell me which rule is wrong and which passage was misread. If you decline, I will stop and save nothing.

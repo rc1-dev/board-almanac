@@ -1,0 +1,27 @@
+Review before saving. This is a first compile: 16 files read (15 documents, plus 1 recording transcribed), 0 excluded. Proposed file: almanac-2026-11-22-v1.md in Board Documents/Almanac. Nothing has been saved yet.
+
+Rule for each topic (with the quote from the source):
+- Monthly fee and budget: 240 dollars per unit from 2026-03-01. Quote: "the monthly common charge is set at $240 per unit, effective March 1, 2026." (minutes-2026-01-20.pdf). Earlier: 225 dollars from 2025-03-01 and 210 dollars from 2024-03-01. The 230 dollar notice was corrected by minutes-2025-04-15.docx.
+- Pets: up to two pets per unit, registration required, no dog weight limit, from 2025-04-15. Quote: "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed" (minutes-2025-04-15.docx). Earlier: one pet per unit and a 35 lb dog limit (bylaws-house-rules-2019.pdf).
+- Renovations and work hours: Mon-Fri 8am-5pm, Sat 9am-1pm, no Sundays or holidays, from 2024-07-15. Quote: "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024." (minutes-2024-06-12.docx).
+- Balconies and exterior fixtures: written approval for fixtures; heat pumps allowed if floor-mounted, not on the railing, and at most 60 dB(A) (2025-01-23, vote 2-1). Quote: "Barbecues and open flames are prohibited on balconies." (bylaws-house-rules-2019.pdf).
+- Quiet hours: 10:00 p.m. to 7:00 a.m. nightly, since 2019-05-01. Quote: "Quiet hours are 10:00 p.m. to 7:00 a.m. every night." (bylaws-house-rules-2019.pdf).
+- Rentals and leasing: minimum lease 30 days from 2025-04-15, vote 2-1. Quote: "amend House Rule 8 so that the minimum lease term is thirty (30) days. Effective immediately." (minutes-2025-04-15.docx). Earlier: six months. A motion for seven-day leases failed 1-2.
+- Parking: one assigned space per unit; guest vehicles up to 48 hours from 2025-10-01. Quote: "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025." (minutes-2025-09-10.pdf). Earlier: 72 hours.
+- Electric vehicle charging: allowed in assigned spaces with written board approval and a licensed electrician, from 2026-01-20. (minutes-2026-01-20.pdf).
+- Pool and amenities: CONFLICT for the 2026 season (see below). Standing bylaws hours: 9am-9pm during the season, June 1 to September 15.
+- Vendor contracts: Bramblewick landscaping at 1,450 dollars per month, term April 1, 2024 to March 31, 2026, auto-renews unless notice is given at least 60 days before the term ends. Status INCOMPLETE: the non-renewal notice is dated 2026-02-02, and 60 days before March 31, 2026 is January 30, 2026. The outcome is not established.
+- Officers and elections: board of three, quorum two; a new Treasurer was appointed 2025-09-10 until the next annual meeting. (minutes-2025-09-10.pdf).
+- Governance and amendments: bylaws Part A need a two-thirds vote of owners; house rules Part B need a board majority. (bylaws-house-rules-2019.pdf).
+
+Open conflicts (1): 2026 pool season hours. minutes-2025-09-10.pdf: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." notice-2026-05-01-pool.pdf: "Hours: 8:00 a.m. to 9:00 p.m. daily." No document explains the difference.
+
+Provisional items (2), from the recording board-meeting-2026-06-18.m4a, not adopted: electric barbecues were leaned towards at 00:01:10 with no vote taken; the pool notice hours objection at 00:01:45 was deferred.
+
+Open items: 8 listed in the draft, including the non-renewal notice that was due 2026-01-30 and sent 2026-02-02.
+
+Changelog: first compile, so there is nothing to compare. No exclusions.
+
+Two points to confirm: the pet rule and the pool hours come from the 2019 bylaws and house rules document, but the folder does not show whether those provisions sit in bylaws Part A or house rules Part B. I have recorded them as written and have not ruled on it.
+
+Do you approve saving almanac-2026-11-22-v1.md? If a rule is wrong, tell me which passage was misread and I will extract that document again. Reply approve, or tell me what to change.

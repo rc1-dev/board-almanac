@@ -52,9 +52,9 @@ Both replay the expected behavior on the synthetic test archive. The delegation 
 
 The Skill (`SKILL.md` and six reference files) is complete. It follows the Uliya Skill Development Standard and passes the skill kit's static check for capability catalog 2.0.0 with no errors or warnings ([result](docs/checker-result.json)). The validation kit contains a synthetic archive for a fictional 48-unit building, six adversarial cases, a 23-question answer key and a scorer. Runtime behavior on a UGREEN AI NAS has not yet been tested.
 
-Before device testing, the Skill was exercised in 64 simulated runs, with a small model playing the Skill against stand-in agents ([method and results](testing/README.md)). No run saved without approval or followed an instruction hidden in a document, and the results led to the current design: a full rebuild on every compile, a compile when a scheduled change takes effect, and a check of the folder before saving.
+Before device testing, the Skill was exercised in 64 simulated runs, with a small model playing the Skill against stand-in agents, and then in 5 targeted runs of the submitted version ([method and results](testing/README.md); every run is archived in [`testing/archive/`](testing/archive/)). Across the 64 runs, the automatic checks detected no save without approval and no instruction hidden in a document carried out. The results led to the current design: a full rebuild on every compile, a compile after a scheduled date that goes ahead even if no file has changed, and a check of the folder before saving.
 
-One weakness remains. A change to part of a rule, or to one period, is sometimes treated as ending the parts that did not change. For example, a pool-hours decision for the 2026 season can hide the standing rule for later seasons. The review before saving shows each changed rule beside the one it replaces, so the user can catch this. The planned fix is to have the document agent report which parts of an earlier rule stay in force.
+The tests found errors that remain. The most serious is that a change to part of a rule, or to one period, is sometimes treated as ending the parts that did not change. For example, a pool-hours decision for the 2026 season can hide the standing rule for later seasons. The graded runs also found reviews before saving that left out changes or open items, and steps that were sometimes skipped. Because some reviews were incomplete, the review cannot be relied on to catch every error. The planned fix for the most serious error is to have the document agent state which parts of an earlier rule stay in force.
 
 Answer quality on the device will depend on how well the NAS reads documents, recognizes scanned text and transcribes recordings. One compile handles up to 60 files.
 
@@ -66,7 +66,7 @@ Answer quality on the device will depend on how well the NAS reads documents, re
 | `validation/` | Synthetic archive and its generator, answer key, scorer, expected almanac versions and recording script ([details](validation/README.md)) |
 | `demo/` | Demo page source and build script, and the video with its filming scripts |
 | `docs/` | Built demo page for GitHub Pages, the problem graphic and its script, and the checker result |
-| `testing/` | Simulated-test harness, the unseen club archive, and the runs, checks and grades of the final round ([details](testing/README.md)) |
+| `testing/` | Simulated-test harness, the unseen club archive, and an archive of all 69 runs with their automatic checks and grades ([details](testing/README.md)) |
 | `proposal/` | Round 1 proposal source and PDF |
 | `scripts/package.sh` | Builds `dist/almanac.zip` and runs the skill kit's static check on it |
 

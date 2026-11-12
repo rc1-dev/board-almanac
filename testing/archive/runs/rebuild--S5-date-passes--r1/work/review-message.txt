@@ -1,0 +1,22 @@
+Review before saving: proposed almanac-2027-01-02-v4.md (draft at <runs>/rebuild--S5-date-passes--r1/work/almanac-2027-01-02-v4.md). Compiled from 18 processed files, 0 excluded. Why compile: the guest parking change dated 2027-01-01 has passed.
+
+CHANGELOG (v3 to v4)
+1. Parking. v3: guest parking up to 48 hours, with up to 24 hours scheduled from 2027-01-01. v4: up to 24 hours from 2027-01-01 (now in force). Source: minutes-2026-11-10.docx, "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 24 hours. Effective January 1, 2027. Motion carried 3-0." Previously 48 hours: minutes-2025-09-10.pdf, "no more than 48 hours. Effective October 1, 2025."
+2. Vendor contracts. v3: Bramblewick landscaping agreement in force. v4: agreement ended 2026-03-31 after non-renewal; no successor recorded. Source: email-2026-02-02-landscaping.txt, "will not renew the Landscaping Services Agreement that ends on March 31, 2026."
+3. Pool and amenities. Provisional objection added from the 2026-06-18 recording (00:01:45). Not a rule.
+No other rule, scope, effective date, authority or status changed. Wording-only differences are not listed.
+
+CONFLICT (1)
+Pool and amenities, 2026 season hours. minutes-2025-09-10.pdf: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." (adopted 3-0) versus notice-2026-05-01-pool.pdf: "Hours: 8:00 a.m. to 9:00 p.m. daily." The rules do not resolve it, so it is recorded as a conflict.
+
+PROVISIONAL (2)
+1. Electric barbecues (board-meeting-2026-06-18.m4a, 00:01:10): "So we all lean towards allowing electric barbecues. Let's not vote tonight." No vote was taken; the barbecue prohibition in the bylaws stands.
+2. Pool hours objection (board-meeting-2026-06-18.m4a, 00:01:45): "Someone said the notice says nine pm, but I thought we said ten." Deferred; no decision.
+
+EXCLUSIONS: none.
+
+Open items include the late landscaping non-renewal notice (due 2026-01-30, sent 2026-02-02). The almanac records the dates and does not judge its legal effect.
+
+Topics with no rule recorded in any processed document: Special assessments, Waste and recycling, Insurance.
+
+Shall I save this as almanac-2027-01-02-v4.md in the Almanac folder? Reply yes to save, or tell me which passage was misread.

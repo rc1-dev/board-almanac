@@ -1,0 +1,36 @@
+REVIEW BEFORE SAVING. First compile, so there is no previous version to compare. Draft file: almanac-2026-11-22-v1.md. Sources: 16 files processed (15 documents, 1 recording), 0 excluded, completeness complete.
+
+CHANGELOG v1: First compile. Every topic is new.
+
+CONFLICTS (1):
+- Pool hours, 2026 season. Minutes 2025-09-10 (adopted 3-0): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." Notice 2026-05-01: "Hours: 8:00 a.m. to 9:00 p.m. daily." No document resolves this, so it is recorded as a conflict and no winner is chosen.
+
+PROVISIONAL (3, all from the 2026-06-18 recording, not confirmed by minutes):
+- Electric barbecues: board leaned towards allowing them, no vote taken, motion planned for September. Barbecues stay prohibited.
+- Secretary to ask the insurer about electric barbecues by end of July.
+- Hours objection on the pool notice (nine vs ten). Deferred.
+
+RULES, first compile (topic: rule | quote | source):
+1. Monthly fee and budget: $240 per unit from 2026-03-01 | "the monthly common charge is set at $240 per unit, effective March 1, 2026. Motion carried 3-0." | minutes 2026-01-20. The 2025-02-10 notice of $230 is recorded as corrected by minutes 2025-04-15.
+2. Special assessments: no rule recorded.
+3. Pets: maximum two per unit; registration required; no dog weight limit, from 2025-04-15 | "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed; registration with management is still required." | minutes 2025-04-15 (3-0).
+4. Renovations and work hours: Mon-Fri 8 a.m. to 5 p.m.; Sat 9 a.m. to 1 p.m.; no Sundays or holidays, from 2024-07-15 | "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024." | minutes 2024-06-12 (3-0).
+5. Balconies: heat pumps permitted with written approval if floor-mounted, not on the railing, and 60 dB(A) or less, from 2025-01-23 | "heat pump outdoor units are permitted on balconies with written board approval, provided they are floor-mounted and not attached to the railing..." | minutes 2025-01-23 (2-1). Barbecues prohibited | "Barbecues and open flames are prohibited on balconies." | bylaws 2019.
+6. Quiet hours: 10 p.m. to 7 a.m. every night | "Quiet hours are 10:00 p.m. to 7:00 a.m. every night." | bylaws 2019.
+7. Rentals: minimum lease 30 days, from 2025-04-15 | "amend House Rule 8 so that the minimum lease term is thirty (30) days. Effective immediately. Motion carried 2-1." | minutes 2025-04-15. A 7-day minimum failed 1-2 the same night.
+8. Parking: one assigned space per unit; guest vehicles up to 48 hours, from 2025-10-01 | "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025." | minutes 2025-09-10 (3-0).
+9. Electric vehicle charging: allowed in assigned spaces with written approval, a licensed electrician, at the owner's cost; decided 2026-01-20, no effective date stated | "owners may install an electric vehicle charger in their assigned parking space with written board approval, installed by a licensed electrician at the owner's cost." | minutes 2026-01-20 (3-0).
+10. Pool and amenities: 2026 season hours in conflict (see above). Standing hours from the 2019 bylaws: June 1 to September 15, 9 a.m. to 9 p.m. | "The pool is open 9:00 a.m. to 9:00 p.m. daily during the season, June 1 to September 15." | bylaws 2019.
+11. Waste and recycling: no rule recorded.
+12. Insurance: no rule recorded.
+13. Vendor contracts: Bramblewick Grounds landscaping, term 2024-04-01 to 2026-03-31, $1,450 per month; board decided not to renew | "the Association will not renew the Bramblewick Grounds agreement at the end of its term." | minutes 2025-09-10 (3-0). The contract auto-renews unless written non-renewal is given at least 60 days before the term ends.
+14. Officers and elections: board of three (President, Treasurer, Secretary), quorum two; new Treasurer appointed 2025-09-10 until the next annual meeting | "The board appointed a new Treasurer to serve until the next annual meeting." | minutes 2025-09-10 (3-0). Names are not recorded.
+15. Governance: Part A bylaws amended only by two-thirds of owners at an annual meeting; Part B house rules by majority of the board | "The House Rules (Part B) may be amended by a majority vote of the board." | bylaws 2019.
+
+OPEN ITEMS THAT NEED ATTENTION:
+- The landscaping non-renewal notice was due 2026-01-30 (per minutes 2025-09-10). The email notice is dated 2026-02-02, after that date. The contract requires notice at least 60 days before 2026-03-31, which is 2026-01-30. The almanac records these dates and does not judge the effect. No document says what happened after 2026-03-31.
+- Authority not confirmed: the 2025-04-15 pet change cites no House Rule number, and the extraction did not record whether the pet provision sits in Part A (owner vote only) or Part B (board majority). The renovation, rental and parking changes cite House Rules 5, 8 and 9. Please confirm the pet provision before relying on that change.
+
+Draft saved at: <runs>/rebuild--S1-first-compile--r2/work/almanac-2026-11-22-v1.md
+
+Do you approve saving this as almanac-2026-11-22-v1.md in the Almanac folder? Reply yes to save, or tell me which passage was misread.

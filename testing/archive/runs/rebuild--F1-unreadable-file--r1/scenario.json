@@ -1,0 +1,52 @@
+{
+ "id": "F1-unreadable-file",
+ "version": "rebuild",
+ "repeat": 1,
+ "today": "2026-11-22",
+ "request": "Compile the almanac for the Board Documents folder.",
+ "user_replies": [
+  {
+   "all": [
+    "exclude"
+   ],
+   "any": [
+    "fix",
+    "can't be read",
+    "cannot be read",
+    "could not be read",
+    "unreadable",
+    "failed"
+   ],
+   "reply": "I can't fix that file now. Exclude it and continue."
+  },
+  {
+   "any": [
+    "approve",
+    "approval",
+    "save this",
+    "shall i save",
+    "should i save",
+    "confirm saving",
+    "ok to save",
+    "go ahead and save"
+   ],
+   "reply": "Approved. Please save it."
+  },
+  {
+   "any": [
+    "empty"
+   ],
+   "reply": "Yes, that is the right folder."
+  },
+  {
+   "any": [
+    "model",
+    "board folder",
+    "almanac folder",
+    "confirm"
+   ],
+   "reply": "Yes. The board folder is 'Board Documents' (paths are relative to it), the almanac folder is 'Almanac' inside it, and the NAS is set to use its local model. Please go ahead."
+  }
+ ],
+ "default_reply": "Yes, please continue."
+}

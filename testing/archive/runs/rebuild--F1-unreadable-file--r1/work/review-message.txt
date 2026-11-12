@@ -1,0 +1,23 @@
+Review before saving: the almanac draft is ready as almanac-2026-11-22-v1.md (first compile, no previous version). Changelog: v1, first compile, rebuilt from 17 files (16 processed, 1 excluded). Exclusion: notice-2026-10-20-elevator.pdf, unreadable, excluded at your request; the almanac is marked "compiled with exclusions".
+
+Current rule per topic, with the decisive quotation:
+- Monthly fee and budget: $240 per unit from 2026-03-01. "the monthly common charge is set at $240 per unit, effective March 1, 2026." (minutes 2026-01-20)
+- Pets: up to two pets per unit, registration required, no dog weight limit, from 2025-04-15. "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed." (minutes 2025-04-15)
+- Renovations and work hours: Mon-Fri 8-5, Sat 9-1, none Sun or holidays, from 2024-07-15. "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m." (minutes 2024-06-12)
+- Balconies and exterior fixtures: fixtures need written approval; barbecues prohibited on balconies; heat pumps allowed with conditions from 2025-01-23. "heat pump outdoor units are permitted on balconies with written board approval" (minutes 2025-01-23)
+- Quiet hours: 10 p.m. to 7 a.m. every night, from 2019-05-01. "Quiet hours are 10:00 p.m. to 7:00 a.m. every night." (bylaws 2019)
+- Rentals and leasing: minimum lease 30 days, from 2025-04-15. "the minimum lease term is thirty (30) days. Effective immediately. Motion carried 2-1." (minutes 2025-04-15)
+- Parking: one assigned space per unit; guest parking up to 48 hours, from 2025-10-01. "guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025." (minutes 2025-09-10)
+- Electric vehicle charging: allowed in assigned spaces with written approval, licensed electrician, owner's cost, from 2026-01-20. (minutes 2026-01-20)
+- Vendor contracts: Bramblewick landscaping agreement ended 2026-03-31; board decided not to renew. "the Association will not renew the Bramblewick Grounds agreement at the end of its term." (minutes 2025-09-10)
+- Officers and elections: board of three, quorum two; Treasurer appointed 2025-09-10. "A quorum is two directors." (bylaws 2019)
+- Governance and amendments: Part A needs a two-thirds owner vote; Part B needs a board majority. (bylaws 2019)
+- Special assessments, Waste and recycling, Insurance: no record in the compiled sources; marked incomplete.
+
+Open conflict (1): 2026 season pool hours. Minutes 2025-09-10: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." Notice 2026-05-01: "Hours: 8:00 a.m. to 9:00 p.m. daily." No document resolves it; the notice does not replace the adopted minutes.
+
+Provisional (1): electric barbecues. From the 2026-06-18 recording, the board leans towards allowing them; no vote was taken and a motion is planned for September. Not adopted.
+
+Open items to note: the Bramblewick non-renewal notice (2026-02-02) was sent after the 2026-01-30 deadline in the minutes; the almanac records the dates and does not judge its effect. Whether the agreement renewed after 2026-03-31 is not recorded. The insurer action from the recording has no record of completion.
+
+Do you approve saving almanac-2026-11-22-v1.md in the Almanac folder? Reply yes to save, or tell me which passage is misread.

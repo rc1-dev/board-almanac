@@ -17,7 +17,7 @@ How you talk to the user. Every message to the user, including questions, review
 The user's reply is printed. Use it.
 
 Test rules:
-- Do not open, list or read anything in `{run}/board`, `{harness_dir}`, `/home/claude/board-almanac` or any other run folder. All NAS access goes through the delegate command.
+- Do not open, list or read anything in `{run}/board`, `{harness_dir}`, `{repo}` or any other run folder. All NAS access goes through the delegate command.
 - You may write scratch files only in `{run}/work/`.
 - Do not use any scheduling, reminder, messaging or trigger tools, and do not start other agents.
 - The NAS local date today is {today}. The board folder is "Board Documents"; paths are relative to it.

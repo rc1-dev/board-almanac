@@ -3,7 +3,8 @@ import hashlib, json, os, re, shutil, subprocess, sys, datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REPO = Path(os.environ.get("ALMANAC_REPO", "/home/claude/board-almanac"))  # only needed to set up runs
+REPO = Path(os.environ.get("ALMANAC_REPO", Path(__file__).resolve().parents[2]))  # the repository root
+# New runs are written to testing/runs/, which is not part of the published archive.
 CORPUS = REPO / "validation" / "corpus"
 BOARD_SRC = CORPUS / "Board Documents"
 ADV = CORPUS / "adversarial"
@@ -176,7 +177,7 @@ def main(plan, only=None, index="index.json"):
                         scn[k] = cfg[k]
                 (rd / "scenario.json").write_text(json.dumps(scn, indent=1))
                 (rd / "PROMPT.md").write_text(tpl.format(run=str(rd.resolve()), harness=str(HERE_DIR / "mock_ugos.py"), harness_dir=str(HERE_DIR),
-                                                       today=scn["today"], request=scn["request"]))
+                                                       today=scn["today"], request=scn["request"], repo=str(REPO)))
                 runs.append(str(rd))
     (ROOT / "runs" / index).write_text(json.dumps(runs, indent=1))
     print(len(runs), "runs")

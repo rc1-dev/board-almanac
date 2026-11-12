@@ -1,0 +1,115 @@
+{
+ "state": "completed",
+ "result": {
+  "findings": [
+   {
+    "type": "disagreement",
+    "topic": "Monthly fee and budget",
+    "statement_a": {
+     "file": "minutes-2025-01-23.pdf",
+     "quote": "the monthly common charge is set at $225 per unit, effective March 1, 2025."
+    },
+    "statement_b": {
+     "file": "notice-2025-02-10-fees.pdf",
+     "quote": "From March 1, 2025 the monthly common charge will be $230 per unit."
+    }
+   },
+   {
+    "type": "correction",
+    "topic": "Monthly fee and budget",
+    "statement_a": {
+     "file": "minutes-2025-04-15.docx",
+     "quote": "the notice of February 10, 2025 stating $230 was in error. The adopted charge is $225 per unit."
+    },
+    "statement_b": {
+     "file": "notice-2025-02-10-fees.pdf",
+     "quote": "From March 1, 2025 the monthly common charge will be $230 per unit."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Monthly fee and budget",
+    "statement_a": {
+     "file": "minutes-2025-01-23.pdf",
+     "quote": "The proposed charge of $235 was amended."
+    },
+    "statement_b": {
+     "file": "agenda-2025-01-23.pdf",
+     "quote": "proposed monthly common charge of $235 per unit from March 1, 2025."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Renovations and work hours",
+    "statement_a": {
+     "file": "minutes-2024-06-12.docx",
+     "quote": "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024."
+    },
+    "statement_b": {
+     "file": "bylaws-house-rules-2019.pdf",
+     "quote": "No work is permitted on Saturdays, Sundays or holidays."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Pets",
+    "statement_a": {
+     "file": "minutes-2025-04-15.docx",
+     "quote": "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed"
+    },
+    "statement_b": {
+     "file": "bylaws-house-rules-2019.pdf",
+     "quote": "Each unit may keep one (1) pet. Dogs may not exceed 35 pounds."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Rentals and leasing",
+    "statement_a": {
+     "file": "minutes-2025-04-15.docx",
+     "quote": "amend House Rule 8 so that the minimum lease term is thirty (30) days."
+    },
+    "statement_b": {
+     "file": "bylaws-house-rules-2019.pdf",
+     "quote": "Units may not be leased for a term of less than six (6) months."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Parking",
+    "statement_a": {
+     "file": "minutes-2025-09-10.pdf",
+     "quote": "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025."
+    },
+    "statement_b": {
+     "file": "bylaws-house-rules-2019.pdf",
+     "quote": "Guest vehicles may stay in guest parking for no more than 72 hours."
+    }
+   },
+   {
+    "type": "disagreement",
+    "topic": "Pool and amenities",
+    "statement_a": {
+     "file": "minutes-2025-09-10.pdf",
+     "quote": "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily."
+    },
+    "statement_b": {
+     "file": "notice-2026-05-01-pool.pdf",
+     "quote": "Hours: 8:00 a.m. to 9:00 p.m. daily."
+    }
+   },
+   {
+    "type": "amendment",
+    "topic": "Quiet hours",
+    "statement_a": {
+     "file": "minutes-2026-09-15.docx",
+     "quote": "amend House Rule 6 so that quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m."
+    },
+    "statement_b": {
+     "file": "bylaws-house-rules-2019.pdf",
+     "quote": "Quiet hours are 10:00 p.m. to 7:00 a.m. every night."
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,29 @@
+Review before saving: first compile, so there is no previous version. Proposed file: almanac-2026-11-22-v1.md (16 files: 15 documents and 1 recording; 0 excluded; NAS local model).
+
+Current rules, each with its quotation:
+- Monthly fee and budget: $240 per unit from 2026-03-01. "the monthly common charge is set at $240 per unit, effective March 1, 2026." (minutes-2026-01-20.pdf, 3-0)
+- Pets: maximum two per unit, registration required, no dog weight limit, from 2025-04-15. "the 35-pound limit for dogs is removed" (minutes-2025-04-15.docx, 3-0)
+- Renovations and work hours: Mon-Fri 8:00 a.m. to 5:00 p.m.; Saturday 9:00 a.m. to 1:00 p.m. from 2024-07-15; no Sundays or holidays. "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m." (minutes-2024-06-12.docx, 3-0)
+- Balconies and exterior fixtures: written approval for fixtures; barbecues prohibited; heat pumps permitted with approval if floor-mounted, off the railing, at most 60 dB(A). "Barbecues and open flames are prohibited on balconies." (bylaws-house-rules-2019.pdf); "heat pump outdoor units are permitted on balconies with written board approval" (minutes-2025-01-23.pdf, 2-1; no effective date stated)
+- Quiet hours: 10:00 p.m. to 7:00 a.m. every night, from 2019-05-01. "Quiet hours are 10:00 p.m. to 7:00 a.m. every night." (bylaws-house-rules-2019.pdf)
+- Rentals and leasing: minimum lease thirty days from 2025-04-15. "the minimum lease term is thirty (30) days. Effective immediately. Motion carried 2-1." (minutes-2025-04-15.docx). Superseded: six months, "Units may not be leased for a term of less than six (6) months." (bylaws-house-rules-2019.pdf). The extraction did not say which Part of the 2019 file holds the six-month rule; please confirm.
+- Parking: one assigned space per unit; guest vehicles up to 48 hours from 2025-10-01. "guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025." (minutes-2025-09-10.pdf, 3-0)
+- Electric vehicle charging: allowed in assigned spaces with written board approval, by a licensed electrician, at the owner's cost. "owners may install an electric vehicle charger in their assigned parking space with written board approval" (minutes-2026-01-20.pdf, 3-0)
+- Officers and elections: board of three, quorum two; new Treasurer appointed until the next annual meeting. "The board appointed a new Treasurer to serve until the next annual meeting." (minutes-2025-09-10.pdf, 3-0)
+- Governance and amendments: bylaws Part A need a two-thirds owner vote; house rules Part B need a board majority. "These Bylaws (Part A) may be amended only by a two-thirds (2/3) vote of unit owners at an annual meeting." (bylaws-house-rules-2019.pdf)
+- Vendor contracts (status: incomplete): Bramblewick Grounds landscaping ran April 1, 2024 to March 31, 2026 at $1,450 per month. "This agreement runs from April 1, 2024 to March 31, 2026." (contract-bramblewick-landscaping-2024.pdf). Non-renewal was due by January 30, 2026; the notice is dated February 2, 2026. No renewal or successor agreement is recorded. The almanac does not judge whether the late notice was effective.
+
+Conflict (1):
+- Pool and amenities, 2026 season: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." (minutes-2025-09-10.pdf, adopted 3-0) versus "Hours: 8:00 a.m. to 9:00 p.m. daily." (notice-2026-05-01-pool.pdf). A notice does not replace adopted minutes, so the almanac records a conflict.
+
+Provisional (from the 2026-06-18 recording only; none changes an adopted rule):
+- Electric barbecues: the board leans toward allowing them; no vote; a motion is planned for September. "So we all lean towards allowing electric barbecues. Let's not vote tonight." (00:01:10)
+- Secretary to ask the insurer by end of July 2026 (00:01:32).
+- Pool-hours objection, deferred (00:01:45).
+
+No record in the folder: Special assessments, Waste and recycling, Insurance.
+Exclusions: none.
+
+Open items include the landscaping non-renewal notice sent after its deadline, and the insurer and barbecue follow-ups with no record of completion.
+
+Do you approve saving almanac-2026-11-22-v1.md? Reply yes to save, or tell me which passage was misread.

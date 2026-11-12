@@ -1,0 +1,33 @@
+Review before saving: almanac-2026-11-22-v1.md (first compile, no previous almanac, nothing saved yet).
+
+Built from 16 files: 15 documents and 1 recording (transcribed; its spoken items are provisional only). No exclusions.
+
+Changelog: first version, so nothing to compare against. New since the previous version: none.
+
+Current rule for each topic, with its quotation:
+- Monthly fee and budget: $240 per unit from 2026-03-01 (minutes 2026-01-20, 3-0). "the monthly common charge is set at $240 per unit, effective March 1, 2026."
+- Pets: up to 2 pets per unit, registration required, no dog weight limit, from 2025-04-15 (minutes 2025-04-15, 3-0). "each unit may keep a maximum of two (2) pets; the 35-pound limit for dogs is removed; registration with management is still required."
+- Renovations and work hours: Mon to Fri 8-5; Sat 9-1 from 2024-07-15 (minutes 2024-06-12, 3-0); no Sundays or holidays. "amend House Rule 5 to permit renovation work on Saturdays from 9:00 a.m. to 1:00 p.m., effective July 15, 2024."
+- Balconies and exterior fixtures: barbecues prohibited on balconies (bylaws 2019). Heat pumps permitted with written approval under conditions (minutes 2025-01-23, vote 2-1). "Barbecues and open flames are prohibited on balconies." / "heat pump outdoor units are permitted on balconies with written board approval..."
+- Quiet hours: 10:00 p.m. to 7:00 a.m. every night (bylaws 2019). "Quiet hours are 10:00 p.m. to 7:00 a.m. every night."
+- Rentals and leasing: minimum lease term 30 days from 2025-04-15 (minutes 2025-04-15, 2-1). "amend House Rule 8 so that the minimum lease term is thirty (30) days."
+- Parking: guest vehicles up to 48 hours from 2025-10-01 (minutes 2025-09-10, 3-0); one assigned space per unit. "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 48 hours. Effective October 1, 2025."
+- Electric vehicle charging: allowed in assigned spaces with written board approval (minutes 2026-01-20, 3-0). "owners may install an electric vehicle charger in their assigned parking space with written board approval..."
+- Pool and amenities: CONFLICT (see below).
+- Vendor contracts: INCOMPLETE (see below).
+- Officers and elections: board of three, quorum two (bylaws 2019); Treasurer appointed 2025-09-10 until the next annual meeting (minutes 2025-09-10, 3-0). "The board appointed a new Treasurer to serve until the next annual meeting."
+- Governance and amendments: bylaws Part A need a two-thirds owner vote at an annual meeting; house rules Part B need a majority board vote (bylaws 2019). "These Bylaws (Part A) may be amended only by a two-thirds (2/3) vote of unit owners at an annual meeting."
+
+Open conflict (1):
+- Pool and amenities, 2026 season hours. Minutes 2025-09-10 (3-0): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." Notice 2026-05-01: "Hours: 8:00 a.m. to 9:00 p.m. daily." The notice does not replace the adopted minutes, and no document resolves it.
+
+Incomplete (1):
+- Vendor contracts (Bramblewick Grounds landscaping). The contract auto-renews unless notice is given at least 60 days before 2026-03-31, which is 2026-01-30. The minutes set that deadline; the notice was sent 2026-02-02, after it. The documents do not establish whether the agreement ended or renewed for one year.
+
+Provisional items (2), from the 2026-06-18 recording only, not confirmed by adopted minutes:
+- Electric barbecues: the board leans toward allowing them; no vote; motion planned for September. "So we all lean towards allowing electric barbecues. Let's not vote tonight."
+- The pool notice's closing time (nine or ten p.m.) was questioned and deferred. "Someone said the notice says nine pm, but I thought we said ten."
+
+Open items: 7 (one overdue landscaping notice, sent late; three from the recording; three past items closed or with no record of completion).
+
+Save almanac-2026-11-22-v1.md in the Almanac folder? Reply yes to save, or tell me which passage is misread and I will extract that document again and rebuild. Reply no to stop without saving.

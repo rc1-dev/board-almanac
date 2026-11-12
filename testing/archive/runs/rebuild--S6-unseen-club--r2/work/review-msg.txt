@@ -1,0 +1,16 @@
+First compile of Board Documents. 4 files read completely, 0 excluded, no audio recordings. No earlier almanac exists, so this is version 1.
+
+Rules found (each with its quote):
+- Guest fees: $15 per visit from 2024-04-01. Committee minutes 2024-03-05 (motion carried 3-1): "the guest fee is raised to $15 per visit, effective April 1, 2024." Confirmed by minutes 2024-06-11: "The adopted guest fee is $15 per visit." Superseded: the $10 in the 2022 club rules ("Each guest pays a fee of $10 per visit.") and the $12 in the 2024-03-20 notice, which the 2024-06-11 minutes correct.
+- Court booking, weekdays: no more than two hours per day (club rules 2022-03-01: "A member may book a court for no more than two hours per day.").
+- Court booking, Saturdays and Sundays: no more than 90 minutes per day from 2024-04-01 (minutes 2024-03-05: "on Saturdays and Sundays a member may book a court for no more than 90 minutes per day. Weekday booking is unchanged.").
+- Governance and amendments: club rules adopted at the members' meeting of 2022-03-01; "These rules may be amended by a majority vote of the committee."
+- The other 13 topics have no rule in these documents.
+
+Conflict (1, open): Court hours. Club rules 2022: "Courts are open from 7:00 a.m. to 9:00 p.m. every day." Notice 2024-03-20: "Courts are now open from 7:00 a.m. to 10:00 p.m." A motion to extend to 10:00 p.m. failed 2-2 on 2024-03-05, so it changes nothing. No document resolves this, so I have not picked a value.
+
+Changelog: first version, nothing to compare.
+
+Proposed file: almanac-2026-11-22-v1.md in a new Almanac folder inside Board Documents. Draft: <runs>/rebuild--S6-unseen-club--r2/work/almanac-2026-11-22-v1.md
+
+Approve saving this file? Reply yes to save, or tell me which passage was misread.

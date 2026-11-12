@@ -1,0 +1,121 @@
+# Almanac format
+
+An almanac is one Markdown file per compile run, saved as `almanac-YYYY-MM-DD-vN.md` in the almanac folder. Older versions are never changed, so the folder is also the history.
+
+Keep the whole file under 60,000 characters so it can be read completely in parts of 4,000 characters. If it would be longer, shorten quotes to the decisive words and condense superseded entries older than five years to a single line each that names the older almanac version holding the full entry. Never drop an entry: older versions are kept unchanged, so the full history stays on the NAS.
+
+## Section order
+
+The file has exactly these sections, in this order, followed by an end line. Section titles are fixed so that later runs can find them and check that a read was complete.
+
+### 1. Header
+
+The first lines of the file:
+
+```text
+# Almanac: Harbor View Condominium Association
+Version: 7
+Compiled: 2026-11-22 14:05
+Compiled-through: 2026-09-15 18:40
+Board folder: Board Documents
+Sources: 18 processed, 0 failed, 0 pending
+Open conflicts: 1
+Provisional items: 1
+Run status: complete
+Model route: NAS local model
+```
+
+`Run status` is `complete` or `partial`. A partial run lists the number of files still pending in `Sources`.
+
+### 2. At a glance
+
+One line per topic, with the current value and any adopted change that has not yet taken effect, so that a reader or the local model can decide quickly where to look and whether the calendar has moved past a scheduled change.
+
+```text
+| Topic | Current rule | Since | Scheduled | Status |
+|---|---|---|---|---|
+| Monthly fee | $240 per unit | 2026-03-01 | none | adopted |
+| Parking | Guest parking up to 48 hours | 2025-10-01 | Up to 24 hours from 2027-01-01 | adopted |
+| Pool hours | 8:00 a.m. to 10:00 p.m. or 8:00 a.m. to 9:00 p.m. | 2026 season | none | conflict |
+```
+
+Status is one of `adopted`, `conflict`, `provisional`, `disputed` or `incomplete`. Scheduled shows an adopted change with its effective date, or `none`.
+
+### 3. Topics
+
+One subsection per topic, using the topic list below. Each topic has these parts:
+
+```text
+## Pets
+
+Current rule: Up to 2 pets per unit. Registration with management is required. No weight limit.
+Effective: 2025-04-15
+Set by: Board meeting minutes, 2025-04-15, motion carried 3-0
+Evidence: minutes-2025-04-15.docx: "maximum of two (2) pets per unit ... the 35-pound limit for dogs is removed"
+
+Superseded:
+- 2019-05-01 to 2025-04-15: One pet per unit, dogs up to 35 lb. Source: bylaws-house-rules-2019.pdf: "one (1) pet per unit"
+
+Scheduled: none
+Open conflicts: none
+Provisional: none
+```
+
+Rules for the parts:
+
+- **Current rule** states the currently documented rule in plain words: what the adopted documents record, not a ruling on legal validity. If the topic is in conflict, state both values and say that the documents disagree.
+- **Effective** is the effective date if a document states one, otherwise the decision date, labelled as such.
+- **Set by** names the document type, its date and the vote if one is recorded. People are named by board role only.
+- **Evidence** gives the file's path relative to the board folder and a verbatim quote of the decisive words. Paths, not bare file names, keep two files with the same name in different subfolders apart.
+- **Superseded** lists earlier rules for the same subject, newest first, each with its date range and source.
+- **Scheduled** lists adopted changes whose effective date is after the compile date, each with the date, the decision that set it and a quote. The current rule stays in force until that date, and Ask and Lint compare the date with today.
+- **Open conflicts** lists disagreements that no document resolves, with both quotes.
+- **Provisional** lists items that come only from a recording, an agenda or an email and are not confirmed by adopted minutes.
+
+### 4. Open items
+
+Action items with owner role, due date, status and source, and contract deadlines such as notice periods.
+
+```text
+| Item | Owner | Due | Status | Source |
+|---|---|---|---|---|
+| Send non-renewal notice to landscaping contractor | Secretary | 2026-01-30 | Sent 2026-02-02, after the due date | minutes-2025-09-10.pdf; email-2026-02-02-landscaping.txt |
+```
+
+### 5. Sources
+
+The ledger that makes incremental compiles possible. One row per file in the board folder.
+
+```text
+| File | Type | Document date | Size | Modified | SHA-256 (first 16) | Status |
+|---|---|---|---|---|---|---|
+| minutes-2025-04-15.docx | minutes | 2025-04-15 | 36846 | 2025-04-20 09:12 | 3f9c0a17b2d4e8c1 | processed |
+```
+
+Status is `processed`, `partial` (not read completely), `failed` (with the reason), `pending` (not yet processed in a partial run) or `missing` (in the previous ledger but no longer in the folder). Only `processed` files whose checksum is unchanged are skipped by the next compile; every other file is processed again.
+
+### 6. Changelog
+
+Newest first. Each entry lists what this run added, changed, superseded, marked as conflict, marked as provisional or left incomplete, and which files it processed.
+
+```text
+## v7, 2026-11-22
+- Extracted 1 new file: minutes-2026-09-15.docx. Rechecked against bylaws-house-rules-2019.pdf (unchanged).
+- Changed: Quiet hours. Friday and Saturday nights now 11:00 p.m. to 7:00 a.m.; other nights unchanged at 10:00 p.m. to 7:00 a.m.
+- No new conflicts.
+```
+
+### End line
+
+The last line of the file is always:
+
+```text
+End of almanac v7.
+```
+
+with the version number. A read that does not reach this line is incomplete.
+## Topic list for boards
+
+Use these topic names when they fit, and add a new topic only when no existing one fits:
+
+Monthly fee and budget; Special assessments; Pets; Renovations and work hours; Balconies and exterior fixtures; Quiet hours; Rentals and leasing; Parking; Electric vehicle charging; Pool and amenities; Waste and recycling; Insurance; Vendor contracts; Officers and elections; Governance and amendments.

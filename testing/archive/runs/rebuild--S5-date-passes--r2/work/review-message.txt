@@ -1,0 +1,27 @@
+Review before saving: almanac v4, file almanac-2027-01-02-v4.md (18 of 18 files processed, 0 excluded). The full text is in <runs>/rebuild--S5-date-passes--r2/work/almanac-2027-01-02-v4.md
+
+Why a compile ran: the snapshot matches the v3 Sources ledger, but the guest parking change scheduled for 2027-01-01 has now passed.
+
+CHANGED
+1. Parking. Previous (v3): guest parking up to 48 hours since 2025-10-01, with 24 hours scheduled for 2027-01-01. Now: guest parking up to 24 hours, since 2027-01-01. Set by minutes-2026-11-10.docx (carried 3-0): "amend House Rule 9 so that guest vehicles may stay in guest parking for no more than 24 hours. Effective January 1, 2027."
+2. Vendor contracts. Previous (v3): Bramblewick landscaping rule, with the non-renewal notice noted as late. Now: the agreement ended 2026-03-31 and was not renewed. Set by minutes-2025-09-10.pdf (carried 3-0): "the Association will not renew the Bramblewick Grounds agreement at the end of its term." The non-renewal notice was due 2026-01-30 and is recorded as sent 2026-02-02 (email-2026-02-02-landscaping.txt). The Skill does not judge whether that notice was effective.
+
+ADDED EMPTY SECTIONS
+Special assessments, Waste and recycling and Insurance: no rule in any processed document. Marked incomplete, not as "no rule exists".
+
+UNCHANGED RULES (structure only): monthly fee $240 (2026-03-01), pets, renovations, balconies, quiet hours, rentals, EV charging, officers, governance.
+
+OPEN CONFLICT (1)
+Pool and amenities, 2026 season. minutes-2025-09-10.pdf (carried 3-0): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." notice-2026-05-01-pool.pdf: "Hours: 8:00 a.m. to 9:00 p.m. daily." The Skill does not choose between them. The notice ranks below adopted minutes, but the minutes do not say the notice is wrong, so this stays a conflict.
+
+PROVISIONAL (2), from the recording board-meeting-2026-06-18.m4a only
+1. Electric barbecues, 00:01:10: "So we all lean towards allowing electric barbecues. Let's not vote tonight." No vote was taken, so the current prohibition stays.
+2. Pool hours objection, 00:01:45: "Someone said the notice says nine pm, but I thought we said ten." Deferred.
+
+OPEN ITEMS (5): the late Bramblewick notice; the insurer check on electric barbecues (end of July 2026, no completion recorded); the September 2026 barbecue motion (not in the later minutes); the pool-hours conflict; the Treasurer appointment "until the next annual meeting", where the meeting date is not stated.
+
+EXCLUSIONS: none.
+
+ONE POINT TO CONFIRM: bylaws-house-rules-2019.pdf has Part A (bylaws, owner vote needed) and Part B (house rules, board majority). The extraction did not say which part holds the pet limit, the balcony and fixture rules, the rental minimum or the pool hours. The board amendments cite house rules, so I ranked them as house rules. Please confirm that the pet and balcony provisions are house rules, not bylaws. If they are bylaws, the board votes in 2025 may not have been able to change them.
+
+Save v4 as almanac-2027-01-02-v4.md in the Almanac folder? Reply "approve" to save, or tell me which passage was misread.

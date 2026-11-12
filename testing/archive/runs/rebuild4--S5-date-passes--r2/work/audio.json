@@ -1,0 +1,38 @@
+{
+ "state": "completed",
+ "result": {
+  "results": [
+   {
+    "transcript": "President: Okay, we're recording. Board meeting, June eighteenth, twenty twenty-six. All three of us are here. Secretary: Before the pool item, can we talk about barbecues? ... President: So we all lean towards allowing electric barbecues. Let's not vote tonight. Secretary, can you check with the insurer, and we'll put a proper motion on the September agenda. Secretary: Will do. I'll ask the insurer by the end of July. ... President: Someone said the notice says nine pm, but I thought we said ten. Treasurer: We'll look at that next time.",
+    "items": [
+     {
+      "kind": "proposal",
+      "topic": "Balconies and exterior fixtures",
+      "text": "Board leans towards allowing electric barbecues; no vote taken; motion planned for September agenda",
+      "quote": "So we all lean towards allowing electric barbecues. Let's not vote tonight.",
+      "segment": "00:01:10"
+     },
+     {
+      "kind": "action item",
+      "topic": "Balconies and exterior fixtures",
+      "text": "Secretary to ask the insurer about electric barbecues by the end of July",
+      "quote": "I'll ask the insurer by the end of July.",
+      "segment": "00:01:32"
+     },
+     {
+      "kind": "objection",
+      "topic": "Pool and amenities",
+      "text": "Pool notice hours questioned (nine pm vs ten); deferred",
+      "quote": "Someone said the notice says nine pm, but I thought we said ten.",
+      "segment": "00:01:45"
+     }
+    ],
+    "file": "board-meeting-2026-06-18.m4a",
+    "status": "completed",
+    "quality_warnings": [
+     "two speakers overlap at 00:01:40"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,22 @@
+Draft almanac v2 is ready for review. Nothing is saved yet. Proposed file name: almanac-2026-11-29-v2.md in Board Documents/Almanac. Full draft: <runs>/rebuild--F4-unexpected-save-name--r2/work/almanac-2026-11-29-v2.md
+
+CHANGELOG (v2 vs v1)
+- Changed: Quiet hours. Now Friday and Saturday nights 11:00 p.m. to 7:00 a.m. (was 10:00 p.m. to 7:00 a.m.). Other nights unchanged at 10:00 p.m. to 7:00 a.m. Adopted 3-0 on 2026-09-15 (minutes-2026-09-15.docx), effective 2026-10-01, so it is already in force. Quote: "amend House Rule 6 so that quiet hours on Friday and Saturday nights are 11:00 p.m. to 7:00 a.m."
+- New source since v1: minutes-2026-09-15.docx. The file list is otherwise the same: 17 files, none excluded, all read completely.
+- Nothing else changed in rule, scope, effective date, authority or status.
+
+OPEN CONFLICT
+- Pool and amenities, 2026 season hours. minutes-2025-09-10.pdf (adopted 3-0): "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." notice-2026-05-01-pool.pdf (board notice): "Hours: 8:00 a.m. to 9:00 p.m. daily." Under the supersession rules a notice does not replace an adopted resolution, so this stays a conflict. The documents do not decide it.
+
+PROVISIONAL (from the 2026-06-18 recording, which never sets a rule)
+- Electric barbecues: the board leaned towards allowing them, no vote taken, motion planned for September. The 2019 prohibition stays in force.
+- Pool hours: a member questioned the notice's nine o'clock hours; deferred.
+
+EXCLUSIONS
+- None. All 17 files were processed.
+
+OPEN ITEMS WORTH YOUR ATTENTION
+- The Bramblewick landscaping non-renewal notice was sent 2026-02-02, after the 2026-01-30 due date in the minutes. The almanac records the dates only and does not judge whether the notice was effective.
+- No document records what happened after the agreement ended 2026-03-31.
+
+Reply "approve" to save almanac-2026-11-29-v2.md, or tell me which passage is wrong. If you reject it, nothing will be saved.

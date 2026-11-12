@@ -1,0 +1,94 @@
+{
+ "state": "completed",
+ "result": {
+  "results": [
+   {
+    "file": "contract-bramblewick-landscaping-2024.pdf",
+    "status": "completed",
+    "read_completely": true,
+    "records_found": 6,
+    "records": [
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping contract parties and signature",
+      "scope": "contract",
+      "value": "Harbor View and Bramblewick Grounds LLC, signed January 25, 2024",
+      "status": "adopted",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Between Harbor View Condominium Association (the Client) and Bramblewick Grounds LLC (the Contractor). Signed January 25, 2024.",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping contract term",
+      "scope": "contract",
+      "value": "April 1, 2024 to March 31, 2026",
+      "status": "adopted",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": "2024-04-01",
+      "vote": null,
+      "quote": "This agreement runs from April 1, 2024 to March 31, 2026.",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping fee",
+      "scope": "monthly",
+      "value": "$1,450 per month",
+      "status": "adopted",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": null,
+      "vote": null,
+      "quote": "The Client pays the Contractor $1,450 per month.",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping renewal and notice period",
+      "scope": "contract",
+      "value": "Auto-renews for one year unless written notice at least 60 days before term ends",
+      "status": "adopted",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": null,
+      "vote": null,
+      "quote": "renews automatically for successive one-year terms unless either party gives written notice of non-renewal at least sixty (60) days before the end of the current term.",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping price increase on renewal",
+      "scope": "contract",
+      "value": "No more than 4% per renewal",
+      "status": "adopted",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": null,
+      "vote": null,
+      "quote": "On each renewal the monthly fee may increase by no more than four percent (4%).",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     },
+     {
+      "topic": "Vendor contracts",
+      "subject": "landscaping scope",
+      "scope": "common grounds",
+      "value": "Lawn care, hedges, seasonal planting, leaf removal",
+      "status": "informational",
+      "document_type": "contract",
+      "document_date": "2024-01-25",
+      "effective_date": null,
+      "vote": null,
+      "quote": "Lawn care, hedges, seasonal planting and leaf removal for all common grounds.",
+      "file": "contract-bramblewick-landscaping-2024.pdf"
+     }
+    ],
+    "schema_used": "contract"
+   }
+  ]
+ }
+}

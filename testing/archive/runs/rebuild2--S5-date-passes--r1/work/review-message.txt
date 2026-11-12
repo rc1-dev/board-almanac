@@ -1,0 +1,15 @@
+Review before saving. Proposed file: almanac-2027-01-02-v4.md (version 4, as of 2027-01-02). All 18 files in Board Documents were read completely; 0 excluded. The recording was transcribed.
+
+Changelog compared with v3:
+- Changed: Parking. v3 showed 48 hours now with a scheduled change to up to 24 hours from 2027-01-01. That date has passed, so the current rule is up to 24 hours for guest vehicles since 2027-01-01 (minutes-2026-11-10.docx: "no more than 24 hours. Effective January 1, 2027. Motion carried 3-0."). Scheduled: none.
+- Added open item: the Treasurer will look at the pool-hours question raised in the 2026-06-18 recording (provisional, recording only).
+- Added open item: a motion on electric barbecues for the September 2026 agenda (provisional, recording only; no adopted minutes show it).
+- No other change in rule, scope, effective date, authority or status. No new files since v3.
+
+Open conflict (1): Pool and amenities, 2026 season. minutes-2025-09-10.pdf: "for the 2026 season the pool is open 8:00 a.m. to 10:00 p.m. daily." against notice-2026-05-01-pool.pdf: "Hours: 8:00 a.m. to 9:00 p.m. daily." Recorded as a conflict, not resolved.
+
+Provisional items (2): (a) Electric barbecues, board-meeting-2026-06-18.m4a at 00:01:10: "So we all lean towards allowing electric barbecues. Let us not vote tonight." No vote was taken, so barbecues stay prohibited. (b) Pool hours objection, same recording at 00:01:45. Neither sets a rule.
+
+Vendor contracts stays incomplete: the non-renewal notice was sent 2026-02-02, after the 2026-01-30 due date, so whether the Bramblewick agreement ended is not established.
+
+Do you approve saving almanac-2027-01-02-v4.md in the Almanac folder? Reply yes to save, or tell me which passage was misread.

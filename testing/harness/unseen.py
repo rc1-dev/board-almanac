@@ -7,7 +7,7 @@ not fully independent; see the results report.
 import sys
 from pathlib import Path
 import os  # noqa: E402
-sys.path.insert(0, os.path.join(os.environ.get("ALMANAC_REPO", "/home/claude/board-almanac"), "validation"))
+sys.path.insert(0, os.path.join(os.environ.get("ALMANAC_REPO", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")), "validation"))
 try:
     from build_corpus import write_any  # noqa: E402  (only needed to regenerate unseen/board)
 except ImportError:
