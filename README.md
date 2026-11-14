@@ -92,3 +92,7 @@ The UGREEN skill kit is not included in this repository and can be downloaded fr
 ## Disclosure
 
 The workflow was designed and written during the UGREEN Hackathon 2026. Claude (Anthropic) assisted with drafting and reviewing the Skill files, test materials, proposal and documentation, and Claude models played the Skill and graded the runs in the simulated tests. The Skill bundles no third-party code, models or services. The validation generator uses reportlab (BSD license) and python-docx (MIT license). All test data is synthetic and fictional, and people appear by board role only.
+
+## License
+
+Copyright 2026 Rajeev Chawla. Licensed under the [Apache License, Version 2.0](LICENSE).
