@@ -10,7 +10,7 @@ from pathlib import Path
 
 TITLE = "Almanac"
 SUBTITLE = "A versioned, cited rulebook for HOA and condo association records on the UGREEN AI NAS"
-META = "Track: Automate Your Workflow · Skill name: almanac · UGREEN Hackathon 2026, Round 1"
+META = "Rajeev Chawla · Track: Automate Your Workflow · Skill name: almanac · UGREEN Hackathon 2026, Round 1"
 LINKS = "Source, demo and video: github.com/rc1-dev/board-almanac"
 
 # (heading, [paragraphs or ("ul", [items])])
