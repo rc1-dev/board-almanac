@@ -53,7 +53,13 @@ h1 { font: 700 clamp(34px, 6vw, 54px)/1 var(--f-display); letter-spacing: -0.01e
 .notice { margin-top: 18px; display: flex; gap: 12px; align-items: flex-start; background: var(--note); border: 1px solid var(--note-rule); border-radius: 6px; padding: 10px 14px; max-width: 860px; font-size: 14px; }
 .notice b { white-space: nowrap; }
 .for { margin: 6px 0 0; color: var(--muted); max-width: 70ch; }
-.problem { margin: 18px 0 0; max-width: 1000px; }
+.hgrid { display: grid; gap: 22px; }
+.problem { margin: 0; max-width: 1000px; cursor: zoom-in; }
+@media (min-width: 1000px) {
+  .hgrid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 32px; }
+  .hgrid.big { grid-template-columns: minmax(0, 1fr); }
+}
+.hgrid.big .problem { cursor: zoom-out; }
 .problem svg { display: block; width: 100%; height: auto; }
 .links { margin-top: 12px; font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -212,11 +218,16 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
 
 
 <header class="top wrap">
+ <div class="hgrid">
+ <div class="htext">
   <p class="eyebrow">UGREEN Hackathon 2026 · Skill <code>almanac</code> · Automate Your Workflow</p>
   <h1>Almanac</h1>
   <p class="lede">Which rule applies now, since when, and on whose authority?</p>
   <p class="for">A versioned, cited rulebook for HOA, condo and club associations, compiled from their records on the NAS.</p>
-  <figure class="problem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="1200" height="650" role="img" aria-labelledby="title desc">
+  <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behavior of the <code>almanac</code> Skill on a synthetic archive for a fictional 48-unit building. The Skill is designed to run on a UGREEN AI NAS, and results from the device will follow the hackathon's device testing. The delegation text is quoted from the Skill, and the answers are the reference answers from the validation kit.</span></div>
+  <div class="links"><a href="https://github.com/rc1-dev/board-almanac" target="_blank" rel="noopener">Source on GitHub</a><a href="https://youtu.be/Pia5Y52dYJs" target="_blank" rel="noopener">Video on YouTube</a><span>Board folder: Harbor View Condominium Association, 2019 to 2026</span></div>
+ </div>
+ <figure class="problem" title="Click to enlarge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="1200" height="650" role="img" aria-labelledby="title desc">
 <title id="title">Search returns every version; Almanac records which one applies</title>
 <desc id="desc">A search for the monthly fee in the validation archive returns seven documents giving $210, $225, $230, $235, $240 and $250. The almanac records that $240 has applied since March 1, 2026, set by the board minutes of January 20, 2026, and explains each other figure.</desc>
 <rect x="0.5" y="0.5" width="1199" height="649" rx="14" fill="#ffffff" stroke="#d9e1e5"/>
@@ -298,8 +309,7 @@ footer.foot { border-top: 1px solid var(--rule); padding-block: 18px 40px; font-
 <text x="680" y="582" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6b75" text-anchor="start">Each line cites its source file and quotation.</text>
 <text x="600.0" y="632" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6b75" text-anchor="middle">Synthetic validation archive: Harbor View Condominium Association (fictional)</text>
 </svg></figure>
-  <div class="notice" role="note"><b>Replay</b><span>This page replays the expected behavior of the <code>almanac</code> Skill on a synthetic archive for a fictional 48-unit building. The Skill is designed to run on a UGREEN AI NAS, and results from the device will follow the hackathon's device testing. The delegation text is quoted from the Skill, and the answers are the reference answers from the validation kit.</span></div>
-  <div class="links"><a href="https://github.com/rc1-dev/board-almanac" target="_blank" rel="noopener">Source on GitHub</a><a href="https://youtu.be/Pia5Y52dYJs" target="_blank" rel="noopener">Video on YouTube</a><span>Board folder: Harbor View Condominium Association, 2019 to 2026</span></div>
+ </div>
 </header>
 
 <nav class="steps" aria-label="Demo steps"><div class="wrap" role="tablist" id="tabs"></div></nav>
@@ -489,7 +499,8 @@ function go(tab) {
   if (location.hash !== "#" + tab) history.replaceState(null, "", "#" + tab);
   if (tab === "lint" || tab === "update") setVersion("v2", true);
 }
-document.addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (b) { go(b.dataset.tab); window.scrollTo({ top: 0 }); } });
+document.addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (b) { go(b.dataset.tab); const h = document.querySelector("header.top"); window.scrollTo({ top: h.offsetTop + h.offsetHeight }); } });
+document.querySelector(".problem").addEventListener("click", () => document.querySelector(".hgrid").classList.toggle("big"));
 window.addEventListener("hashchange", () => go(location.hash.slice(1)));
 
 /* Folder */

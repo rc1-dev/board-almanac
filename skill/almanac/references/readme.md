@@ -13,14 +13,19 @@ Almanac compiles a board folder (bylaws, minutes, notices, contracts and meeting
 
 ## Everyday use
 
+Once the first version is saved, anyone with access can ask about the rules in plain language. For example:
+
 - "What is the current rule on pets?"
 - "How has the monthly fee changed since 2024?"
-- "Check the almanac" for conflicts, overdue items and coming deadlines.
-- "Update the almanac" after adding new minutes.
+
+Two other requests keep the almanac useful:
+
+- "Check the almanac" lists open conflicts, overdue items and coming deadlines.
+- "Update the almanac", after new minutes are added, compiles a new version.
 
 ## What it changes on the NAS
 
-It creates the almanac folder once, if needed, and adds one new Markdown file per compile run, rebuilt from the original documents. It never asks an expert to change, move or delete board documents or older almanac versions. Before each save it checks that the file name is free, and after saving it reads the file back. Each save asks for approval after a review of every changed rule.
+It creates the almanac folder once, if needed, and adds one new Markdown file per compile run, rebuilt from the original documents. It never asks a UGOS agent to change, move or delete board documents or older almanac versions. Before each save it checks that the file name is free, and after saving it reads the file back. Each save asks for approval after a review of every changed rule.
 
 ## Removal
 
@@ -28,7 +33,7 @@ Uninstall the Skill. To remove its output, delete the almanac folder yourself; t
 
 ## Privacy
 
-Board documents are processed by the NAS experts. The intended setting is the NAS local model. Model routing is a UGOS setting that the Skill cannot change: it asks which model the NAS uses, and if that is a third-party model it asks for explicit authorization before reading any document. The almanac records people by board role, and leaves out residents' private matters.
+Board documents are read by the UGOS agents on the NAS: file-agent, document-agent and knowledge-agent. The intended setting is the NAS local model. Model routing is a UGOS setting that the Skill cannot change: it asks which model the NAS uses, and if that is a third-party model it asks for explicit authorization before reading any document. The almanac records people by board role, and leaves out residents' private matters.
 
 ## Limits
 
@@ -38,6 +43,6 @@ The Skill reports what the documents say. It is not legal advice, does not judge
 
 - Written for the UGREEN AI NAS hackathon. The workflow was designed and written during the hackathon.
 - AI assistance: Claude (Anthropic) was used to help draft and check the Skill files and test materials.
-- Third-party components: none bundled. The Skill uses only NAS experts named in the capability evidence section of SKILL.md.
-- The official Skill kit checker was used to check the package.
+- Third-party components: none bundled. The Skill uses only the UGOS agents named in the capability evidence section of SKILL.md.
+- The package passes the static check of the official UGREEN skill kit (version 0.7.7).
 - Test data is synthetic and fictional.

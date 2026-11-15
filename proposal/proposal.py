@@ -19,16 +19,16 @@ ITEMS = [
         "Almanac turns an HOA or condo board's archive on the NAS into a versioned, cited rulebook: which rule applies now, since when, and on whose authority.",
     ]),
     ("2. User and problem", [
-        "Users: volunteer boards and managers of HOA, condo and club associations. Rules are spread across years of minutes, notices, recordings and corrections. One archive can hold a proposed $235 fee, a notice wrongly saying $230 and the vote setting $240. Search finds all three; which governs?",
+        "Users: volunteer boards and managers of HOA, condo and club associations. Rules are spread across years of minutes, notices and recordings. One archive can hold a proposed $235 fee, a notice wrongly saying $230 and the vote setting $240. Which governs?",
     ]),
     ("3. Solution", [
-        "A Markdown rulebook on the NAS recording, for each topic, the current rule, scope, effective date, authorizing vote or document, a quotation, replaced rules, scheduled changes and open conflicts.",
+        "Almanac writes a Markdown rulebook on the NAS. For each topic, it gives the current rule, its scope and start date, the vote or document behind it, and a source quote. It also keeps replaced rules, scheduled changes and conflicts.",
     ]),
     ("4. Core user flow", [
-        "A board member points Almanac at the board folder and asks it to compile. It reads every document and recording, shows the proposed changes with quotations, and saves it once approved. Members can then ask questions and get the rule, vote and source.",
+        "A board member asks Almanac to compile the folder. It reads every document and recording and shows what changed, with quotes. Nothing is saved without approval. Members can ask questions and get the rule, vote and source.",
     ]),
     ("5. Difference", [
-        "Search finds what documents say; Almanac reconstructs which decisions still apply. Hosted HOA platforms, such as HOALife and HOA Hub, answer questions from uploaded governing documents. Almanac instead reconciles decisions across minutes, notices, recordings and corrections. With the UGOS local model, documents need not go to a hosted AI service.",
+        "Boards use search or a hosted HOA platform. Search returns every document on a topic, leaving the reader to decide which applies. Hosted platforms such as HOALife and HOA Hub answer questions from uploaded documents, so a third party holds a copy. Almanac reconciles minutes, notices, recordings and corrections into the rule in force. With the NAS local model, records naming residents and disputes stay on the association's NAS.",
     ]),
     ("6. NAS capabilities", [
         ("ul", [
@@ -38,21 +38,21 @@ ITEMS = [
         ]),
     ]),
     ("7. Technical approach", [
-        "The Skill only delegates to these agents. Each compile rebuilds the rulebook from every original document, so a corrected or deleted document leaves no outdated rule. A compile after a scheduled date makes that change current. Saving needs approval, never overwrites, and is cancelled if a file changes mid-run.",
+        "The Skill only delegates to these agents. Each compile rebuilds the rulebook from every original document, so a corrected or deleted document leaves no outdated rule. Saving needs approval, never overwrites, and is cancelled if a file changes mid-run.",
     ]),
     ("8. Status", [
-        "Implemented: the Skill, which follows the Uliya Skill Development Standard and passes the skill kit's static check, and a validation kit. In 64 simulated runs with a small stand-in model, the checks found no save without approval or obeyed instructions hidden in documents. Pending NAS validation: accuracy and run time.",
+        "Implemented: the Skill, which follows the Uliya Skill Development Standard and passes the skill kit's static check, and a validation kit. In 64 simulated runs, the checks found no save without approval or obeyed instructions hidden in documents. Pending NAS validation: accuracy and run time.",
     ]),
     ("9. Validation plan", [
-        "On the NAS, Almanac will compile the validation kit's synthetic condo archive, including the fee history above.",
+        "On the NAS, Almanac will compile the validation kit's fictional condo archive (2019 to 2026): 15 documents, a recording and a 23-question answer key.",
         ("ul", [
-            "Core test 1: when asked the monthly fee, it should answer $240 with the vote and minutes, not $235 or $230.",
-            "Core test 2: when asked about balcony heat pumps, it should give the conditions and 2-1 vote; for gym hours, which no document covers, it should say so.",
-            "Edge case: after new minutes change quiet hours on Friday and Saturday only, version 2 should change those nights and keep 10:00 p.m. on others.",
+            "Core test 1: the monthly fee should be $240, citing the 2026 vote, not the $235 proposal or $230 notice.",
+            "Core test 2: balcony heat pumps should be allowed with conditions, by a 2-1 vote. It should say no document covers Sunday gym hours.",
+            "Edge case: after minutes change quiet hours for Friday and Saturday only, version 2 should change those nights and keep 10:00 p.m. on others.",
         ]),
     ]),
     ("10. Limitations", [
-        "Answer quality depends on the NAS's document reading, OCR and transcription. In simulations, the model sometimes treated a partial change, such as new Saturday hours, as ending the whole rule. The review before saving shows each change beside the earlier rule, but some reviews were incomplete. One compile handles up to 60 files.",
+        "Results depend on how well UGOS agents read documents, scans and recordings. In simulations, a stand-in model sometimes treated a partial change, such as new Saturday hours, as ending the whole rule. The planned fix has the document agent state which parts still apply. One compile handles up to 60 files.",
     ]),
 ]
 
@@ -62,7 +62,7 @@ DISCLOSURE = [
             "The Skill bundles no third-party code, models, libraries or external services. It uses only the UGOS agents file-agent, document-agent and knowledge-agent.",
             "Board files are read and processed by UGOS agents on the NAS, and almanac versions are saved to a NAS folder the user confirms. The intended model is the NAS local model. Model routing is a UGOS setting; the Skill asks which model is in use and requires explicit authorization before any document is sent to a third-party model.",
             "The validation kit, which is not part of the Skill, uses reportlab 5.0.1 (BSD license) and python-docx 1.2.0 (MIT license) to generate synthetic test documents. Its scorer uses only the Python standard library.",
-            "The package was checked with the official UGREEN skill kit 0.7.3.",
+            "The package passes the static check of the official UGREEN skill kit 0.7.7 (capability catalog 2.2.0).",
             "Claude (Anthropic) assisted with drafting and reviewing the Skill files, test materials and this proposal, and Claude models played the Skill and graded the runs in the simulated tests.",
             "All test data is synthetic and fictional. The workflow was designed and written during the hackathon.",
             "The almanac reports what the documents record and is not legal advice.",

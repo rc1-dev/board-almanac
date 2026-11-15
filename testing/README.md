@@ -1,6 +1,6 @@
 # Simulated tests
 
-Before NAS access was available, Almanac was tested in simulation. A small model played the Skill, and stand-in agents played the UGOS agents. These tests check how the Skill runs a compile: the order of calls, stopping, approval, honesty and how rules are merged. They do not test extraction quality, which depends on the NAS model and can only be measured on the device.
+Almanac was tested in simulation. A small model played the Skill, and stand-in agents played the UGOS agents. These tests check how the Skill runs a compile: the order of calls, stopping, approval, honesty and how rules are merged. They do not test extraction quality, which depends on the NAS model and can only be measured on the device.
 
 ## How a run works
 
