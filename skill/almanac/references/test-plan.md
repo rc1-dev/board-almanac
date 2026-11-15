@@ -56,7 +56,7 @@ The NAS is available for one day, so the tests are ordered by priority and recor
 
 | Priority | Test | Purpose |
 |---|---|---|
-| P0 | Install, compile three core documents, ask two questions, save and reopen a version | The Skill runs end to end |
+| P0 | Install, compile three core documents, ask two questions, save and reopen a version, and check that the saved file has the requested name | The Skill runs end to end |
 | P1 | Add the weekend amendment and compile again; compile the full archive; record demonstration footage | The central behavior on the real device |
 | P2 | Adversarial cases, repeated runs, timings | Robustness and engineering evidence |
 
@@ -65,6 +65,8 @@ Record footage as soon as P0 and P1 succeed rather than at the end of the day.
 ## Checking answers
 
 The scorer checks required facts, forbidden statements and citations with patterns. It is a regression aid and can accept an answer that is wrong in meaning, so every answer from the device is also checked by hand for the current value, effective date, vote, source and replaced rules.
+
+Extraction recall is checked separately: each compile's records are compared with every decision in the expected almanacs, so a missed decision is found even when no question asks about it.
 
 ## Comparison
 

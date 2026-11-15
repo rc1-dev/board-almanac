@@ -79,7 +79,15 @@ The automatic checks found the first error in every round, including the first d
 - The scripted user replies by keyword.
 - The club archive and the expected almanacs were written by the author.
 - Claude models also graded the runs.
+- The stand-in `delegate` command accepted file lists, a save path and a file name as separate options, and its save always used the exact name. The real command takes only a target and an instruction, and the catalog's save adds a timestamp to a file name hint. The simulations therefore did not test whether the Skill writes paths and names into its instructions or how a timestamped name is handled.
+- The last edits to the Skill (comparison through `qa`, self-contained requests, the exact save path and the full At a glance read) follow catalog 2.2.0 and were not simulated.
 - NAS accuracy, run time and agent behavior are untested.
+
+## Planned work
+
+- Change the stand-in `delegate` command to accept only a target and an instruction, with paths read from the instruction text.
+- Make the stand-in save follow catalog 2.2.0: a file name hint gets a timestamp, and an exact .md path is kept.
+- Re-run the first compile, weekend amendment and lint save scenarios on the submitted Skill.
 
 ## The archive
 

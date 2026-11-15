@@ -34,7 +34,7 @@ ITEMS = [
         ("ul", [
             "file-agent (ug-filesystem): snapshot and checks before saving.",
             "knowledge-agent (ug-knowledge): transcription and saving.",
-            "document-agent (ug-document): extraction, reconciliation and answers.",
+            "document-agent (ug-document): extraction, comparison and answers.",
         ]),
     ]),
     ("7. Technical approach", [
