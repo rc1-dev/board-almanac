@@ -50,7 +50,7 @@ Almanac also runs where the records are kept. Association records name residents
 
 ## Demo
 
-An interactive demo is available at [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source in [`docs/index.html`](docs/index.html)). It walks through the board folder, the compile run, the resulting almanac with the history of each rule, answers to sample questions, an update and the lint report. A captioned video of the same walkthrough is in [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4).
+An interactive demo is available at [rc1-dev.github.io/board-almanac](https://rc1-dev.github.io/board-almanac/) (source in [`docs/index.html`](docs/index.html)). It walks through the board folder, the compile run, the resulting almanac with the history of each rule, answers to sample questions, an update and the lint report. A captioned video of the same walkthrough (2:24) is on [YouTube](https://youtu.be/Pia5Y52dYJs); the file is also in [`demo/video/almanac-demo.mp4`](demo/video/almanac-demo.mp4).
 
 Both replay the expected behavior on the synthetic test archive. The delegation text is quoted from `SKILL.md`, and the answers are the reference answers from the validation kit. Results from a real NAS will follow the hackathon's device testing.
 
