@@ -43,7 +43,7 @@ const CARD_CSS = BASE_CSS + `
   .graphic { width: 1120px; } .graphic img { width: 100%; display:block; border-radius: 14px; }
   .graphic .eyebrow { margin-bottom: 14px; }
   .gwrap { position: relative; }
-  .cover { position:absolute; left:50.3%; top:0.4%; right:0.3%; bottom:7%; background:#fff; border-top-right-radius: 13px; }
+  .cover { position:absolute; left:49%; top:0.4%; right:0.3%; bottom:7%; background:#fff; border-top-right-radius: 13px; }
 `;
 const FRAME_CSS = BASE_CSS + `
   .shot { position:absolute; left:0; top:0; width:${FRAME_W}px; height:${PAGE_H}px; display:block; }

@@ -6,19 +6,23 @@ It was written for the UGREEN Hackathon 2026 (track: Automate Your Workflow). Th
 
 ## The problem
 
-An association's rules are rarely kept in one place. They are set in bylaws, changed in meeting minutes, announced in notices, constrained by contracts and sometimes discussed in recorded meetings. Over the years, later decisions replace earlier ones, a notice occasionally states the wrong figure, and a proposal that failed can be mistaken for one that passed. In the validation archive, a search for the monthly fee returns seven documents and six different figures: a $235 proposal that was never adopted, a notice that wrongly gave $230, a newsletter question about $250, two fees that applied in earlier years and the current fee of $240. Anyone trying to answer a simple question, such as the current fee or how many pets a unit may keep, has to read the whole history and work out which statement still governs.
+An association's rules are rarely kept in one place. They are set in bylaws, changed in meeting minutes, announced in notices, constrained by contracts and sometimes discussed in recorded meetings. Over the years, later decisions replace earlier ones, a notice occasionally states the wrong figure, and a proposal that failed can be mistaken for one that passed. A search of the archive therefore returns every version of a rule, current or not, and leaves the reader to work out which one still applies. Answering a simple question, such as the current monthly fee or how many pets a unit may keep, means reading the whole history.
+
+The test archive in this repository shows the problem. It is a synthetic archive for a fictional 48-unit condominium association, with 15 documents and a meeting recording from 2019 to 2026, built to test Almanac. In it, a search for the monthly fee returns seven documents and six different figures: a $235 proposal that was never adopted, a notice that wrongly gave $230, a newsletter question about $250, two fees that applied in earlier years and the current fee of $240. Almanac records which one applies and what each of the others was.
 
 ![A search for the monthly fee returns seven documents with six different figures. The almanac records that $240 has applied since March 1, 2026, and what each other figure was.](docs/search-vs-almanac.svg)
 
 ## The approach
 
-Search finds what documents say; Almanac reconstructs which decisions still apply. It does that work in a compile and keeps the result. Each compile produces a Markdown file in an almanac folder on the NAS. For every topic, the file records the currently documented rule, its scope, its effective date, the vote or document that established it, a quotation from the source, the rules it replaced and the period each applied, any change scheduled for a later date, and any conflict the documents leave unresolved. Each version also has a changelog of what changed since the previous one, and the user reviews it before the version is saved. The changelog compares each topic's summary (rule, scope, effective date and status) and the open items; a change only to a topic's authority or evidence, such as a corrected vote count, appears in the topic but is not flagged as a change. Older versions are never modified, so the folder also serves as an audit trail.
+A search tool matches words. It finds every document that mentions a topic but cannot tell which statement is still in force. Almanac answers that question: it reads the whole archive, works out which decisions replaced which, and records the result as a rulebook in which every rule cites its source.
+
+Almanac does this in a compile. Each compile produces a Markdown file in an almanac folder on the NAS. For every topic, the file records the currently documented rule, its scope, its effective date, the vote or document that established it, a quotation from the source, the rules it replaced and the period each applied, any change scheduled for a later date, and any conflict the documents leave unresolved. Each version also has a changelog of what changed since the previous one, and the user reviews it before the version is saved. The changelog compares each topic's summary (rule, scope, effective date and status) and the open items. A change only to a topic's authority or evidence, such as a corrected vote count, appears in the topic but is not flagged as a change. Older versions are never modified, so the folder also serves as an audit trail.
 
 The rules for deciding which statement is current are set out in [the supersession rules](skill/almanac/references/supersession-rules.md). A later adopted decision replaces an earlier one only for the same subject and scope, so an amendment that changes quiet hours on Friday and Saturday nights leaves the other nights untouched. Failed motions and agenda proposals never change a rule. A notice that contradicts the minutes is recorded as a conflict unless a later document corrects it. When nothing resolves a disagreement, the almanac quotes both statements and leaves the decision to the board.
 
 Adopted changes that take effect later are recorded as scheduled, and a question about a date after the change gets the new rule. Almanac has no background scheduler. When the user next runs a compile after that date, it proceeds even if no file has changed, and the saved version makes the new rule current.
 
-Questions are answered from the newest almanac rather than from the raw archive. Each answer gives the rule, its source and the almanac version it came from, and says so plainly when the almanac does not cover the question.
+Questions are answered from the newest almanac rather than from the raw archive. Each answer gives the rule, its source and the almanac version it came from, and says so when the almanac does not cover the question.
 
 ## How a compile runs
 
@@ -40,7 +44,9 @@ The almanac reports what the documents record. It does not give legal advice or 
 
 Hosted HOA platforms such as HOALife and HOA Hub answer questions from an association's uploaded governing documents. [HOALife](https://www.hoalife.com/features/ai-features) offers an AI chat that draws on an HOA's governing documents. HOA Hub answers residents' questions with [EasyAsk](https://www.hoahub.app/features/easyask/), and its [document hub](https://www.hoahub.app/features/documents/) compares an uploaded amendment with the governing document and keeps a version history.
 
-Almanac instead reconciles decisions across the association's whole archive on the NAS, including minutes, notices, recordings and corrections. It records which motions passed or failed, when each change takes effect and where documents disagree, and the user reviews each version before it is saved. With the UGOS local model, the documents need not go to a hosted AI service.
+Almanac instead reconciles decisions across the association's whole archive on the NAS, including minutes, notices, recordings and corrections. It records which motions passed or failed, when each change takes effect and where documents disagree, and the user reviews each version before it is saved.
+
+Almanac also runs where the records are kept. Association records name residents and can include disputes, violations and late payments. With the NAS set to its local model, the documents are read on the device and the archive is not uploaded to a hosted platform or AI service. The Skill confirms the model setting before reading any document and uses a third-party model only with the user's explicit authorization.
 
 ## Demo
 

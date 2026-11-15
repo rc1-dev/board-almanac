@@ -6,7 +6,7 @@ Run: python3 docs/make_problem_graphic.py
 from html import escape
 from pathlib import Path
 
-W, H = 1200, 600
+W, H = 1200, 650
 SANS = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 INK, MUTED, RULE, ACCENT = "#1d2a31", "#5b6b75", "#d9e1e5", "#1f5f74"
@@ -49,8 +49,14 @@ def main():
          f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="#ffffff" stroke="{RULE}"/>']
 
     # Left: the search
-    lx, top = 36, 44
-    o.append(t(lx, top, "SEARCH THE ARCHIVE", 13, 600, MUTED, MONO, extra=' letter-spacing="1.5"'))
+    lx, top = 36, 96
+    # The almanac side sits on a tinted panel so it reads as the answer.
+    rx, rw = 680, 484
+    o.append(f'<rect x="{rx - 22}" y="22" width="{rw + 44}" height="{H - 76}" rx="12" fill="#eef5f7" stroke="{ACCENT}" stroke-width="2"/>')
+    o.append(t(lx, 56, "Search the archive", 22, 700, INK))
+    o.append(t(lx, 80, "Every document that mentions the fee", 15, 400, MUTED))
+    o.append(t(rx, 56, "Ask Almanac", 22, 700, ACCENT))
+    o.append(t(rx, 80, "The rule that applies, with its source", 15, 400, MUTED))
     o.append(f'<rect x="{lx}" y="{top + 16}" width="540" height="40" rx="8" fill="#f4f7f8" stroke="{RULE}"/>')
     o.append(f'<circle cx="{lx + 22}" cy="{top + 35}" r="7" fill="none" stroke="{MUTED}" stroke-width="2"/>'
              f'<line x1="{lx + 27}" y1="{top + 40}" x2="{lx + 33}" y2="{top + 46}" stroke="{MUTED}" stroke-width="2" stroke-linecap="round"/>')
@@ -66,15 +72,13 @@ def main():
     o.append(t(lx, y - 8, "Which one applies today?", 18, 600, WARN))
 
     # Arrow
-    ax = 606
-    o.append(t(ax + 24, 284, "compile", 12, 500, ACCENT, MONO, anchor="middle"))
-    o.append(f'<line x1="{ax}" y1="300" x2="{ax + 34}" y2="300" stroke="{ACCENT}" stroke-width="3"/>'
-             f'<path d="M{ax + 34} 291 L{ax + 48} 300 L{ax + 34} 309 Z" fill="{ACCENT}"/>')
+    ax, ay = 598, 336
+    o.append(t(ax + 24, ay - 14, "compile", 12, 500, ACCENT, MONO, anchor="middle"))
+    o.append(f'<line x1="{ax}" y1="{ay}" x2="{ax + 34}" y2="{ay}" stroke="{ACCENT}" stroke-width="3"/>'
+             f'<path d="M{ax + 34} {ay - 9} L{ax + 48} {ay} L{ax + 34} {ay + 9} Z" fill="{ACCENT}"/>')
 
     # Right: the almanac
-    rx, rw = 676, 488
-    o.append(t(rx, top, "THE ALMANAC", 13, 600, MUTED, MONO, extra=' letter-spacing="1.5"'))
-    o.append(f'<rect x="{rx}" y="{top + 16}" width="{rw}" height="164" rx="10" fill="#eef5f7" stroke="{ACCENT}" stroke-width="1.5"/>')
+    o.append(f'<rect x="{rx}" y="{top + 16}" width="{rw}" height="164" rx="10" fill="#ffffff" stroke="{ACCENT}" stroke-width="1.5"/>')
     o.append(t(rx + 22, top + 46, "Monthly fee", 15, 600, ACCENT))
     o.append(f'<rect x="{rx + rw - 104}" y="{top + 31}" width="84" height="22" rx="11" fill="{ACCENT}"/>')
     o.append(t(rx + rw - 62, top + 47, "IN FORCE", 11.5, 700, "#ffffff", MONO, anchor="middle"))
@@ -86,7 +90,7 @@ def main():
     o.append(t(rx, top + 222, "The other figures", 15, 600, INK))
     y = top + 258
     for when, amount, note, colour in HISTORY:
-        o.append(f'<line x1="{rx}" y1="{y - 24}" x2="{rx + rw}" y2="{y - 24}" stroke="{RULE}"/>')
+        o.append(f'<line x1="{rx}" y1="{y - 24}" x2="{rx + rw}" y2="{y - 24}" stroke="#c9dbe1"/>')
         o.append(t(rx, y, when, 13, 500, MUTED, MONO))
         o.append(t(rx + 92, y, amount, 17, 700, MUTED))
         o.append(f'<line x1="{rx + 91}" y1="{y - 6}" x2="{rx + 135}" y2="{y - 6}" stroke="{MUTED}" stroke-width="1.5"/>')
